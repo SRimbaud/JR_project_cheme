@@ -1,0 +1,42 @@
+digraph "src/read.c"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/read.c",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="stdio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ctype.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="read.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$read_8h.html",tooltip="Read routine for SFS. "];
+  Node4 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="eval.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$eval_8h.html",tooltip="Evaluation stuff for SFS. "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="object.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$object_8h.html",tooltip="Object definition for SFS. "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="strings.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="stdlib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="limits.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="number.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$number_8h.html",tooltip="Number handling. "];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="basic.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$basic_8h.html",tooltip="Basic types. "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="string.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node11 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="notify.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$notify_8h.html",tooltip="Notification management. "];
+  Node13 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="mem.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mem_8h.html",tooltip="Memory wrappers for malloc/free. "];
+  Node14 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+}

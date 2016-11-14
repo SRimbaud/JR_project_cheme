@@ -1,0 +1,67 @@
+Notes livrable 2 :
+
+Evaluation :
+
+(+ 4 9) --> 13
+'(+ 4 9) --> '(+ 4 9)
+
+eval(object t) retourne un objet.
+
+Objets autoévaluant c'est eux même. ex : 13 --> 13.
+define ==> Définir une variable.
+(define x '(+ 4 9)) ==> Associe au symbole x le gros bordel (..).
+formes :
+define 
+if 
+and
+or
+set!
+quote
+Ces trucs ont un mode d'éval spécifique. Dans les autres cas c'est
+classique.
+
+Le define :
+
+On évalue pas le symbole qui suit ex (define x 3), x n'est pas évalué.
+On évalue pas le car du cdr mais le cdr du cdr.
+ça va être récursif de ouf.
+On va avoir des liste globales qui stockent le nom des variables et leurs valeurs.
+
+Le and : (C'est le et logique )
+
+On connait la valeur du and quand on a évalué le premier qui est faux 
+(identique à la subtilité du & et && en C).
+La liste de tous les arguments du and c'est son cdr.
+Il faut évaluer les expressions ensuite. (a ne pas oublier !)
+
+Le or : (Pareil que le and mais on s'arrête dès qu'on a un vrai)
+
+Le if :
+
+(if (< x 5) (set! x 12) (set! x 2))
+
+On évalue le car du if, s'il est vrai on évalue le car du cdr sinon 
+le cdr du cdr.
+
+(if (condition) (then) (else)) (ressemble à un ternaire)
+On évite appel récursif car c'est trop lourd
+on remplace par un goto.
+
+
+Les environnements (polalala pompelup)
+
+LIste d'environnements qui contiennent des listes de symbole
+On se démerde pour le hachage ect....
+Qd on cherche une variable on remontre les environnements jusqu'à ce qu'on la trouve.
+Et si on la trouve pas on balance une motherfucking erreur =D
+Faire :
+Retrouver un symbole
+retrouver la valeur d'un symbole
+ajouter un symbole
+modifier un symbole
+
+Les environnements c'est livrable 3 c'est juste pour pas que ça parte trop en steak lorsqu'on passera au livrable 3. Ils sont sympa ces profs, j'les aime bien =D
+
+
+
+

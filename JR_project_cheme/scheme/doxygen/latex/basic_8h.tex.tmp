@@ -1,0 +1,51 @@
+\hypertarget{basic_8h}{}\section{Référence du fichier include/basic.h}
+\label{basic_8h}\index{include/basic.\+h@{include/basic.\+h}}
+
+
+Basic types.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}notify.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de basic.\+h\+:
+% FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries S\+T\+R\+L\+EN}~256\hypertarget{basic_8h_a278cf415676752815cfb411cb0b32802}{}\label{basic_8h_a278cf415676752815cfb411cb0b32802}
+
+\item 
+\#define {\bfseries B\+I\+G\+S\+T\+R\+I\+NG}~65536\hypertarget{basic_8h_aa7ce15434a42cf84903f90b1d9680aa2}{}\label{basic_8h_aa7ce15434a42cf84903f90b1d9680aa2}
+
+\item 
+\#define {\bfseries T\+R\+UE}~1\hypertarget{basic_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{}\label{basic_8h_aa8cecfc5c5c054d2875c03e77b7be15d}
+
+\item 
+\#define {\bfseries F\+A\+L\+SE}~0\hypertarget{basic_8h_aa93f0eb578d23995850d61f7d61c55c1}{}\label{basic_8h_aa93f0eb578d23995850d61f7d61c55c1}
+
+\item 
+\#define {\bfseries init\+\_\+string}(s)~memset( s, \textquotesingle{}\textbackslash{}0\textquotesingle{}, S\+T\+R\+L\+EN )\hypertarget{basic_8h_a45a4253f92f29321f0b3af0999579ff3}{}\label{basic_8h_a45a4253f92f29321f0b3af0999579ff3}
+
+\end{DoxyCompactItemize}
+\subsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int {\bfseries uint}\hypertarget{basic_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{}\label{basic_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}
+
+\item 
+typedef char {\bfseries string}\mbox{[}S\+T\+R\+L\+EN\mbox{]}\hypertarget{basic_8h_addc3c69b25629ef3509f9e80d33625fa}{}\label{basic_8h_addc3c69b25629ef3509f9e80d33625fa}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Basic types. 
+
+\begin{DoxyAuthor}{Auteur}
+François Cayre $<$cayre.(null)$>$ 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Sat Jun 23 01\+:09\+:22 2012 Basic types. 
+\end{DoxyDate}
