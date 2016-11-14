@@ -1,0 +1,257 @@
+\hypertarget{eval_8h}{}\section{Référence du fichier include/eval.h}
+\label{eval_8h}\index{include/eval.\+h@{include/eval.\+h}}
+
+
+Evaluation stuff for S\+FS.  
+
+
+{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de eval.\+h\+:
+% FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
+\subsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structobject__t}{object\+\_\+t} $\ast$ {\bfseries object}\hypertarget{eval_8h_af581f8cc2bba3b54da9fd9d7225cb1f2}{}\label{eval_8h_af581f8cc2bba3b54da9fd9d7225cb1f2}
+
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_ae3d0e6146540807f51d3f98bcc072dec}{sfs\+\_\+eval} (\hyperlink{structobject__t}{object})
+\begin{DoxyCompactList}\small\item\em Fontion d\textquotesingle{}évalution d\textquotesingle{}expression scheme. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_ab3046168bcbd3ea1c3b2b256c52f3381}{E\+V\+A\+L\+\_\+quote} (\hyperlink{structobject__t}{object} o)
+\begin{DoxyCompactList}\small\item\em Evalue l\textquotesingle{}expression quote. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a3ab5f3daaa76ecdb200516edaeb5f1de}{E\+V\+A\+L\+\_\+define} (\hyperlink{structobject__t}{object} o)
+\begin{DoxyCompactList}\small\item\em Evalue un define. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_aaf33772424539f09fb5cf02f68539a27}{E\+V\+A\+L\+\_\+set} (\hyperlink{structobject__t}{object} o)
+\begin{DoxyCompactList}\small\item\em Mets à jour une variable. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a5d2f9663d35a3771d2199c8a982571db}{E\+V\+A\+L\+\_\+and} (\hyperlink{structobject__t}{object} o)
+\begin{DoxyCompactList}\small\item\em Retourne un et logique de o. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a8cf3f371a46ed2d9a0c49c65397b704f}{E\+V\+A\+L\+\_\+or} (\hyperlink{structobject__t}{object} o)
+\begin{DoxyCompactList}\small\item\em Evaluation de la forme or. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a92d6d091093aca2cc461305af9898a57}{E\+V\+A\+L\+\_\+if} (\hyperlink{structobject__t}{object} o)
+\begin{DoxyCompactList}\small\item\em Evalue un if. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a0059ac2d5fc1abec50561b5b9a1b494e}{I\+F\+\_\+predicat} (\hyperlink{structobject__t}{object} input)
+\begin{DoxyCompactList}\small\item\em Retourne le prédicat d\textquotesingle{}une structure if. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_ae2d724e0225104a8dcd621f5f691c601}{I\+F\+\_\+consequence} (\hyperlink{structobject__t}{object} input)
+\begin{DoxyCompactList}\small\item\em Renvoie la conséquence d\textquotesingle{}une structure if. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_aefec57e38712b1baf88ee81276fe57ed}{I\+F\+\_\+alternative} (\hyperlink{structobject__t}{object} input)
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}alternative d\textquotesingle{}une structure if. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a026bb47409acef4341f840fc817b292c}{I\+F\+\_\+overargument} (\hyperlink{structobject__t}{object} input)
+\begin{DoxyCompactList}\small\item\em Vérifie que if n\textquotesingle{}ait pas un argument en trop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Evaluation stuff for S\+FS. 
+
+\begin{DoxyAuthor}{Auteur}
+François Cayre $<$cayre.(null)$>$ 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Fri Jun 22 20\+:10\+:38 2012 Evaluation stuff for S\+FS. 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+and@{E\+V\+A\+L\+\_\+and}}
+\index{E\+V\+A\+L\+\_\+and@{E\+V\+A\+L\+\_\+and}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+and(object o)}{EVAL_and(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+and (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_a5d2f9663d35a3771d2199c8a982571db}{}\label{eval_8h_a5d2f9663d35a3771d2199c8a982571db}
+
+
+Retourne un et logique de o. 
+
+On évalue chaque terme si on croise un terme faux on s\textquotesingle{}arrête et on retourne faux. Les termes sont évalués. Si le terme évalué n\textquotesingle{}est pas un booléen on le renvoie et on quitte la fonction. Si and est vide renvoie vrai par défaut. En cas de succession de termes non booléen, seul le dernier est affiché. Un terme non booléen est considéré comme vrai, s\textquotesingle{}il est le dernier dans le and, il est retourné. (fonctionnement de scheme48)
+
+Renvoie N\+U\+LL et affiche un warning en cas de problème.
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie le résultat. Renvoie un booléen ! 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+define@{E\+V\+A\+L\+\_\+define}}
+\index{E\+V\+A\+L\+\_\+define@{E\+V\+A\+L\+\_\+define}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+define(object o)}{EVAL_define(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+define (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_a3ab5f3daaa76ecdb200516edaeb5f1de}{}\label{eval_8h_a3ab5f3daaa76ecdb200516edaeb5f1de}
+
+
+Evalue un define. 
+
+Evalue un define. évalue également de cddr. Effectue également la création dans l\textquotesingle{}environnement courant de la variable. Retourne le nom de la variable créée c\textquotesingle{}est à dire le symbole. Si le format de la chaine n\textquotesingle{}est pas bon elle retourne N\+U\+LL et affiche un warning.
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie le symbole crée. 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+if@{E\+V\+A\+L\+\_\+if}}
+\index{E\+V\+A\+L\+\_\+if@{E\+V\+A\+L\+\_\+if}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+if(object o)}{EVAL_if(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+if (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_a92d6d091093aca2cc461305af9898a57}{}\label{eval_8h_a92d6d091093aca2cc461305af9898a57}
+
+
+Evalue un if. 
+
+Si le prédicat est vrai renvoie la conséquence.~\newline
+S\textquotesingle{}il n\textquotesingle{}y a pas de prédicat retourne N\+U\+LL et affiche des warnings. Sinon renvoie l\textquotesingle{}alternative. S\textquotesingle{}il n\textquotesingle{}y a pas d\textquotesingle{}alternative retourne \#f. S\textquotesingle{}il n\textquotesingle{}y a pas de conséquence retourne retourne N\+U\+LL et affiche une erreur. S\textquotesingle{}il y a trop d\textquotesingle{}arguments renvoie null et affiche un warning.
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{eval_8c_ae2d724e0225104a8dcd621f5f691c601}{I\+F\+\_\+consequence} 
+
+\hyperlink{eval_8c_aefec57e38712b1baf88ee81276fe57ed}{I\+F\+\_\+alternative} 
+
+\hyperlink{eval_8c_a0059ac2d5fc1abec50561b5b9a1b494e}{I\+F\+\_\+predicat} 
+
+\hyperlink{eval_8c_a026bb47409acef4341f840fc817b292c}{I\+F\+\_\+overargument}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie l\textquotesingle{}évaluation d\textquotesingle{}un if. 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+or@{E\+V\+A\+L\+\_\+or}}
+\index{E\+V\+A\+L\+\_\+or@{E\+V\+A\+L\+\_\+or}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+or(object o)}{EVAL_or(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+or (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_a8cf3f371a46ed2d9a0c49c65397b704f}{}\label{eval_8h_a8cf3f371a46ed2d9a0c49c65397b704f}
+
+
+Evaluation de la forme or. 
+
+On évalue chaque terme du or tant qu\textquotesingle{}on a pas de terme vrai. Comme pour and si un terme n\textquotesingle{}est pas un booléen il est considéré comme vrai et on le retourne Si c\textquotesingle{}est le dernier, on le retourne (scheme48) or seul vaut faux par défaut.
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie un booléen qui correspond à un ou logique. 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+quote@{E\+V\+A\+L\+\_\+quote}}
+\index{E\+V\+A\+L\+\_\+quote@{E\+V\+A\+L\+\_\+quote}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+quote(object o)}{EVAL_quote(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+quote (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_ab3046168bcbd3ea1c3b2b256c52f3381}{}\label{eval_8h_ab3046168bcbd3ea1c3b2b256c52f3381}
+
+
+Evalue l\textquotesingle{}expression quote. 
+
+Concrètement retourne le cdr de o.
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie le cdr de o. 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+set@{E\+V\+A\+L\+\_\+set}}
+\index{E\+V\+A\+L\+\_\+set@{E\+V\+A\+L\+\_\+set}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+set(object o)}{EVAL_set(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_aaf33772424539f09fb5cf02f68539a27}{}\label{eval_8h_aaf33772424539f09fb5cf02f68539a27}
+
+
+Mets à jour une variable. 
+
+set! est de la forme \+: (set! x $<$valeur$>$) x le symbole à mettre à jour et $<$valeur$>$ sa nouvelle valeur. Renvoie x. Si x n\textquotesingle{}existe affiche un warning et retourne N\+U\+LL. Si x n\textquotesingle{}est pas un symbole affiche un warning et retourne null. Si $<$valeur$>$ est N\+U\+LL affiche un warning et retourne N\+U\+LL
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie le nom de la variable modifiée. 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!I\+F\+\_\+alternative@{I\+F\+\_\+alternative}}
+\index{I\+F\+\_\+alternative@{I\+F\+\_\+alternative}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{I\+F\+\_\+alternative(object input)}{IF_alternative(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} I\+F\+\_\+alternative (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_aefec57e38712b1baf88ee81276fe57ed}{}\label{eval_8h_aefec57e38712b1baf88ee81276fe57ed}
+
+
+Retourne l\textquotesingle{}alternative d\textquotesingle{}une structure if. 
+
+Renvoie le cadddr. \begin{DoxySeeAlso}{Voir également}
+\hyperlink{object_8c_a486b361de0c6c18f7227158b12dbfd4a}{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr}(input, \char`\"{}cadddr\char`\"{})
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie l\textquotesingle{}alternative (le cadddr) 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!I\+F\+\_\+consequence@{I\+F\+\_\+consequence}}
+\index{I\+F\+\_\+consequence@{I\+F\+\_\+consequence}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{I\+F\+\_\+consequence(object input)}{IF_consequence(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} I\+F\+\_\+consequence (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_ae2d724e0225104a8dcd621f5f691c601}{}\label{eval_8h_ae2d724e0225104a8dcd621f5f691c601}
+
+
+Renvoie la conséquence d\textquotesingle{}une structure if. 
+
+Renvoie le caddr. \begin{DoxySeeAlso}{Voir également}
+\hyperlink{object_8c_a486b361de0c6c18f7227158b12dbfd4a}{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie la conséquence (le caddr). 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!I\+F\+\_\+overargument@{I\+F\+\_\+overargument}}
+\index{I\+F\+\_\+overargument@{I\+F\+\_\+overargument}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{I\+F\+\_\+overargument(object input)}{IF_overargument(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} I\+F\+\_\+overargument (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_a026bb47409acef4341f840fc817b292c}{}\label{eval_8h_a026bb47409acef4341f840fc817b292c}
+
+
+Vérifie que if n\textquotesingle{}ait pas un argument en trop. 
+
+Renvoie nil si if contient le bon nombre d\textquotesingle{}argument ce nil provient de la construction normale du if que l\textquotesingle{}on obtient en allant chercher le cddddr (ce qui suit le prédicat
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie nil si if est bon, autre chose sinon. 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!I\+F\+\_\+predicat@{I\+F\+\_\+predicat}}
+\index{I\+F\+\_\+predicat@{I\+F\+\_\+predicat}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{I\+F\+\_\+predicat(object input)}{IF_predicat(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} I\+F\+\_\+predicat (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_a0059ac2d5fc1abec50561b5b9a1b494e}{}\label{eval_8h_a0059ac2d5fc1abec50561b5b9a1b494e}
+
+
+Retourne le prédicat d\textquotesingle{}une structure if. 
+
+Revient à prendre le cadr. \begin{DoxySeeAlso}{Voir également}
+\hyperlink{object_8c_a486b361de0c6c18f7227158b12dbfd4a}{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie l\textquotesingle{}alternative (le cadr). 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!sfs\+\_\+eval@{sfs\+\_\+eval}}
+\index{sfs\+\_\+eval@{sfs\+\_\+eval}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{sfs\+\_\+eval(object)}{sfs_eval(object)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} sfs\+\_\+eval (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_ae3d0e6146540807f51d3f98bcc072dec}{}\label{eval_8h_ae3d0e6146540807f51d3f98bcc072dec}
+
+
+Fontion d\textquotesingle{}évalution d\textquotesingle{}expression scheme. 
+
+Evaluation de l\textquotesingle{}input. Renvoie N\+U\+LL si \+: input est N\+U\+LL
+\begin{DoxyItemize}
+\item Si on a un symbole correspondant à un forme scheme seul.
+\item Si on donne une variable inexistante.
+\item Si on commence une liste avec un symbole qui n\textquotesingle{}est ni un mot ni une variable.
+\item Si par inadvertance le car de input est N\+U\+LL.
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{Voir également}
+is\+\_\+form(object symbol, int$\ast$ forme);
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie l\textquotesingle{}objet évalué. 
+\end{DoxyReturn}
