@@ -1,0 +1,46 @@
+\hypertarget{mem_8c}{}\section{Référence du fichier src/mem.c}
+\label{mem_8c}\index{src/mem.\+c@{src/mem.\+c}}
+
+
+Memory wrappers for malloc/free.  
+
+
+{\ttfamily \#include \char`\"{}mem.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de mem.\+c\+:
+% FIG 0
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{mem_8c_a659bee72955e0e8f265312220e10f2d4}{sfs\+\_\+malloc} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em alloue un bloc de taille t \end{DoxyCompactList}\item 
+void \hyperlink{mem_8c_ae414c01305ed3c5d50c4b8c4c6f6fa99}{sfs\+\_\+free} (void $\ast$ptr)\hypertarget{mem_8c_ae414c01305ed3c5d50c4b8c4c6f6fa99}{}\label{mem_8c_ae414c01305ed3c5d50c4b8c4c6f6fa99}
+
+\begin{DoxyCompactList}\small\item\em libère ptr \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Memory wrappers for malloc/free. 
+
+\begin{DoxyAuthor}{Auteur}
+François Cayre $<$cayre.(null)$>$ 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Fri Jun 15 18\+:06\+:23 2012 Memory wrappers for malloc/free. 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\index{mem.\+c@{mem.\+c}!sfs\+\_\+malloc@{sfs\+\_\+malloc}}
+\index{sfs\+\_\+malloc@{sfs\+\_\+malloc}!mem.\+c@{mem.\+c}}
+\subsubsection[{\texorpdfstring{sfs\+\_\+malloc(size\+\_\+t size)}{sfs_malloc(size_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ sfs\+\_\+malloc (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{mem_8c_a659bee72955e0e8f265312220e10f2d4}{}\label{mem_8c_a659bee72955e0e8f265312220e10f2d4}
+
+
+alloue un bloc de taille t 
+
+\begin{DoxyReturn}{Renvoie}
+Pointeur sur bloc de taille t. 
+\end{DoxyReturn}
