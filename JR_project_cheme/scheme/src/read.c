@@ -584,7 +584,7 @@ int OBJECT_real_update(object o, char* input, uint* here)
 	char** fin = &debut ;
 	double val = 0;
 	/* DEBUG_MSG("REAL val before reading %lf", val); */
-	val = strtod(input, fin);
+	val = strtod(debut, fin);
 
 	/* DEBUG_MSG("REAL val after reading %lf", val); */
 	DEBUG_MSG("here = %d", *here);
@@ -627,7 +627,7 @@ int OBJECT_real_update(object o, char* input, uint* here)
 #define MINIMAL_IF_STRUCTURE
 		if (val == HUGE_VAL)
 		{
-			WARNING_MSG("Real overflow erreur set to inf");
+			WARNING_MSG("Real overflow error set to inf");
 			NUM_set_lint(&(o->this.number), 0, NUM_PINFTY);
 			return(2);
 		}
