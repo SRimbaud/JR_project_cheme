@@ -1,3 +1,0 @@
-; TEST_RETURN_CODE=PASS
-; TEST_COMMENT=empty script
-
