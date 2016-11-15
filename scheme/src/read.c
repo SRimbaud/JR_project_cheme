@@ -516,6 +516,19 @@ int OBJECT_int_update(object o, char* input, uint *here)
 	*here = debut - input ;
 	DEBUG_MSG("*debut : %c, *here : %d, input[*here] : %c",
 			*debut, *here, input[*here]);
+	if(*debut == '.')
+	{
+		/* Cas ou un point nous bloque dans ce cas on a
+		 * affaire à un flottant
+		 * On appelle la fonction de lecture d'un flottant.
+		 * Mais avant on remet here à sa valeur initiale grace
+		 * à la copie.
+		 */
+		*here = here_cpy ;
+		return(OBJECT_real_update(o, input, here));
+		
+		
+	}
 	/*Test validité entier, petite parenthèse pour les listes.*/
 	if(isspace(*debut) || *debut== '\0' || *debut == ')' 
 			|| *debut =='(' || *debut == '"')
@@ -549,6 +562,96 @@ int OBJECT_int_update(object o, char* input, uint *here)
 		return(1);
 	}
 	
+}
+
+
+/** @fn int OBJECT_real_update(object o, char* input, uint* here)
+ * @brief Lit un réel sur une entrée utilisateur.
+ *
+ *
+ * Lit un réel. La virgule doit être un point.
+ * Cette fonction est appelée par OBJECT_int_update lorsque le caractère d'arrêt
+ * est un point son retour est utilisé par cette même fonction.
+ *
+ * @sa strtold
+ *
+ * @return Renvoie 2 si overflow, 1 si entrée mauvaise, 0 sinon.
+ */
+int OBJECT_real_update(object o, char* input, uint* here)
+{
+	uint here_cpy = *here ;
+	char* debut = input + *here ;
+	char** fin = &debut ;
+	double val = 0;
+	/* DEBUG_MSG("REAL val before reading %lf", val); */
+	val = strtod(input, fin);
+
+	/* DEBUG_MSG("REAL val after reading %lf", val); */
+	DEBUG_MSG("here = %d", *here);
+	*here = abs(debut - input) ; /* Mise à jour de here */
+	DEBUG_MSG("here = %d", *here);
+	/* Check entrée valide */
+	if(isspace(*debut) || *debut== '\0' || *debut == ')' 
+			|| *debut =='(' || *debut == '"')
+	{
+
+
+		/* Check des overflows
+		 * On vérifie que les define existe à chaque fois
+		 * car c'est pas toujours le cas.
+		 * */
+
+#ifdef HUGE_VALF
+		if( val == HUGE_VALF)
+		{
+			WARNING_MSG("Positive overflow for real number");
+			NUM_set_lint(&(o->this.number), 0, NUM_PINFTY);
+			return(2);
+		}
+#endif
+
+#ifdef HUGE_VALL
+		if( val == HUGE_VALL)
+		{
+			WARNING_MSG("Negative overflow for real number");
+			NUM_set_lint(&(o->this.number), 0, NUM_MINFTY);
+			return(2);
+		}
+#endif
+		/* Ce test vient en dernier recours si jamais les autres 
+		 * ne sont pas définis
+		 * dans ce cas on ne peut pas distinguer un 
+		 * infini positif d'un négatif
+		 */
+#ifdef HUGE_VAL
+#define MINIMAL_IF_STRUCTURE
+		if (val == HUGE_VAL)
+		{
+			WARNING_MSG("Real overflow erreur set to inf");
+			NUM_set_lint(&(o->this.number), 0, NUM_PINFTY);
+			return(2);
+		}
+#endif
+#ifdef MINIMAL_IF_STRUCTURE
+		else 
+		{
+#endif
+			NUM_set_real(&(o->this.number), val);
+			DEBUG_MSG("Valid real format for %lf", val);
+			return(0);
+#ifdef MINIMAL_IF_STRUCTURE
+		}
+#endif
+	}
+	else
+	{
+		WARNING_MSG("%s is not a float", input + here_cpy);
+		o->type = SFS_UNKNOWN;
+		return(1);
+	}
+
+
+
 }
 
 /** @fn int OBJECT_character_update(object o, char* input, uint* here)
