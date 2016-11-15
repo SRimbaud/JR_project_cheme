@@ -14,7 +14,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 #include <stdio.h>
 #include <ctype.h>
 #include "eval.h"
@@ -49,6 +48,7 @@ int sfs_type_atom(char* chaine, uint* here);
 /*Mise à jour données sur OBJECT */
 
 int OBJECT_int_update(object o, char* input, uint *here);
+int OBJECT_real_update(object o, char* input, uint *here);
 int OBJECT_character_update(object o, char* input, uint* here);
 int OBJECT_string_update(object o, char* input, uint* here);
 int OBJECT_boolean_update(object* o, char* input, uint* here);
