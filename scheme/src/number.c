@@ -188,3 +188,155 @@ int NUM_cmp(num a, num b)
 	return(0);
 
 }
+
+/* Opérateur */
+
+/** @fn num NUM_sum(num a, num b, int* flag )
+ * @brief Effectue la somme de 2 num.
+ *
+ * Le flag est mis à un lorsqu'on a une erreur
+ * de calcul
+ * - Somme d'infini de signe opposé
+ * - Somme d'éléments de type non réel ou entier.
+ *
+ * @return Renvoie la somme de deux num.
+ */
+num NUM_sum(num a, num b, int* flag )
+{
+	/* On vérifie que le flag existe */
+	char existing_flag = 0;
+	if(!flag) existing_flag = 1;
+
+	if(NUM_cmp_type(a, b))
+	{
+		/* Num ont le même type */
+		if(a.numtype == NUM_INTEGER)
+		{
+			a.this.integer += b.this.integer;
+			return(a);
+		}
+		if(a.numtype == NUM_REAL)
+		{
+			a.this.real += b.this.real ;
+			return(a);
+		}
+		if(a.numtype == NUM_PINFTY) return(a);
+		if(a.numtype == NUM_MINFTY) return(a);
+		/* Si aucun des cas ci-dessus c'est
+		 * un cas non implémenté on
+		 * renvoie a et un warning.
+		 */
+		WARNING_MSG("Trying to do an undefined sum");
+		if(existing_flag) *flag = 1 ;
+		return(a);
+	}
+
+	else
+	{
+		if(a.numtype == NUM_INTEGER)
+		{
+			/* a est un entier de b flottant
+			 * on somme dans b
+			 */
+			b.this.real += a.this.integer ;
+			return(b);
+		}
+		if(a.numtype == NUM_REAL)
+		{
+			/* Cas inverse
+			 */
+			a.this.real += b.this.integer ;
+			return(a);
+		}
+		/* Ici on a un type pas implémenté
+		 * ou des infinis de signe opposé.
+		 */
+		WARNING_MSG("Trying to do an undefined sum");
+		if(existing_flag) *flag = 1 ;
+		return(a);
+	}
+}
+
+/** @fn num NUM_sub(num a, num b, int* flag )
+ * @brief Soustrait deux num.
+ *
+ * Si les num ont des types dont la 
+ * soustraction n'est pas définie ou implémenté
+ * le flag passe à 1.
+ *
+ * @return Renvoie le num résultat de la somme. a si erreur.
+ */
+num NUM_sub(num a, num b, int* flag )
+{
+	/* On vérifie que le flag existe */
+	char existing_flag = 0;
+	if(!flag) existing_flag = 1;
+
+	if(NUM_cmp_type(a, b))
+	{
+		/* Num ont le même type */
+		if(a.numtype == NUM_INTEGER)
+		{
+			a.this.integer -= b.this.integer;
+			return(a);
+		}
+		if(a.numtype == NUM_REAL)
+		{
+			a.this.real -= b.this.real ;
+			return(a);
+		}
+		/* Si aucun des cas ci-dessus c'est
+		 * un cas non implémenté on
+		 * renvoie a et un warning.
+		 */
+		WARNING_MSG("Trying to do an undefined sum");
+		if(existing_flag) *flag = 1 ;
+		return(a);
+	}
+
+	else
+	{
+		if(a.numtype == NUM_INTEGER)
+		{
+			/* a est un entier de b flottant
+			 * on somme dans b
+			 */
+			b.this.real -= a.this.integer ;
+			return(b);
+		}
+		if(a.numtype == NUM_REAL)
+		{
+			/* Cas inverse
+			*/
+			a.this.real -= b.this.integer ;
+			return(a);
+		}
+		/* C'est l'opposé pour les infinis de
+		 * la somme
+		 * Quelque soit le type de b,
+		 * on aura infini même si on a un infini
+		 * c'est celui de signe opposé qui ramène
+		 * a une somme selon
+		 */
+		if(a.numtype == NUM_PINFTY) return(a);
+		if(a.numtype == NUM_MINFTY) return(a);
+
+		/* Ici on a un type pas implémenté
+		 * ou des infinis de signe opposé.
+		 */
+		WARNING_MSG("Trying to do an undefined sum");
+		if(existing_flag) *flag = 1 ;
+		return(a);
+	}
+}
+/*
+num NUM_mul(num a, num b, int* flag )
+{
+	return(0);
+}
+num NUM_div(num a, num b)
+{
+	return(0);
+}
+*/
+

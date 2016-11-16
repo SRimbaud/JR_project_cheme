@@ -51,6 +51,11 @@ int NUM_lint_cmp(num a,long int v);
 int NUM_cmp(num a, num b);
 int NUM_cmp_lint(num a, num b);
 int NUM_cmp_type(num a, num b);
+/* Opérateur */
+num NUM_sum(num a, num b, int * flag);
+num NUM_sub(num a, num b, int* flag);
+num NUM_mul(num a, num b, int* flag);
+num NUM_div(num a, num b, int* flag);
 
 #ifdef __cplusplus
 }

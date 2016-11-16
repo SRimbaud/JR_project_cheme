@@ -36,7 +36,6 @@ void init_prim_func(int taille)
 ptr_primitive PRIM_isprimitiv(object symbole)
 {
 	int i ;
-	ptr_primitive = NULL;
 	for(i = 0; i < NB_PRIMITIVE ; i++)
 	{
 		if(OBJECT_isEqual(symbole, primitive_name[i]))
@@ -53,13 +52,14 @@ ptr_primitive PRIM_isprimitiv(object symbole)
 
 /* Opérateurs mathématiques */
 /** @fn object PRIM_somme(object a) 
- * @brief
+ * @brief Somme une liste d'objet.
  *
- * @return
+ * Alloue dynamique le nouvel objet.
+ * @return Renvoie la somme des objets.
  */
 object PRIM_somme(object a) 
 {
-	return(NULL);
+	
 }
 
 /** @fn object PRIM_soustrait(object a) 

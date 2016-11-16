@@ -76,7 +76,7 @@ x
 ==> BOUCLE INFINIIIIEEEEE.
 
 J'ai trouvé le problème. En réalité lorsque je fais un set! ou define
-j'indique comme valeur la valeur qui est lu. Ainsi plusieurs noms
+j'indique comme valeur la valeur qui est lue. Ainsi plusieurs noms
 peuvent pointer une même variable.
 2 choix alors :
 Soit on cherche à savoir quels sont les noms qui pointent cette
@@ -101,7 +101,7 @@ fonctions par thématiques.
 
 and et or sont implémentés.
 and prend une infinité de paramétres.
-Tant qu'il sont vrai il continue à les évaluer, dès qu'il trouve un faux il
+Tant qu'ils sont vrai il continue à les évaluer, dès qu'il trouve un faux il
 renvoie faux.
 Si il croise un symbole qui n'est pas un booléen il le considére comme vrai.
 (scheme48)
