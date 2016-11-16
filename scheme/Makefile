@@ -14,7 +14,7 @@ GARBAGE=*~ $(SRCDIR)/*~ $(INCDIR)/*~ $(TESTDIR)/*~
 INCLUDE=-I$(INCDIR)
 
 # Pour activer les sorties INFO_MSG, ajouter -DVERBOSE aux CFLAGS 
-CFLAGS=-Wall -ansi $(INCLUDE) -DVERBOSE
+CFLAGS=-Wall $(INCLUDE) -DVERBOSE
 LFLAGS=-lm
 
 CFLAGS_DBG=$(CFLAGS) -g -DDEBUG -Wall
@@ -37,6 +37,7 @@ all :
 
 debug   : $(OBJ_DBG)
 	$(LD) $^ $(LFLAGS) -o $(TARGET)
+
 
 release : $(OBJ_RLS)
 	$(LD) $^ $(LFLAGS) -o $(TARGET)

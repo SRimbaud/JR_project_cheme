@@ -110,6 +110,20 @@ extern "C" {
 #define DEBUG_MSG(...)
 #endif
 
+#ifdef DEBUG2
+#define DEBUG2_MSG(...) do {							\
+    fprintf( stderr, "%c[%d;%dm", 0x1B, STYLE_BOLD, COLOR_BLUE );	\
+    fprintf( stderr, "[ DEBUG2 :: %s:%s:%d] ",				\
+	     __FILE__, __FUNCTION__, __LINE__ );			\
+    SET_COLORS(FOR_INFOS, ON(stderr));					\
+    fprintf( stderr, __VA_ARGS__ );					\
+    fprintf( stderr, ".\n" );						\
+    RESET_COLORS(ON(stderr));						\
+} while( 0 )
+#else
+#define DEBUG2_MSG(...)
+#endif
+
 #ifdef __cplusplus
 }
 #endif
