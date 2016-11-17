@@ -32,11 +32,10 @@ enum liste_primitive
 /* Initialise tableau primitives */
 void init_primitive();
 typedef object(*ptr_primitive)(object) ;
-void init_prim_func(int taille);
 
 /* Repèrage de priiimiiiiiveuuuuh */
 
-ptr_primitive PRIM_isprimitiv(object symbole);
+object PRIM_make(char* name, ptr_primitive function);
 
 /* Primitives */
 

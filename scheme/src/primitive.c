@@ -1,51 +1,45 @@
 #include"primitive.h"
 
 /** @fn void init_primitive()
- * @brief Initialise la liste de nom de primitives.
+ * @brief Initialise l'environnement courant avec toutes les 
+ * primitives.
+ *
+ * Primitives implémentées le 17 Novembre 2016 :
+ *
+ * - +
+ * - -
+ * - *
+ * - /
  *
  */
 void init_primitive()
 {
-	primitive_name[ADD] =OBJECT_build_symbol("+");
-	primitive_name[SUB] =OBJECT_build_symbol("-");
-	primitive_name[DIV] =OBJECT_build_symbol("*");
-	primitive_name[MUL] =OBJECT_build_symbol("/");
+	PRIM_make( "+", PRIM_somme);
+	PRIM_make("-" ,  PRIM_soustrait);
+	PRIM_make("/" ,  PRIM_divise);
+	PRIM_make("*" ,  PRIM_multiplie);
+	INFO_MSG("Primitives initiated in top level ENV");
 }
 
-/** @fn void init_prim_func(int taille)
- * @brief Initialise la liste de pointeur de fonction.
+
+
+/** @fn object PRIM_make(char* name, ptr_primitive function);
+ * @brief Ajoute dans l'environnement la primitive name.
  *
- */
-void init_prim_func(int taille)
-{
-	primitive_function[ADD] = PRIM_somme;
-	primitive_function[SUB] = PRIM_soustrait;
-	primitive_function[DIV] = PRIM_divise;
-	primitive_function[MUL] = PRIM_multiplie;
-}
-
-
-/* Repérage de primitive */
-
-/** @fn ptr_primitive PRIM_isprimitiv(object symbole)
- * @brief Si le symbole est une primitive renvoie un pointeur sur
- * la fonction correspondante.
+ * La primitive est ajoutée dans l'environnement en tant que variable.
+ * Celle ci aura le nom name et aura comme valeur un object
+ * de type sfs_prim. Cet object contient un pointeur
+ * de fonction sur la primitive voulue.
  *
- * @return Renvoie un pointeur sur la primitive, null sinon.
+ * @return Renvoie un object de type primitive contenant function.
  */
-ptr_primitive PRIM_isprimitiv(object symbole)
+object PRIM_make(char* name, ptr_primitive function)
 {
-	int i ;
-	for(i = 0; i < NB_PRIMITIVE ; i++)
-	{
-		if(OBJECT_isEqual(symbole, primitive_name[i]))
-		{
-			return( primitive_function[i] );
-		}
-	}	
-	return( NULL);
+	object nom = OBJECT_build_symbol(name);
+	object value = make_object(SFS_PRIM);
+	value->this.function = function ;
+	return(ENV_add_var(nom, value));
 }
-
 
 
 /* Primitives */

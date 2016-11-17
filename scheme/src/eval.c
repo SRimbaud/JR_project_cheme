@@ -51,6 +51,12 @@ object sfs_eval( object input )
 		DEBUG_MSG( "Eval called on atom");
 		return(lecture);
 	}
+	/* Si l'input est une primitive seule on a une erreur */
+	if(check_type(input, SFS_PRIM))
+	{
+		WARNING_MSG("Wrong format for primitive type");
+		return(NULL);
+	}
 	/* Cas d'un symbole seul : On l'affiche */
 	if(check_type(input, SFS_SYMBOL))
 	{
@@ -71,6 +77,7 @@ object sfs_eval( object input )
 				WARNING_MSG("Error or variable doesn't exist");
 				return(NULL);
 			}
+			object saved_name = var->this.pair.car;
 			var = var->this.pair.cdr ;
 			DEBUG_MSG("Var->type %d", var->type);
 			if(flag)
@@ -82,6 +89,13 @@ object sfs_eval( object input )
 				{
 					DEBUG_MSG("Symbol detected");
 					return(sfs_eval(var));
+				}
+				else if(check_type(var, SFS_PRIM))
+				{
+					/* Cas ou on a une primitive seule */
+					WARNING_MSG("Wrong format for primitive type : %s ",
+							saved_name->this.symbol);
+					return(NULL);
 				}
 				else
 				{

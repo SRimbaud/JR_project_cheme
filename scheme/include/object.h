@@ -66,6 +66,7 @@ typedef struct object_t {
         } pair;
 
         struct object_t *special;
+	struct object_t* (*function)(struct object_t*);
 
     } this;
 
@@ -135,6 +136,7 @@ int wait_first_non_blank_char(char* s1, uint* s1_cursor);
 #define SFS_CDR 	 0x08
 #define SFS_CAR 	 0x09
 #define SFS_ENV 	 0x0A
+#define SFS_PRIM	 0x0B
 
 
 /* Environnements */
@@ -157,6 +159,7 @@ object ENV_add_var(object name, object value);
 object ENV_update_var(object name,const object val, int mode, int* free_flag);
 object ENV_get_var_in_env(object var, object environ, int* flag);
 int ENV_check_loop(object name);
+
 
 #ifdef __cplusplus
 }

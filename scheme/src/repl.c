@@ -67,15 +67,6 @@ object env;
  * @brief Décrit l'ensemble des formes du langage.
  */
 object form[NB_FORM];
-/** @var char primitive_name[NB_PRIMITIVE]
- * @brief Ensemble des noms de toutes les primitives.
- */
-object primitive_name[NB_PRIMITIVE] ;
-
-/** @var ptr_primitive [NB_PRIMITIVE]
- * @brief Liste des fonctions primitives.
- */
-ptr_primitive primitive_function [NB_PRIMITIVE];
 /** @fn void init_interpreter ( void ) 
  * @brief Initialise les variables globales de l'interpréteur.
  *
@@ -91,8 +82,11 @@ void init_interpreter ( void ) {
 	nil = make_nil();
 	vrai = make_true();
 	faux = make_false();
+	/* Construction environnement père */
 	env = ENV_build(NULL);
 	make_forms();
+	/* Construction des primitives dans le top level */
+	init_primitive();
 }
 
 int main ( int argc, char *argv[] ) {
