@@ -134,15 +134,41 @@ object PRIM_soustrait(object a)
 	}	
 	return(result);
 }
+
 /** @fn object PRIM_multiplie(object a) 
- * @brief
+ * @brief Calcul le produit de tous les objects a.
+ *
+ * Si a est nil ou NULL retourne un object valant 1.
+ * (élément neutre du produit).
+ * @sa PRIM_somme()
  *
  * @return
  */
 object PRIM_multiplie(object a) 
 {
-	return(NULL);
+	if(a == nil || OBJECT_isempty(a))
+	{
+		/* Dans ce cas on renvoie 0 */
+		a = make_object(SFS_NUMBER);
+		long int neutral_elt = 1;
+		NUM_build(&(a->this.number), &neutral_elt, NUM_INTEGER);
+		return(a);
+	}
+	object result = OBJECT_build_cpy(a->this.pair.car) ;
+	object terme = a ;
+	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
+		terme = terme->this.pair.cdr)
+	{
+		result = OBJECT_mul(result, terme->this.pair.car, result);
+		if(result == nil || OBJECT_isempty(result) )
+		{
+			/* Cas ou la somme fail */
+			return(nil);
+		}
+	}	
+	return(result);
 }
+
 /** @fn object PRIM_divise(object a)
  * @brief
  *

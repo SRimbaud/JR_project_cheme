@@ -205,6 +205,38 @@ int NUM_cmp(num a, num b)
 
 }
 
+
+/** @fn int NUM_sign(num a)
+ * @brief Retourne 1 si a positif, -1 si a négatif.
+ *
+ * Renvoie 0 pour un num non typé ou de type n'ayant pas
+ * de signe.
+ * NUM_COMPLEX : pas de signe.
+ * @return 1 si a >= 0, -1 si a < 0.
+ */
+int NUM_sign(num a)
+{
+	switch(a.numtype)
+	{
+		case NUM_INTEGER :
+			if(a.this.integer >= 0) return(1);
+			return(-1);
+			break;
+		case NUM_REAL :
+			if(a.this.real >= 0) return(1);
+			return(-1);
+			break;
+		case NUM_PINFTY :
+			return(1);
+		case NUM_MINFTY :
+			return(-1);
+		default :
+			return(0);
+	}
+	return(0);
+}
+
+
 /* Opérateur */
 
 /** @fn num NUM_sum(num a, num b, int* flag )
@@ -351,11 +383,105 @@ num NUM_sub(num a, num b, int* flag )
 		return(a);
 	}
 }
-/*
+
+
+/** @fn num NUM_mul(num a, num b, int* flag )
+ * @brief Produit de a par b.
+ *
+ * Similaire à PRIM_sum.
+ * Tous les infinis passent seulement leur signe change.
+ * 
+ *
+ * @sa PRIM_sum.
+ *
+ * @return
+ */
 num NUM_mul(num a, num b, int* flag )
 {
-	return(0);
+	/* On vérifie que le flag existe */
+	char existing_flag = 0;
+	if(flag) existing_flag = 1;
+
+	if(NUM_cmp_type(a, b))
+	{
+		/* Num ont le même type */
+		if(a.numtype == NUM_INTEGER)
+		{
+			a.this.integer *= b.this.integer;
+			return(a);
+		}
+		if(a.numtype == NUM_REAL)
+		{
+			a.this.real *= b.this.real ;
+			return(a);
+		}
+		if(a.numtype == NUM_PINFTY) return(a);
+		if(a.numtype == NUM_MINFTY)
+		{
+			a.numtype = NUM_PINFTY;
+			return(a);
+		}
+		/* Si aucun des cas ci-dessus c'est
+		 * un cas non implémenté on
+		 * renvoie a et un warning.
+		 */
+		WARNING_MSG("Trying to do an undefined product");
+		if(existing_flag) *flag = 1 ;
+		return(a);
+	}
+
+	else
+	{
+		if(a.numtype == NUM_INTEGER)
+		{
+			/* a est un entier de b flottant
+			 * on somme dans b
+			 */
+			b.this.real *= a.this.integer ;
+			return(b);
+		}
+		if(a.numtype == NUM_REAL)
+		{
+			/* Cas inverse
+			*/
+			a.this.real *= b.this.integer ;
+			return(a);
+		}
+		/* Gestion produit d'infinis */
+		if(a.numtype == NUM_PINFTY && b.numtype == NUM_MINFTY) return(b);
+		if(a.numtype == NUM_MINFTY && b.numtype == NUM_PINFTY) return(a);
+		/* Gestion produit d'infini par un nombre */
+		if(a. numtype == NUM_PINFTY || a.numtype == NUM_MINFTY)
+		{
+			if(NUM_sign(b) == 1) return(a);
+			if(NUM_sign(b) == -1)
+			{
+				if(a.numtype == NUM_PINFTY) a.numtype = NUM_MINFTY;
+				else if(a.numtype == NUM_MINFTY) a.numtype = NUM_PINFTY;
+				return(a);
+			}
+		}
+		if(b. numtype == NUM_PINFTY || b.numtype == NUM_MINFTY)
+		{
+			if(NUM_sign(a) == 1) return(b);
+			if(NUM_sign(a) == -1)
+			{
+				if(b.numtype == NUM_PINFTY) b.numtype = NUM_MINFTY;
+				else if(b.numtype == NUM_MINFTY) b.numtype = NUM_PINFTY;
+				return(b);
+			}
+		}
+		/* Ici on a un type pas implémenté
+		 * ou des infinis de signe opposé.
+		 */
+		WARNING_MSG("Trying to do an undefined product");
+		if(existing_flag) *flag = 1 ;
+		return(a);
+	}
 }
+
+
+/*
 num NUM_div(num a, num b)
 {
 	return(0);

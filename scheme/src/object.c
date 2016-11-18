@@ -667,6 +667,39 @@ object OBJECT_sub(const object a, const object b, object result)
 	return(result);
 }
 
+/** @fn object OBJECT_mul(const object a, const object b, object result)
+ * @brief Calcul le produit de 2 objects a par b.
+ *
+ * A priori, le produit ne pose pas d'impossibilité de calcul, que
+ * ce soit un nombre ou un infini on peut toujours calculer le produit
+ * et trouver un résultat.
+ *
+ * @sa OBJECT_sum(const object a, const object b, object result)
+ *
+ * @return Renvoie le result mis à jour si produit possible, nil sinon.
+ */
+object OBJECT_mul(const object a, const object b, object result)
+{
+	if(check_type(a, SFS_NIL) || check_type(b, SFS_NIL)) 
+	{
+		DEBUG_MSG("Product on nil, nil returned");
+		return(nil);
+	}
+	if(!check_type(a, SFS_NUMBER) || !check_type(b, SFS_NUMBER))
+	{
+		WARNING_MSG("Product on not Number type");
+		return (nil);
+	}
+	int flag = 0;
+	result->type = SFS_NUMBER;
+	result->this.number = NUM_mul(a->this.number, b->this.number, &flag);
+	if(flag) 
+	{
+		WARNING_MSG(" '*' impossible to calculate result");
+		return(nil);
+	}
+	return(result);
+}
 
 
 

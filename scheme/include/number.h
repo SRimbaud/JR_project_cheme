@@ -53,6 +53,7 @@ int NUM_lint_cmp(num a,long int v);
 int NUM_cmp(num a, num b);
 int NUM_cmp_lint(num a, num b);
 int NUM_cmp_type(num a, num b);
+int NUM_sign(num a);
 /* Opérateur */
 num NUM_sum(num a, num b, int * flag);
 num NUM_sub(num a, num b, int* flag);
