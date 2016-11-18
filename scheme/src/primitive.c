@@ -110,13 +110,29 @@ object PRIM_somme(object a)
 }
 
 /** @fn object PRIM_soustrait(object a) 
- * @brief
+ * @brief Calcul la soustraction de tous les objects de a.
  *
- * @return
+ * Fonctionnement similaire a PRIM_somme()
+ * Si a vaut nil ==> renvoie nil.
+ * @sa PRIM_somme(object a )
+ * @return Renvoie un object alloué qui contient le résultat.
  */
 object PRIM_soustrait(object a) 
 {
-	return(NULL);
+	if(a == nil) return(a);
+	object result = OBJECT_build_cpy(a->this.pair.car) ;
+	object terme = a ;
+	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
+			terme = terme->this.pair.cdr)
+	{
+		result = OBJECT_sub(result, terme->this.pair.car, result);
+		if(result == nil || OBJECT_isempty(result) )
+		{
+			/* Cas ou la somme fail */
+			return(nil);
+		}
+	}	
+	return(result);
 }
 /** @fn object PRIM_multiplie(object a) 
  * @brief

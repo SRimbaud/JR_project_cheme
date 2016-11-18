@@ -274,11 +274,14 @@ num NUM_sum(num a, num b, int* flag )
 }
 
 /** @fn num NUM_sub(num a, num b, int* flag )
- * @brief Soustrait deux num.
+ * @brief Calcul a - b.
  *
  * Si les num ont des types dont la 
  * soustraction n'est pas définie ou implémenté
  * le flag passe à 1.
+ * Soustraction d'infinis de même signe cause une erreur.
+ * Une opération sur un type autre que infini, réel, entier ==> erreur.
+ * Le type renvoyer sera flottant si a ou b est flottant. 
  *
  * @return Renvoie le num résultat de la somme. a si erreur.
  */
@@ -286,8 +289,8 @@ num NUM_sub(num a, num b, int* flag )
 {
 	/* On vérifie que le flag existe */
 	char existing_flag = 0;
-	if(!flag) existing_flag = 1;
-
+	if(flag) existing_flag = 1;
+	/* Le résultat renvoyé est toujours a */
 	if(NUM_cmp_type(a, b))
 	{
 		/* Num ont le même type */
@@ -314,10 +317,11 @@ num NUM_sub(num a, num b, int* flag )
 	{
 		if(a.numtype == NUM_INTEGER)
 		{
-			/* a est un entier de b flottant
-			 * on somme dans b
+			/* (a -b) = -(b - a)
+			 * En effet je n'arrive pas
+			 * convertir a d'entier à réel.
 			 */
-			b.this.real -= a.this.integer ;
+			b.this.real = (-1)*(b.this.real - a.this.integer) ;
 			return(b);
 		}
 		if(a.numtype == NUM_REAL)
@@ -333,9 +337,11 @@ num NUM_sub(num a, num b, int* flag )
 		 * on aura infini même si on a un infini
 		 * c'est celui de signe opposé qui ramène
 		 * a une somme selon
+		 * +inf - truc_non infini = +inf
+		 * -inf - truc_non_infi = -inf
 		 */
-		if(a.numtype == NUM_PINFTY) return(a);
-		if(a.numtype == NUM_MINFTY) return(a);
+		if(a.numtype == NUM_PINFTY ) return(a);
+		if(a.numtype == NUM_MINFTY ) return(a);
 
 		/* Ici on a un type pas implémenté
 		 * ou des infinis de signe opposé.

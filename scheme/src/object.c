@@ -636,6 +636,41 @@ object OBJECT_add(const object a, const object b, object result)
 
 
 
+/** @fn object OBJECT_sub(const object a, const object b, object result)
+ * @brief Soustraction de 2 object. Le résultat est mis dans résult.
+ *
+ * Fonctionnement similaire à OBJECT_add.
+ * @sa OBJECT_add
+ *
+ * @return Renvoie result mis à jour si opération possible, nil sinon.
+ */
+object OBJECT_sub(const object a, const object b, object result)
+{
+	if(check_type(a, SFS_NIL) || check_type(b, SFS_NIL)) 
+	{
+		DEBUG_MSG("Sub on nil, nil returned");
+		return(nil);
+	}
+	if(!check_type(a, SFS_NUMBER) || !check_type(b, SFS_NUMBER))
+	{
+		WARNING_MSG("Sub on not Number type");
+		return (nil);
+	}
+	int flag = 0;
+	result->type = SFS_NUMBER;
+	result->this.number = NUM_sub(a->this.number, b->this.number, &flag);
+	if(flag) 
+	{
+		WARNING_MSG(" '-' impossible to calculate result");
+		return(nil);
+	}
+	return(result);
+}
+
+
+
+
+
 /** @fn  void check_alloc(void* ptr, char* message)
  * @brief Vérifie une allocation dynamique.
  *
