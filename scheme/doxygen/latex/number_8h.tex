@@ -48,15 +48,14 @@ typedef struct \hyperlink{structnum__t}{num\+\_\+t} {\bfseries num}\hypertarget{
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void {\bfseries N\+U\+M\+\_\+print} (\hyperlink{structnum__t}{num} printed)\hypertarget{number_8h_adee8e683b4a4606c79f5e1c97e984b67}{}\label{number_8h_adee8e683b4a4606c79f5e1c97e984b67}
-
-\item 
+void \hyperlink{number_8h_adee8e683b4a4606c79f5e1c97e984b67}{N\+U\+M\+\_\+print} (\hyperlink{structnum__t}{num} printed)
+\begin{DoxyCompactList}\small\item\em Affiche un num. \end{DoxyCompactList}\item 
+\hyperlink{structnum__t}{num} $\ast$ \hyperlink{number_8h_a507160f6206ea3b05ad895d88f8b8477}{N\+U\+M\+\_\+build} (\hyperlink{structnum__t}{num} $\ast$a, void $\ast$v\+\_\+ptr, int mode)
+\begin{DoxyCompactList}\small\item\em Enregistre dans a la valeur v, retourne le nouveau num. \end{DoxyCompactList}\item 
 \hyperlink{structnum__t}{num} $\ast$ \hyperlink{number_8h_a13c40a8c9f04c4212c928403d7b5d61c}{N\+U\+M\+\_\+set\+\_\+int} (\hyperlink{structnum__t}{num} $\ast$a, int v)
 \begin{DoxyCompactList}\small\item\em Enregistre dans a l\textquotesingle{}entier v, retourne le nouveau num. Met à jour champ numtype à N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER. \end{DoxyCompactList}\item 
 \hyperlink{structnum__t}{num} $\ast$ \hyperlink{number_8h_aa53cab64b7f8aac29afb32b1744950be}{N\+U\+M\+\_\+set\+\_\+real} (\hyperlink{structnum__t}{num} $\ast$a, double v)
 \begin{DoxyCompactList}\small\item\em Enregistre dans a le réel v, retourne le nouveau num. Met à jour champ numtype à N\+U\+M\+\_\+\+R\+E\+AL. \end{DoxyCompactList}\item 
-\hyperlink{structnum__t}{num} $\ast$ \hyperlink{number_8h_a5ba5a1c088b5f8c7d5240149364a8a42}{N\+U\+M\+\_\+set\+\_\+lint} (\hyperlink{structnum__t}{num} $\ast$a, long int v, int mode)
-\begin{DoxyCompactList}\small\item\em Enregistre dans a l\textquotesingle{}entier long v, retourne le nouveau num. Met à jour champ numtype à N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER. \end{DoxyCompactList}\item 
 int \hyperlink{number_8h_a1c5cedf6d188f7c15ba2395bc2e94ba6}{N\+U\+M\+\_\+lint\+\_\+cmp} (\hyperlink{structnum__t}{num} a, long int v)
 \begin{DoxyCompactList}\small\item\em Compare le num avec l\textquotesingle{}int v. Num doit être de type N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER. \end{DoxyCompactList}\item 
 int \hyperlink{number_8h_aba35ad055dd8fd8e71bd2d7bc69a3cad}{N\+U\+M\+\_\+cmp} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b)
@@ -64,7 +63,17 @@ int \hyperlink{number_8h_aba35ad055dd8fd8e71bd2d7bc69a3cad}{N\+U\+M\+\_\+cmp} (\
 int \hyperlink{number_8h_aad8448d59850c6d4291f6a4f7ce7c0cc}{N\+U\+M\+\_\+cmp\+\_\+lint} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b)
 \begin{DoxyCompactList}\small\item\em Compare deux num de type N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER. \end{DoxyCompactList}\item 
 int \hyperlink{number_8h_afecc8f5832487583cdc2f0792c67091f}{N\+U\+M\+\_\+cmp\+\_\+type} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b)
-\begin{DoxyCompactList}\small\item\em Compare les types de 2 structures num. Renvoie 1 si égale 0 sinon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compare les types de 2 structures num. Renvoie 1 si égale 0 sinon. \end{DoxyCompactList}\item 
+\hyperlink{structnum__t}{num} \hyperlink{number_8h_aa001b3a988a911dfb8b9db6c716f47a4}{N\+U\+M\+\_\+sum} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Effectue la somme de 2 num. \end{DoxyCompactList}\item 
+\hyperlink{structnum__t}{num} \hyperlink{number_8h_a7790d6469a5253d77a41fe3066d69cb7}{N\+U\+M\+\_\+sub} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Soustrait deux num. \end{DoxyCompactList}\item 
+\hyperlink{structnum__t}{num} {\bfseries N\+U\+M\+\_\+mul} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b, int $\ast$flag)\hypertarget{number_8h_ad7003e02f06ef1fd25a160c3b0a5b880}{}\label{number_8h_ad7003e02f06ef1fd25a160c3b0a5b880}
+
+\item 
+\hyperlink{structnum__t}{num} {\bfseries N\+U\+M\+\_\+div} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b, int $\ast$flag)\hypertarget{number_8h_a33c7fe283eec368735c8619468ccaeb9}{}\label{number_8h_a33c7fe283eec368735c8619468ccaeb9}
+
+\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -79,7 +88,45 @@ Sat Jun 23 00\+:42\+:34 2012 Number handling.
 
 
 \subsection{Documentation des fonctions}
-\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+cmp@{N\+U\+M\+\_\+cmp}}
+\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+build@{N\+U\+M\+\_\+build}}
+\index{N\+U\+M\+\_\+build@{N\+U\+M\+\_\+build}!number.\+h@{number.\+h}}
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+build(num $\ast$a, void $\ast$v\+\_\+ptr, int mode)}{NUM_build(num *a, void *v_ptr, int mode)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+build (
+\begin{DoxyParamCaption}
+\item[{{\bf num} $\ast$}]{a, }
+\item[{void $\ast$}]{v\+\_\+ptr, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8h_a507160f6206ea3b05ad895d88f8b8477}{}\label{number_8h_a507160f6206ea3b05ad895d88f8b8477}
+
+
+Enregistre dans a la valeur v, retourne le nouveau num. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em num$\ast$} & \+: num ou on doit enregistrer la valeur. \\
+\hline
+{\em v} & \+: Pointeur sur la valeur qu\textquotesingle{}on doit enregistrer. \\
+\hline
+{\em mode} & \+: Mode N\+U\+M\+\_\+\+P\+I\+N\+F\+TY N\+U\+M\+\_\+\+M\+I\+N\+F\+TY ou N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER ou N\+U\+M\+\_\+\+R\+E\+AL.\\
+\hline
+\end{DoxyParams}
+En pratique v est casté selon le mode précisé. La fonction ne garanti pas de bon fonctionnement si v n\textquotesingle{}est pas castable dans le mode voulu.\+11 Si v\+\_\+ptr est N\+U\+LL la valeur par défaut sera 0.
+
+Si le mode n\textquotesingle{}est pas une constante implémentée dans la fonction \+:
+
+
+\begin{DoxyItemize}
+\item N\+U\+M\+\_\+\+R\+E\+AL (Not implemented)
+\item N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER
+\item N\+U\+M\+\_\+\+U\+I\+N\+T\+E\+G\+ER (Not implemented)
+\item N\+U\+M\+\_\+\+C\+O\+M\+P\+L\+EX (Not implemented)
+\item N\+U\+M\+\_\+\+U\+N\+D\+EF
+\item N\+U\+M\+\_\+\+P\+I\+N\+F\+TY
+\item N\+U\+M\+\_\+\+M\+I\+N\+F\+TY Il est mis par défaut à N\+U\+M\+\_\+\+U\+N\+D\+EF \begin{DoxyReturn}{Renvoie}
+\+: Renvoie un pointeur sur le num modifié. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+cmp@{N\+U\+M\+\_\+cmp}}
 \index{N\+U\+M\+\_\+cmp@{N\+U\+M\+\_\+cmp}!number.\+h@{number.\+h}}
 \subsubsection[{\texorpdfstring{N\+U\+M\+\_\+cmp(num a, num b)}{NUM_cmp(num a, num b)}}]{\setlength{\rightskip}{0pt plus 5cm}int N\+U\+M\+\_\+cmp (
 \begin{DoxyParamCaption}
@@ -155,6 +202,22 @@ Compare le num avec l\textquotesingle{}int v. Num doit être de type N\+U\+M\+\_
 \begin{DoxyReturn}{Renvoie}
 \+: Revoie 1 si num = v et 0 sinon (renvoie 0 si num n\textquotesingle{}est pas de type entier) 
 \end{DoxyReturn}
+\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+print@{N\+U\+M\+\_\+print}}
+\index{N\+U\+M\+\_\+print@{N\+U\+M\+\_\+print}!number.\+h@{number.\+h}}
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+print(num printed)}{NUM_print(num printed)}}]{\setlength{\rightskip}{0pt plus 5cm}void N\+U\+M\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{printed}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8h_adee8e683b4a4606c79f5e1c97e984b67}{}\label{number_8h_adee8e683b4a4606c79f5e1c97e984b67}
+
+
+Affiche un num. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em printed} & \+: le num à afficher. \\
+\hline
+\end{DoxyParams}
 \index{number.\+h@{number.\+h}!N\+U\+M\+\_\+set\+\_\+int@{N\+U\+M\+\_\+set\+\_\+int}}
 \index{N\+U\+M\+\_\+set\+\_\+int@{N\+U\+M\+\_\+set\+\_\+int}!number.\+h@{number.\+h}}
 \subsubsection[{\texorpdfstring{N\+U\+M\+\_\+set\+\_\+int(num $\ast$a, int v)}{NUM_set_int(num *a, int v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+set\+\_\+int (
@@ -177,43 +240,7 @@ Enregistre dans a l\textquotesingle{}entier v, retourne le nouveau num. Met à j
 \begin{DoxyReturn}{Renvoie}
 \+: Renvoie un pointeur sur le num modifié. 
 \end{DoxyReturn}
-\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+set\+\_\+lint@{N\+U\+M\+\_\+set\+\_\+lint}}
-\index{N\+U\+M\+\_\+set\+\_\+lint@{N\+U\+M\+\_\+set\+\_\+lint}!number.\+h@{number.\+h}}
-\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+set\+\_\+lint(num $\ast$a, long int v, int mode)}{NUM_set_lint(num *a, long int v, int mode)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+set\+\_\+lint (
-\begin{DoxyParamCaption}
-\item[{{\bf num} $\ast$}]{a, }
-\item[{long int}]{v, }
-\item[{int}]{mode}
-\end{DoxyParamCaption}
-)}\hypertarget{number_8h_a5ba5a1c088b5f8c7d5240149364a8a42}{}\label{number_8h_a5ba5a1c088b5f8c7d5240149364a8a42}
-
-
-Enregistre dans a l\textquotesingle{}entier long v, retourne le nouveau num. Met à jour champ numtype à N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER. 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em num$\ast$} & \+: num ou on doit enregistrer la valeur. \\
-\hline
-{\em v} & \+: entier long à enregistrer. \\
-\hline
-{\em mode} & \+: Mode N\+U\+M\+\_\+\+P\+I\+N\+F\+TY N\+U\+M\+\_\+\+M\+I\+N\+F\+TY ou N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER\\
-\hline
-\end{DoxyParams}
-Si le mode n\textquotesingle{}est pas une constante implémentée dans la fonction \+:
-
-
-\begin{DoxyItemize}
-\item N\+U\+M\+\_\+\+R\+E\+AL (Not implemented)
-\item N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER
-\item N\+U\+M\+\_\+\+U\+I\+N\+T\+E\+G\+ER (Not implemented)
-\item N\+U\+M\+\_\+\+C\+O\+M\+P\+L\+EX (Not implemented)
-\item N\+U\+M\+\_\+\+U\+N\+D\+EF
-\item N\+U\+M\+\_\+\+P\+I\+N\+F\+TY
-\item N\+U\+M\+\_\+\+M\+I\+N\+F\+TY Il est mis par défaut à N\+U\+M\+\_\+\+U\+N\+D\+EF \begin{DoxyReturn}{Renvoie}
-\+: Renvoie un pointeur sur le num modifié. 
-\end{DoxyReturn}
-
-\end{DoxyItemize}\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+set\+\_\+real@{N\+U\+M\+\_\+set\+\_\+real}}
+\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+set\+\_\+real@{N\+U\+M\+\_\+set\+\_\+real}}
 \index{N\+U\+M\+\_\+set\+\_\+real@{N\+U\+M\+\_\+set\+\_\+real}!number.\+h@{number.\+h}}
 \subsubsection[{\texorpdfstring{N\+U\+M\+\_\+set\+\_\+real(num $\ast$a, double v)}{NUM_set_real(num *a, double v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+set\+\_\+real (
 \begin{DoxyParamCaption}
@@ -234,4 +261,44 @@ Enregistre dans a le réel v, retourne le nouveau num. Met à jour champ numtype
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 \+: Renvoie un pointeur sur le num modifié. 
+\end{DoxyReturn}
+\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+sub@{N\+U\+M\+\_\+sub}}
+\index{N\+U\+M\+\_\+sub@{N\+U\+M\+\_\+sub}!number.\+h@{number.\+h}}
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+sub(num a, num b, int $\ast$flag)}{NUM_sub(num a, num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+sub (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{{\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8h_a7790d6469a5253d77a41fe3066d69cb7}{}\label{number_8h_a7790d6469a5253d77a41fe3066d69cb7}
+
+
+Soustrait deux num. 
+
+Si les num ont des types dont la soustraction n\textquotesingle{}est pas définie ou implémenté le flag passe à 1.
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie le num résultat de la somme. a si erreur. 
+\end{DoxyReturn}
+\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+sum@{N\+U\+M\+\_\+sum}}
+\index{N\+U\+M\+\_\+sum@{N\+U\+M\+\_\+sum}!number.\+h@{number.\+h}}
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+sum(num a, num b, int $\ast$flag)}{NUM_sum(num a, num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+sum (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{{\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8h_aa001b3a988a911dfb8b9db6c716f47a4}{}\label{number_8h_aa001b3a988a911dfb8b9db6c716f47a4}
+
+
+Effectue la somme de 2 num. 
+
+Le flag est mis à un lorsqu\textquotesingle{}on a une erreur de calcul
+\begin{DoxyItemize}
+\item Somme d\textquotesingle{}infinis de signe opposés
+\item Somme d\textquotesingle{}éléments de type non réels ou non entiers.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie la somme de deux num. 
 \end{DoxyReturn}

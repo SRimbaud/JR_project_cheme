@@ -16,7 +16,7 @@ extern "C" {
 #endif
 
 
-#include "object.h"
+#include "primitive.h"
 /* Prototypages supplémentaires */
 
 /* fin */

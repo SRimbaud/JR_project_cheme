@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['read_2ec',['read.c',['../read_8c.html',1,'']]],
-  ['read_2eh',['read.h',['../read_8h.html',1,'']]],
-  ['repl_2ec',['repl.c',['../repl_8c.html',1,'']]]
+  ['quote',['QUOTE',['../object_8h.html#a0b6a835fc6107eae744ba88c03f404d4ada126905189f15af6d475cc45f0cb2b2',1,'object.h']]]
 ];

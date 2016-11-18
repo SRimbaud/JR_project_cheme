@@ -264,8 +264,9 @@ object OBJECT_build_symbol(char* symbol)
 /** @fn  object OBJECT_build_cpy(object o)
  * @brief Copie l'objet o en en allouant un nouveau.
  *
- * Si l'objet est nil on ne le recréé pas
- * on renvoie nil.
+ * Si l'objet est nil ou un booléen on 
+ * ne refait pas d'alloc on renvoie la 
+ * variable globale correspondante.
  * Si l'objet est NULL renvoie null
  * et affiche un warning.
  *
@@ -306,6 +307,10 @@ object OBJECT_build_cpy(object o)
 		return(cpy);
 	}
 }
+
+
+
+
 /* Destructeurs */
 
 
@@ -478,7 +483,7 @@ object OBJECT_get_cxr(object o, char* place)
  *
  * Attention si changed est de type SFS_NIL, un
  * nouvel objet est renvoyé.
- * Incompléte
+ * @bug Incomplète
  *
  */
 void OBJECT_rewrite(object changed, object nouveau)
@@ -541,7 +546,6 @@ int OBJECT_isEqual(object a, object b)
 	return(0); /* Fait office de cas else pour chaque if*/
 }
 
-
 /** @fn int OBJECT_cmp_bool(object a, object b)
  * @brief Compare 2 booléens. Renvoie 0 s'ils ne sont pas booléens.
  *
@@ -560,8 +564,6 @@ int OBJECT_cmp_bool(object a, object b)
 	 * Je garde donc cette implémentation pour l'instant qui est robuste.
 	 */
 }
-
-
 
 /** @fn int OBJECT_cmp_number(object a, object b)
  * @brief Compare deux objets de type entier.
@@ -590,6 +592,48 @@ int OBJECT_cmp_symb(object a, char* symbol)
 	return(0);
 }
 	
+/* Opérateurs arithmétiques */
+
+
+/** @fn object OBJECT_add(const object a,const object b, object result)
+ * @brief Effectue la somme de 2 objets, écrit résultat dans résult.
+ *
+ * La somme est faite sur des objects de type
+ * SFS_NUM.
+ * Le résultat est écrit dans result et result est retourné.
+ * Il faut toujours prendre la valeur retournée par la fonction,
+ * result permet d'éviter un trop grand nombre d'allocation
+ * dans PRIM_somme.
+ * Retourne nil si la somme est irréalisable
+ * (Utile pour les affectations).
+ *
+ * @sa NUM_sum(num a, num b)
+ *
+ * @return Retourne le résultat de la somme ou nil si erreur.
+ */
+object OBJECT_add(const object a, const object b, object result)
+{
+	if(check_type(a, SFS_NIL) || check_type(b, SFS_NIL)) 
+	{
+		DEBUG_MSG("Sum on nil, nil returned");
+		return(nil);
+	}
+	if(!check_type(a, SFS_NUMBER) || !check_type(b, SFS_NUMBER))
+	{
+		WARNING_MSG("Sum on not Number type");
+		return (nil);
+	}
+	int flag = 0;
+	result->type = SFS_NUMBER;
+	result->this.number = NUM_sum(a->this.number, b->this.number, &flag);
+	if(flag) 
+	{
+		WARNING_MSG(" '+' impossible to calculate result");
+		return(nil);
+	}
+	return(result);
+}
+
 
 
 /** @fn  void check_alloc(void* ptr, char* message)

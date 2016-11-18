@@ -41,11 +41,13 @@ typedef struct num_t {
 
 /* Affichage */
 void NUM_print( num printed);
+/* Constructeur ultime */
+
+num* NUM_build(num* a, void* v_ptr, int mode);
 
 /* Mise à jour */
 num* NUM_set_int(num* a, int v);
 num* NUM_set_real(num* a, double v);
-num* NUM_set_lint(num* a, long int v, int mode);
 /* Comparaison */
 int NUM_lint_cmp(num a,long int v);
 int NUM_cmp(num a, num b);

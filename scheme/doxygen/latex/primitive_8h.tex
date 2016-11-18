@@ -1,0 +1,174 @@
+\hypertarget{primitive_8h}{}\section{Référence du fichier include/primitive.h}
+\label{primitive_8h}\index{include/primitive.\+h@{include/primitive.\+h}}
+
+
+Fonctions d\textquotesingle{}implémentation des primitives.  
+
+
+{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}eval.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de primitive.\+h\+:
+% FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries N\+B\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE}~4\hypertarget{primitive_8h_a384c701c9e7cec26f48341a24cfff088}{}\label{primitive_8h_a384c701c9e7cec26f48341a24cfff088}
+
+\end{DoxyCompactItemize}
+\subsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum liste\+\_\+primitive {\bfseries P\+R\+I\+M\+I\+VE}\hypertarget{primitive_8h_a72a06e01a4dcdf346e4201da783c76bf}{}\label{primitive_8h_a72a06e01a4dcdf346e4201da783c76bf}
+
+\item 
+typedef \hyperlink{structobject__t}{object}($\ast$ {\bfseries ptr\+\_\+primitive}) (\hyperlink{structobject__t}{object})\hypertarget{primitive_8h_a8a0f96afaa3e3866d2d17d26ddd978f0}{}\label{primitive_8h_a8a0f96afaa3e3866d2d17d26ddd978f0}
+
+\end{DoxyCompactItemize}
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries liste\+\_\+primitive} \{ {\bfseries A\+DD}, 
+{\bfseries S\+UB}, 
+{\bfseries D\+IV}, 
+{\bfseries M\+UL}
+ \}\hypertarget{primitive_8h_adb01d4940d71fd8c6f59bc6a0f70b532}{}\label{primitive_8h_adb01d4940d71fd8c6f59bc6a0f70b532}
+
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{primitive_8h_a71008e3b64854232352e9a010b0ec70f}{init\+\_\+primitive} ()
+\begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}environnement courant avec toutes les primitives. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_abee93397113dab4c44190e649c596c23}{P\+R\+I\+M\+\_\+make} (char $\ast$name, ptr\+\_\+primitive function)
+\begin{DoxyCompactList}\small\item\em Ajoute dans l\textquotesingle{}environnement la primitive name. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a50f700a8f4b90445a7495f540da9b931}{P\+R\+I\+M\+\_\+eval} (const \hyperlink{structobject__t}{object} args)
+\begin{DoxyCompactList}\small\item\em Evalue la liste d\textquotesingle{}arguments passé en paramètre. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a3a80047431ff9783b9c824584a2e6889}{P\+R\+I\+M\+\_\+somme} (\hyperlink{structobject__t}{object} a)
+\begin{DoxyCompactList}\small\item\em Somme une liste d\textquotesingle{}objet. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a72bf04d3898cbf2f3c528e00a4eaa9de}{P\+R\+I\+M\+\_\+soustrait} (\hyperlink{structobject__t}{object} a)
+\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_ab174b04c861814b52dabbe3020c5fc1c}{P\+R\+I\+M\+\_\+multiplie} (\hyperlink{structobject__t}{object} a)
+\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_aa37a7bb955bdf1e25fc2d535322a9abe}{P\+R\+I\+M\+\_\+divise} (\hyperlink{structobject__t}{object} a)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structobject__t}{object} {\bfseries primitive\+\_\+name} \mbox{[}N\+B\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE\mbox{]}\hypertarget{primitive_8h_ad0696073db18fbfc6e86f590814a976a}{}\label{primitive_8h_ad0696073db18fbfc6e86f590814a976a}
+
+\item 
+ptr\+\_\+primitive {\bfseries primitive\+\_\+function} \mbox{[}N\+B\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE\mbox{]}\hypertarget{primitive_8h_ad8439afa765fcffc5b72cbcbd3c9a95c}{}\label{primitive_8h_ad8439afa765fcffc5b72cbcbd3c9a95c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fonctions d\textquotesingle{}implémentation des primitives. 
+
+Ensemble de fonctions permettant de coder les primitives. On retrouvera le constructeur de la liste globale regroupant toutes les primitives possibles. On aura les fonctions correspondant à chaque primitive.
+
+\begin{DoxyAuthor}{Auteur}
+Rimbaud Sébatien. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+16 novembre 2016 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\index{primitive.\+h@{primitive.\+h}!init\+\_\+primitive@{init\+\_\+primitive}}
+\index{init\+\_\+primitive@{init\+\_\+primitive}!primitive.\+h@{primitive.\+h}}
+\subsubsection[{\texorpdfstring{init\+\_\+primitive()}{init_primitive()}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+primitive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{primitive_8h_a71008e3b64854232352e9a010b0ec70f}{}\label{primitive_8h_a71008e3b64854232352e9a010b0ec70f}
+
+
+Initialise l\textquotesingle{}environnement courant avec toutes les primitives. 
+
+Primitives implémentées le 17 Novembre 2016 \+:
+
+
+\begin{DoxyItemize}
+\item +
+\item -\/
+\item $\ast$
+\item / 
+\end{DoxyItemize}\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+divise@{P\+R\+I\+M\+\_\+divise}}
+\index{P\+R\+I\+M\+\_\+divise@{P\+R\+I\+M\+\_\+divise}!primitive.\+h@{primitive.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+I\+M\+\_\+divise(object a)}{PRIM_divise(object a)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} P\+R\+I\+M\+\_\+divise (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{primitive_8h_aa37a7bb955bdf1e25fc2d535322a9abe}{}\label{primitive_8h_aa37a7bb955bdf1e25fc2d535322a9abe}
+\begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+eval@{P\+R\+I\+M\+\_\+eval}}
+\index{P\+R\+I\+M\+\_\+eval@{P\+R\+I\+M\+\_\+eval}!primitive.\+h@{primitive.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+I\+M\+\_\+eval(const object args)}{PRIM_eval(const object args)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} P\+R\+I\+M\+\_\+eval (
+\begin{DoxyParamCaption}
+\item[{const {\bf object}}]{args}
+\end{DoxyParamCaption}
+)}\hypertarget{primitive_8h_a50f700a8f4b90445a7495f540da9b931}{}\label{primitive_8h_a50f700a8f4b90445a7495f540da9b931}
+
+
+Evalue la liste d\textquotesingle{}arguments passé en paramètre. 
+
+Effectue une copie des arguments dans la mémoire. Les arguments ne sont donc pas modifiés. \begin{DoxyReturn}{Renvoie}
+Renvoie La liste des arguments évalué. 
+\end{DoxyReturn}
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+make@{P\+R\+I\+M\+\_\+make}}
+\index{P\+R\+I\+M\+\_\+make@{P\+R\+I\+M\+\_\+make}!primitive.\+h@{primitive.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+I\+M\+\_\+make(char $\ast$name, ptr\+\_\+primitive function)}{PRIM_make(char *name, ptr_primitive function)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} P\+R\+I\+M\+\_\+make (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{ptr\+\_\+primitive}]{function}
+\end{DoxyParamCaption}
+)}\hypertarget{primitive_8h_abee93397113dab4c44190e649c596c23}{}\label{primitive_8h_abee93397113dab4c44190e649c596c23}
+
+
+Ajoute dans l\textquotesingle{}environnement la primitive name. 
+
+La primitive est ajoutée dans l\textquotesingle{}environnement en tant que variable. Celle ci aura le nom name et aura comme valeur un object de type sfs\+\_\+prim. Cet object contient un pointeur de fonction sur la primitive voulue.
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie un object de type primitive contenant function. 
+\end{DoxyReturn}
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+multiplie@{P\+R\+I\+M\+\_\+multiplie}}
+\index{P\+R\+I\+M\+\_\+multiplie@{P\+R\+I\+M\+\_\+multiplie}!primitive.\+h@{primitive.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+I\+M\+\_\+multiplie(object a)}{PRIM_multiplie(object a)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} P\+R\+I\+M\+\_\+multiplie (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{primitive_8h_ab174b04c861814b52dabbe3020c5fc1c}{}\label{primitive_8h_ab174b04c861814b52dabbe3020c5fc1c}
+\begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+somme@{P\+R\+I\+M\+\_\+somme}}
+\index{P\+R\+I\+M\+\_\+somme@{P\+R\+I\+M\+\_\+somme}!primitive.\+h@{primitive.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+I\+M\+\_\+somme(object a)}{PRIM_somme(object a)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} P\+R\+I\+M\+\_\+somme (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{primitive_8h_a3a80047431ff9783b9c824584a2e6889}{}\label{primitive_8h_a3a80047431ff9783b9c824584a2e6889}
+
+
+Somme une liste d\textquotesingle{}objet. 
+
+On effectue une copie du premier élément de a. (son car). On sommera ensuite tous les autres éléments dans celui-\/ci. Si a est N\+U\+LL ou nil on alloue un object valant 0. \begin{DoxyReturn}{Renvoie}
+Renvoie la somme des objets. 
+\end{DoxyReturn}
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+soustrait@{P\+R\+I\+M\+\_\+soustrait}}
+\index{P\+R\+I\+M\+\_\+soustrait@{P\+R\+I\+M\+\_\+soustrait}!primitive.\+h@{primitive.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+I\+M\+\_\+soustrait(object a)}{PRIM_soustrait(object a)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} P\+R\+I\+M\+\_\+soustrait (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{primitive_8h_a72bf04d3898cbf2f3c528e00a4eaa9de}{}\label{primitive_8h_a72bf04d3898cbf2f3c528e00a4eaa9de}
+\begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}

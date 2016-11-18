@@ -53,6 +53,8 @@ int \hyperlink{object_8c_aa8a7c4f6341e5477c8cf12d9fa4b8048}{O\+B\+J\+E\+C\+T\+\_
 \begin{DoxyCompactList}\small\item\em Compare deux objets de type entier. \end{DoxyCompactList}\item 
 int \hyperlink{object_8c_a85b5035114247cba825eafb2ef1d34c0}{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb} (\hyperlink{structobject__t}{object} a, char $\ast$symbol)
 \begin{DoxyCompactList}\small\item\em Compare a avec le symbol symbol. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{object_8c_a79151b36db8756df298be886a88dde6a}{O\+B\+J\+E\+C\+T\+\_\+add} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, \hyperlink{structobject__t}{object} result)
+\begin{DoxyCompactList}\small\item\em Effectue la somme de 2 objets, écrit résultat dans résult. \end{DoxyCompactList}\item 
 void \hyperlink{object_8c_a457357b9ad319b66d3573aaeb2d77933}{check\+\_\+alloc} (void $\ast$ptr, char $\ast$message)
 \begin{DoxyCompactList}\small\item\em Vérifie une allocation dynamique. \end{DoxyCompactList}\item 
 int \hyperlink{object_8c_aa57b70a35593ee0e9483282f796a5122}{check\+\_\+type} (\hyperlink{structobject__t}{object} o, int sfs\+\_\+type)
@@ -406,7 +408,28 @@ Renvoie un pointeur sur l\textquotesingle{}objet créé.
 
 Créé le booléen vrai (variable globale). Fonction appelée dans \hyperlink{repl_8c_ac7892fa748bffcd6854f8b7adeb40ba0}{init\+\_\+interpreter()}. 
 
-Cette fonction quitte l\textquotesingle{}interpréteur si l\textquotesingle{}allocation échoue. Inutile de continuer si le booléen n\textquotesingle{}existe pas dans l\textquotesingle{}interpréteur. L\textquotesingle{}objet vrai est de type S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN et possède son this.\+number mis à 1. \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy}}
+Cette fonction quitte l\textquotesingle{}interpréteur si l\textquotesingle{}allocation échoue. Inutile de continuer si le booléen n\textquotesingle{}existe pas dans l\textquotesingle{}interpréteur. L\textquotesingle{}objet vrai est de type S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN et possède son this.\+number mis à 1. \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+add@{O\+B\+J\+E\+C\+T\+\_\+add}}
+\index{O\+B\+J\+E\+C\+T\+\_\+add@{O\+B\+J\+E\+C\+T\+\_\+add}!object.\+c@{object.\+c}}
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+add(const object a, const object b, object result)}{OBJECT_add(const object a, const object b, object result)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{const {\bf object}}]{a, }
+\item[{const {\bf object}}]{b, }
+\item[{{\bf object}}]{result}
+\end{DoxyParamCaption}
+)}\hypertarget{object_8c_a79151b36db8756df298be886a88dde6a}{}\label{object_8c_a79151b36db8756df298be886a88dde6a}
+
+
+Effectue la somme de 2 objets, écrit résultat dans résult. 
+
+La somme est faite sur des objects de type S\+F\+S\+\_\+\+N\+UM. Le résultat est écrit dans result et result est retourné. Il faut toujours prendre la valeur retournée par la fonction, result permet d\textquotesingle{}éviter un trop grand nombre d\textquotesingle{}allocation dans P\+R\+I\+M\+\_\+somme. Retourne nil si la somme est irréalisable (Utile pour les affectations).
+
+\begin{DoxySeeAlso}{Voir également}
+N\+U\+M\+\_\+sum(num a, num b)
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Retourne le résultat de la somme ou nil si erreur. 
+\end{DoxyReturn}
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy}}
 \index{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy}!object.\+c@{object.\+c}}
 \subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy(object o)}{OBJECT_build_cpy(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy (
 \begin{DoxyParamCaption}
@@ -417,7 +440,7 @@ Cette fonction quitte l\textquotesingle{}interpréteur si l\textquotesingle{}all
 
 Copie l\textquotesingle{}objet o en en allouant un nouveau. 
 
-Si l\textquotesingle{}objet est nil on ne le recréé pas on renvoie nil. Si l\textquotesingle{}objet est N\+U\+LL renvoie null et affiche un warning.
+Si l\textquotesingle{}objet est nil ou un booléen on ne refait pas d\textquotesingle{}alloc on renvoie la variable globale correspondante. Si l\textquotesingle{}objet est N\+U\+LL renvoie null et affiche un warning.
 
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}objet créé. 
@@ -605,7 +628,9 @@ Deux objets sont considérés comme égaux s\textquotesingle{}ils ont le même t
 
 Réécris avec la valeur de nouveau. 
 
-Attention si changed est de type S\+F\+S\+\_\+\+N\+IL, un nouvel objet est renvoyé. Incompléte \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car}}
+Attention si changed est de type S\+F\+S\+\_\+\+N\+IL, un nouvel objet est renvoyé. \begin{DoxyRefDesc}{Bogue}
+\item[\hyperlink{bug__bug000001}{Bogue}]Incomplète\end{DoxyRefDesc}
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car}}
 \index{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car}!object.\+c@{object.\+c}}
 \subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car(object o, object car)}{OBJECT_set_car(object o, object car)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car (
 \begin{DoxyParamCaption}

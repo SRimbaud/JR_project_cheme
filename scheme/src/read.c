@@ -444,7 +444,8 @@ int sfs_type_atom(char* chaine, uint* here)
 	/* Cas d'un nombre ENTIER ou du SYMBOLE + ou - voir flottant et complexe plus tard. */
 	{
 		if(isdigit(second)) return(SFS_NUMBER);
-		if(isspace(second) || second =='\0') return(SFS_SYMBOL);
+		if(isspace(second) || second =='\0' || second == '('
+				|| second == ')') return(SFS_SYMBOL);
 		return(SFS_UNKNOWN); /* Si on arrive ici c'est ni un symbole ni un int*/
 	}
 	if(first == '\"') /* On s'attend à recevoir une chaine de caractère */
@@ -496,7 +497,7 @@ int sfs_type_atom(char* chaine, uint* here)
  * Le type de l'object est alors mis à SFS_UNKNOWN et la fonction s'arrête en
  * retournant 1. L'entier est alors tronqué.@n
  * La fonction gère aussi l'overflow, si l'entier est trop grand (ou trop petit négatif)
- * le type est mis à SFS_NUMBER et la valeur à + ou -inf.(voir NUM_set_lint )
+ * le type est mis à SFS_NUMBER et la valeur à + ou -inf.(voir NUM_build )
  * Dans ce cas affiche un WARNING et retourne 2.@n
  *
  * Voir <a href="http://manpagesfr.free.fr/man/man3/strtol.3.html " > strtol </a> pour 
@@ -539,19 +540,19 @@ int OBJECT_int_update(object o, char* input, uint *here)
 		if(val == LONG_MAX)
 		{
 			WARNING_MSG("Overflow error : %s is too long", input + here_cpy);
-			NUM_set_lint(&(o->this.number), val, NUM_PINFTY);
+			NUM_build(&(o->this.number), &val, NUM_PINFTY);
 			return(2);
 		}
 		else if(val == LONG_MIN)
 		{
 			WARNING_MSG("Underflow error : %s is too low",input + here_cpy);
-			NUM_set_lint(&(o->this.number), val, NUM_MINFTY);
+			NUM_build(&(o->this.number), &val, NUM_MINFTY);
 			return(2);
 		}
 		else
 		{
 			DEBUG_MSG("No overflow");
-			NUM_set_lint(&(o->this.number), val, NUM_INTEGER);
+			NUM_build(&(o->this.number), &val, NUM_INTEGER);
 			return(0);
 		}
 	}
@@ -605,7 +606,7 @@ int OBJECT_real_update(object o, char* input, uint* here)
 		if( val == HUGE_VALF)
 		{
 			WARNING_MSG("Positive overflow for real number");
-			NUM_set_lint(&(o->this.number), 0, NUM_PINFTY);
+			NUM_build(&(o->this.number), NULL, NUM_PINFTY);
 			return(2);
 		}
 #endif
@@ -614,7 +615,7 @@ int OBJECT_real_update(object o, char* input, uint* here)
 		if( val == HUGE_VALL)
 		{
 			WARNING_MSG("Negative overflow for real number");
-			NUM_set_lint(&(o->this.number), 0, NUM_MINFTY);
+			NUM_build(&(o->this.number), NULL, NUM_MINFTY);
 			return(2);
 		}
 #endif
@@ -628,7 +629,7 @@ int OBJECT_real_update(object o, char* input, uint* here)
 		if (val == HUGE_VAL)
 		{
 			WARNING_MSG("Real overflow error set to inf");
-			NUM_set_lint(&(o->this.number), 0, NUM_PINFTY);
+			NUM_build(&(o->this.number), NULL, NUM_PINFTY);
 			return(2);
 		}
 #endif

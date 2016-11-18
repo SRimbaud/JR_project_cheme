@@ -66,7 +66,10 @@ typedef struct object_t {
         } pair;
 
         struct object_t *special;
+	struct prim_t {
 	struct object_t* (*function)(struct object_t*);
+	struct object_t* name ;
+	} prim ;
 
     } this;
 
@@ -113,6 +116,8 @@ int OBJECT_cmp_bool(object a, object b);
 int OBJECT_cmp_number(object a, object b);
 int OBJECT_cmp_symb(object a, char* symbol);
 
+/* Opérateurs arithmétiques */
+object OBJECT_add(const object a, const object b, object result);
 /* Outils */
 void check_alloc(void* ptr, char* message);
 int check_type(object o, int sfs_type);

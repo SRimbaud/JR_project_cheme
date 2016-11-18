@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vrai',['vrai',['../object_8h.html#ad0bbf8a55978ced29692b45921af4bc4',1,'vrai():&#160;repl.c'],['../repl_8c.html#ad0bbf8a55978ced29692b45921af4bc4',1,'vrai():&#160;repl.c']]]
+  ['usage_5ferror',['usage_error',['../repl_8c.html#a4c6b444cc6a6c7911f55ae1745312033',1,'repl.c']]]
 ];

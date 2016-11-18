@@ -42,11 +42,13 @@ int \hyperlink{read_8c_ab21f6839688301ccb9e157c5f16c58b3}{sfs\+\_\+type\+\_\+ato
 \begin{DoxyCompactList}\small\item\em détermine le type d\textquotesingle{}un atome et le renvoie. N\textquotesingle{}incrémente pas here. \end{DoxyCompactList}\item 
 int \hyperlink{read_8c_a9cc1a614faace621e97aa57ac764ec93}{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update} (\hyperlink{structobject__t}{object} o, char $\ast$input, uint $\ast$here)
 \begin{DoxyCompactList}\small\item\em Extrait un entier de l\textquotesingle{}entrée utilisateur et créé l\textquotesingle{}objet correspondant. \end{DoxyCompactList}\item 
+int \hyperlink{read_8c_abbe5cdc861f097aa41cb4e8ad88d53a8}{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update} (\hyperlink{structobject__t}{object} o, char $\ast$input, uint $\ast$here)
+\begin{DoxyCompactList}\small\item\em Lit un réel sur une entrée utilisateur. \end{DoxyCompactList}\item 
 int \hyperlink{read_8c_aedd5c9ba9c7b85317ca31157893a9378}{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update} (\hyperlink{structobject__t}{object} o, char $\ast$input, uint $\ast$here)
 \begin{DoxyCompactList}\small\item\em Extrait le caractère de input et l\textquotesingle{}enregistre dans object. Place here sur caractère suivant. \end{DoxyCompactList}\item 
 int \hyperlink{read_8c_ac9ebedee6be777ef6b05c9b3a651aeee}{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update} (\hyperlink{structobject__t}{object} o, char $\ast$input, uint $\ast$here)
 \begin{DoxyCompactList}\small\item\em Extrait la chaine de input et l\textquotesingle{}enregistre dans object. \end{DoxyCompactList}\item 
-int \hyperlink{read_8c_accf6611c03303ef483521bd3b347b045}{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update} (\hyperlink{structobject__t}{object} o, char $\ast$input, uint $\ast$here)
+int \hyperlink{read_8c_aaa7a3fe5326b17d2e2858848680c1b44}{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update} (\hyperlink{structobject__t}{object} $\ast$o, char $\ast$input, uint $\ast$here)
 \begin{DoxyCompactList}\small\item\em Extrait le booléen de l\textquotesingle{}input. Déplace here au caractère suivant. \end{DoxyCompactList}\item 
 int \hyperlink{read_8c_a46c4c9ac5d3fa743f8b60a812c7620f7}{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update} (\hyperlink{structobject__t}{object} o, char $\ast$input, uint $\ast$here)
 \begin{DoxyCompactList}\small\item\em Extrait un symbole de la chaine input et met à jour l\textquotesingle{}object. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -101,13 +103,13 @@ Retourne !i.
 \end{DoxyReturn}
 \index{read.\+c@{read.\+c}!O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update}!read.\+c@{read.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_boolean_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update (
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update(object $\ast$o, char $\ast$input, uint $\ast$here)}{OBJECT_boolean_update(object *o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update (
 \begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
+\item[{{\bf object} $\ast$}]{o, }
 \item[{char $\ast$}]{input, }
 \item[{uint $\ast$}]{here}
 \end{DoxyParamCaption}
-)}\hypertarget{read_8c_accf6611c03303ef483521bd3b347b045}{}\label{read_8c_accf6611c03303ef483521bd3b347b045}
+)}\hypertarget{read_8c_aaa7a3fe5326b17d2e2858848680c1b44}{}\label{read_8c_aaa7a3fe5326b17d2e2858848680c1b44}
 
 
 Extrait le booléen de l\textquotesingle{}input. Déplace here au caractère suivant. 
@@ -174,11 +176,32 @@ Extrait un entier de l\textquotesingle{}entrée utilisateur et créé l\textquot
 \hline
 \end{DoxyParams}
 On a contrôle de l\textquotesingle{}erreur ici. Si l\textquotesingle{}entier contient des caractères qui ne sont pas des parenthèses ouvrantes ou fermantes de listes celui-\/ci est considéré comme mauvais. Le type de l\textquotesingle{}object est alors mis à S\+F\+S\+\_\+\+U\+N\+K\+N\+O\+WN et la fonction s\textquotesingle{}arrête en retournant 1. L\textquotesingle{}entier est alors tronqué.~\newline
-La fonction gère aussi l\textquotesingle{}overflow, si l\textquotesingle{}entier est trop grand (ou trop petit négatif) le type est mis à S\+F\+S\+\_\+\+N\+U\+M\+B\+ER et la valeur à + ou -\/inf.(voir N\+U\+M\+\_\+set\+\_\+lint ) Dans ce cas affiche un W\+A\+R\+N\+I\+NG et retourne 2.~\newline
+La fonction gère aussi l\textquotesingle{}overflow, si l\textquotesingle{}entier est trop grand (ou trop petit négatif) le type est mis à S\+F\+S\+\_\+\+N\+U\+M\+B\+ER et la valeur à + ou -\/inf.(voir N\+U\+M\+\_\+build ) Dans ce cas affiche un W\+A\+R\+N\+I\+NG et retourne 2.~\newline
  Voir \href{http://manpagesfr.free.fr/man/man3/strtol.3.html }{\tt strtol } pour plus d\textquotesingle{}informations.
 
 \begin{DoxyReturn}{Renvoie}
 Renvoie 0, 1 si l\textquotesingle{}entier entré n\textquotesingle{}en est pas un, 2 si overflow. 
+\end{DoxyReturn}
+\index{read.\+c@{read.\+c}!O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update}}
+\index{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update}!read.\+c@{read.\+c}}
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_real_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_abbe5cdc861f097aa41cb4e8ad88d53a8}{}\label{read_8c_abbe5cdc861f097aa41cb4e8ad88d53a8}
+
+
+Lit un réel sur une entrée utilisateur. 
+
+Lit un réel. La virgule doit être un point. Cette fonction est appelée par O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update lorsque le caractère d\textquotesingle{}arrêt est un point son retour est utilisé par cette même fonction.
+
+\begin{DoxySeeAlso}{Voir également}
+strtold
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie 2 si overflow, 1 si entrée mauvaise, 0 sinon. 
 \end{DoxyReturn}
 \index{read.\+c@{read.\+c}!O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update}!read.\+c@{read.\+c}}
@@ -322,7 +345,7 @@ L\textquotesingle{}objet renvoyé possède le type S\+F\+S\+\_\+\+U\+N\+K\+N\+O\
 \item \hyperlink{read_8c_a9cc1a614faace621e97aa57ac764ec93}{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update(object o, char$\ast$ input, uint$\ast$ here)}
 \item \hyperlink{read_8c_aedd5c9ba9c7b85317ca31157893a9378}{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update(object o, char$\ast$ input, uint$\ast$ here)}
 \item \hyperlink{read_8c_ac9ebedee6be777ef6b05c9b3a651aeee}{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update(object o, char$\ast$ input, uint$\ast$ here)}
-\item \hyperlink{read_8c_accf6611c03303ef483521bd3b347b045}{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update(object o, char$\ast$ input, uint$\ast$ here)}
+\item O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update(object o, char$\ast$ input, uint$\ast$ here)
 \item \hyperlink{read_8c_a46c4c9ac5d3fa743f8b60a812c7620f7}{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update(object o, char$\ast$ input, uint$\ast$here)}
 \end{DoxyItemize}
 

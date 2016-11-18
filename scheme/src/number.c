@@ -7,10 +7,9 @@
 
 /* Affichage */
 
-/**@fn void NUM_print( num printed, int mode)
+/**@fn void NUM_print( num printed)
  * @brief Affiche un num.
  * @param printed : le num à afficher.
- * @param mode : le type du num (réel, entier, uentier, complexe.....).
  */
 void NUM_print( num printed)
 {
@@ -32,6 +31,60 @@ void NUM_print( num printed)
 			printf("Unrecognized num type or not implemented");
 	}
 }
+
+/* Constructeur ultime */
+/**@fn num NUM_build(num* a, void* v_ptr, int mode)
+ * @brief Enregistre dans a la valeur v, retourne le nouveau num. 
+ * @param num* : num ou on doit enregistrer la valeur.
+ * @param v : Pointeur sur la valeur qu'on doit enregistrer. 
+ * @param mode : Mode NUM_PINFTY NUM_MINFTY ou NUM_INTEGER ou NUM_REAL.
+ *
+ * En pratique v est casté selon le mode précisé. La fonction ne garanti
+ * pas de bon fonctionnement si v n'est pas castable dans le mode voulu.11
+ * Si v_ptr est NULL la valeur par défaut sera 0.
+ *
+ * Si le mode n'est pas une constante implémentée dans la fonction :
+ *
+ * - NUM_REAL    	(Not implemented) 
+ * - NUM_INTEGER  
+ * - NUM_UINTEGER	(Not implemented) 
+ * - NUM_COMPLEX  	(Not implemented)
+ * - NUM_UNDEF    
+ * - NUM_PINFTY   
+ * - NUM_MINFTY   
+ * Il est mis par défaut à NUM_UNDEF
+ * @return : Renvoie un pointeur sur le num modifié.
+ */
+num* NUM_build(num* a, void* v_ptr, int mode)
+{
+	/* Entier */
+	long int e = 0;
+	if(v_ptr) e = *( (long int*) v_ptr);
+	/*Double */
+	double d = 0;
+	if(v_ptr) d = *( (double*) v_ptr);
+
+	switch(mode)
+	{
+		case NUM_INTEGER :
+			a->numtype= NUM_INTEGER;
+			a->this.integer = e;
+			break;
+		case NUM_REAL :
+			a->numtype = NUM_REAL;
+			a->this.real = d;
+		case NUM_PINFTY :
+			a->numtype= mode ;
+			break;
+		case NUM_MINFTY :
+			a->numtype=mode;
+			break;
+		default :
+			a->numtype=NUM_UNDEF;
+	}
+	return(a);
+}
+
 
 /* Mise à jour */
 /**@fn num NUM_set_int(num* a, int v)
@@ -62,43 +115,6 @@ num* NUM_set_real(num* a, double v)
 	return(a);
 }
 
-/**@fn num NUM_set_lint(num* a, long int v, int mode)
- * @brief Enregistre dans a l'entier long v, retourne le nouveau num. Met à jour champ numtype à NUM_INTEGER.
- * @param num* : num ou on doit enregistrer la valeur.
- * @param v : entier long à enregistrer.
- * @param mode : Mode NUM_PINFTY NUM_MINFTY ou NUM_INTEGER
- *
- * Si le mode n'est pas une constante implémentée dans la fonction :
- *
- * - NUM_REAL    	(Not implemented) 
- * - NUM_INTEGER  
- * - NUM_UINTEGER	(Not implemented) 
- * - NUM_COMPLEX  	(Not implemented)
- * - NUM_UNDEF    
- * - NUM_PINFTY   
- * - NUM_MINFTY   
- * Il est mis par défaut à NUM_UNDEF
- * @return : Renvoie un pointeur sur le num modifié.
- */
-num* NUM_set_lint(num* a, long int v, int mode)
-{
-	switch(mode)
-	{
-		case NUM_INTEGER :
-			a->numtype= NUM_INTEGER;
-			a->this.integer = v;
-			break;
-		case NUM_PINFTY :
-			a->numtype= mode ;
-			break;
-		case NUM_MINFTY :
-			a->numtype=mode;
-			break;
-		default :
-			a->numtype=NUM_UNDEF;
-	}
-	return(a);
-}
 /* Comparaison */
 
 
@@ -196,8 +212,8 @@ int NUM_cmp(num a, num b)
  *
  * Le flag est mis à un lorsqu'on a une erreur
  * de calcul
- * - Somme d'infini de signe opposé
- * - Somme d'éléments de type non réel ou entier.
+ * - Somme d'infinis de signe opposés
+ * - Somme d'éléments de type non réels ou non entiers.
  *
  * @return Renvoie la somme de deux num.
  */
@@ -205,7 +221,7 @@ num NUM_sum(num a, num b, int* flag )
 {
 	/* On vérifie que le flag existe */
 	char existing_flag = 0;
-	if(!flag) existing_flag = 1;
+	if(flag) existing_flag = 1;
 
 	if(NUM_cmp_type(a, b))
 	{

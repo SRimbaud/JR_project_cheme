@@ -15,6 +15,7 @@
  */
 
 #include"object.h"
+#include"eval.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -39,6 +40,7 @@ object PRIM_make(char* name, ptr_primitive function);
 
 /* Primitives */
 
+object PRIM_eval(const object args);
 /* Opérateurs numériques */
 
 object PRIM_somme(object a) ;

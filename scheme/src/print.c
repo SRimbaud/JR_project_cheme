@@ -214,6 +214,18 @@ void OBJECT_print_pair(object o)
 	}
 }
 
+/** @fn void OBJECT_print_prim(object o)
+ * @brief Affiche un type primitive.
+ *
+ * En pratique on va chercher le nom de la primitive
+ * dans la structure prim de object pour l'afficher.
+ *
+ */
+void OBJECT_print_prim(object o)
+{
+	OBJECT_print_symbol(o->this.prim.name);
+}
+
 /**@fn void OBJECT_print_atom( object o)
  * @brief Affiche un atome. Appel OBJECT_print_fail() si le type
  * est non reconnu.
@@ -250,6 +262,9 @@ void OBJECT_print_atom ( object o )
 		    printf("()");
 		    break;
 		    /*Ne devrait pas se produire*/
+	    case SFS_PRIM :
+		    OBJECT_print_prim(o);
+		    break;
 	    default :
 		    OBJECT_print_fail(); /* Cas ou on a pas de correspondance.*/
     }

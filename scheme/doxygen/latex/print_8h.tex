@@ -37,6 +37,8 @@ void \hyperlink{print_8h_a76c85a78447173279ae36a78110b030e}{O\+B\+J\+E\+C\+T\+\_
 \begin{DoxyCompactList}\small\item\em Affiche un object de type bool. \end{DoxyCompactList}\item 
 void \hyperlink{print_8h_a3937d61f164b6181c8137178eb66db03}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+nil} (int place)
 \begin{DoxyCompactList}\small\item\em Affiche un object de type nil. \end{DoxyCompactList}\item 
+void \hyperlink{print_8h_a478b35e75fe4de7f0cc70cf2b293edc3}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim} (\hyperlink{structobject__t}{object} o)
+\begin{DoxyCompactList}\small\item\em Affiche un type primitive. \end{DoxyCompactList}\item 
 void \hyperlink{print_8h_abc700e5dc549b50ed2b811de1cb8c9ad}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail} ()
 \begin{DoxyCompactList}\small\item\em Affiche un object qui n\textquotesingle{}est pas reconnu. Affiche un warning. \end{DoxyCompactList}\item 
 void \hyperlink{print_8h_ad94ede42a4f72f61eccb7152d06345f4}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+pair} (\hyperlink{structobject__t}{object} o)
@@ -174,7 +176,18 @@ Affiche un object de type pair. Fonction récursive.
 {\em object} & \+: l\textquotesingle{}objet à afficher.\\
 \hline
 \end{DoxyParams}
-La fonction gére de façon particulière le cas de nil selon si il se trouve dans le car ou le cdr. Un nil seul est géré par \hyperlink{print_8c_a7e845724ec647ec44337e2e3e86bd8f7}{sfs\+\_\+print()} \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string}}
+La fonction gére de façon particulière le cas de nil selon si il se trouve dans le car ou le cdr. Un nil seul est géré par \hyperlink{print_8c_a7e845724ec647ec44337e2e3e86bd8f7}{sfs\+\_\+print()} \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim}}
+\index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim}!print.\+h@{print.\+h}}
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim(object o)}{OBJECT_print_prim(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{print_8h_a478b35e75fe4de7f0cc70cf2b293edc3}{}\label{print_8h_a478b35e75fe4de7f0cc70cf2b293edc3}
+
+
+Affiche un type primitive. 
+
+En pratique on va chercher le nom de la primitive dans la structure prim de object pour l\textquotesingle{}afficher. \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string}!print.\+h@{print.\+h}}
 \subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string(object o)}{OBJECT_print_string(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string (
 \begin{DoxyParamCaption}

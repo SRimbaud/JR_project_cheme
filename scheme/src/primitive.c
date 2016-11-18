@@ -37,23 +37,76 @@ object PRIM_make(char* name, ptr_primitive function)
 {
 	object nom = OBJECT_build_symbol(name);
 	object value = make_object(SFS_PRIM);
-	value->this.function = function ;
+	value->this.prim.function = function ;
+	value->this.prim.name = nom ;
 	return(ENV_add_var(nom, value));
 }
 
 
 /* Primitives */
 
+/** @fn object PRIM_eval(const object args)
+ * @brief Evalue la liste d'arguments passé en paramètre.
+ *
+ * Effectue une copie des arguments dans la mémoire.
+ * Les arguments ne sont donc pas modifiés.
+ * @return Renvoie La liste des arguments évalué.
+ */
+object PRIM_eval(const object args)
+{
+	DEBUG_MSG("Begin evaluating primitiv arguments");
+	object evaluated = OBJECT_build_cpy(args);
+	object i = evaluated;
+	/* i est normalement une paire dont on évalue le car et
+	 * dont on prend le cdr pour itérer.
+	 */
+	for(i = evaluated ; i!=nil && !OBJECT_isempty(i);
+		i = i->this.pair.cdr)
+	{
+		if(!check_type(i, SFS_PAIR))
+		{
+			/* Gestion d'un cons */
+			i = sfs_eval(i);
+		}
+		else
+		{
+			i->this.pair.car = sfs_eval(i->this.pair.car);
+		}
+	}	
+	return(evaluated);
+}
+
 /* Opérateurs mathématiques */
 /** @fn object PRIM_somme(object a) 
  * @brief Somme une liste d'objet.
  *
- * Alloue dynamique le nouvel objet.
+ * On effectue une copie du premier élément de a. (son car).
+ * On sommera ensuite tous les autres éléments dans celui-ci.
+ * Si a est NULL ou nil on alloue un object valant 0.
  * @return Renvoie la somme des objets.
  */
 object PRIM_somme(object a) 
 {
-	
+	if(a == nil || OBJECT_isempty(a))
+	{
+		/* Dans ce cas on renvoie 0 */
+		a = make_object(SFS_NUMBER);
+		NUM_build(&(a->this.number), NULL, NUM_INTEGER);
+		return(a);
+	}
+	object result = OBJECT_build_cpy(a->this.pair.car) ;
+	object terme = a ;
+	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
+		terme = terme->this.pair.cdr)
+	{
+		result = OBJECT_add(result, terme->this.pair.car, result);
+		if(result == nil || OBJECT_isempty(result) )
+		{
+			/* Cas ou la somme fail */
+			return(nil);
+		}
+	}	
+	return(result);
 }
 
 /** @fn object PRIM_soustrait(object a) 

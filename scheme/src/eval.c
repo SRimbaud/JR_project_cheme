@@ -54,8 +54,8 @@ object sfs_eval( object input )
 	/* Si l'input est une primitive seule on a une erreur */
 	if(check_type(input, SFS_PRIM))
 	{
-		WARNING_MSG("Wrong format for primitive type");
-		return(NULL);
+		DEBUG_MSG("Primitive detected");
+		return(input);
 	}
 	/* Cas d'un symbole seul : On l'affiche */
 	if(check_type(input, SFS_SYMBOL))
@@ -63,7 +63,7 @@ object sfs_eval( object input )
 		
 		if(is_form(input, &forme))
 		{
-			WARNING_MSG("Invalide format for %s", input->this.symbol);
+			WARNING_MSG("Invalid format for %s", input->this.symbol);
 			/* A voir avec le temps si on ne peut pas
 			 * avoir des symboles seul hors d'une liste
 			 */
@@ -92,7 +92,12 @@ object sfs_eval( object input )
 				}
 				else if(check_type(var, SFS_PRIM))
 				{
-					/* Cas ou on a une primitive seule */
+					/* Cas ou on a une primitive seule 
+					 * Ne devrait pas se produire,
+					 * les primitives sont évaluées seulement
+					 * dans des paires. Une primitive hors d'une paire
+					 * ne devrait pas se produire.
+					 */
 					WARNING_MSG("Wrong format for primitive type : %s ",
 							saved_name->this.symbol);
 					return(NULL);
@@ -181,8 +186,24 @@ object sfs_eval( object input )
 		else /* Cas ou c'est une variable définie par l'utilisateur */
 		{
 			DEBUG_MSG("Star looking for %s", symb->this.symbol);
-			var = ENV_get_var(symb, &flag);
-			if(flag) return(var);
+			var = ENV_get_var(symb, &flag)->this.pair.cdr;
+			DEBUG_MSG("Finded ? %d", flag);
+			
+			if(flag) /* On a trouvé quelque chose */
+			{
+				
+				if(check_type(var, SFS_PRIM)) 
+				{
+					/* Si le car est une primitive on l'applique à l'évaluation
+					 * de tous les object */
+					DEBUG_MSG("Primitive detected");
+					object argument = PRIM_eval(OBJECT_get_cxr(input, "cdr"));
+					/* Pas d'erreur ici on a normalement une paire avec un car 
+					 * et cdr */
+					return((*var->this.prim.function)(argument) );
+				}
+				return(var);
+			}
 			else
 			{
 				WARNING_MSG("%s is not a scheme key word", symb->this.symbol);
