@@ -120,6 +120,7 @@ int OBJECT_cmp_symb(object a, char* symbol);
 object OBJECT_add(const object a, const object b, object result);
 object OBJECT_sub(const object a, const object b, object result);
 object OBJECT_mul(const object a, const object b, object result);
+object OBJECT_div(const object a, const object b, object result);
 /* Outils */
 void check_alloc(void* ptr, char* message);
 int check_type(object o, int sfs_type);

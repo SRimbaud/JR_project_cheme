@@ -635,7 +635,6 @@ object OBJECT_add(const object a, const object b, object result)
 }
 
 
-
 /** @fn object OBJECT_sub(const object a, const object b, object result)
  * @brief Soustraction de 2 object. Le résultat est mis dans résult.
  *
@@ -701,6 +700,36 @@ object OBJECT_mul(const object a, const object b, object result)
 	return(result);
 }
 
+
+/** @fn object OBJECT_div(const object a, const object b, object result)
+ * @brief Calcule la division de a par b.
+ *
+ * @sa OBJECT_sum();
+ *
+ * @return Renvoie result mis à jour. Nil si erreur.
+ */
+object OBJECT_div(const object a, const object b, object result)
+{
+	if(check_type(a, SFS_NIL) || check_type(b, SFS_NIL)) 
+	{
+		DEBUG_MSG("Division on nil, nil returned");
+		return(nil);
+	}
+	if(!check_type(a, SFS_NUMBER) || !check_type(b, SFS_NUMBER))
+	{
+		WARNING_MSG("Division on not Number type");
+		return (nil);
+	}
+	int flag = 0;
+	result->type = SFS_NUMBER;
+	result->this.number = NUM_div(a->this.number, b->this.number, &flag);
+	if(flag) 
+	{
+		WARNING_MSG(" '/' impossible to calculate result");
+		return(nil);
+	}
+	return(result);
+}
 
 
 

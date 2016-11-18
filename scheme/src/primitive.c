@@ -176,5 +176,19 @@ object PRIM_multiplie(object a)
  */
 object PRIM_divise(object a)
 {
-	return(NULL);
+	if(a == nil) return(a);
+	object result = OBJECT_build_cpy(a->this.pair.car) ;
+	object terme = a ;
+	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
+			terme = terme->this.pair.cdr)
+	{
+		result = OBJECT_div(result, terme->this.pair.car, result);
+		if(result == nil || OBJECT_isempty(result) )
+		{
+			/* Cas ou la somme fail */
+			return(nil);
+		}
+	}	
+	return(result);
 }
+

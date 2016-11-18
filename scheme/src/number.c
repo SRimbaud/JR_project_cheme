@@ -212,7 +212,7 @@ int NUM_cmp(num a, num b)
  * Renvoie 0 pour un num non typé ou de type n'ayant pas
  * de signe.
  * NUM_COMPLEX : pas de signe.
- * @return 1 si a >= 0, -1 si a < 0.
+ * @return 1 si a > 0, -1 si a < 0 et 0 si a nul.
  */
 int NUM_sign(num a)
 {
@@ -220,10 +220,12 @@ int NUM_sign(num a)
 	{
 		case NUM_INTEGER :
 			if(a.this.integer >= 0) return(1);
+			else if(a.this.integer == 0) return(0);
 			return(-1);
 			break;
 		case NUM_REAL :
 			if(a.this.real >= 0) return(1);
+			else if(a.this.real ==0) return(0);
 			return(-1);
 			break;
 		case NUM_PINFTY :
@@ -281,7 +283,7 @@ num NUM_sum(num a, num b, int* flag )
 
 	else
 	{
-		if(a.numtype == NUM_INTEGER)
+		if(a.numtype == NUM_INTEGER && b.numtype == NUM_REAL)
 		{
 			/* a est un entier de b flottant
 			 * on somme dans b
@@ -289,12 +291,22 @@ num NUM_sum(num a, num b, int* flag )
 			b.this.real += a.this.integer ;
 			return(b);
 		}
-		if(a.numtype == NUM_REAL)
+		if(a.numtype == NUM_REAL && b.numtype == NUM_INTEGER)
 		{
 			/* Cas inverse
 			 */
 			a.this.real += b.this.integer ;
 			return(a);
+		}
+		if(a.numtype == NUM_PINFTY || a.numtype == NUM_MINFTY)
+		{
+			if(b.numtype== NUM_REAL || b.numtype == NUM_INTEGER)
+				return(a);
+		}
+		if(b.numtype == NUM_PINFTY || b.numtype == NUM_MINFTY)
+		{
+			if(a.numtype== NUM_REAL || a.numtype == NUM_INTEGER)
+				return(b);
 		}
 		/* Ici on a un type pas implémenté
 		 * ou des infinis de signe opposé.
@@ -347,7 +359,7 @@ num NUM_sub(num a, num b, int* flag )
 
 	else
 	{
-		if(a.numtype == NUM_INTEGER)
+		if(a.numtype == NUM_INTEGER && b.numtype == NUM_REAL)
 		{
 			/* (a -b) = -(b - a)
 			 * En effet je n'arrive pas
@@ -356,7 +368,7 @@ num NUM_sub(num a, num b, int* flag )
 			b.this.real = (-1)*(b.this.real - a.this.integer) ;
 			return(b);
 		}
-		if(a.numtype == NUM_REAL)
+		if(a.numtype == NUM_REAL && b.numtype == NUM_INTEGER)
 		{
 			/* Cas inverse
 			*/
@@ -432,7 +444,7 @@ num NUM_mul(num a, num b, int* flag )
 
 	else
 	{
-		if(a.numtype == NUM_INTEGER)
+		if(a.numtype == NUM_INTEGER && b.numtype == NUM_REAL)
 		{
 			/* a est un entier de b flottant
 			 * on somme dans b
@@ -440,7 +452,7 @@ num NUM_mul(num a, num b, int* flag )
 			b.this.real *= a.this.integer ;
 			return(b);
 		}
-		if(a.numtype == NUM_REAL)
+		if(a.numtype == NUM_REAL && b.numtype == NUM_INTEGER)
 		{
 			/* Cas inverse
 			*/
@@ -460,6 +472,12 @@ num NUM_mul(num a, num b, int* flag )
 				else if(a.numtype == NUM_MINFTY) a.numtype = NUM_PINFTY;
 				return(a);
 			}
+			if(NUM_sign(b)== 0)
+			{
+				WARNING_MSG("0 * inf Undeterminated product");
+				if(existing_flag) *flag = 1;
+				return(a);
+			}
 		}
 		if(b. numtype == NUM_PINFTY || b.numtype == NUM_MINFTY)
 		{
@@ -469,6 +487,12 @@ num NUM_mul(num a, num b, int* flag )
 				if(b.numtype == NUM_PINFTY) b.numtype = NUM_MINFTY;
 				else if(b.numtype == NUM_MINFTY) b.numtype = NUM_PINFTY;
 				return(b);
+			}
+			if(NUM_sign(a)== 0)
+			{
+				WARNING_MSG("0 * inf Undeterminated product");
+				if(existing_flag) *flag = 1;
+				return(a);
 			}
 		}
 		/* Ici on a un type pas implémenté
@@ -481,10 +505,110 @@ num NUM_mul(num a, num b, int* flag )
 }
 
 
-/*
-num NUM_div(num a, num b)
+/** @fn num NUM_div(num a, num b, int* flag)
+ * @brief Calcule a/b.
+ *
+ *
+ *
+ * @return Renvoie le résultat du calcul.
+ */
+
+num NUM_div(num a, num b, int* flag)
 {
-	return(0);
+	/* On vérifie que le flag existe */
+	char existing_flag = 0;
+	if(flag) existing_flag = 1;
+	/* Le résultat renvoyé est toujours a */
+
+	/* Inverse de 0 c'est infini */
+	if(NUM_sign(b) == 0)
+	{
+		/* Division par zéro on renvoie l'infini */
+		if(NUM_sign(a) == 1)
+		{
+			a.numtype = NUM_PINFTY;
+			return(a);
+		}
+		if(NUM_sign(a) == -1)
+		{
+			a.numtype = NUM_MINFTY;
+			return(a);
+		}
+		else 
+		{
+			WARNING_MSG("0/0 error !");
+			if(existing_flag) *flag = 1 ;
+			return(a);
+		}
+	}
+
+	if(NUM_cmp_type(a, b))
+	{
+		/* Num ont le même type */
+		if(a.numtype == NUM_INTEGER)
+		{
+			
+			a.numtype = NUM_REAL;
+			a.this.real = (double) a.this.integer/b.this.integer;
+			return(a);
+		}
+		if(a.numtype == NUM_REAL)
+		{
+			a.this.real=a.this.real/ b.this.real ;
+			return(a);
+		}
+		/* Si aucun des cas ci-dessus c'est
+		 * un cas non implémenté on
+		 * renvoie a et un warning.
+		 */
+		WARNING_MSG("Trying to do an undefined division");
+		if(existing_flag) *flag = 1 ;
+		return(a);
+	}
+
+	else
+	{
+		if(a.numtype == NUM_INTEGER && b.numtype == NUM_REAL)
+		{
+			a.numtype = NUM_REAL;
+			a.this.real = a.this.integer/b.this.real ;	
+			return (a);
+		}
+		if(a.numtype == NUM_REAL && b.numtype == NUM_INTEGER)
+		{
+			/* Cas inverse
+			*/
+			a.this.real= a.this.real / b.this.integer ;
+			return(a);
+		}
+		
+		/* Infini diviser par qqch */
+		if((a.numtype == NUM_PINFTY || a.numtype == NUM_MINFTY) 
+				&& (b.numtype != NUM_MINFTY || b.numtype != NUM_PINFTY))
+		{
+			/* Infini sur un truc positif ou nul = inf */
+			if(NUM_sign(b) >= 0) return(a);
+			else /* On renvoie opposé de a */
+			{
+				if(a.numtype == NUM_PINFTY)
+				{
+					a.numtype = NUM_MINFTY;
+				}
+				else if(a.numtype == NUM_MINFTY)
+				{
+					a.numtype = NUM_PINFTY;
+				}
+				return(a);
+			}
+		}
+		
+		/* Ici on a un type pas implémenté
+		 * ou des infinis de signe opposé.
+		 */
+		WARNING_MSG("Trying to do an undefined division");
+		if(existing_flag) *flag = 1 ;
+		return(a);
+	}
 }
-*/
+
 
