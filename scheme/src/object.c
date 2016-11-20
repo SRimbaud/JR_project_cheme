@@ -1062,6 +1062,11 @@ object ENV_add_var(object name, object value)
  * La valeur initiale du drapeau importe peu, il est mis à 
  * faux automatiquement au début de la fonction.
  *
+ * Lors de la mise à jour d'une variable existante,
+ * cette fonction vérifie que ce n'est pas une primitive
+ * du langage. Si c'est le cas elle affiche un warning et
+ * renvoie le nom de la variable.
+ *
  * @sa ENV_DISABLE_CREATION
  * @sa ENV_ENABLE_CREATION
  * @return Renvoie name.
