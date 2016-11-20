@@ -183,7 +183,9 @@ object sfs_eval( object input )
 				 */
 			}
 		}
-		else /* Cas ou c'est une variable définie par l'utilisateur */
+		else /* Cas ou c'est une variable définie par l'utilisateur
+		      * Ou une primitive
+		      */
 		{
 			DEBUG_MSG("Star looking for %s", symb->this.symbol);
 			var = ENV_get_var(symb, &flag)->this.pair.cdr;
@@ -200,6 +202,7 @@ object sfs_eval( object input )
 					object argument = PRIM_eval(OBJECT_get_cxr(input, "cdr"));
 					/* Pas d'erreur ici on a normalement une paire avec un car 
 					 * et cdr */
+					DEBUG_MSG("Type argument in primitive : %d", argument->type);
 					return((*var->this.prim.function)(argument) );
 				}
 				return(var);

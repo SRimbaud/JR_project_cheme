@@ -41,6 +41,19 @@ object PRIM_make(char* name, ptr_primitive function);
 /* Primitives */
 
 object PRIM_eval(const object args);
+/* Predicats */
+object PRIM_check_predicate(object a);
+object PRIM_is_null(object a);
+object PRIM_is_boolean(object a);
+object PRIM_is_symbol(object a);
+object PRIM_is_integer(object a);
+object PRIM_is_real(object a);
+object PRIM_is_char(object a);
+object PRIM_is_string(object a);
+object PRIM_is_pair(object a);
+object PRIM_is_list(object a);
+
+
 /* Opérateurs numériques */
 
 object PRIM_somme(object a) ;
@@ -51,6 +64,9 @@ object PRIM_divise(object a);
 /* Extern */
 extern object primitive_name[NB_PRIMITIVE] ;
 extern ptr_primitive primitive_function [NB_PRIMITIVE];
+extern object nil;
+extern object vrai;
+extern object faux;
 
 
 

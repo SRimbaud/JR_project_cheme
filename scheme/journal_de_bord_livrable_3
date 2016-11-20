@@ -30,6 +30,15 @@ des arguments donnés. Cependant il faut bien COPIER cet élément sinon
 on le modifie et ça on veut pas !
 
 
+J'ai ajouté la somme, le produit, la soustraction la division et ce
+en gérant tous mes types, réels, entiers, infinis.
+Je remarque des pb dans l'affichage lors de mes divisions avec l'infini ou zéro.
+Je sais pas d'ou ça vient.
+A voir.
+Je suis content quand même les primitives ça se code assez vite et les opérateurs mathématiques ce sont
+les plus longs à réaliser car il y a beaucoup de cas.
+
+
 *Cette fonction prend l'object résultat en paramètre.
 C'est important car lorsqu'on va ajouter un par un les objects
 on ne veut pas en allouer un nouveau à chaque appel de la somme d'object
