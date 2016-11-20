@@ -1104,19 +1104,18 @@ object ENV_update_var(object name,const object val, int mode, int* free_flag)
 		/* Cas ou la variable existe*/
 		/* On supprime la VALEUR de l'ancienne variable */
 		DEBUG_MSG("val_cpy->type : %d", val_cpy->type);
-		/* Ici on a un problème sur le free qu'on
-		 * cherche à résoudre.
-		 * Surement un problème de copie.
-		 * On copie des pointeurs et non des structures et quand on le
-		 * free la structure supprimée est toujours pointée quelque part.
-		 * Un problème du à un manque de rigueur surement.
-		 * Mais en orienté objet le destructeur devrait nous garder 
-		 * de ce genre de saloperie c'est relou quand même.
-		 * Et de même quand on surcharge l'affectation
-		 * BREEEEf J'espère que le problème vient de là.
+		/* On vérifie que la variable que l'on écrase 
+		 * n'est pas une primitive
+		 * Autrement on affiche un warning et on ne fait rien
 		 */
-		DEBUG_MSG("Appel destroy");
+			
 		object a_suppr = OBJECT_get_cxr(variable, "cdr");
+		DEBUG_MSG("Appel destroy");
+		if(check_type(a_suppr, SFS_PRIM))
+		{
+			WARNING_MSG("%s is a scheme key word", name->this.string);
+		       return(name);	
+		}
 		OBJECT_destroy(&a_suppr);
 		DEBUG_MSG("val_cpy-type : %d", val_cpy->type);
 		if(free_flag) *free_flag = TRUE;
