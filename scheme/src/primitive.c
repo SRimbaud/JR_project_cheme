@@ -27,6 +27,10 @@ void init_primitive()
 	PRIM_make("string?", PRIM_is_string);
 	PRIM_make("pair?", PRIM_is_pair);
 	PRIM_make("list?", PRIM_is_list);
+	PRIM_make("car", PRIM_car);
+	PRIM_make("cdr", PRIM_cdr);
+	PRIM_make("set-car!", PRIM_set_car);
+	PRIM_make("set-cdr!", PRIM_set_cdr);
 
 
 	INFO_MSG("Primitives initiated in top level ENV");
@@ -87,7 +91,28 @@ object PRIM_eval(const object args)
 	return(evaluated);
 }
 
-/* Predicats */
+/** @fn int PRIM_check_number_arg(object args, int number);
+ * @brief Vérifie que args contient bien number arguments.
+ *
+ * En pratique on vérifie qu'on a bien number car dans notre
+ * liste d'arguments. Si c'est pas le cas on renvoie 0.
+ * Si le nombre d'arguments ne correspond pas on affiche
+ * un warning expliquant le nombre attendu et celui donné.
+ *
+ * @return 1 si on a number args, 0 sinon.
+ */
+int PRIM_check_number_arg(object args, int number)
+{
+	object i = args;
+	int j =0 ;
+	for(i = args, j = 0; !OBJECT_isempty(i), check_type(i, SFS_PAIR);
+			i=i->this.pair.cdr, j++)
+	{}
+	if(number == j) return(1);
+	WARNING_MSG("%d arguments expected but %d given.", number, j); 
+	return(0);
+}
+/*========== Predicats============ */
 /* Chaque predicat reçoit en paramètre une liste 
  * d'argument.
  * On s'intéresse donc au car de cette liste.
@@ -108,12 +133,12 @@ object PRIM_check_predicate(object a)
 	/* On vérifie qu'on ait bien une paire */
 	if(!check_type(a, SFS_PAIR))
 	{
-		WARNING_MSG("Error in predicate");
+		WARNING_MSG("Error in predicate, need 1 argument");
 		return(nil);
 	}
 	if(!check_type(a->this.pair.cdr, SFS_NIL))
 	{
-		WARNING_MSG("Too many arguments for predicate\nContinuing on first one");
+		WARNING_MSG("Too many arguments one needed.\nContinuing on first one");
 	}
 	return(OBJECT_get_cxr(a, "car"));
 }
@@ -360,5 +385,86 @@ object PRIM_divise(object a)
 		}
 	}	
 	return(result);
+}
+
+
+/* =================== Manip listes ============== */
+
+/** @fn object PRIM_car(object a);
+ * @brief Renvoie le car de l'argument.
+ *
+ * En pratique on applique PRIM_check_predicate(), du coup
+ * on renvoie exactement le cadr.
+ *
+ * @return Le car de a.
+ */
+object PRIM_car(object a)
+{
+	/* On fait face à la même pbmatique
+	 * que pour les predicats du coup
+	 * on recycle
+	 */
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+	return(OBJECT_get_cxr(a, "caar"));
+}
+
+/** @fn object PRIM_cdr(object a);
+ * @brief Renvoie le cdr de a.
+ *
+ * En pratique on applique PRIM_check_predicate(), du coup
+ * on renvoie exactement le cadr.
+ *
+ * @return car de a.
+ */
+object PRIM_cdr(object a)
+{
+	/* On fait face à la même pbmatique
+	 * que pour les predicats du coup
+	 * on recycle
+	 */
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+	return(OBJECT_get_cxr(a, "cdar"));
+}
+
+/** @fn object PRIM_set_car(object a);
+ * @brief Met a jour le car du premier arg de a par le second de a.
+ *
+ * Cette fonction vérifie qu'elle ait le bon nombre d'arguments.
+ *
+ * @return Renvoie NULL.
+ */
+object PRIM_set_car(object a)
+{
+	/* On fait face à la même pbmatique
+	 * que pour les predicats du coup
+	 * on recycle
+	 */
+	int test = PRIM_check_number_arg(a, 2);
+	if(!test) return(NULL);
+	object new = OBJECT_get_cxr(a, "cadr");
+	/* Mise à jour du premier élément de a */
+	OBJECT_set_cxr(a, new, "caar");
+	return(NULL);
+}
+
+/** @fn object PRIM_set_cdr(object a);
+ * @brief Met a jour le cdr du premier arg de a, avec son second.
+ *
+ * @return Renvoie NULL.
+ */
+object PRIM_set_cdr(object a)
+{
+	/* On fait face à la même pbmatique
+	 * que pour les predicats du coup
+	 * on recycle
+	 */
+	int test = PRIM_check_number_arg(a, 2);
+	if(!test) return(NULL);
+	object new = OBJECT_get_cxr(a, "cadr");
+	/* Mise à jour du premier élément de a */
+	OBJECT_set_cxr(a, new, "cdar");
+	return(NULL);
 }
 

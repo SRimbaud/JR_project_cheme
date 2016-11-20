@@ -148,19 +148,22 @@ void OBJECT_set_cxr(object o, object val, char* place)
 		OBJECT_set_cxr(o, nil, place);
 	}
 
-	char position = place[1];
-	char* cpy = place;
-	place[1] = 'c';
-	cpy ++;
-	/* Ainsi "caadr" devient 'a' et "cadr" */
+	/* Comme on doit supprimer on veut arriver un cran
+	 * avant l'object que l'on modifie.
+	 * De ce fait on retire le dernier déplacement on l'enregistre
+	 * puis on va à l'objet avant celui qui doit-être modifié.
+	 */
+	char* cpy = strdup(place);
+	char position = cpy[1];
+	cpy[1] = 'c';
 
-	object before_changed = OBJECT_get_cxr(o, cpy);
+	object before_changed = OBJECT_get_cxr(o, cpy + 1);
 	if(position == 'a')
 	{
 		OBJECT_destroy(&(before_changed->this.pair.car));
 		OBJECT_set_car(before_changed, val);
 	}
-	else if(position== 'c')
+	else if(position== 'd')
 	{
 
 		OBJECT_destroy(&(before_changed->this.pair.cdr));
@@ -170,6 +173,7 @@ void OBJECT_set_cxr(object o, object val, char* place)
 	{
 		WARNING_MSG("%c unrecognized position in OBJECT_set_cxr", position);
 	}
+	free(cpy);
 
 }
 
