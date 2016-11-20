@@ -18,6 +18,7 @@ void init_primitive()
 	PRIM_make("-" ,  PRIM_soustrait);
 	PRIM_make("/" ,  PRIM_divise);
 	PRIM_make("*" ,  PRIM_multiplie);
+	PRIM_make("=", PRIM_equal);
 	PRIM_make("null?", PRIM_is_null);
 	PRIM_make("boolean?", PRIM_is_boolean);
 	PRIM_make("symbol?", PRIM_is_symbol);
@@ -388,6 +389,53 @@ object PRIM_divise(object a)
 		}
 	}	
 	return(result);
+}
+
+
+/* Comparaisons */
+
+
+/** @fn object PRIM_equal(object a);
+ * @brief Compare deux nombre (SFS_NUMBER)
+ *
+ * Renvoie vrai si égaux, faux sinon.
+ * Renvoie NULL si un des arguments n'est pas un
+ * SFS_NUMBER et affiche un warning.
+ *
+ * @sa NUM_cmp()
+ *
+ * @return Vrai si tous nombres égaux, faux sinon.
+ */
+object PRIM_equal(object a)
+{
+	/* Vérif qu'on ait au moins 2 arguments */
+	if(PRIM_check_number_arg(a, 0) || PRIM_check_number_arg(a, 1))
+	{
+		WARNING_MSG("= need 2 args or more");
+		return(NULL);
+	}
+	object i = a;
+	object ref = a->this.pair.car;
+	if(!check_type(ref, SFS_NUMBER))
+	{
+		WARNING_MSG("= Should compare numbers try eq?");
+		return(NULL);
+	}
+	int j = 0;
+
+	for(i = a->this.pair.cdr; !OBJECT_isempty(i) && a!=nil, check_type(i, SFS_PAIR);
+			i=i->this.pair.cdr, j++)
+	{
+		if(!check_type(i->this.pair.car, SFS_NUMBER))
+		{
+			WARNING_MSG("= : Should compare number, argument %d is not a number try eq?"
+					, j);
+			return(NULL);
+		}
+		if(OBJECT_isEqual(ref, i->this.pair.car)) return(vrai);
+
+	}
+	return(faux);
 }
 
 

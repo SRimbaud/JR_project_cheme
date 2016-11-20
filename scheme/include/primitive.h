@@ -64,6 +64,10 @@ object PRIM_soustrait(object a) ;
 object PRIM_multiplie(object a) ;
 object PRIM_divise(object a);
 
+/* Comparaisons */
+
+object PRIM_equal(object a);
+
 /*========= Manipulation liste============*/
 
 object PRIM_car(object a);
