@@ -165,7 +165,7 @@ void OBJECT_set_cxr(object o, object val, char* place)
 	}
 	else if(position== 'd')
 	{
-
+		
 		OBJECT_destroy(&(before_changed->this.pair.cdr));
 		OBJECT_set_cdr(before_changed, val);
 	}
@@ -507,7 +507,6 @@ void OBJECT_rewrite(object changed, object nouveau)
  *
  * Deux objets sont considérés comme égaux s'ils ont le même type
  * et la même valeur.
- * COMPARAISON DE PAIRE NON IMPLEMENTEE.
  *
  * @return 1 si a==b, 0 sinon.
  */

@@ -180,6 +180,11 @@ void OBJECT_print_fail()
  * selon si il se trouve dans le car ou le cdr.
  * Un nil seul est géré par sfs_print()
  *
+ * Gestion d'une paire pure :
+ * Une paire pure, contient une paire et
+ * un cdr qui n'est pas une paire.
+ * Dans ce cas affiche au forme (car . cdr)
+ *
  */
 void OBJECT_print_pair(object o)
 {
@@ -203,9 +208,21 @@ void OBJECT_print_pair(object o)
 		/*affichage cdr */
 		if(o->this.pair.cdr->type !=SFS_NIL)
 		{
-			printf(" ");
-			OBJECT_print_pair(o->this.pair.cdr);
+			if(!check_type(o->this.pair.cdr, SFS_PAIR))
+			{
+				/* Cas d'une paire pure */
+				printf(" . ");
+				OBJECT_print_atom(o->this.pair.cdr);
+				printf(")");
+			}
+			else
+			{
+				printf(" ");
+				OBJECT_print_pair(o->this.pair.cdr);
+			}
+
 		}
+		
 		else
 		{
 			OBJECT_print_nil(SFS_CDR);

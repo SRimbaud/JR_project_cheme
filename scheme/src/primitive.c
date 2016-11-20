@@ -31,6 +31,9 @@ void init_primitive()
 	PRIM_make("cdr", PRIM_cdr);
 	PRIM_make("set-car!", PRIM_set_car);
 	PRIM_make("set-cdr!", PRIM_set_cdr);
+	PRIM_make("list", PRIM_list);
+	PRIM_make("cons", PRIM_cons);
+	PRIM_make("eq?", PRIM_eq);
 
 
 	INFO_MSG("Primitives initiated in top level ENV");
@@ -468,3 +471,53 @@ object PRIM_set_cdr(object a)
 	return(NULL);
 }
 
+
+/** @fn object PRIM_list(object a);
+ * @brief Construit un liste composée des arguments de a.
+ *
+ * En pratique la liste est déjà construite à la lecture,
+ * on renvoie directement a.
+ *
+ * @return Renvoie a.
+ */
+object PRIM_list(object a)
+{
+	return(a);
+}
+
+
+/** @fn object PRIM_cons(object a);
+ * @brief Construit une paire grâce aux 2 arguments de a.
+ *
+ * La paire ne contenir que deux arguments pas plus.
+ * a doit posséder uniquement 2 arguments.
+ *
+ * @return Renvoie une paire constituée des arguments de a.
+ */
+object PRIM_cons(object a)
+{
+	int test = PRIM_check_number_arg(a, 2);
+	if(!test) return(NULL);
+	return(OBJECT_build_pair(OBJECT_get_cxr(a, "car"), OBJECT_get_cxr(a, "cadr") ));
+}
+
+
+/** @fn object PRIM_eq?(object a);
+ * @brief Vérifie ques les arguments désignent la même entité.
+ *
+ * Seulement 2 arguments.
+ * Si les arguments sont égaux (type et valeur)
+ * renvoie vrai, faux sinon.
+ *
+ * @sa OBJECT_isEqual
+ * @return Vrai si tous les arguments sont de même entité, faux sinon.
+ */
+object PRIM_eq(object a)
+{
+	int test = PRIM_check_number_arg(a, 2);
+	if(!test) return(NULL);
+	if(OBJECT_isEqual(OBJECT_get_cxr(a, "car"), OBJECT_get_cxr(a, "cadr")))
+		return(vrai);
+	return(faux);
+
+}

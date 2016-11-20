@@ -38,6 +38,32 @@ A voir.
 Je suis content quand même les primitives ça se code assez vite et les opérateurs mathématiques ce sont
 les plus longs à réaliser car il y a beaucoup de cas.
 
+Prédicats :
+
+On vérifie bien qu'on ait 1 argument et pas plus.
+Si plus on évalue que le premier je crois.
+null? ok
+boolean? ok
+integer? ok
+char? ok
+string? ok
+symbol? ok
+pair? ok
+list? ok
+real? ok
+
+
+Manip listes :
+
+Check du nombre d'arg on renvoie null si pas bon.
+car ok
+cdr ok
+set-car! ok easy
+set-cdr! pas easy
+	Petit conflit sur la mise à jour du cdr.
+	En réalité on doit modifier l'affiche d'une paire pure pour que tout soit cohérant avec cons.
+cons ok easy
+list ok (SUPER EASY)
 
 *Cette fonction prend l'object résultat en paramètre.
 C'est important car lorsqu'on va ajouter un par un les objects

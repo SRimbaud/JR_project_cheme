@@ -70,6 +70,9 @@ object PRIM_car(object a);
 object PRIM_cdr(object a);
 object PRIM_set_car(object a);
 object PRIM_set_cdr(object a);
+object PRIM_list(object a);
+object PRIM_cons(object a);
+object PRIM_eq(object a);
 
 /* Extern */
 extern object primitive_name[NB_PRIMITIVE] ;
