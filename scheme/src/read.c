@@ -385,6 +385,12 @@ object sfs_read_atom( char *input, uint *here ) {
 		    break;
 	    default : /* Cas d'une erreur */
 		    WARNING_MSG("Unrecognized type : %s", input + *here);
+		    /* Si c'est pas reconnu on lit l'entrée comme un
+		     * chaine afin de faire avancer le curseur
+		     */
+		    OBJECT_string_update(atom, input, here);
+		    atom->type = SFS_UNKNOWN;
+		    error =1;
     }
     if(error ==1 ) return NULL;
     return atom;
@@ -796,8 +802,9 @@ int OBJECT_boolean_update(object* o, char* input, uint* here)
 	}
 	else /* Cas ou on a une mauvaise entrée */
 	{
-		/*o->type = SFS_UNKNOWN ;*/
+		(*o)->type = SFS_UNKNOWN ;
 		WARNING_MSG("%s is not a boolean", input + *here -1 );
+		
 		error = TRUE;
 	}
 	(*here)++; /* Curseur passe à la suite */

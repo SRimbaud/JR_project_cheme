@@ -63,6 +63,8 @@ object PRIM_somme(object a) ;
 object PRIM_soustrait(object a) ;
 object PRIM_multiplie(object a) ;
 object PRIM_divise(object a);
+object PRIM_quotient(object a);
+object PRIM_remainder(object a);
 
 /*========= Manipulation liste============*/
 
@@ -73,6 +75,20 @@ object PRIM_set_cdr(object a);
 object PRIM_list(object a);
 object PRIM_cons(object a);
 object PRIM_eq(object a);
+
+/* ========= Conversion de types ======= */
+
+int PRIM_check_converted_type(object converted,char* name_type, int type);
+object PRIM_char_to_integer(object a);
+object PRIM_integer_to_char(object a);
+object PRIM_string_to_symbol(object a);
+object PRIM_symbol_to_string(object a);
+object PRIM_string_to_integer(object a);
+object PRIM_integer_to_string(object a);
+object PRIM_string_to_real(object a);
+object PRIM_real_to_string(object a);
+object PRIM_string_to_number(object a);
+object PRIM_number_to_string(object a);
 
 /* Extern */
 extern object primitive_name[NB_PRIMITIVE] ;

@@ -34,8 +34,17 @@ void init_primitive()
 	PRIM_make("list", PRIM_list);
 	PRIM_make("cons", PRIM_cons);
 	PRIM_make("eq?", PRIM_eq);
-
-
+	PRIM_make("char->integer",PRIM_char_to_integer);
+	PRIM_make("integer->char",PRIM_integer_to_char);
+	PRIM_make("string->symbol",PRIM_string_to_symbol);
+	PRIM_make("symbol->string",PRIM_symbol_to_string);
+	PRIM_make("string->number",PRIM_string_to_number);
+	PRIM_make("number->string",PRIM_number_to_string);
+	/* A retirer */
+	PRIM_make("string->integer",PRIM_string_to_integer);
+	PRIM_make("integer->string",PRIM_integer_to_string);
+	PRIM_make("string->real", PRIM_string_to_real);
+	PRIM_make("real->string", PRIM_real_to_string);
 	INFO_MSG("Primitives initiated in top level ENV");
 }
 
@@ -390,6 +399,43 @@ object PRIM_divise(object a)
 	return(result);
 }
 
+object PRIM_quotient(object a);
+/** @fn object PRIM_remainder(object a)
+ * @brief Calcul le reste de la division euclidienne
+ * des objets de a.
+ *
+ * Prend une infinité d'arguments.
+ * Si un des arguments n'est pas un entier retourne NULL.
+ * Calcul la division du premier pas le second puis le resultat
+ * par le troisième le résultat pas le quatrième ....
+ *
+ * @return Renvoie un SFS_NUMBER entier résultat.
+ */
+object PRIM_remainder(object a)
+{
+	if(a == nil) return(a);
+	object result = OBJECT_build_cpy(a->this.pair.car) ;
+	object terme = a ;
+	if(a->this.number.numtype != NUM_INTEGER)
+	{
+		WARNING_MSG("remainder : Args should be integer");
+		return (NULL);
+	}
+	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
+			terme = terme->this.pair.cdr)
+	{
+		result = OBJECT_div(result, terme->this.pair.car, result);
+		if(result == nil || OBJECT_isempty(result) )
+		{
+			/* Cas ou la somme fail */
+			return(nil);
+		}
+	}	
+	return(result);
+}
+
+
+
 
 /* =================== Manip listes ============== */
 
@@ -520,4 +566,293 @@ object PRIM_eq(object a)
 		return(vrai);
 	return(faux);
 
+}
+
+/* ========= Conversion de types ======= */
+
+/** @fn int PRIM_check_converted_type(object converted,char* name_type int type)
+ * @brief Vérifie que converted est de type type.
+ * @param name_type : nom en str du type utilisé lors de l'affichage.
+ * @param type : Valeur du type (voir SFS_NUMBER...)
+ * @param converted : Object à vérifier.
+ *
+ * Si il ne l'est pas affiche un message de warning indiquant
+ * que le type qu'on souhaite convertir n'est pas le bon.
+ *
+ * @return
+ */
+int PRIM_check_converted_type(object converted,char* name_type, int type)
+{
+	if(!check_type(converted, type))
+	{
+		WARNING_MSG("Argument is not %s type", name_type);
+		return(0);
+	}
+	return(1);
+}
+
+
+
+/** @fn object PRIM_char_to_integer(object a)
+ * @brief Convertit en char en entier.
+ *
+ * Reçoit 1 argument.
+ * Convertit le premier argument qui est un char
+ * en entier. 
+ * Ce sera son code ASCII.
+ * Elle renvoie NULL si le premier argument n'est pas 
+ * un char.
+ * Renvoie NULL si nombre d'arguments différent de 1.
+ *
+ * @return Renvoie la conversion de l'object en integer.
+ */
+object PRIM_char_to_integer(object a)
+{
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+	
+	object tmp= OBJECT_get_cxr(a, "car");
+	if(!PRIM_check_converted_type(tmp, "char", SFS_CHARACTER)) return(NULL);
+
+	int charac= (int) tmp->this.character;
+	/* Conversion */
+	tmp->type = SFS_NUMBER;
+	NUM_build(&(tmp->this.number), &charac, NUM_INTEGER);
+	return(tmp);	
+}
+
+/** @fn object PRIM_integer_to_char(object a)
+ * @brief Convertit en char en entier.
+ *
+ * La conversion est effectuée comme en C 
+ * en retirant les octets de poids les plus fort
+ * et en gardant ceux de poids plus faibles.
+ *
+ * Fonctionnement similaire à PRIM_char_to_integer()
+ *
+ * @return Renvoie l'object convertit.
+ */
+object PRIM_integer_to_char(object a)
+{
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+	
+	object tmp= OBJECT_get_cxr(a, "car");
+	if(!PRIM_check_converted_type(tmp, "int", SFS_NUMBER)) return(NULL);
+	/* On vérifie qu'on essaie bien de convertir en entier */
+	if(tmp->this.number.numtype != NUM_INTEGER)
+	{
+		WARNING_MSG("Cannot convert non integer type to char");
+		return(NULL);
+	}
+
+	tmp->type = SFS_CHARACTER;
+	tmp->this.character = (char) tmp->this.number.this.integer;
+	return(tmp);
+}
+
+/** @fn object PRIM_string_to_symbol(object a)
+ * @brief Convertit un symbole en string
+ *
+ * Au vu de l'implémentation actuelle object est une union
+ * ou string et symbol sont des string soit char[256].
+ * Autrement dit l'union fait que qu'on regarde sous forme
+ * de string ou sous forme de symbole on voit la même chose.
+ *
+ * A modifier si on implémente une allocation dynamique.
+ *
+ * @return Renvoie l'objet convertit.
+ */
+object PRIM_string_to_symbol(object a)
+{
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+
+	object converted = OBJECT_get_cxr(a, "car");
+	if(!PRIM_check_converted_type(converted, "string", SFS_STRING)) return(NULL);
+	converted->type = SFS_SYMBOL;
+	return(converted);
+
+}
+
+/** @fn object PRIM_symbol_to_string(object a)
+ * @brief Convertit un symbole en string.
+ *
+ * @sa PRIM_string_to_symbol()
+ * @return Renvoie l'objet converti.
+ */
+object PRIM_symbol_to_string(object a)
+{
+
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+
+	object converted = OBJECT_get_cxr(a, "car");
+	if(!PRIM_check_converted_type(converted, "symbol", SFS_SYMBOL)) return(NULL);
+	converted->type = SFS_STRING;
+	return(converted);
+}
+
+/** @fn object PRIM_string_to_integer(object a)
+ * @brief Convertit un string en entier.
+ *
+ * Conversion d'un string en entier.
+ * Utilisation de strtol.
+ * Gère la conversion en infini si overflow.
+ *
+ * @return Renvoie l'objet convertie.
+ */
+object PRIM_string_to_integer(object a)
+{
+
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+
+	object converted = OBJECT_get_cxr(a, "car");
+	if(!PRIM_check_converted_type(converted, "string", SFS_STRING)) return(NULL);
+
+	long int converted_string= strtol(converted->this.string, NULL, 10);
+	NUM_build(&(converted->this.number), &converted_string, NUM_INTEGER);
+	/* Normalement NUM_build gère l'overflow de strtod avec LONG_MAX
+	 * et LONG_MIN
+	 */
+	converted->type = SFS_NUMBER;
+
+	return(converted);
+}
+
+/** @fn object PRIM_integer_to_string(object a)
+ * @brief Convertit un entier en en string.
+ *
+ * Utilise snprintf.
+ *
+ * @return Renvoie l'objet convertit
+ */
+object PRIM_integer_to_string(object a)
+{
+
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+
+	object tmp = OBJECT_get_cxr(a, "car");
+	if(!PRIM_check_converted_type(tmp, "int", SFS_NUMBER)) return(NULL);
+	if(tmp->this.number.numtype != NUM_INTEGER)
+	{
+		WARNING_MSG("Trying to convert non integer type");
+		return(NULL);
+	}
+	snprintf(tmp->this.string,STRLEN,"%ld",tmp->this.number.this.integer);
+	tmp->type= SFS_STRING;
+	return(tmp);
+}
+
+/** @fn object PRIM_string_to_real(object a)
+ * @brief Convertit un string en réel.
+ *
+ * Accepte un argument de type string.
+ * Fait appel à strtod.
+ * Renvoie NULL en cas de problème.
+ *
+ * @return Renvoie le réel convertit.
+ */
+object PRIM_string_to_real(object a)
+{
+
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+
+	object converted = OBJECT_get_cxr(a, "car");
+	if(!PRIM_check_converted_type(converted, "string", SFS_STRING)) return(NULL);
+
+	double converted_string= strtod(converted->this.string, NULL);
+	NUM_build(&(converted->this.number), &converted_string, NUM_REAL);
+	/* Normalement NUM_build gère l'overflow de strtod avec LONG_MAX
+	 * et LONG_MIN
+	 */
+	converted->type = SFS_NUMBER;
+
+	return(converted);
+}
+
+/** @fn object PRIM_real_to_string(object a)
+ * @brief Convertit en reel en string.
+ *
+ * Fait appel à snprintf.
+ * Renvoie NULL en cas de pb.
+ *
+ * @return Renvoie la chaine de caractère.
+ */
+object PRIM_real_to_string(object a)
+{
+
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+
+	object tmp = OBJECT_get_cxr(a, "car");
+	if(!PRIM_check_converted_type(tmp, "int", SFS_NUMBER)) return(NULL);
+	if(tmp->this.number.numtype != NUM_REAL)
+	{
+		WARNING_MSG("Trying to convert non real type");
+		return(NULL);
+	}
+	snprintf(tmp->this.string,STRLEN,"%lf",tmp->this.number.this.real);
+	tmp->type= SFS_STRING;
+	return(tmp);
+}
+/** @fn object PRIM_string_to_number(object a)
+ * @brief Conversion d'une chaine en nombre (entier ou réel).
+ *
+ * Pour cette fonction on fait appel à OBJECT_update.
+ * Renvoie NULL si trop d'arguments et si ce n'est pas
+ * une chaine de caractère.
+ * Max 1 argument.
+ *
+ * @return Renvoie l'objet convertit.
+ */
+object PRIM_string_to_number(object a)
+{
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+
+	object converted = OBJECT_get_cxr(a, "car");
+	if(!PRIM_check_converted_type(converted, "string", SFS_STRING)) return(NULL);
+
+	int here = 0;
+	/* On utilise OBJECT_int_update qui contient déjà tout*/
+	OBJECT_int_update(converted, converted->this.string, &here);
+	converted->type = SFS_NUMBER;
+	return(converted);
+}
+/** @fn }object PRIM_number_to_string(object a)
+ * @brief Convertit un number en chaine.
+ *
+ * Fait appel à snprintf.
+ * Renvoie NULL si 
+ * - Plus d'un argument.
+ * - Argument n'est pas un number.
+ *
+ * @return Renvoie le resultat de la conversion.
+ */
+object PRIM_number_to_string(object a)
+{
+	int test = PRIM_check_number_arg(a, 1);
+	if(!test) return(NULL);
+
+	object tmp = OBJECT_get_cxr(a, "car");
+	if(!PRIM_check_converted_type(tmp, "number", SFS_NUMBER)) return(NULL);
+	if(tmp->this.number.numtype == NUM_REAL)
+	{	
+		snprintf(tmp->this.string,STRLEN,"%lf",tmp->this.number.this.real);
+		tmp->type= SFS_STRING;
+	}
+	else if(tmp->this.number.numtype == NUM_INTEGER)
+	{
+
+		snprintf(tmp->this.string,STRLEN,"%ld",tmp->this.number.this.integer);
+		tmp->type= SFS_STRING;
+	}
+	else
+		tmp->type = SFS_UNKNOWN;
+
+	return(tmp);
 }

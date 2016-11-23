@@ -16,7 +16,7 @@ extern "C" {
 #endif
 
 #include "basic.h"
-
+#include<limits.h>
 
 #define NUM_REAL     0x00
 #define NUM_INTEGER  0x01
@@ -59,6 +59,7 @@ num NUM_sum(num a, num b, int * flag);
 num NUM_sub(num a, num b, int* flag);
 num NUM_mul(num a, num b, int* flag);
 num NUM_div(num a, num b, int* flag);
+num NUM_modulo(num a, num b, int* flag);
 
 #ifdef __cplusplus
 }

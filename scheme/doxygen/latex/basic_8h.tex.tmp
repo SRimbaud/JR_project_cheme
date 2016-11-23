@@ -5,8 +5,8 @@
 Basic types.  
 
 
-{\ttfamily \#include $<$string.\+h$>$}\\*
-{\ttfamily \#include \char`\"{}notify.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}notify.\+h\char`\"{}}\newline
 Graphe des dépendances par inclusion de basic.\+h\+:
 % FIG 0
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
@@ -14,29 +14,29 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define {\bfseries S\+T\+R\+L\+EN}~256\hypertarget{basic_8h_a278cf415676752815cfb411cb0b32802}{}\label{basic_8h_a278cf415676752815cfb411cb0b32802}
-
+\hypertarget{basic_8h_a278cf415676752815cfb411cb0b32802}{}\label{basic_8h_a278cf415676752815cfb411cb0b32802} 
+\#define {\bfseries S\+T\+R\+L\+EN}~256
 \item 
-\#define {\bfseries B\+I\+G\+S\+T\+R\+I\+NG}~65536\hypertarget{basic_8h_aa7ce15434a42cf84903f90b1d9680aa2}{}\label{basic_8h_aa7ce15434a42cf84903f90b1d9680aa2}
-
+\hypertarget{basic_8h_aa7ce15434a42cf84903f90b1d9680aa2}{}\label{basic_8h_aa7ce15434a42cf84903f90b1d9680aa2} 
+\#define {\bfseries B\+I\+G\+S\+T\+R\+I\+NG}~65536
 \item 
-\#define {\bfseries T\+R\+UE}~1\hypertarget{basic_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{}\label{basic_8h_aa8cecfc5c5c054d2875c03e77b7be15d}
-
+\hypertarget{basic_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{}\label{basic_8h_aa8cecfc5c5c054d2875c03e77b7be15d} 
+\#define {\bfseries T\+R\+UE}~1
 \item 
-\#define {\bfseries F\+A\+L\+SE}~0\hypertarget{basic_8h_aa93f0eb578d23995850d61f7d61c55c1}{}\label{basic_8h_aa93f0eb578d23995850d61f7d61c55c1}
-
+\hypertarget{basic_8h_aa93f0eb578d23995850d61f7d61c55c1}{}\label{basic_8h_aa93f0eb578d23995850d61f7d61c55c1} 
+\#define {\bfseries F\+A\+L\+SE}~0
 \item 
-\#define {\bfseries init\+\_\+string}(s)~memset( s, \textquotesingle{}\textbackslash{}0\textquotesingle{}, S\+T\+R\+L\+EN )\hypertarget{basic_8h_a45a4253f92f29321f0b3af0999579ff3}{}\label{basic_8h_a45a4253f92f29321f0b3af0999579ff3}
-
+\hypertarget{basic_8h_a45a4253f92f29321f0b3af0999579ff3}{}\label{basic_8h_a45a4253f92f29321f0b3af0999579ff3} 
+\#define {\bfseries init\+\_\+string}(s)~memset( s, \textquotesingle{}\textbackslash{}0\textquotesingle{}, S\+T\+R\+L\+EN )
 \end{DoxyCompactItemize}
 \subsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-typedef unsigned int {\bfseries uint}\hypertarget{basic_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{}\label{basic_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}
-
+\hypertarget{basic_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{}\label{basic_8h_a91ad9478d81a7aaf2593e8d9c3d06a14} 
+typedef unsigned int {\bfseries uint}
 \item 
-typedef char {\bfseries string}\mbox{[}S\+T\+R\+L\+EN\mbox{]}\hypertarget{basic_8h_addc3c69b25629ef3509f9e80d33625fa}{}\label{basic_8h_addc3c69b25629ef3509f9e80d33625fa}
-
+\hypertarget{basic_8h_addc3c69b25629ef3509f9e80d33625fa}{}\label{basic_8h_addc3c69b25629ef3509f9e80d33625fa} 
+typedef char {\bfseries string}\mbox{[}S\+T\+R\+L\+EN\mbox{]}
 \end{DoxyCompactItemize}
 
 

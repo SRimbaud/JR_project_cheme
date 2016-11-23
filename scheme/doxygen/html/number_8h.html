@@ -3,17 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
-<title>Livrable3 Informatique Phelma SICOM: Référence du fichier include/number.h</title>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Livrable1 Informatique Phelma SICOM: Référence du fichier include/number.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Livrable3 Informatique Phelma SICOM
+   <div id="projectname">Livrable1 Informatique Phelma SICOM
    </div>
    <div id="projectbrief">Interpréteur Scheme</div>
   </td>
@@ -32,40 +30,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.11 -->
+<!-- Généré par Doxygen 1.8.12 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
-      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
-      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <p>Number handling.  
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="basic_8h_source.html">basic.h</a>&quot;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de number.h:</div>
 <div class="dyncontent">
@@ -121,31 +99,31 @@ Structures de données</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a9b59ea8454241afa3d301dc5132652cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b59ea8454241afa3d301dc5132652cb"></a>
+<tr class="memitem:a9b59ea8454241afa3d301dc5132652cb"><td class="memItemLeft" align="right" valign="top"><a id="a9b59ea8454241afa3d301dc5132652cb"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>NUM_REAL</b>&#160;&#160;&#160;0x00</td></tr>
 <tr class="separator:a9b59ea8454241afa3d301dc5132652cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee6f6eb451fd169429e3b71dcdd17885"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee6f6eb451fd169429e3b71dcdd17885"></a>
+<tr class="memitem:aee6f6eb451fd169429e3b71dcdd17885"><td class="memItemLeft" align="right" valign="top"><a id="aee6f6eb451fd169429e3b71dcdd17885"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>NUM_INTEGER</b>&#160;&#160;&#160;0x01</td></tr>
 <tr class="separator:aee6f6eb451fd169429e3b71dcdd17885"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9e4f1559890eb88a2f0ff9cfd2e762f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9e4f1559890eb88a2f0ff9cfd2e762f"></a>
+<tr class="memitem:ac9e4f1559890eb88a2f0ff9cfd2e762f"><td class="memItemLeft" align="right" valign="top"><a id="ac9e4f1559890eb88a2f0ff9cfd2e762f"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>NUM_UINTEGER</b>&#160;&#160;&#160;0x02</td></tr>
 <tr class="separator:ac9e4f1559890eb88a2f0ff9cfd2e762f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a570037a88094b2a0c5600a9cc4a457"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a570037a88094b2a0c5600a9cc4a457"></a>
+<tr class="memitem:a8a570037a88094b2a0c5600a9cc4a457"><td class="memItemLeft" align="right" valign="top"><a id="a8a570037a88094b2a0c5600a9cc4a457"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>NUM_COMPLEX</b>&#160;&#160;&#160;0x03</td></tr>
 <tr class="separator:a8a570037a88094b2a0c5600a9cc4a457"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1449472105cd1b317cc99899e696942"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1449472105cd1b317cc99899e696942"></a>
+<tr class="memitem:ae1449472105cd1b317cc99899e696942"><td class="memItemLeft" align="right" valign="top"><a id="ae1449472105cd1b317cc99899e696942"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>NUM_UNDEF</b>&#160;&#160;&#160;0x04</td></tr>
 <tr class="separator:ae1449472105cd1b317cc99899e696942"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a733462f39cf4e46ff50d4884da5ff837"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a733462f39cf4e46ff50d4884da5ff837"></a>
+<tr class="memitem:a733462f39cf4e46ff50d4884da5ff837"><td class="memItemLeft" align="right" valign="top"><a id="a733462f39cf4e46ff50d4884da5ff837"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>NUM_PINFTY</b>&#160;&#160;&#160;0x05</td></tr>
 <tr class="separator:a733462f39cf4e46ff50d4884da5ff837"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee717e9313fef9ee932f5bd7a72b688e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee717e9313fef9ee932f5bd7a72b688e"></a>
+<tr class="memitem:aee717e9313fef9ee932f5bd7a72b688e"><td class="memItemLeft" align="right" valign="top"><a id="aee717e9313fef9ee932f5bd7a72b688e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>NUM_MINFTY</b>&#160;&#160;&#160;0x06</td></tr>
 <tr class="separator:aee717e9313fef9ee932f5bd7a72b688e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
-<tr class="memitem:a84d4b535e3908cccf4478813b5367e6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84d4b535e3908cccf4478813b5367e6f"></a>
+<tr class="memitem:a84d4b535e3908cccf4478813b5367e6f"><td class="memItemLeft" align="right" valign="top"><a id="a84d4b535e3908cccf4478813b5367e6f"></a>
 typedef struct <a class="el" href="structnum__t.html">num_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>num</b></td></tr>
 <tr class="separator:a84d4b535e3908cccf4478813b5367e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -175,17 +153,20 @@ Fonctions</h2></td></tr>
 <tr class="memitem:afecc8f5832487583cdc2f0792c67091f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="number_8h.html#afecc8f5832487583cdc2f0792c67091f">NUM_cmp_type</a> (<a class="el" href="structnum__t.html">num</a> a, <a class="el" href="structnum__t.html">num</a> b)</td></tr>
 <tr class="memdesc:afecc8f5832487583cdc2f0792c67091f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare les types de 2 structures num. Renvoie 1 si égale 0 sinon.  <a href="#afecc8f5832487583cdc2f0792c67091f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afecc8f5832487583cdc2f0792c67091f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968d39ec3ecc0e720e61bd3657cec2a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="number_8h.html#a968d39ec3ecc0e720e61bd3657cec2a7">NUM_sign</a> (<a class="el" href="structnum__t.html">num</a> a)</td></tr>
+<tr class="memdesc:a968d39ec3ecc0e720e61bd3657cec2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si a positif, -1 si a négatif.  <a href="#a968d39ec3ecc0e720e61bd3657cec2a7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a968d39ec3ecc0e720e61bd3657cec2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa001b3a988a911dfb8b9db6c716f47a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnum__t.html">num</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="number_8h.html#aa001b3a988a911dfb8b9db6c716f47a4">NUM_sum</a> (<a class="el" href="structnum__t.html">num</a> a, <a class="el" href="structnum__t.html">num</a> b, int *flag)</td></tr>
 <tr class="memdesc:aa001b3a988a911dfb8b9db6c716f47a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue la somme de 2 num.  <a href="#aa001b3a988a911dfb8b9db6c716f47a4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa001b3a988a911dfb8b9db6c716f47a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7790d6469a5253d77a41fe3066d69cb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnum__t.html">num</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="number_8h.html#a7790d6469a5253d77a41fe3066d69cb7">NUM_sub</a> (<a class="el" href="structnum__t.html">num</a> a, <a class="el" href="structnum__t.html">num</a> b, int *flag)</td></tr>
-<tr class="memdesc:a7790d6469a5253d77a41fe3066d69cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Soustrait deux num.  <a href="#a7790d6469a5253d77a41fe3066d69cb7">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a7790d6469a5253d77a41fe3066d69cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcul a - b.  <a href="#a7790d6469a5253d77a41fe3066d69cb7">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7790d6469a5253d77a41fe3066d69cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7003e02f06ef1fd25a160c3b0a5b880"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7003e02f06ef1fd25a160c3b0a5b880"></a>
-<a class="el" href="structnum__t.html">num</a>&#160;</td><td class="memItemRight" valign="bottom"><b>NUM_mul</b> (<a class="el" href="structnum__t.html">num</a> a, <a class="el" href="structnum__t.html">num</a> b, int *flag)</td></tr>
+<tr class="memitem:ad7003e02f06ef1fd25a160c3b0a5b880"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnum__t.html">num</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="number_8h.html#ad7003e02f06ef1fd25a160c3b0a5b880">NUM_mul</a> (<a class="el" href="structnum__t.html">num</a> a, <a class="el" href="structnum__t.html">num</a> b, int *flag)</td></tr>
+<tr class="memdesc:ad7003e02f06ef1fd25a160c3b0a5b880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produit de a par b.  <a href="#ad7003e02f06ef1fd25a160c3b0a5b880">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad7003e02f06ef1fd25a160c3b0a5b880"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33c7fe283eec368735c8619468ccaeb9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33c7fe283eec368735c8619468ccaeb9"></a>
-<a class="el" href="structnum__t.html">num</a>&#160;</td><td class="memItemRight" valign="bottom"><b>NUM_div</b> (<a class="el" href="structnum__t.html">num</a> a, <a class="el" href="structnum__t.html">num</a> b, int *flag)</td></tr>
+<tr class="memitem:a33c7fe283eec368735c8619468ccaeb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnum__t.html">num</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="number_8h.html#a33c7fe283eec368735c8619468ccaeb9">NUM_div</a> (<a class="el" href="structnum__t.html">num</a> a, <a class="el" href="structnum__t.html">num</a> b, int *flag)</td></tr>
+<tr class="memdesc:a33c7fe283eec368735c8619468ccaeb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule a/b.  <a href="#a33c7fe283eec368735c8619468ccaeb9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a33c7fe283eec368735c8619468ccaeb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -193,7 +174,9 @@ Fonctions</h2></td></tr>
 <dl class="section author"><dt>Auteur</dt><dd>François Cayre &lt;cayre.(null)&gt; </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>Sat Jun 23 00:42:34 2012 Number handling. </dd></dl>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a class="anchor" id="a507160f6206ea3b05ad895d88f8b8477"></a>
+<a id="a507160f6206ea3b05ad895d88f8b8477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a507160f6206ea3b05ad895d88f8b8477">&sect;&nbsp;</a></span>NUM_build()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -232,10 +215,10 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>En pratique v est casté selon le mode précisé. La fonction ne garanti pas de bon fonctionnement si v n'est pas castable dans le mode voulu.11 Si v_ptr est NULL la valeur par défaut sera 0.</p>
+<p>En pratique v est casté selon le mode précisé. La fonction ne garanti pas de bon fonctionnement si v n'est pas castable dans le mode voulu.11 Si v_ptr est NULL la valeur par défaut sera 0. Pour les entiers la fonction gère l'overflow et construit un +inf ou -inf selon le débordement. Pour que cela fonctionne *v_ptr doit prendre les valeurs LONG_MAX ou LONG_MIN.</p>
 <p>Si le mode n'est pas une constante implémentée dans la fonction :</p>
 <ul>
-<li>NUM_REAL (Not implemented)</li>
+<li>NUM_REAL</li>
 <li>NUM_INTEGER</li>
 <li>NUM_UINTEGER (Not implemented)</li>
 <li>NUM_COMPLEX (Not implemented)</li>
@@ -247,7 +230,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aba35ad055dd8fd8e71bd2d7bc69a3cad"></a>
+<a id="aba35ad055dd8fd8e71bd2d7bc69a3cad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba35ad055dd8fd8e71bd2d7bc69a3cad">&sect;&nbsp;</a></span>NUM_cmp()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -283,7 +268,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aad8448d59850c6d4291f6a4f7ce7c0cc"></a>
+<a id="aad8448d59850c6d4291f6a4f7ce7c0cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad8448d59850c6d4291f6a4f7ce7c0cc">&sect;&nbsp;</a></span>NUM_cmp_lint()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -312,7 +299,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afecc8f5832487583cdc2f0792c67091f"></a>
+<a id="afecc8f5832487583cdc2f0792c67091f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afecc8f5832487583cdc2f0792c67091f">&sect;&nbsp;</a></span>NUM_cmp_type()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -341,7 +330,46 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1c5cedf6d188f7c15ba2395bc2e94ba6"></a>
+<a id="a33c7fe283eec368735c8619468ccaeb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33c7fe283eec368735c8619468ccaeb9">&sect;&nbsp;</a></span>NUM_div()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnum__t.html">num</a> NUM_div </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnum__t.html">num</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnum__t.html">num</a>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcule a/b. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Renvoie le résultat du calcul. </dd></dl>
+
+</div>
+</div>
+<a id="a1c5cedf6d188f7c15ba2395bc2e94ba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c5cedf6d188f7c15ba2395bc2e94ba6">&sect;&nbsp;</a></span>NUM_lint_cmp()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -377,7 +405,48 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adee8e683b4a4606c79f5e1c97e984b67"></a>
+<a id="ad7003e02f06ef1fd25a160c3b0a5b880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7003e02f06ef1fd25a160c3b0a5b880">&sect;&nbsp;</a></span>NUM_mul()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnum__t.html">num</a> NUM_mul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnum__t.html">num</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnum__t.html">num</a>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Produit de a par b. </p>
+<p>Similaire à PRIM_sum. Tous les infinis passent seulement leur signe change.</p>
+<dl class="section see"><dt>Voir également</dt><dd>PRIM_sum.</dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="adee8e683b4a4606c79f5e1c97e984b67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adee8e683b4a4606c79f5e1c97e984b67">&sect;&nbsp;</a></span>NUM_print()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -401,7 +470,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a13c40a8c9f04c4212c928403d7b5d61c"></a>
+<a id="a13c40a8c9f04c4212c928403d7b5d61c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c40a8c9f04c4212c928403d7b5d61c">&sect;&nbsp;</a></span>NUM_set_int()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -437,7 +508,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa53cab64b7f8aac29afb32b1744950be"></a>
+<a id="aa53cab64b7f8aac29afb32b1744950be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa53cab64b7f8aac29afb32b1744950be">&sect;&nbsp;</a></span>NUM_set_real()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -473,7 +546,30 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7790d6469a5253d77a41fe3066d69cb7"></a>
+<a id="a968d39ec3ecc0e720e61bd3657cec2a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968d39ec3ecc0e720e61bd3657cec2a7">&sect;&nbsp;</a></span>NUM_sign()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NUM_sign </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnum__t.html">num</a>&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si a positif, -1 si a négatif. </p>
+<p>Renvoie 0 pour un num non typé ou de type n'ayant pas de signe. NUM_COMPLEX : pas de signe. </p><dl class="section return"><dt>Renvoie</dt><dd>1 si a &gt; 0, -1 si a &lt; 0 et 0 si a nul. </dd></dl>
+
+</div>
+</div>
+<a id="a7790d6469a5253d77a41fe3066d69cb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7790d6469a5253d77a41fe3066d69cb7">&sect;&nbsp;</a></span>NUM_sub()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -503,13 +599,15 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Soustrait deux num. </p>
-<p>Si les num ont des types dont la soustraction n'est pas définie ou implémenté le flag passe à 1.</p>
+<p>Calcul a - b. </p>
+<p>Si les num ont des types dont la soustraction n'est pas définie ou implémenté le flag passe à 1. Soustraction d'infinis de même signe cause une erreur. Une opération sur un type autre que infini, réel, entier ==&gt; erreur. Le type renvoyer sera flottant si a ou b est flottant.</p>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie le num résultat de la somme. a si erreur. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aa001b3a988a911dfb8b9db6c716f47a4"></a>
+<a id="aa001b3a988a911dfb8b9db6c716f47a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa001b3a988a911dfb8b9db6c716f47a4">&sect;&nbsp;</a></span>NUM_sum()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -553,7 +651,7 @@ Fonctions</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+</a> 1.8.12
 </small></address>
 </body>
 </html>

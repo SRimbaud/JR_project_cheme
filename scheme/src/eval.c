@@ -38,6 +38,8 @@ object sfs_eval( object input )
 	/* Vérif qu'on ait pas un input NULL */
 	if(OBJECT_isempty(input))
 	{ return NULL ; }
+	/* Cas d'un type inconnu */
+	if(check_type(input, SFS_UNKNOWN)) return(NULL);
 
 
 	/*return(input);*/
@@ -327,7 +329,8 @@ object EVAL_define(object o)
 		return(NULL);
 	}
 	evaluated = sfs_eval(evaluated);
-	DEBUG_MSG("Type evaluated %d", evaluated->type);
+	/* petite ternaire pour gérer le cas NULL*/
+	DEBUG_MSG("Type evaluated %d", (evaluated ? evaluated->type : 7));
 	/* Vérification format de la variable. */
 	if(OBJECT_isempty(evaluated) || check_type(evaluated, SFS_UNKNOWN))
 	{

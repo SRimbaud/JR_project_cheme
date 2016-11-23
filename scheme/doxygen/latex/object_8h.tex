@@ -5,14 +5,14 @@
 Object definition for S\+FS.  
 
 
-{\ttfamily \#include $<$strings.\+h$>$}\\*
-{\ttfamily \#include $<$ctype.\+h$>$}\\*
-{\ttfamily \#include $<$stdlib.\+h$>$}\\*
-{\ttfamily \#include $<$limits.\+h$>$}\\*
-{\ttfamily \#include \char`\"{}number.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}basic.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}mem.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}notify.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$strings.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}number.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}basic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mem.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}notify.\+h\char`\"{}}\newline
 Graphe des dépendances par inclusion de object.\+h\+:
 % FIG 0
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
@@ -27,41 +27,41 @@ struct \hyperlink{structobject__t}{object\+\_\+t}
 \item 
 \#define \hyperlink{object_8h_aacf24b05297ae7bbff3af215ec3259ff}{N\+B\+\_\+\+F\+O\+RM}~6
 \begin{DoxyCompactList}\small\item\em Nombre de formes reconnues par l\textquotesingle{}interpréteur. \end{DoxyCompactList}\item 
-\#define {\bfseries S\+F\+S\+\_\+\+N\+U\+M\+B\+ER}~0x00\hypertarget{object_8h_a858bd2deff1d4b07656f8fdfd4484af0}{}\label{object_8h_a858bd2deff1d4b07656f8fdfd4484af0}
-
+\hypertarget{object_8h_a858bd2deff1d4b07656f8fdfd4484af0}{}\label{object_8h_a858bd2deff1d4b07656f8fdfd4484af0} 
+\#define {\bfseries S\+F\+S\+\_\+\+N\+U\+M\+B\+ER}~0x00
 \item 
-\#define {\bfseries S\+F\+S\+\_\+\+C\+H\+A\+R\+A\+C\+T\+ER}~0x01\hypertarget{object_8h_ab0c6e6f9792d56e31823c7eb419b1055}{}\label{object_8h_ab0c6e6f9792d56e31823c7eb419b1055}
-
+\hypertarget{object_8h_ab0c6e6f9792d56e31823c7eb419b1055}{}\label{object_8h_ab0c6e6f9792d56e31823c7eb419b1055} 
+\#define {\bfseries S\+F\+S\+\_\+\+C\+H\+A\+R\+A\+C\+T\+ER}~0x01
 \item 
-\#define {\bfseries S\+F\+S\+\_\+\+S\+T\+R\+I\+NG}~0x02\hypertarget{object_8h_a954073636055f257d8ae1c24955d86ed}{}\label{object_8h_a954073636055f257d8ae1c24955d86ed}
-
+\hypertarget{object_8h_a954073636055f257d8ae1c24955d86ed}{}\label{object_8h_a954073636055f257d8ae1c24955d86ed} 
+\#define {\bfseries S\+F\+S\+\_\+\+S\+T\+R\+I\+NG}~0x02
 \item 
-\#define {\bfseries S\+F\+S\+\_\+\+P\+A\+IR}~0x03\hypertarget{object_8h_a673d96ad502160a83b9cb48d73e58956}{}\label{object_8h_a673d96ad502160a83b9cb48d73e58956}
-
+\hypertarget{object_8h_a673d96ad502160a83b9cb48d73e58956}{}\label{object_8h_a673d96ad502160a83b9cb48d73e58956} 
+\#define {\bfseries S\+F\+S\+\_\+\+P\+A\+IR}~0x03
 \item 
-\#define {\bfseries S\+F\+S\+\_\+\+N\+IL}~0x04\hypertarget{object_8h_aaf314e37b7a10a3759057c867ea892fc}{}\label{object_8h_aaf314e37b7a10a3759057c867ea892fc}
-
+\hypertarget{object_8h_aaf314e37b7a10a3759057c867ea892fc}{}\label{object_8h_aaf314e37b7a10a3759057c867ea892fc} 
+\#define {\bfseries S\+F\+S\+\_\+\+N\+IL}~0x04
 \item 
-\#define {\bfseries S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN}~0x05\hypertarget{object_8h_a3db3f3377646a39cb60c7613ac8b75ba}{}\label{object_8h_a3db3f3377646a39cb60c7613ac8b75ba}
-
+\hypertarget{object_8h_a3db3f3377646a39cb60c7613ac8b75ba}{}\label{object_8h_a3db3f3377646a39cb60c7613ac8b75ba} 
+\#define {\bfseries S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN}~0x05
 \item 
-\#define {\bfseries S\+F\+S\+\_\+\+S\+Y\+M\+B\+OL}~0x06\hypertarget{object_8h_a651ff3a8559a6a3a3e9d4f7cf099d0af}{}\label{object_8h_a651ff3a8559a6a3a3e9d4f7cf099d0af}
-
+\hypertarget{object_8h_a651ff3a8559a6a3a3e9d4f7cf099d0af}{}\label{object_8h_a651ff3a8559a6a3a3e9d4f7cf099d0af} 
+\#define {\bfseries S\+F\+S\+\_\+\+S\+Y\+M\+B\+OL}~0x06
 \item 
-\#define {\bfseries S\+F\+S\+\_\+\+U\+N\+K\+N\+O\+WN}~0x07 /$\ast$ Cas d\textquotesingle{}un type non reconnu utile au traitement des exceptions $\ast$/\hypertarget{object_8h_a4cf31b341df096acaabd1d9b72694c8b}{}\label{object_8h_a4cf31b341df096acaabd1d9b72694c8b}
-
+\hypertarget{object_8h_a4cf31b341df096acaabd1d9b72694c8b}{}\label{object_8h_a4cf31b341df096acaabd1d9b72694c8b} 
+\#define {\bfseries S\+F\+S\+\_\+\+U\+N\+K\+N\+O\+WN}~0x07 /$\ast$ Cas d\textquotesingle{}un type non reconnu utile au traitement des exceptions $\ast$/
 \item 
-\#define {\bfseries S\+F\+S\+\_\+\+C\+DR}~0x08\hypertarget{object_8h_a8af648398b55e2d58cd187111bc48082}{}\label{object_8h_a8af648398b55e2d58cd187111bc48082}
-
+\hypertarget{object_8h_a8af648398b55e2d58cd187111bc48082}{}\label{object_8h_a8af648398b55e2d58cd187111bc48082} 
+\#define {\bfseries S\+F\+S\+\_\+\+C\+DR}~0x08
 \item 
-\#define {\bfseries S\+F\+S\+\_\+\+C\+AR}~0x09\hypertarget{object_8h_af5e1649455f3552cec58655d5a9c5180}{}\label{object_8h_af5e1649455f3552cec58655d5a9c5180}
-
+\hypertarget{object_8h_af5e1649455f3552cec58655d5a9c5180}{}\label{object_8h_af5e1649455f3552cec58655d5a9c5180} 
+\#define {\bfseries S\+F\+S\+\_\+\+C\+AR}~0x09
 \item 
-\#define {\bfseries S\+F\+S\+\_\+\+E\+NV}~0x0A\hypertarget{object_8h_ac3d60e7c6afb2da994d741410adbc9a9}{}\label{object_8h_ac3d60e7c6afb2da994d741410adbc9a9}
-
+\hypertarget{object_8h_ac3d60e7c6afb2da994d741410adbc9a9}{}\label{object_8h_ac3d60e7c6afb2da994d741410adbc9a9} 
+\#define {\bfseries S\+F\+S\+\_\+\+E\+NV}~0x0A
 \item 
-\#define {\bfseries S\+F\+S\+\_\+\+P\+R\+IM}~0x0B\hypertarget{object_8h_ad95e386ed6e743f5aba98b37e5e9cde4}{}\label{object_8h_ad95e386ed6e743f5aba98b37e5e9cde4}
-
+\hypertarget{object_8h_ad95e386ed6e743f5aba98b37e5e9cde4}{}\label{object_8h_ad95e386ed6e743f5aba98b37e5e9cde4} 
+\#define {\bfseries S\+F\+S\+\_\+\+P\+R\+IM}~0x0B
 \item 
 \#define \hyperlink{object_8h_a4e8777591d506b4f54d8c4ff94cdf2a3}{E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}~1
 \item 
@@ -70,21 +70,21 @@ struct \hyperlink{structobject__t}{object\+\_\+t}
 \subsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-typedef enum \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4}{mots\+\_\+clefs} {\bfseries F\+O\+R\+MS}\hypertarget{object_8h_a86fa2bfff5d86477ec2a3ceb7d491318}{}\label{object_8h_a86fa2bfff5d86477ec2a3ceb7d491318}
-
+\hypertarget{object_8h_a86fa2bfff5d86477ec2a3ceb7d491318}{}\label{object_8h_a86fa2bfff5d86477ec2a3ceb7d491318} 
+typedef enum \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4}{mots\+\_\+clefs} {\bfseries F\+O\+R\+MS}
 \item 
-typedef struct \hyperlink{structobject__t}{object\+\_\+t} $\ast$ {\bfseries object}\hypertarget{object_8h_adbb8ed13377cc3cd105cbdb0e70cb2c8}{}\label{object_8h_adbb8ed13377cc3cd105cbdb0e70cb2c8}
-
+\hypertarget{object_8h_adbb8ed13377cc3cd105cbdb0e70cb2c8}{}\label{object_8h_adbb8ed13377cc3cd105cbdb0e70cb2c8} 
+typedef struct \hyperlink{structobject__t}{object\+\_\+t} $\ast$ {\bfseries object}
 \end{DoxyCompactItemize}
 \subsection*{Énumérations}
 \begin{DoxyCompactItemize}
 \item 
-enum \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4}{mots\+\_\+clefs} \{ \\*
+enum \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4}{mots\+\_\+clefs} \{ \newline
 \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4ada126905189f15af6d475cc45f0cb2b2}{Q\+U\+O\+TE}, 
 \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4aff318ced96eeb59afb7dd091c7cf0903}{D\+E\+F\+I\+NE}, 
 \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4ab44c8101cc294c074709ec1b14211792}{S\+ET}, 
 \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4a865555c9f2e0458a7078486aa1b3254f}{A\+ND}, 
-\\*
+\newline
 \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4a252802eda493fb6b4a279c4452acb547}{IF}, 
 \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4a96727447c0ad447987df1c6415aef074}{OR}, 
 \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4ac157bdf0b85a40d2619cbc8bc1ae5fe2}{N\+O\+NE} = 9999
@@ -105,8 +105,8 @@ void \hyperlink{object_8h_a457357b9ad319b66d3573aaeb2d77933}{check\+\_\+alloc} (
 \begin{DoxyCompactList}\small\item\em Créé le booléen faux (variable globale). Fonction appelée dans \hyperlink{repl_8c_ac7892fa748bffcd6854f8b7adeb40ba0}{init\+\_\+interpreter()}. \end{DoxyCompactList}\item 
 void \hyperlink{object_8h_aabab05a704acf24c0040b7223908c858}{make\+\_\+forms} ()
 \begin{DoxyCompactList}\small\item\em Initialise formes de l\textquotesingle{}interpréteur. \end{DoxyCompactList}\item 
-void {\bfseries free\+\_\+forms} (void)\hypertarget{object_8h_a89b443d890fd442462682ae33991eff9}{}\label{object_8h_a89b443d890fd442462682ae33991eff9}
-
+\hypertarget{object_8h_a89b443d890fd442462682ae33991eff9}{}\label{object_8h_a89b443d890fd442462682ae33991eff9} 
+void {\bfseries free\+\_\+forms} (void)
 \item 
 \hyperlink{structobject__t}{object} \hyperlink{object_8h_ade583a8335577c269af8b9cc37567699}{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair} (\hyperlink{structobject__t}{object} car, \hyperlink{structobject__t}{object} cdr)
 \begin{DoxyCompactList}\small\item\em Construit une paire avec un car et cdr donné. \end{DoxyCompactList}\item 
@@ -142,6 +142,12 @@ int \hyperlink{object_8h_a85b5035114247cba825eafb2ef1d34c0}{O\+B\+J\+E\+C\+T\+\_
 \begin{DoxyCompactList}\small\item\em Compare a avec le symbol symbol. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{object_8h_a79151b36db8756df298be886a88dde6a}{O\+B\+J\+E\+C\+T\+\_\+add} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, \hyperlink{structobject__t}{object} result)
 \begin{DoxyCompactList}\small\item\em Effectue la somme de 2 objets, écrit résultat dans résult. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{object_8h_a600f7cb500116ca30a31e9ae9c39a469}{O\+B\+J\+E\+C\+T\+\_\+sub} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, \hyperlink{structobject__t}{object} result)
+\begin{DoxyCompactList}\small\item\em Soustraction de 2 object. Le résultat est mis dans résult. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{object_8h_af66fca655ad9b5fafc4540f7dfc97127}{O\+B\+J\+E\+C\+T\+\_\+mul} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, \hyperlink{structobject__t}{object} result)
+\begin{DoxyCompactList}\small\item\em Calcul le produit de 2 objects a par b. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{object_8h_a2edee12884f9288a6d9f1056f1ecc492}{O\+B\+J\+E\+C\+T\+\_\+div} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, \hyperlink{structobject__t}{object} result)
+\begin{DoxyCompactList}\small\item\em Calcule la division de a par b. \end{DoxyCompactList}\item 
 int \hyperlink{object_8h_aa57b70a35593ee0e9483282f796a5122}{check\+\_\+type} (\hyperlink{structobject__t}{object} o, int sfs\+\_\+type)
 \begin{DoxyCompactList}\small\item\em Vérifie que o est bien de type sfs\+\_\+type. \end{DoxyCompactList}\item 
 int \hyperlink{object_8h_ae40aea5d87d9c145bfe576adb9a93f10}{string\+\_\+cmp} (char $\ast$a, char $\ast$b)
@@ -169,20 +175,20 @@ int \hyperlink{object_8h_a7fb587a2ac0a4bebac5317ece2968594}{E\+N\+V\+\_\+check\+
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structobject__t}{object} \hyperlink{object_8h_ad0bbf8a55978ced29692b45921af4bc4}{vrai}\hypertarget{object_8h_ad0bbf8a55978ced29692b45921af4bc4}{}\label{object_8h_ad0bbf8a55978ced29692b45921af4bc4}
-
+\hypertarget{object_8h_ad0bbf8a55978ced29692b45921af4bc4}{}\label{object_8h_ad0bbf8a55978ced29692b45921af4bc4} 
+\hyperlink{structobject__t}{object} \hyperlink{object_8h_ad0bbf8a55978ced29692b45921af4bc4}{vrai}
 \begin{DoxyCompactList}\small\item\em Représente booléen T\+R\+UE. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{object_8h_aa7cbb88f06ae33db856de331a8395465}{faux}\hypertarget{object_8h_aa7cbb88f06ae33db856de331a8395465}{}\label{object_8h_aa7cbb88f06ae33db856de331a8395465}
-
+\hypertarget{object_8h_aa7cbb88f06ae33db856de331a8395465}{}\label{object_8h_aa7cbb88f06ae33db856de331a8395465} 
+\hyperlink{structobject__t}{object} \hyperlink{object_8h_aa7cbb88f06ae33db856de331a8395465}{faux}
 \begin{DoxyCompactList}\small\item\em Représente booléen faux. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{object_8h_a66e8aad941d446bb2fd11968edcfe8f0}{nil}\hypertarget{object_8h_a66e8aad941d446bb2fd11968edcfe8f0}{}\label{object_8h_a66e8aad941d446bb2fd11968edcfe8f0}
-
+\hypertarget{object_8h_a66e8aad941d446bb2fd11968edcfe8f0}{}\label{object_8h_a66e8aad941d446bb2fd11968edcfe8f0} 
+\hyperlink{structobject__t}{object} \hyperlink{object_8h_a66e8aad941d446bb2fd11968edcfe8f0}{nil}
 \begin{DoxyCompactList}\small\item\em Représente la fin d\textquotesingle{}une liste ou la liste vide. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{object_8h_ade537a1359e40746508cefe214c3c4f7}{form} \mbox{[}\hyperlink{object_8h_aacf24b05297ae7bbff3af215ec3259ff}{N\+B\+\_\+\+F\+O\+RM}\mbox{]}\hypertarget{object_8h_ade537a1359e40746508cefe214c3c4f7}{}\label{object_8h_ade537a1359e40746508cefe214c3c4f7}
-
+\hypertarget{object_8h_ade537a1359e40746508cefe214c3c4f7}{}\label{object_8h_ade537a1359e40746508cefe214c3c4f7} 
+\hyperlink{structobject__t}{object} \hyperlink{object_8h_ade537a1359e40746508cefe214c3c4f7}{form} \mbox{[}\hyperlink{object_8h_aacf24b05297ae7bbff3af215ec3259ff}{N\+B\+\_\+\+F\+O\+RM}\mbox{]}
 \begin{DoxyCompactList}\small\item\em Décrit l\textquotesingle{}ensemble des formes du langage. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{object_8h_a062b7366fcc9f920dbb8475d815e0bfc}{env}\hypertarget{object_8h_a062b7366fcc9f920dbb8475d815e0bfc}{}\label{object_8h_a062b7366fcc9f920dbb8475d815e0bfc}
-
+\hypertarget{object_8h_a062b7366fcc9f920dbb8475d815e0bfc}{}\label{object_8h_a062b7366fcc9f920dbb8475d815e0bfc} 
+\hyperlink{structobject__t}{object} \hyperlink{object_8h_a062b7366fcc9f920dbb8475d815e0bfc}{env}
 \begin{DoxyCompactList}\small\item\em Représente l\textquotesingle{}environnement courant. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -198,15 +204,24 @@ Fri Jun 15 17\+:49\+:46 2012 Object definition for S\+FS.
 
 
 \subsection{Documentation des macros}
+\hypertarget{object_8h_ad6ae71669c1596ca1e441c7da58c3655}{}\label{object_8h_ad6ae71669c1596ca1e441c7da58c3655} 
 \index{object.\+h@{object.\+h}!E\+N\+V\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON@{E\+N\+V\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}}
 \index{E\+N\+V\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON@{E\+N\+V\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}{ENV_DISABLE_CREATION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+V\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON~0}\hypertarget{object_8h_ad6ae71669c1596ca1e441c7da58c3655}{}\label{object_8h_ad6ae71669c1596ca1e441c7da58c3655}
-Empêche la création d\textquotesingle{}une variable lorsqu\textquotesingle{}on essaie d\textquotesingle{}en modifier une inexistante. \index{object.\+h@{object.\+h}!E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON@{E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}{ENV\_DISABLE\_CREATION}}
+{\footnotesize\ttfamily \#define E\+N\+V\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON~0}
+
+Empêche la création d\textquotesingle{}une variable lorsqu\textquotesingle{}on essaie d\textquotesingle{}en modifier une inexistante. \hypertarget{object_8h_a4e8777591d506b4f54d8c4ff94cdf2a3}{}\label{object_8h_a4e8777591d506b4f54d8c4ff94cdf2a3} 
+\index{object.\+h@{object.\+h}!E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON@{E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}}
 \index{E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON@{E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}{ENV_ENABLE_CREATION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON~1}\hypertarget{object_8h_a4e8777591d506b4f54d8c4ff94cdf2a3}{}\label{object_8h_a4e8777591d506b4f54d8c4ff94cdf2a3}
-Autorise la création d\textquotesingle{}une variable lorsqu\textquotesingle{}on essaie d\textquotesingle{}en modifier une inexistante. \index{object.\+h@{object.\+h}!N\+B\+\_\+\+F\+O\+RM@{N\+B\+\_\+\+F\+O\+RM}}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}{ENV\_ENABLE\_CREATION}}
+{\footnotesize\ttfamily \#define E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON~1}
+
+Autorise la création d\textquotesingle{}une variable lorsqu\textquotesingle{}on essaie d\textquotesingle{}en modifier une inexistante. \hypertarget{object_8h_aacf24b05297ae7bbff3af215ec3259ff}{}\label{object_8h_aacf24b05297ae7bbff3af215ec3259ff} 
+\index{object.\+h@{object.\+h}!N\+B\+\_\+\+F\+O\+RM@{N\+B\+\_\+\+F\+O\+RM}}
 \index{N\+B\+\_\+\+F\+O\+RM@{N\+B\+\_\+\+F\+O\+RM}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{N\+B\+\_\+\+F\+O\+RM}{NB_FORM}}]{\setlength{\rightskip}{0pt plus 5cm}N\+B\+\_\+\+F\+O\+RM~6}\hypertarget{object_8h_aacf24b05297ae7bbff3af215ec3259ff}{}\label{object_8h_aacf24b05297ae7bbff3af215ec3259ff}
+\subsubsection{\texorpdfstring{N\+B\+\_\+\+F\+O\+RM}{NB\_FORM}}
+{\footnotesize\ttfamily N\+B\+\_\+\+F\+O\+RM~6}
+
 
 
 Nombre de formes reconnues par l\textquotesingle{}interpréteur. 
@@ -214,39 +229,51 @@ Nombre de formes reconnues par l\textquotesingle{}interpréteur.
 22 Oct 2016 ==$>$ 6 formes. 
 
 \subsection{Documentation du type de l\textquotesingle{}énumération}
+\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4} 
 \index{object.\+h@{object.\+h}!mots\+\_\+clefs@{mots\+\_\+clefs}}
 \index{mots\+\_\+clefs@{mots\+\_\+clefs}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{mots\+\_\+clefs}{mots_clefs}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf mots\+\_\+clefs}}\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4}
-\begin{Desc}
-\item[Valeurs énumérées]\par
-\begin{description}
-\index{Q\+U\+O\+TE@{Q\+U\+O\+TE}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!Q\+U\+O\+TE@{Q\+U\+O\+TE}}\item[{\em 
-Q\+U\+O\+TE\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4ada126905189f15af6d475cc45f0cb2b2}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4ada126905189f15af6d475cc45f0cb2b2}
-}]La forme Q\+U\+O\+TE valant 0 \index{D\+E\+F\+I\+NE@{D\+E\+F\+I\+NE}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!D\+E\+F\+I\+NE@{D\+E\+F\+I\+NE}}\item[{\em 
-D\+E\+F\+I\+NE\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4aff318ced96eeb59afb7dd091c7cf0903}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4aff318ced96eeb59afb7dd091c7cf0903}
-}]La forme D\+E\+F\+I\+NE valant 1 \index{S\+ET@{S\+ET}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!S\+ET@{S\+ET}}\item[{\em 
-S\+ET\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4ab44c8101cc294c074709ec1b14211792}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4ab44c8101cc294c074709ec1b14211792}
-}]La forme S\+E\+T! valant 2 \index{A\+ND@{A\+ND}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!A\+ND@{A\+ND}}\item[{\em 
-A\+ND\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4a865555c9f2e0458a7078486aa1b3254f}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4a865555c9f2e0458a7078486aa1b3254f}
-}]La forme A\+ND valant 3 \index{IF@{IF}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!IF@{IF}}\item[{\em 
-IF\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4a252802eda493fb6b4a279c4452acb547}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4a252802eda493fb6b4a279c4452acb547}
-}]La forme IF valant 4 \index{OR@{OR}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!OR@{OR}}\item[{\em 
-OR\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4a96727447c0ad447987df1c6415aef074}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4a96727447c0ad447987df1c6415aef074}
-}]La forme IF valant 5 \index{N\+O\+NE@{N\+O\+NE}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!N\+O\+NE@{N\+O\+NE}}\item[{\em 
-N\+O\+NE\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4ac157bdf0b85a40d2619cbc8bc1ae5fe2}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4ac157bdf0b85a40d2619cbc8bc1ae5fe2}
-}]Forme inconnue valant 9999 \end{description}
-\end{Desc}
+\subsubsection{\texorpdfstring{mots\+\_\+clefs}{mots\_clefs}}
+{\footnotesize\ttfamily enum \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4}{mots\+\_\+clefs}}
+
+\begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Q\+U\+O\+TE@{Q\+U\+O\+TE}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!Q\+U\+O\+TE@{Q\+U\+O\+TE}}}\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4ada126905189f15af6d475cc45f0cb2b2}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4ada126905189f15af6d475cc45f0cb2b2} 
+Q\+U\+O\+TE&La forme Q\+U\+O\+TE valant 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+F\+I\+NE@{D\+E\+F\+I\+NE}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!D\+E\+F\+I\+NE@{D\+E\+F\+I\+NE}}}\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4aff318ced96eeb59afb7dd091c7cf0903}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4aff318ced96eeb59afb7dd091c7cf0903} 
+D\+E\+F\+I\+NE&La forme D\+E\+F\+I\+NE valant 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+ET@{S\+ET}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!S\+ET@{S\+ET}}}\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4ab44c8101cc294c074709ec1b14211792}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4ab44c8101cc294c074709ec1b14211792} 
+S\+ET&La forme S\+E\+T! valant 2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+ND@{A\+ND}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!A\+ND@{A\+ND}}}\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4a865555c9f2e0458a7078486aa1b3254f}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4a865555c9f2e0458a7078486aa1b3254f} 
+A\+ND&La forme A\+ND valant 3 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IF@{IF}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!IF@{IF}}}\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4a252802eda493fb6b4a279c4452acb547}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4a252802eda493fb6b4a279c4452acb547} 
+IF&La forme IF valant 4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OR@{OR}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!OR@{OR}}}\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4a96727447c0ad447987df1c6415aef074}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4a96727447c0ad447987df1c6415aef074} 
+OR&La forme IF valant 5 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+NE@{N\+O\+NE}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!N\+O\+NE@{N\+O\+NE}}}\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4ac157bdf0b85a40d2619cbc8bc1ae5fe2}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4ac157bdf0b85a40d2619cbc8bc1ae5fe2} 
+N\+O\+NE&Forme inconnue valant 9999 \\
+\hline
+
+\end{DoxyEnumFields}
 
 
 \subsection{Documentation des fonctions}
+\hypertarget{object_8h_aa8d164b8e7142d98aaff83ccfcd48409}{}\label{object_8h_aa8d164b8e7142d98aaff83ccfcd48409} 
 \index{object.\+h@{object.\+h}!check@{check}}
 \index{check@{check}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{check(void $\ast$ptr, char $\ast$message)}{check(void *ptr, char *message)}}]{\setlength{\rightskip}{0pt plus 5cm}int check (
-\begin{DoxyParamCaption}
-\item[{void $\ast$}]{ptr, }
-\item[{char $\ast$}]{message}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_aa8d164b8e7142d98aaff83ccfcd48409}{}\label{object_8h_aa8d164b8e7142d98aaff83ccfcd48409}
+\subsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily int check (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
 
 
 Si ptr est N\+U\+LL affiche message dans un warning. 
@@ -254,26 +281,22 @@ Si ptr est N\+U\+LL affiche message dans un warning.
 \begin{DoxyReturn}{Renvoie}
 Renvoie 0 si ptr==N\+U\+LL 
 \end{DoxyReturn}
+\hypertarget{object_8h_a457357b9ad319b66d3573aaeb2d77933}{}\label{object_8h_a457357b9ad319b66d3573aaeb2d77933} 
 \index{object.\+h@{object.\+h}!check\+\_\+alloc@{check\+\_\+alloc}}
 \index{check\+\_\+alloc@{check\+\_\+alloc}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{check\+\_\+alloc(void $\ast$ptr, char $\ast$message)}{check_alloc(void *ptr, char *message)}}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+alloc (
-\begin{DoxyParamCaption}
-\item[{void $\ast$}]{ptr, }
-\item[{char $\ast$}]{message}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a457357b9ad319b66d3573aaeb2d77933}{}\label{object_8h_a457357b9ad319b66d3573aaeb2d77933}
+\subsubsection{\texorpdfstring{check\+\_\+alloc()}{check\_alloc()}}
+{\footnotesize\ttfamily void check\+\_\+alloc (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
 
 
 Vérifie une allocation dynamique. 
 
-Quitte le programme avec un E\+R\+R\+O\+R\+\_\+\+M\+SG si une alloc rate. \index{object.\+h@{object.\+h}!check\+\_\+type@{check\+\_\+type}}
+Quitte le programme avec un E\+R\+R\+O\+R\+\_\+\+M\+SG si une alloc rate. \hypertarget{object_8h_aa57b70a35593ee0e9483282f796a5122}{}\label{object_8h_aa57b70a35593ee0e9483282f796a5122} 
+\index{object.\+h@{object.\+h}!check\+\_\+type@{check\+\_\+type}}
 \index{check\+\_\+type@{check\+\_\+type}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{check\+\_\+type(object o, int sfs\+\_\+type)}{check_type(object o, int sfs_type)}}]{\setlength{\rightskip}{0pt plus 5cm}int check\+\_\+type (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{int}]{sfs\+\_\+type}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_aa57b70a35593ee0e9483282f796a5122}{}\label{object_8h_aa57b70a35593ee0e9483282f796a5122}
+\subsubsection{\texorpdfstring{check\+\_\+type()}{check\_type()}}
+{\footnotesize\ttfamily int check\+\_\+type (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{int}]{sfs\+\_\+type }\end{DoxyParamCaption})}
+
 
 
 Vérifie que o est bien de type sfs\+\_\+type. 
@@ -281,14 +304,12 @@ Vérifie que o est bien de type sfs\+\_\+type.
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si o est de type sfs\+\_\+type, 0 sinon. Renvoie 0 si o de type S\+F\+S\+\_\+\+U\+N\+K\+N\+OW quelque soit sfs\+\_\+type. 
 \end{DoxyReturn}
+\hypertarget{object_8h_aad94ca4613c4d0f6214c77363f55008f}{}\label{object_8h_aad94ca4613c4d0f6214c77363f55008f} 
 \index{object.\+h@{object.\+h}!E\+N\+V\+\_\+add\+\_\+var@{E\+N\+V\+\_\+add\+\_\+var}}
 \index{E\+N\+V\+\_\+add\+\_\+var@{E\+N\+V\+\_\+add\+\_\+var}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+add\+\_\+var(object name, object value)}{ENV_add_var(object name, object value)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+add\+\_\+var (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{name, }
-\item[{{\bf object}}]{value}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_aad94ca4613c4d0f6214c77363f55008f}{}\label{object_8h_aad94ca4613c4d0f6214c77363f55008f}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+add\+\_\+var()}{ENV\_add\_var()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+N\+V\+\_\+add\+\_\+var (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{name,  }\item[{\hyperlink{structobject__t}{object}}]{value }\end{DoxyParamCaption})}
+
 
 
 Ajoute la variable de nom name et de valeur value l\textquotesingle{}environnement courant. 
@@ -305,13 +326,12 @@ Ajoute la variable de nom name et de valeur value à l\textquotesingle{}environn
 \begin{DoxyReturn}{Renvoie}
 Renvoie la valeur de la variable crée. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a13394f7830becff1f3558b6f5b0969f9}{}\label{object_8h_a13394f7830becff1f3558b6f5b0969f9} 
 \index{object.\+h@{object.\+h}!E\+N\+V\+\_\+build@{E\+N\+V\+\_\+build}}
 \index{E\+N\+V\+\_\+build@{E\+N\+V\+\_\+build}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+build(object father)}{ENV_build(object father)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+build (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{father}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a13394f7830becff1f3558b6f5b0969f9}{}\label{object_8h_a13394f7830becff1f3558b6f5b0969f9}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+build()}{ENV\_build()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+N\+V\+\_\+build (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{father }\end{DoxyParamCaption})}
+
 
 
 Construit un environnement dont le père est father. 
@@ -321,13 +341,12 @@ L\textquotesingle{}environnement construit possède comme parent father. Si fath
 \begin{DoxyReturn}{Renvoie}
 
 \end{DoxyReturn}
+\hypertarget{object_8h_a7fb587a2ac0a4bebac5317ece2968594}{}\label{object_8h_a7fb587a2ac0a4bebac5317ece2968594} 
 \index{object.\+h@{object.\+h}!E\+N\+V\+\_\+check\+\_\+loop@{E\+N\+V\+\_\+check\+\_\+loop}}
 \index{E\+N\+V\+\_\+check\+\_\+loop@{E\+N\+V\+\_\+check\+\_\+loop}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+check\+\_\+loop(object name)}{ENV_check_loop(object name)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+N\+V\+\_\+check\+\_\+loop (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{name}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a7fb587a2ac0a4bebac5317ece2968594}{}\label{object_8h_a7fb587a2ac0a4bebac5317ece2968594}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+check\+\_\+loop()}{ENV\_check\_loop()}}
+{\footnotesize\ttfamily int E\+N\+V\+\_\+check\+\_\+loop (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{name }\end{DoxyParamCaption})}
+
 
 
 Vérifie la validité d\textquotesingle{}un environnement. 
@@ -343,14 +362,12 @@ x-\/$>$y-\/$>$z-\/$>$x-\/$>$y... .
 \begin{DoxyReturn}{Renvoie}
 0 si incohérences trouvées, 1 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a9408de05ed658e0c2b39b06dfa52afc9}{}\label{object_8h_a9408de05ed658e0c2b39b06dfa52afc9} 
 \index{object.\+h@{object.\+h}!E\+N\+V\+\_\+get\+\_\+var@{E\+N\+V\+\_\+get\+\_\+var}}
 \index{E\+N\+V\+\_\+get\+\_\+var@{E\+N\+V\+\_\+get\+\_\+var}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+get\+\_\+var(object var, int $\ast$flag)}{ENV_get_var(object var, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+get\+\_\+var (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{var, }
-\item[{int $\ast$}]{flag}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a9408de05ed658e0c2b39b06dfa52afc9}{}\label{object_8h_a9408de05ed658e0c2b39b06dfa52afc9}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+get\+\_\+var()}{ENV\_get\_var()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+N\+V\+\_\+get\+\_\+var (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{var,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
 
 
 Cherche le symbole var dans les environnements. 
@@ -368,15 +385,12 @@ Cherche la variable var dans les environnements. Si var n\textquotesingle{}est p
 \begin{DoxyReturn}{Renvoie}
 Renvoie une paire dont le car porte le nom de la variable et le cdr sa valeur. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a6c450315c9bb5fc8d72fe422bccad428}{}\label{object_8h_a6c450315c9bb5fc8d72fe422bccad428} 
 \index{object.\+h@{object.\+h}!E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env@{E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env}}
 \index{E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env@{E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env(object var, object environ, int $\ast$flag)}{ENV_get_var_in_env(object var, object environ, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{var, }
-\item[{{\bf object}}]{environ, }
-\item[{int $\ast$}]{flag}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a6c450315c9bb5fc8d72fe422bccad428}{}\label{object_8h_a6c450315c9bb5fc8d72fe422bccad428}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env()}{ENV\_get\_var\_in\_env()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{var,  }\item[{\hyperlink{structobject__t}{object}}]{environ,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
 
 
 Chercher la variable de nom var dans l\textquotesingle{}environnement environ. 
@@ -393,16 +407,12 @@ Chercher la variable de nom var dans l\textquotesingle{}environnement environ.
 \begin{DoxyReturn}{Renvoie}
 Renvoie une paire dont le car porte le nom de la variable (symbole) et le cdr sa valeur. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a700e3a4614699deb08c3640cd18af8e3}{}\label{object_8h_a700e3a4614699deb08c3640cd18af8e3} 
 \index{object.\+h@{object.\+h}!E\+N\+V\+\_\+update\+\_\+var@{E\+N\+V\+\_\+update\+\_\+var}}
 \index{E\+N\+V\+\_\+update\+\_\+var@{E\+N\+V\+\_\+update\+\_\+var}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+update\+\_\+var(object name, const object val, int mode, int $\ast$free\+\_\+flag)}{ENV_update_var(object name, const object val, int mode, int *free_flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+update\+\_\+var (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{name, }
-\item[{const {\bf object}}]{val, }
-\item[{int}]{mode, }
-\item[{int $\ast$}]{free\+\_\+flag}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a700e3a4614699deb08c3640cd18af8e3}{}\label{object_8h_a700e3a4614699deb08c3640cd18af8e3}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+update\+\_\+var()}{ENV\_update\_var()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+N\+V\+\_\+update\+\_\+var (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{name,  }\item[{const \hyperlink{structobject__t}{object}}]{val,  }\item[{int}]{mode,  }\item[{int $\ast$}]{free\+\_\+flag }\end{DoxyParamCaption})}
+
 
 
 Mets à jour la variable de nom name à la valeur val. 
@@ -424,6 +434,8 @@ Le flag free\+\_\+flag est mis à vrai si la fonction appelle O\+B\+J\+E\+C\+T\+
 
 La valeur initiale du drapeau importe peu, il est mis à faux automatiquement au début de la fonction.
 
+Lors de la mise à jour d\textquotesingle{}une variable existante, cette fonction vérifie que ce n\textquotesingle{}est pas une primitive du langage. Si c\textquotesingle{}est le cas elle affiche un warning et renvoie le nom de la variable.
+
 \begin{DoxySeeAlso}{Voir également}
 \hyperlink{object_8h_ad6ae71669c1596ca1e441c7da58c3655}{E\+N\+V\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON} 
 
@@ -432,14 +444,12 @@ La valeur initiale du drapeau importe peu, il est mis à faux automatiquement au
 \begin{DoxyReturn}{Renvoie}
 Renvoie name. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a54510b61c6f3490e0d71cbc71cc4225a}{}\label{object_8h_a54510b61c6f3490e0d71cbc71cc4225a} 
 \index{object.\+h@{object.\+h}!is\+\_\+form@{is\+\_\+form}}
 \index{is\+\_\+form@{is\+\_\+form}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{is\+\_\+form(object symbol, F\+O\+R\+M\+S $\ast$forme)}{is_form(object symbol, FORMS *forme)}}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+form (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{symbol, }
-\item[{F\+O\+R\+MS $\ast$}]{forme}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a54510b61c6f3490e0d71cbc71cc4225a}{}\label{object_8h_a54510b61c6f3490e0d71cbc71cc4225a}
+\subsubsection{\texorpdfstring{is\+\_\+form()}{is\_form()}}
+{\footnotesize\ttfamily int is\+\_\+form (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{symbol,  }\item[{F\+O\+R\+MS $\ast$}]{forme }\end{DoxyParamCaption})}
+
 
 
 Renvoie 1 si symbol est un mot clef du langage scheme. 
@@ -461,13 +471,12 @@ N\+B\+\_\+\+F\+O\+R\+MS
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si c\textquotesingle{}est une forme, 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a0fe65b3e6071e628e9dd27ceb779a253}{}\label{object_8h_a0fe65b3e6071e628e9dd27ceb779a253} 
 \index{object.\+h@{object.\+h}!isealnum@{isealnum}}
 \index{isealnum@{isealnum}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{isealnum(char c)}{isealnum(char c)}}]{\setlength{\rightskip}{0pt plus 5cm}int isealnum (
-\begin{DoxyParamCaption}
-\item[{char}]{c}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a0fe65b3e6071e628e9dd27ceb779a253}{}\label{object_8h_a0fe65b3e6071e628e9dd27ceb779a253}
+\subsubsection{\texorpdfstring{isealnum()}{isealnum()}}
+{\footnotesize\ttfamily int isealnum (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
 
 
 Vérifie si c est un caractère compatible pour une expression scheme (voir R5\+RS) 
@@ -480,24 +489,22 @@ Les caractères compatibles sont \mbox{[}a-\/z\mbox{]} \mbox{[}A-\/Z\mbox{]} \mb
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si c est compatible 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a0c208c0fbec6ecf85e3de7949b7691cf}{}\label{object_8h_a0c208c0fbec6ecf85e3de7949b7691cf} 
 \index{object.\+h@{object.\+h}!make\+\_\+false@{make\+\_\+false}}
 \index{make\+\_\+false@{make\+\_\+false}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{make\+\_\+false(void)}{make_false(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} make\+\_\+false (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a0c208c0fbec6ecf85e3de7949b7691cf}{}\label{object_8h_a0c208c0fbec6ecf85e3de7949b7691cf}
+\subsubsection{\texorpdfstring{make\+\_\+false()}{make\_false()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} make\+\_\+false (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
 
 
 Créé le booléen faux (variable globale). Fonction appelée dans \hyperlink{repl_8c_ac7892fa748bffcd6854f8b7adeb40ba0}{init\+\_\+interpreter()}. 
 
-Cette fonction quitte l\textquotesingle{}interpréteur si l\textquotesingle{}allocation échoue. Inutile de continuer si le booléen n\textquotesingle{}existe pas dans l\textquotesingle{}interpréteur. L\textquotesingle{}objet vrai est de type S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN et possède son this.\+number mis à 0. \index{object.\+h@{object.\+h}!make\+\_\+forms@{make\+\_\+forms}}
+Cette fonction quitte l\textquotesingle{}interpréteur si l\textquotesingle{}allocation échoue. Inutile de continuer si le booléen n\textquotesingle{}existe pas dans l\textquotesingle{}interpréteur. L\textquotesingle{}objet vrai est de type S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN et possède son this.\+number mis à 0. \hypertarget{object_8h_aabab05a704acf24c0040b7223908c858}{}\label{object_8h_aabab05a704acf24c0040b7223908c858} 
+\index{object.\+h@{object.\+h}!make\+\_\+forms@{make\+\_\+forms}}
 \index{make\+\_\+forms@{make\+\_\+forms}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{make\+\_\+forms()}{make_forms()}}]{\setlength{\rightskip}{0pt plus 5cm}void make\+\_\+forms (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_aabab05a704acf24c0040b7223908c858}{}\label{object_8h_aabab05a704acf24c0040b7223908c858}
+\subsubsection{\texorpdfstring{make\+\_\+forms()}{make\_forms()}}
+{\footnotesize\ttfamily void make\+\_\+forms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Initialise formes de l\textquotesingle{}interpréteur. 
@@ -505,13 +512,12 @@ Initialise formes de l\textquotesingle{}interpréteur.
 \begin{DoxySeeAlso}{Voir également}
 F\+O\+R\+MS; 
 \end{DoxySeeAlso}
+\hypertarget{object_8h_a27cc84d64ba2ebc57634851dfa247bdd}{}\label{object_8h_a27cc84d64ba2ebc57634851dfa247bdd} 
 \index{object.\+h@{object.\+h}!make\+\_\+nil@{make\+\_\+nil}}
 \index{make\+\_\+nil@{make\+\_\+nil}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{make\+\_\+nil(void)}{make_nil(void)}}]{\setlength{\rightskip}{0pt plus 5cm}make\+\_\+nil (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a27cc84d64ba2ebc57634851dfa247bdd}{}\label{object_8h_a27cc84d64ba2ebc57634851dfa247bdd}
+\subsubsection{\texorpdfstring{make\+\_\+nil()}{make\_nil()}}
+{\footnotesize\ttfamily make\+\_\+nil (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
 
 
 Alloue l\textquotesingle{}objet nil qui marque fin de o. Programme se termine si l\textquotesingle{}alloc rate. 
@@ -522,13 +528,12 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 \begin{DoxyReturn}{Renvoie}
 Renvoie un pointeur sur l\textquotesingle{}objet créé. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a742a50e12ae185f989627ff4fcfe5440}{}\label{object_8h_a742a50e12ae185f989627ff4fcfe5440} 
 \index{object.\+h@{object.\+h}!make\+\_\+object@{make\+\_\+object}}
 \index{make\+\_\+object@{make\+\_\+object}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{make\+\_\+object(uint type)}{make_object(uint type)}}]{\setlength{\rightskip}{0pt plus 5cm}make\+\_\+object (
-\begin{DoxyParamCaption}
-\item[{uint}]{type}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a742a50e12ae185f989627ff4fcfe5440}{}\label{object_8h_a742a50e12ae185f989627ff4fcfe5440}
+\subsubsection{\texorpdfstring{make\+\_\+object()}{make\_object()}}
+{\footnotesize\ttfamily make\+\_\+object (\begin{DoxyParamCaption}\item[{uint}]{type }\end{DoxyParamCaption})}
+
 
 
 Alloue un objet de type type, vérifie l\textquotesingle{}alloc. 
@@ -541,26 +546,22 @@ Alloue un objet de type type, vérifie l\textquotesingle{}alloc.
 \begin{DoxyReturn}{Renvoie}
 Renvoie un pointeur sur l\textquotesingle{}objet créé. 
 \end{DoxyReturn}
+\hypertarget{object_8h_aa54a323be37760f91b9a423760d800d3}{}\label{object_8h_aa54a323be37760f91b9a423760d800d3} 
 \index{object.\+h@{object.\+h}!make\+\_\+true@{make\+\_\+true}}
 \index{make\+\_\+true@{make\+\_\+true}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{make\+\_\+true(void)}{make_true(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} make\+\_\+true (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_aa54a323be37760f91b9a423760d800d3}{}\label{object_8h_aa54a323be37760f91b9a423760d800d3}
+\subsubsection{\texorpdfstring{make\+\_\+true()}{make\_true()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} make\+\_\+true (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
 
 
 Créé le booléen vrai (variable globale). Fonction appelée dans \hyperlink{repl_8c_ac7892fa748bffcd6854f8b7adeb40ba0}{init\+\_\+interpreter()}. 
 
-Cette fonction quitte l\textquotesingle{}interpréteur si l\textquotesingle{}allocation échoue. Inutile de continuer si le booléen n\textquotesingle{}existe pas dans l\textquotesingle{}interpréteur. L\textquotesingle{}objet vrai est de type S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN et possède son this.\+number mis à 1. \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+add@{O\+B\+J\+E\+C\+T\+\_\+add}}
+Cette fonction quitte l\textquotesingle{}interpréteur si l\textquotesingle{}allocation échoue. Inutile de continuer si le booléen n\textquotesingle{}existe pas dans l\textquotesingle{}interpréteur. L\textquotesingle{}objet vrai est de type S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN et possède son this.\+number mis à 1. \hypertarget{object_8h_a79151b36db8756df298be886a88dde6a}{}\label{object_8h_a79151b36db8756df298be886a88dde6a} 
+\index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+add@{O\+B\+J\+E\+C\+T\+\_\+add}}
 \index{O\+B\+J\+E\+C\+T\+\_\+add@{O\+B\+J\+E\+C\+T\+\_\+add}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+add(const object a, const object b, object result)}{OBJECT_add(const object a, const object b, object result)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+add (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{{\bf object}}]{result}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a79151b36db8756df298be886a88dde6a}{}\label{object_8h_a79151b36db8756df298be886a88dde6a}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+add()}{OBJECT\_add()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+add (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
 
 
 Effectue la somme de 2 objets, écrit résultat dans résult. 
@@ -573,13 +574,12 @@ N\+U\+M\+\_\+sum(num a, num b)
 \begin{DoxyReturn}{Renvoie}
 Retourne le résultat de la somme ou nil si erreur. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a09933fca31b4b68d1e8d1d8f26f7ce45}{}\label{object_8h_a09933fca31b4b68d1e8d1d8f26f7ce45} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy}}
 \index{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy(object o)}{OBJECT_build_cpy(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a09933fca31b4b68d1e8d1d8f26f7ce45}{}\label{object_8h_a09933fca31b4b68d1e8d1d8f26f7ce45}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy()}{OBJECT\_build\_cpy()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Copie l\textquotesingle{}objet o en en allouant un nouveau. 
@@ -589,14 +589,12 @@ Si l\textquotesingle{}objet est nil ou un booléen on ne refait pas d\textquotes
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}objet créé. 
 \end{DoxyReturn}
+\hypertarget{object_8h_ade583a8335577c269af8b9cc37567699}{}\label{object_8h_ade583a8335577c269af8b9cc37567699} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair}}
 \index{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair(object car, object cdr)}{OBJECT_build_pair(object car, object cdr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{car, }
-\item[{{\bf object}}]{cdr}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_ade583a8335577c269af8b9cc37567699}{}\label{object_8h_ade583a8335577c269af8b9cc37567699}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair()}{OBJECT\_build\_pair()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{car,  }\item[{\hyperlink{structobject__t}{object}}]{cdr }\end{DoxyParamCaption})}
+
 
 
 Construit une paire avec un car et cdr donné. 
@@ -611,13 +609,12 @@ Construit une liste avec un car et cdr donné. Si car ou cdr == N\+U\+LL alors i
 \begin{DoxyReturn}{Renvoie}
 Renvoie un object avec car et le cdr donné. 
 \end{DoxyReturn}
+\hypertarget{object_8h_aba2f19194908157a74d7250b28929484}{}\label{object_8h_aba2f19194908157a74d7250b28929484} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol}}
 \index{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol(char $\ast$symbol)}{OBJECT_build_symbol(char *symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol (
-\begin{DoxyParamCaption}
-\item[{char $\ast$}]{symbol}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_aba2f19194908157a74d7250b28929484}{}\label{object_8h_aba2f19194908157a74d7250b28929484}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol()}{OBJECT\_build\_symbol()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol (\begin{DoxyParamCaption}\item[{char $\ast$}]{symbol }\end{DoxyParamCaption})}
+
 
 
 Construit un object de type symbole contenant symbole. 
@@ -627,14 +624,12 @@ Doit contenir 256 caractère définit pas string et S\+T\+R\+L\+EN.
 \begin{DoxyReturn}{Renvoie}
 
 \end{DoxyReturn}
+\hypertarget{object_8h_a1d783570ac14dc2efa3f0565e162a6e8}{}\label{object_8h_a1d783570ac14dc2efa3f0565e162a6e8} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote@{O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote}}
 \index{O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote@{O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote(char $\ast$input, uint $\ast$here)}{OBJECT_built_short_quote(char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote (
-\begin{DoxyParamCaption}
-\item[{char $\ast$}]{input, }
-\item[{uint $\ast$}]{here}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a1d783570ac14dc2efa3f0565e162a6e8}{}\label{object_8h_a1d783570ac14dc2efa3f0565e162a6e8}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote()}{OBJECT\_built\_short\_quote()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote (\begin{DoxyParamCaption}\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
+
 
 
 Construit le début de pair pour quote sous forme \textquotesingle{}. 
@@ -644,14 +639,12 @@ Lorsque que l\textquotesingle{}on a \textquotesingle{}(objects) cette fonction c
 \begin{DoxyReturn}{Renvoie}
 Renvoie une forme quote. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a8467e456f150c3514808c26c6864497d}{}\label{object_8h_a8467e456f150c3514808c26c6864497d} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool(object a, object b)}{OBJECT_cmp_bool(object a, object b)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{a, }
-\item[{{\bf object}}]{b}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a8467e456f150c3514808c26c6864497d}{}\label{object_8h_a8467e456f150c3514808c26c6864497d}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool()}{OBJECT\_cmp\_bool()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a,  }\item[{\hyperlink{structobject__t}{object}}]{b }\end{DoxyParamCaption})}
+
 
 
 Compare 2 booléens. Renvoie 0 s\textquotesingle{}ils ne sont pas booléens. 
@@ -659,14 +652,12 @@ Compare 2 booléens. Renvoie 0 s\textquotesingle{}ils ne sont pas booléens.
 \begin{DoxyReturn}{Renvoie}
 1 si les 2 booléens sont égaux, 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8h_aa8a7c4f6341e5477c8cf12d9fa4b8048}{}\label{object_8h_aa8a7c4f6341e5477c8cf12d9fa4b8048} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number(object a, object b)}{OBJECT_cmp_number(object a, object b)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{a, }
-\item[{{\bf object}}]{b}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_aa8a7c4f6341e5477c8cf12d9fa4b8048}{}\label{object_8h_aa8a7c4f6341e5477c8cf12d9fa4b8048}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number()}{OBJECT\_cmp\_number()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a,  }\item[{\hyperlink{structobject__t}{object}}]{b }\end{DoxyParamCaption})}
+
 
 
 Compare deux objets de type entier. 
@@ -674,14 +665,12 @@ Compare deux objets de type entier.
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si a et b contiennent les mêmes entiers. 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a85b5035114247cba825eafb2ef1d34c0}{}\label{object_8h_a85b5035114247cba825eafb2ef1d34c0} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb(object a, char $\ast$symbol)}{OBJECT_cmp_symb(object a, char *symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{a, }
-\item[{char $\ast$}]{symbol}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a85b5035114247cba825eafb2ef1d34c0}{}\label{object_8h_a85b5035114247cba825eafb2ef1d34c0}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb()}{OBJECT\_cmp\_symb()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a,  }\item[{char $\ast$}]{symbol }\end{DoxyParamCaption})}
+
 
 
 Compare a avec le symbol symbol. 
@@ -689,37 +678,49 @@ Compare a avec le symbol symbol.
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si égaux, O sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a5f88c49537b92e95b7d33660446ee8c7}{}\label{object_8h_a5f88c49537b92e95b7d33660446ee8c7} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+destroy@{O\+B\+J\+E\+C\+T\+\_\+destroy}}
 \index{O\+B\+J\+E\+C\+T\+\_\+destroy@{O\+B\+J\+E\+C\+T\+\_\+destroy}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+destroy(object $\ast$o)}{OBJECT_destroy(object *o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+destroy (
-\begin{DoxyParamCaption}
-\item[{{\bf object} $\ast$}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a5f88c49537b92e95b7d33660446ee8c7}{}\label{object_8h_a5f88c49537b92e95b7d33660446ee8c7}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+destroy()}{OBJECT\_destroy()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object} $\ast$}]{o }\end{DoxyParamCaption})}
+
 
 
 Supprime un objet. 
 
 Supprime tous les éléments d\textquotesingle{}un objet si c\textquotesingle{}est une paire, de même pour un environnement. ~\newline
-Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l\textquotesingle{}instant c\textquotesingle{}est un free classique. Voir le pb sur les booléens aussi. \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair}}
+Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l\textquotesingle{}instant c\textquotesingle{}est un free classique. Voir le pb sur les booléens aussi. \hypertarget{object_8h_ad1356f35f47fdbb828bc06a5884d74ed}{}\label{object_8h_ad1356f35f47fdbb828bc06a5884d74ed} 
+\index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair}}
 \index{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair(object $\ast$o)}{OBJECT_destroy_pair(object *o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair (
-\begin{DoxyParamCaption}
-\item[{{\bf object} $\ast$}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_ad1356f35f47fdbb828bc06a5884d74ed}{}\label{object_8h_ad1356f35f47fdbb828bc06a5884d74ed}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair()}{OBJECT\_destroy\_pair()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object} $\ast$}]{o }\end{DoxyParamCaption})}
+
 
 
 Supprime une paire. Fonction récursive. 
 
-Pas de controle sur o pour savoir si c\textquotesingle{}est bien une paire. Fonction appelée par O\+B\+J\+E\+C\+T\+\_\+destroy. N\textquotesingle{}utiliser que O\+B\+J\+E\+C\+T\+\_\+destroy pas celle-\/ci, elle n\textquotesingle{}est utile qu\textquotesingle{}à l\textquotesingle{}implémentation du destructeur général. \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr@{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr}}
+Pas de controle sur o pour savoir si c\textquotesingle{}est bien une paire. Fonction appelée par O\+B\+J\+E\+C\+T\+\_\+destroy. N\textquotesingle{}utiliser que O\+B\+J\+E\+C\+T\+\_\+destroy pas celle-\/ci, elle n\textquotesingle{}est utile qu\textquotesingle{}à l\textquotesingle{}implémentation du destructeur général. \hypertarget{object_8h_a2edee12884f9288a6d9f1056f1ecc492}{}\label{object_8h_a2edee12884f9288a6d9f1056f1ecc492} 
+\index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+div@{O\+B\+J\+E\+C\+T\+\_\+div}}
+\index{O\+B\+J\+E\+C\+T\+\_\+div@{O\+B\+J\+E\+C\+T\+\_\+div}!object.\+h@{object.\+h}}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+div()}{OBJECT\_div()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+div (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
+
+
+Calcule la division de a par b. 
+
+\begin{DoxySeeAlso}{Voir également}
+O\+B\+J\+E\+C\+T\+\_\+sum();
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie result mis à jour. Nil si erreur. 
+\end{DoxyReturn}
+\hypertarget{object_8h_a486b361de0c6c18f7227158b12dbfd4a}{}\label{object_8h_a486b361de0c6c18f7227158b12dbfd4a} 
+\index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr@{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr}}
 \index{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr@{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr(object o, char $\ast$place)}{OBJECT_get_cxr(object o, char *place)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{char $\ast$}]{place}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a486b361de0c6c18f7227158b12dbfd4a}{}\label{object_8h_a486b361de0c6c18f7227158b12dbfd4a}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr()}{OBJECT\_get\_cxr()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{place }\end{DoxyParamCaption})}
+
 
 
 Renvoie de l\textquotesingle{}élement de la pair correspondant à la chaine. 
@@ -729,13 +730,12 @@ Renvoie l\textquotesingle{}élément car si la chaine \char`\"{}car\char`\"{} es
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}objet lu correspondant à la chaine. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a0d7084a07b321423f9cd922529fd8ed8}{}\label{object_8h_a0d7084a07b321423f9cd922529fd8ed8} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+isempty@{O\+B\+J\+E\+C\+T\+\_\+isempty}}
 \index{O\+B\+J\+E\+C\+T\+\_\+isempty@{O\+B\+J\+E\+C\+T\+\_\+isempty}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+isempty(object o)}{OBJECT_isempty(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+isempty (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a0d7084a07b321423f9cd922529fd8ed8}{}\label{object_8h_a0d7084a07b321423f9cd922529fd8ed8}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+isempty()}{OBJECT\_isempty()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+isempty (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Vérifie si un objet est vide (égal à N\+U\+LL) 
@@ -743,70 +743,77 @@ Vérifie si un objet est vide (égal à N\+U\+LL)
 \begin{DoxyReturn}{Renvoie}
 Vrai si vide, faux sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8h_ab49b1649bad38a97c44b7713731cea48}{}\label{object_8h_ab49b1649bad38a97c44b7713731cea48} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+is\+Equal@{O\+B\+J\+E\+C\+T\+\_\+is\+Equal}}
 \index{O\+B\+J\+E\+C\+T\+\_\+is\+Equal@{O\+B\+J\+E\+C\+T\+\_\+is\+Equal}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+is\+Equal(object a, object b)}{OBJECT_isEqual(object a, object b)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+is\+Equal (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{a, }
-\item[{{\bf object}}]{b}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_ab49b1649bad38a97c44b7713731cea48}{}\label{object_8h_ab49b1649bad38a97c44b7713731cea48}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+is\+Equal()}{OBJECT\_isEqual()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+is\+Equal (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a,  }\item[{\hyperlink{structobject__t}{object}}]{b }\end{DoxyParamCaption})}
+
 
 
 Compare deux object Renvoie 1 s\textquotesingle{}ils sont égaux 0 sinon. 
 
-Deux objets sont considérés comme égaux s\textquotesingle{}ils ont le même type et la même valeur. C\+O\+M\+P\+A\+R\+A\+I\+S\+ON DE P\+A\+I\+RE N\+ON I\+M\+P\+L\+E\+M\+E\+N\+T\+EE.
+Deux objets sont considérés comme égaux s\textquotesingle{}ils ont le même type et la même valeur.
 
 \begin{DoxyReturn}{Renvoie}
 1 si a==b, 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8h_af66fca655ad9b5fafc4540f7dfc97127}{}\label{object_8h_af66fca655ad9b5fafc4540f7dfc97127} 
+\index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+mul@{O\+B\+J\+E\+C\+T\+\_\+mul}}
+\index{O\+B\+J\+E\+C\+T\+\_\+mul@{O\+B\+J\+E\+C\+T\+\_\+mul}!object.\+h@{object.\+h}}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+mul()}{OBJECT\_mul()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+mul (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
+
+
+Calcul le produit de 2 objects a par b. 
+
+A priori, le produit ne pose pas d\textquotesingle{}impossibilité de calcul, que ce soit un nombre ou un infini on peut toujours calculer le produit et trouver un résultat.
+
+\begin{DoxySeeAlso}{Voir également}
+O\+B\+J\+E\+C\+T\+\_\+sum(const object a, const object b, object result)
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie le result mis à jour si produit possible, nil sinon. 
+\end{DoxyReturn}
+\hypertarget{object_8h_a64f2fee85ada6041d0c74a250c419686}{}\label{object_8h_a64f2fee85ada6041d0c74a250c419686} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+rewrite@{O\+B\+J\+E\+C\+T\+\_\+rewrite}}
 \index{O\+B\+J\+E\+C\+T\+\_\+rewrite@{O\+B\+J\+E\+C\+T\+\_\+rewrite}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+rewrite(object changed, object nouveau)}{OBJECT_rewrite(object changed, object nouveau)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+rewrite (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{changed, }
-\item[{{\bf object}}]{nouveau}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a64f2fee85ada6041d0c74a250c419686}{}\label{object_8h_a64f2fee85ada6041d0c74a250c419686}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+rewrite()}{OBJECT\_rewrite()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+rewrite (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{changed,  }\item[{\hyperlink{structobject__t}{object}}]{nouveau }\end{DoxyParamCaption})}
+
 
 
 Réécris avec la valeur de nouveau. 
 
 Attention si changed est de type S\+F\+S\+\_\+\+N\+IL, un nouvel objet est renvoyé. \begin{DoxyRefDesc}{Bogue}
 \item[\hyperlink{bug__bug000001}{Bogue}]Incomplète\end{DoxyRefDesc}
+\hypertarget{object_8h_a8ccb3f30397a60a9d663f43c4dc28514}{}\label{object_8h_a8ccb3f30397a60a9d663f43c4dc28514} 
 \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car}}
 \index{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car(object o, object car)}{OBJECT_set_car(object o, object car)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{car}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a8ccb3f30397a60a9d663f43c4dc28514}{}\label{object_8h_a8ccb3f30397a60a9d663f43c4dc28514}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car()}{OBJECT\_set\_car()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{car }\end{DoxyParamCaption})}
+
 
 
 Met à jour le car de o avec l\textquotesingle{}objet car. 
 
-Si car est N\+U\+LL place la variable globale nil. \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr}}
+Si car est N\+U\+LL place la variable globale nil. \hypertarget{object_8h_a4d4c460873067cf00d877f60cdd285ec}{}\label{object_8h_a4d4c460873067cf00d877f60cdd285ec} 
+\index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr}}
 \index{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr(object o, object cdr)}{OBJECT_set_cdr(object o, object cdr)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{cdr}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a4d4c460873067cf00d877f60cdd285ec}{}\label{object_8h_a4d4c460873067cf00d877f60cdd285ec}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr()}{OBJECT\_set\_cdr()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{cdr }\end{DoxyParamCaption})}
+
 
 
 Met à jour le cdr de o avec l\textquotesingle{}object cdr. 
 
-Si cdr est a N\+U\+LL place la variable globale nil. \index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr}}
+Si cdr est a N\+U\+LL place la variable globale nil. \hypertarget{object_8h_a421310d9e2d05d70789086bd9418656c}{}\label{object_8h_a421310d9e2d05d70789086bd9418656c} 
+\index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr}}
 \index{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr(object o, object val, char $\ast$place)}{OBJECT_set_cxr(object o, object val, char *place)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{val, }
-\item[{char $\ast$}]{place}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a421310d9e2d05d70789086bd9418656c}{}\label{object_8h_a421310d9e2d05d70789086bd9418656c}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr()}{OBJECT\_set\_cxr()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{val,  }\item[{char $\ast$}]{place }\end{DoxyParamCaption})}
+
 
 
 Modifie l\textquotesingle{}emplacement donné et y met la variable val. 
@@ -821,14 +828,28 @@ Cette fonction libère l\textquotesingle{}ancienne valeur. L\textquotesingle{}ob
 \begin{DoxyReturn}{Renvoie}
 
 \end{DoxyReturn}
+\hypertarget{object_8h_a600f7cb500116ca30a31e9ae9c39a469}{}\label{object_8h_a600f7cb500116ca30a31e9ae9c39a469} 
+\index{object.\+h@{object.\+h}!O\+B\+J\+E\+C\+T\+\_\+sub@{O\+B\+J\+E\+C\+T\+\_\+sub}}
+\index{O\+B\+J\+E\+C\+T\+\_\+sub@{O\+B\+J\+E\+C\+T\+\_\+sub}!object.\+h@{object.\+h}}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+sub()}{OBJECT\_sub()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+sub (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
+
+
+Soustraction de 2 object. Le résultat est mis dans résult. 
+
+Fonctionnement similaire à O\+B\+J\+E\+C\+T\+\_\+add. \begin{DoxySeeAlso}{Voir également}
+\hyperlink{object_8c_a79151b36db8756df298be886a88dde6a}{O\+B\+J\+E\+C\+T\+\_\+add}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie result mis à jour si opération possible, nil sinon. 
+\end{DoxyReturn}
+\hypertarget{object_8h_ae40aea5d87d9c145bfe576adb9a93f10}{}\label{object_8h_ae40aea5d87d9c145bfe576adb9a93f10} 
 \index{object.\+h@{object.\+h}!string\+\_\+cmp@{string\+\_\+cmp}}
 \index{string\+\_\+cmp@{string\+\_\+cmp}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{string\+\_\+cmp(char $\ast$a, char $\ast$b)}{string_cmp(char *a, char *b)}}]{\setlength{\rightskip}{0pt plus 5cm}int string\+\_\+cmp (
-\begin{DoxyParamCaption}
-\item[{char $\ast$}]{a, }
-\item[{char $\ast$}]{b}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_ae40aea5d87d9c145bfe576adb9a93f10}{}\label{object_8h_ae40aea5d87d9c145bfe576adb9a93f10}
+\subsubsection{\texorpdfstring{string\+\_\+cmp()}{string\_cmp()}}
+{\footnotesize\ttfamily int string\+\_\+cmp (\begin{DoxyParamCaption}\item[{char $\ast$}]{a,  }\item[{char $\ast$}]{b }\end{DoxyParamCaption})}
+
 
 
 Compare chaine a et b. Renvoie 1 si égale 0 sinon. 
@@ -838,14 +859,12 @@ Si les chaines n\textquotesingle{}ont pas la même longueur renvoie 0. Compare l
 \begin{DoxyReturn}{Renvoie}
 1 si chaine égales, 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8h_a8db21bf1c03bc99e813b38a77ff8792e}{}\label{object_8h_a8db21bf1c03bc99e813b38a77ff8792e} 
 \index{object.\+h@{object.\+h}!wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char@{wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char}}
 \index{wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char@{wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char(char $\ast$s1, uint $\ast$s1\+\_\+cursor)}{wait_first_non_blank_char(char *s1, uint *s1_cursor)}}]{\setlength{\rightskip}{0pt plus 5cm}int wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char (
-\begin{DoxyParamCaption}
-\item[{char $\ast$}]{s1, }
-\item[{uint $\ast$}]{s1\+\_\+cursor}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a8db21bf1c03bc99e813b38a77ff8792e}{}\label{object_8h_a8db21bf1c03bc99e813b38a77ff8792e}
+\subsubsection{\texorpdfstring{wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char()}{wait\_first\_non\_blank\_char()}}
+{\footnotesize\ttfamily int wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char (\begin{DoxyParamCaption}\item[{char $\ast$}]{s1,  }\item[{uint $\ast$}]{s1\+\_\+cursor }\end{DoxyParamCaption})}
+
 
 
 incrémente le curseur tant qu\textquotesingle{}il y indique un espace dans la chaine 

@@ -734,7 +734,15 @@ object OBJECT_div(const object a, const object b, object result)
 	return(result);
 }
 
-
+/** @fn object OBJECT_modulo(const object a, const object b, object result)
+ * @brief Calcule a%b.
+ *
+ * Fonctionnement similaire à OBJECT_sum.
+ * @sa OBJECT_sum()
+ *
+ * @return Renvoie le résultat.
+ */
+object OBJECT_modulo(const object a, const object b, object result);
 
 /** @fn  void check_alloc(void* ptr, char* message)
  * @brief Vérifie une allocation dynamique.

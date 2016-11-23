@@ -3,17 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
-<title>Livrable3 Informatique Phelma SICOM: Référence du fichier src/repl.c</title>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Livrable1 Informatique Phelma SICOM: Référence du fichier src/repl.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Livrable3 Informatique Phelma SICOM
+   <div id="projectname">Livrable1 Informatique Phelma SICOM
    </div>
    <div id="projectbrief">Interpréteur Scheme</div>
   </td>
@@ -32,40 +30,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.11 -->
+<!-- Généré par Doxygen 1.8.12 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
-      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
-      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -113,43 +90,43 @@ Graphe des dépendances par inclusion de repl.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Énumérations</h2></td></tr>
-<tr class="memitem:a5950dde77323ac42d3e96193656e4514"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5950dde77323ac42d3e96193656e4514"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>inter_mode</b> { <b>INTERACTIF</b>, 
+<tr class="memitem:a5950dde77323ac42d3e96193656e4514"><td class="memItemLeft" align="right" valign="top"><a id="a5950dde77323ac42d3e96193656e4514"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>inter_mode</b> { <b>INTERACTIF</b>, 
 <b>SCRIPT</b>
  }</td></tr>
 <tr class="separator:a5950dde77323ac42d3e96193656e4514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a4c6b444cc6a6c7911f55ae1745312033"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c6b444cc6a6c7911f55ae1745312033"></a>
+<tr class="memitem:a4c6b444cc6a6c7911f55ae1745312033"><td class="memItemLeft" align="right" valign="top"><a id="a4c6b444cc6a6c7911f55ae1745312033"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="repl_8c.html#a4c6b444cc6a6c7911f55ae1745312033">usage_error</a> (char *command)</td></tr>
 <tr class="memdesc:a4c6b444cc6a6c7911f55ae1745312033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un message d'erreur si la fonction est mal utilisée en ligne de commande. <br /></td></tr>
 <tr class="separator:a4c6b444cc6a6c7911f55ae1745312033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7892fa748bffcd6854f8b7adeb40ba0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="repl_8c.html#ac7892fa748bffcd6854f8b7adeb40ba0">init_interpreter</a> (void)</td></tr>
 <tr class="memdesc:ac7892fa748bffcd6854f8b7adeb40ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise les variables globales de l'interpréteur.  <a href="#ac7892fa748bffcd6854f8b7adeb40ba0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac7892fa748bffcd6854f8b7adeb40ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a66e8aad941d446bb2fd11968edcfe8f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a66e8aad941d446bb2fd11968edcfe8f0"></a>
+<tr class="memitem:a66e8aad941d446bb2fd11968edcfe8f0"><td class="memItemLeft" align="right" valign="top"><a id="a66e8aad941d446bb2fd11968edcfe8f0"></a>
 <a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="repl_8c.html#a66e8aad941d446bb2fd11968edcfe8f0">nil</a></td></tr>
 <tr class="memdesc:a66e8aad941d446bb2fd11968edcfe8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Représente la fin d'une liste ou la liste vide. <br /></td></tr>
 <tr class="separator:a66e8aad941d446bb2fd11968edcfe8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0bbf8a55978ced29692b45921af4bc4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0bbf8a55978ced29692b45921af4bc4"></a>
+<tr class="memitem:ad0bbf8a55978ced29692b45921af4bc4"><td class="memItemLeft" align="right" valign="top"><a id="ad0bbf8a55978ced29692b45921af4bc4"></a>
 <a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="repl_8c.html#ad0bbf8a55978ced29692b45921af4bc4">vrai</a></td></tr>
 <tr class="memdesc:ad0bbf8a55978ced29692b45921af4bc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Représente booléen TRUE. <br /></td></tr>
 <tr class="separator:ad0bbf8a55978ced29692b45921af4bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7cbb88f06ae33db856de331a8395465"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7cbb88f06ae33db856de331a8395465"></a>
+<tr class="memitem:aa7cbb88f06ae33db856de331a8395465"><td class="memItemLeft" align="right" valign="top"><a id="aa7cbb88f06ae33db856de331a8395465"></a>
 <a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="repl_8c.html#aa7cbb88f06ae33db856de331a8395465">faux</a></td></tr>
 <tr class="memdesc:aa7cbb88f06ae33db856de331a8395465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Représente booléen faux. <br /></td></tr>
 <tr class="separator:aa7cbb88f06ae33db856de331a8395465"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a062b7366fcc9f920dbb8475d815e0bfc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a062b7366fcc9f920dbb8475d815e0bfc"></a>
+<tr class="memitem:a062b7366fcc9f920dbb8475d815e0bfc"><td class="memItemLeft" align="right" valign="top"><a id="a062b7366fcc9f920dbb8475d815e0bfc"></a>
 <a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="repl_8c.html#a062b7366fcc9f920dbb8475d815e0bfc">env</a></td></tr>
 <tr class="memdesc:a062b7366fcc9f920dbb8475d815e0bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Représente l'environnement courant. <br /></td></tr>
 <tr class="separator:a062b7366fcc9f920dbb8475d815e0bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbb046e7b56d659f37775ae86077abd5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbb046e7b56d659f37775ae86077abd5"></a>
+<tr class="memitem:afbb046e7b56d659f37775ae86077abd5"><td class="memItemLeft" align="right" valign="top"><a id="afbb046e7b56d659f37775ae86077abd5"></a>
 <a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="repl_8c.html#afbb046e7b56d659f37775ae86077abd5">form</a> [<a class="el" href="object_8h.html#aacf24b05297ae7bbff3af215ec3259ff">NB_FORM</a>]</td></tr>
 <tr class="memdesc:afbb046e7b56d659f37775ae86077abd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Décrit l'ensemble des formes du langage. <br /></td></tr>
 <tr class="separator:afbb046e7b56d659f37775ae86077abd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,7 +150,9 @@ Rimbaud Sébastien. </dd></dl>
 </ul>
 </dd></dl>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a class="anchor" id="ac7892fa748bffcd6854f8b7adeb40ba0"></a>
+<a id="ac7892fa748bffcd6854f8b7adeb40ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7892fa748bffcd6854f8b7adeb40ba0">&sect;&nbsp;</a></span>init_interpreter()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -203,7 +182,7 @@ Rimbaud Sébastien. </dd></dl>
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+</a> 1.8.12
 </small></address>
 </body>
 </html>

@@ -42,10 +42,13 @@ void NUM_print( num printed)
  * En pratique v est casté selon le mode précisé. La fonction ne garanti
  * pas de bon fonctionnement si v n'est pas castable dans le mode voulu.11
  * Si v_ptr est NULL la valeur par défaut sera 0.
+ * Pour les entiers la fonction gère l'overflow et construit un 
+ * +inf ou -inf selon le débordement. Pour que cela fonctionne
+ * *v_ptr doit prendre les valeurs LONG_MAX ou LONG_MIN.
  *
  * Si le mode n'est pas une constante implémentée dans la fonction :
  *
- * - NUM_REAL    	(Not implemented) 
+ * - NUM_REAL    	 
  * - NUM_INTEGER  
  * - NUM_UINTEGER	(Not implemented) 
  * - NUM_COMPLEX  	(Not implemented)
@@ -68,7 +71,16 @@ num* NUM_build(num* a, void* v_ptr, int mode)
 	{
 		case NUM_INTEGER :
 			a->numtype= NUM_INTEGER;
-			a->this.integer = e;
+			/* Gestion de l'overflow*/
+			if(e == LONG_MAX) /* +inf */
+			{
+				a->numtype = NUM_PINFTY;
+			}
+			else if(e == LONG_MIN)
+			{
+				a->numtype = NUM_MINFTY;
+			}
+			else a->this.integer = e;
 			break;
 		case NUM_REAL :
 			a->numtype = NUM_REAL;
@@ -508,11 +520,8 @@ num NUM_mul(num a, num b, int* flag )
 /** @fn num NUM_div(num a, num b, int* flag)
  * @brief Calcule a/b.
  *
- *
- *
  * @return Renvoie le résultat du calcul.
  */
-
 num NUM_div(num a, num b, int* flag)
 {
 	/* On vérifie que le flag existe */
@@ -609,6 +618,34 @@ num NUM_div(num a, num b, int* flag)
 		if(existing_flag) *flag = 1 ;
 		return(a);
 	}
+}
+
+/** @fn num NUM_modulo(num a, num b, int* flag)
+ * @brief Calcule a%b.
+ *
+ * Renvoie le reste de la division euclidienne de a par b.
+ * Les num doivent être entier si ce n'est pas le cas le
+ * flag passe a 1.
+ *
+ * @return Renvoie un num résultat.
+ */
+num NUM_modulo(num a, num b, int* flag)
+{
+	int existing_flag = 0;
+	if(flag) existing_flag = 1;
+	if(!NUM_cmp_type(a, b)) 
+	{
+		if(existing_flag) *flag = 1;
+		return a ;
+	}
+	if(a.numtype != NUM_INTEGER)
+	{
+		if(existing_flag) *flag = 1;
+		return(a);
+	}
+
+	a.this.integer = a.this.integer % b.this.integer ;
+	return(a);
 }
 
 
