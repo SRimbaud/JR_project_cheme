@@ -738,11 +738,33 @@ object OBJECT_div(const object a, const object b, object result)
  * @brief Calcule a%b.
  *
  * Fonctionnement similaire à OBJECT_sum.
- * @sa OBJECT_sum()
+ * @sa OBJECT_add()
  *
  * @return Renvoie le résultat.
  */
-object OBJECT_modulo(const object a, const object b, object result);
+object OBJECT_modulo(const object a, const object b, object result)
+{
+	if(check_type(a, SFS_NIL) || check_type(b, SFS_NIL)) 
+	{
+		DEBUG_MSG("Remainder on nil, nil returned");
+		return(nil);
+	}
+	if(!check_type(a, SFS_NUMBER) || !check_type(b, SFS_NUMBER))
+	{
+		WARNING_MSG("Remainder on not Number type");
+		return (nil);
+	}
+	int flag = 0;
+	result->type = SFS_NUMBER;
+	result->this.number = NUM_modulo(a->this.number, b->this.number, &flag);
+	if(flag) 
+	{
+		WARNING_MSG(" remainder : Should apply on integer");
+		return(nil);
+	}
+	return(result);
+}
+
 
 /** @fn  void check_alloc(void* ptr, char* message)
  * @brief Vérifie une allocation dynamique.

@@ -18,6 +18,8 @@ void init_primitive()
 	PRIM_make("-" ,  PRIM_soustrait);
 	PRIM_make("/" ,  PRIM_divise);
 	PRIM_make("*" ,  PRIM_multiplie);
+	PRIM_make("remainder", PRIM_remainder);
+	PRIM_make("quotient", PRIM_quotient);
 	PRIM_make("null?", PRIM_is_null);
 	PRIM_make("boolean?", PRIM_is_boolean);
 	PRIM_make("symbol?", PRIM_is_symbol);
@@ -117,7 +119,7 @@ int PRIM_check_number_arg(object args, int number)
 {
 	object i = args;
 	int j =0 ;
-	for(i = args, j = 0; !OBJECT_isempty(i), check_type(i, SFS_PAIR);
+	for(i = args, j = 0; !OBJECT_isempty(i) && check_type(i, SFS_PAIR);
 			i=i->this.pair.cdr, j++)
 	{}
 	if(number == j) return(1);
@@ -399,7 +401,47 @@ object PRIM_divise(object a)
 	return(result);
 }
 
-object PRIM_quotient(object a);
+/** @fn object PRIM_quotient(object a)
+ * @brief Effectue la division des arguments de a.
+ *
+ * Les arguments doivent être entier.
+ * Calcule le quotient d'entier uniquement en faisant
+ * appel à OBJECT_div.
+ *
+ * @sa PRIM_divise.
+ *
+ * @return Renvoie l'object résultat.
+ */
+object PRIM_quotient(object a)
+{
+	/* On se content d'effectuer une division sur des 
+	 * entiers on va donc se contenter de vérifier
+	 * que les nombre sont bien des entiers.
+	 */
+{
+	if(a == nil) return(a);
+	object result = OBJECT_build_cpy(a->this.pair.car) ;
+	object terme = a ;
+	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
+			terme = terme->this.pair.cdr)
+	{
+		/* On test si c'est un entier */
+		if(terme->this.pair.car->this.number.numtype != NUM_INTEGER)
+		{
+			WARNING_MSG("quotient : Non integer type");
+			return(nil);
+		}
+		result = OBJECT_div(result, terme->this.pair.car, result);
+		if(result == nil || OBJECT_isempty(result) )
+		{
+			/* Cas ou la somme fail */
+			return(nil);
+		}
+		
+	}	
+	return(result);
+}
+}
 /** @fn object PRIM_remainder(object a)
  * @brief Calcul le reste de la division euclidienne
  * des objets de a.
@@ -416,7 +458,7 @@ object PRIM_remainder(object a)
 	if(a == nil) return(a);
 	object result = OBJECT_build_cpy(a->this.pair.car) ;
 	object terme = a ;
-	if(a->this.number.numtype != NUM_INTEGER)
+	if(a->this.pair.car->this.number.numtype != NUM_INTEGER)
 	{
 		WARNING_MSG("remainder : Args should be integer");
 		return (NULL);
@@ -424,7 +466,7 @@ object PRIM_remainder(object a)
 	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
 			terme = terme->this.pair.cdr)
 	{
-		result = OBJECT_div(result, terme->this.pair.car, result);
+		result = OBJECT_modulo(result, terme->this.pair.car, result);
 		if(result == nil || OBJECT_isempty(result) )
 		{
 			/* Cas ou la somme fail */
