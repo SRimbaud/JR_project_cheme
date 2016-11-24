@@ -5,20 +5,20 @@
 Read routine for S\+FS.  
 
 
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$ctype.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}read.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}read.\+h\char`\"{}}\\*
 Graphe des dépendances par inclusion de read.\+c\+:
 % FIG 0
 \subsection*{Énumérations}
 \begin{DoxyCompactItemize}
 \item 
-enum \hyperlink{read_8c_a794da11e5e95baea1892357a25b44336}{E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+Y\+P\+E\+\_\+T} \{ \newline
+enum \hyperlink{read_8c_a794da11e5e95baea1892357a25b44336}{E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+Y\+P\+E\+\_\+T} \{ \\*
 \hyperlink{read_8c_a794da11e5e95baea1892357a25b44336acfe24a7b308a82835c8a9a9a89bc4ca2}{N\+O\+T\+H\+I\+NG}, 
 \hyperlink{read_8c_a794da11e5e95baea1892357a25b44336a3789e89d60fe0d18548ebc6d3080e20f}{S\+T\+R\+I\+N\+G\+\_\+\+A\+T\+O\+ME}, 
 \hyperlink{read_8c_a794da11e5e95baea1892357a25b44336a26a9892b61e0aa5a24c1c1c7d57ebaab}{B\+A\+S\+I\+C\+\_\+\+A\+T\+O\+ME}, 
 \hyperlink{read_8c_a794da11e5e95baea1892357a25b44336a52eaf1b8684255efd41eadf2e613cf28}{S\+\_\+\+E\+X\+P\+R\+\_\+\+P\+A\+R\+E\+N\+T\+H\+E\+S\+IS}, 
-\newline
+\\*
 \hyperlink{read_8c_a794da11e5e95baea1892357a25b44336adbd1812bee789fbf3548cf79d3f2b400}{F\+I\+N\+I\+S\+H\+ED}
  \}
 \end{DoxyCompactItemize}
@@ -27,8 +27,8 @@ enum \hyperlink{read_8c_a794da11e5e95baea1892357a25b44336}{E\+X\+P\+R\+E\+S\+S\+
 \item 
 void \hyperlink{read_8c_a2944755a32d2f89b5585df862eaa4980}{flip} (uint $\ast$i)
 \begin{DoxyCompactList}\small\item\em Prend la négation de i. Equivalent à une porte non. \end{DoxyCompactList}\item 
-\hypertarget{read_8c_a5f436bcd6cba7ebae92b4278d43cf7d9}{}\label{read_8c_a5f436bcd6cba7ebae92b4278d43cf7d9} 
-char $\ast$ \hyperlink{read_8c_a5f436bcd6cba7ebae92b4278d43cf7d9}{first\+\_\+usefull\+\_\+char} (char $\ast$line)
+char $\ast$ \hyperlink{read_8c_a5f436bcd6cba7ebae92b4278d43cf7d9}{first\+\_\+usefull\+\_\+char} (char $\ast$line)\hypertarget{read_8c_a5f436bcd6cba7ebae92b4278d43cf7d9}{}\label{read_8c_a5f436bcd6cba7ebae92b4278d43cf7d9}
+
 \begin{DoxyCompactList}\small\item\em retourne un pointeur sur le premier caractere utile dans line ou N\+U\+LL si line ne contient que des espaces et des commentaires \end{DoxyCompactList}\item 
 uint \hyperlink{read_8c_a46cec1fd91fe64ce3df1940755ea173e}{sfs\+\_\+get\+\_\+sexpr} (char $\ast$input, F\+I\+LE $\ast$fp)
 \begin{DoxyCompactList}\small\item\em extrait la prochaine S-\/\+Expression dans le flux fp et la stocke dans input (meme si elle est repartie sur plusieurs lignes) \end{DoxyCompactList}\item 
@@ -66,43 +66,34 @@ Fri Jun 15 18\+:31\+:05 2012 Read routine for S\+FS.
 
 
 \subsection{Documentation du type de l\textquotesingle{}énumération}
-\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336}{}\label{read_8c_a794da11e5e95baea1892357a25b44336} 
 \index{read.\+c@{read.\+c}!E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+Y\+P\+E\+\_\+T@{E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+Y\+P\+E\+\_\+T}}
 \index{E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+Y\+P\+E\+\_\+T@{E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+Y\+P\+E\+\_\+T}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+Y\+P\+E\+\_\+T}{EXPRESSION\_TYPE\_T}}
-{\footnotesize\ttfamily enum \hyperlink{read_8c_a794da11e5e95baea1892357a25b44336}{E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+Y\+P\+E\+\_\+T}}
-
-\begin{DoxyEnumFields}{Valeurs énumérées}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+T\+H\+I\+NG@{N\+O\+T\+H\+I\+NG}!read.\+c@{read.\+c}}\index{read.\+c@{read.\+c}!N\+O\+T\+H\+I\+NG@{N\+O\+T\+H\+I\+NG}}}\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336acfe24a7b308a82835c8a9a9a89bc4ca2}{}\label{read_8c_a794da11e5e95baea1892357a25b44336acfe24a7b308a82835c8a9a9a89bc4ca2} 
-N\+O\+T\+H\+I\+NG&rien n\textquotesingle{}a ete trouve encore.. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+R\+I\+N\+G\+\_\+\+A\+T\+O\+ME@{S\+T\+R\+I\+N\+G\+\_\+\+A\+T\+O\+ME}!read.\+c@{read.\+c}}\index{read.\+c@{read.\+c}!S\+T\+R\+I\+N\+G\+\_\+\+A\+T\+O\+ME@{S\+T\+R\+I\+N\+G\+\_\+\+A\+T\+O\+ME}}}\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336a3789e89d60fe0d18548ebc6d3080e20f}{}\label{read_8c_a794da11e5e95baea1892357a25b44336a3789e89d60fe0d18548ebc6d3080e20f} 
-S\+T\+R\+I\+N\+G\+\_\+\+A\+T\+O\+ME&la premiere trouvee dans la ligne semble etre un atome \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+A\+S\+I\+C\+\_\+\+A\+T\+O\+ME@{B\+A\+S\+I\+C\+\_\+\+A\+T\+O\+ME}!read.\+c@{read.\+c}}\index{read.\+c@{read.\+c}!B\+A\+S\+I\+C\+\_\+\+A\+T\+O\+ME@{B\+A\+S\+I\+C\+\_\+\+A\+T\+O\+ME}}}\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336a26a9892b61e0aa5a24c1c1c7d57ebaab}{}\label{read_8c_a794da11e5e95baea1892357a25b44336a26a9892b61e0aa5a24c1c1c7d57ebaab} 
-B\+A\+S\+I\+C\+\_\+\+A\+T\+O\+ME&la premiere trouvee dans la ligne semble etre d\textquotesingle{}une chaine \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+\_\+\+E\+X\+P\+R\+\_\+\+P\+A\+R\+E\+N\+T\+H\+E\+S\+IS@{S\+\_\+\+E\+X\+P\+R\+\_\+\+P\+A\+R\+E\+N\+T\+H\+E\+S\+IS}!read.\+c@{read.\+c}}\index{read.\+c@{read.\+c}!S\+\_\+\+E\+X\+P\+R\+\_\+\+P\+A\+R\+E\+N\+T\+H\+E\+S\+IS@{S\+\_\+\+E\+X\+P\+R\+\_\+\+P\+A\+R\+E\+N\+T\+H\+E\+S\+IS}}}\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336a52eaf1b8684255efd41eadf2e613cf28}{}\label{read_8c_a794da11e5e95baea1892357a25b44336a52eaf1b8684255efd41eadf2e613cf28} 
-S\+\_\+\+E\+X\+P\+R\+\_\+\+P\+A\+R\+E\+N\+T\+H\+E\+S\+IS&la premiere trouvee dans la ligne semble etre une expression parenthesee \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+I\+N\+I\+S\+H\+ED@{F\+I\+N\+I\+S\+H\+ED}!read.\+c@{read.\+c}}\index{read.\+c@{read.\+c}!F\+I\+N\+I\+S\+H\+ED@{F\+I\+N\+I\+S\+H\+ED}}}\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336adbd1812bee789fbf3548cf79d3f2b400}{}\label{read_8c_a794da11e5e95baea1892357a25b44336adbd1812bee789fbf3548cf79d3f2b400} 
-F\+I\+N\+I\+S\+H\+ED&on a trouve une S-\/\+Expr bien formee \\
-\hline
-
-\end{DoxyEnumFields}
+\subsubsection[{\texorpdfstring{E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+Y\+P\+E\+\_\+T}{EXPRESSION_TYPE_T}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+T\+Y\+P\+E\+\_\+T}}\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336}{}\label{read_8c_a794da11e5e95baea1892357a25b44336}
+\begin{Desc}
+\item[Valeurs énumérées]\par
+\begin{description}
+\index{N\+O\+T\+H\+I\+NG@{N\+O\+T\+H\+I\+NG}!read.\+c@{read.\+c}}\index{read.\+c@{read.\+c}!N\+O\+T\+H\+I\+NG@{N\+O\+T\+H\+I\+NG}}\item[{\em 
+N\+O\+T\+H\+I\+NG\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336acfe24a7b308a82835c8a9a9a89bc4ca2}{}\label{read_8c_a794da11e5e95baea1892357a25b44336acfe24a7b308a82835c8a9a9a89bc4ca2}
+}]rien n\textquotesingle{}a ete trouve encore.. \index{S\+T\+R\+I\+N\+G\+\_\+\+A\+T\+O\+ME@{S\+T\+R\+I\+N\+G\+\_\+\+A\+T\+O\+ME}!read.\+c@{read.\+c}}\index{read.\+c@{read.\+c}!S\+T\+R\+I\+N\+G\+\_\+\+A\+T\+O\+ME@{S\+T\+R\+I\+N\+G\+\_\+\+A\+T\+O\+ME}}\item[{\em 
+S\+T\+R\+I\+N\+G\+\_\+\+A\+T\+O\+ME\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336a3789e89d60fe0d18548ebc6d3080e20f}{}\label{read_8c_a794da11e5e95baea1892357a25b44336a3789e89d60fe0d18548ebc6d3080e20f}
+}]la premiere trouvee dans la ligne semble etre un atome \index{B\+A\+S\+I\+C\+\_\+\+A\+T\+O\+ME@{B\+A\+S\+I\+C\+\_\+\+A\+T\+O\+ME}!read.\+c@{read.\+c}}\index{read.\+c@{read.\+c}!B\+A\+S\+I\+C\+\_\+\+A\+T\+O\+ME@{B\+A\+S\+I\+C\+\_\+\+A\+T\+O\+ME}}\item[{\em 
+B\+A\+S\+I\+C\+\_\+\+A\+T\+O\+ME\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336a26a9892b61e0aa5a24c1c1c7d57ebaab}{}\label{read_8c_a794da11e5e95baea1892357a25b44336a26a9892b61e0aa5a24c1c1c7d57ebaab}
+}]la premiere trouvee dans la ligne semble etre d\textquotesingle{}une chaine \index{S\+\_\+\+E\+X\+P\+R\+\_\+\+P\+A\+R\+E\+N\+T\+H\+E\+S\+IS@{S\+\_\+\+E\+X\+P\+R\+\_\+\+P\+A\+R\+E\+N\+T\+H\+E\+S\+IS}!read.\+c@{read.\+c}}\index{read.\+c@{read.\+c}!S\+\_\+\+E\+X\+P\+R\+\_\+\+P\+A\+R\+E\+N\+T\+H\+E\+S\+IS@{S\+\_\+\+E\+X\+P\+R\+\_\+\+P\+A\+R\+E\+N\+T\+H\+E\+S\+IS}}\item[{\em 
+S\+\_\+\+E\+X\+P\+R\+\_\+\+P\+A\+R\+E\+N\+T\+H\+E\+S\+IS\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336a52eaf1b8684255efd41eadf2e613cf28}{}\label{read_8c_a794da11e5e95baea1892357a25b44336a52eaf1b8684255efd41eadf2e613cf28}
+}]la premiere trouvee dans la ligne semble etre une expression parenthesee \index{F\+I\+N\+I\+S\+H\+ED@{F\+I\+N\+I\+S\+H\+ED}!read.\+c@{read.\+c}}\index{read.\+c@{read.\+c}!F\+I\+N\+I\+S\+H\+ED@{F\+I\+N\+I\+S\+H\+ED}}\item[{\em 
+F\+I\+N\+I\+S\+H\+ED\hypertarget{read_8c_a794da11e5e95baea1892357a25b44336adbd1812bee789fbf3548cf79d3f2b400}{}\label{read_8c_a794da11e5e95baea1892357a25b44336adbd1812bee789fbf3548cf79d3f2b400}
+}]on a trouve une S-\/\+Expr bien formee \end{description}
+\end{Desc}
 
 
 \subsection{Documentation des fonctions}
-\hypertarget{read_8c_a2944755a32d2f89b5585df862eaa4980}{}\label{read_8c_a2944755a32d2f89b5585df862eaa4980} 
 \index{read.\+c@{read.\+c}!flip@{flip}}
 \index{flip@{flip}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{flip()}{flip()}}
-{\footnotesize\ttfamily void flip (\begin{DoxyParamCaption}\item[{uint $\ast$}]{i }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{flip(uint $\ast$i)}{flip(uint *i)}}]{\setlength{\rightskip}{0pt plus 5cm}void flip (
+\begin{DoxyParamCaption}
+\item[{uint $\ast$}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_a2944755a32d2f89b5585df862eaa4980}{}\label{read_8c_a2944755a32d2f89b5585df862eaa4980}
 
 
 Prend la négation de i. Equivalent à une porte non. 
@@ -110,12 +101,15 @@ Prend la négation de i. Equivalent à une porte non.
 \begin{DoxyReturn}{Renvoie}
 Retourne !i. 
 \end{DoxyReturn}
-\hypertarget{read_8c_aaa7a3fe5326b17d2e2858848680c1b44}{}\label{read_8c_aaa7a3fe5326b17d2e2858848680c1b44} 
 \index{read.\+c@{read.\+c}!O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update()}{OBJECT\_boolean\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object} $\ast$}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update(object $\ast$o, char $\ast$input, uint $\ast$here)}{OBJECT_boolean_update(object *o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object} $\ast$}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_aaa7a3fe5326b17d2e2858848680c1b44}{}\label{read_8c_aaa7a3fe5326b17d2e2858848680c1b44}
 
 
 Extrait le booléen de l\textquotesingle{}input. Déplace here au caractère suivant. 
@@ -134,12 +128,15 @@ La fonction vérifie que le booléen entré en est bien un (\#t ou \#f) autremen
 \begin{DoxyReturn}{Renvoie}
 Renvoie 0 si tout de passe bien, 1 sinon. 
 \end{DoxyReturn}
-\hypertarget{read_8c_aedd5c9ba9c7b85317ca31157893a9378}{}\label{read_8c_aedd5c9ba9c7b85317ca31157893a9378} 
 \index{read.\+c@{read.\+c}!O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update()}{OBJECT\_character\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_character_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_aedd5c9ba9c7b85317ca31157893a9378}{}\label{read_8c_aedd5c9ba9c7b85317ca31157893a9378}
 
 
 Extrait le caractère de input et l\textquotesingle{}enregistre dans object. Place here sur caractère suivant. 
@@ -156,12 +153,15 @@ Extrait le caractère de input et l\textquotesingle{}enregistre dans object. Pla
 \begin{DoxyReturn}{Renvoie}
 Renvoie 0 si tout de passe bien 1 sinon. 
 \end{DoxyReturn}
-\hypertarget{read_8c_a9cc1a614faace621e97aa57ac764ec93}{}\label{read_8c_a9cc1a614faace621e97aa57ac764ec93} 
 \index{read.\+c@{read.\+c}!O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update()}{OBJECT\_int\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_int_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_a9cc1a614faace621e97aa57ac764ec93}{}\label{read_8c_a9cc1a614faace621e97aa57ac764ec93}
 
 
 Extrait un entier de l\textquotesingle{}entrée utilisateur et créé l\textquotesingle{}objet correspondant. 
@@ -182,12 +182,15 @@ La fonction gère aussi l\textquotesingle{}overflow, si l\textquotesingle{}entie
 \begin{DoxyReturn}{Renvoie}
 Renvoie 0, 1 si l\textquotesingle{}entier entré n\textquotesingle{}en est pas un, 2 si overflow. 
 \end{DoxyReturn}
-\hypertarget{read_8c_abbe5cdc861f097aa41cb4e8ad88d53a8}{}\label{read_8c_abbe5cdc861f097aa41cb4e8ad88d53a8} 
 \index{read.\+c@{read.\+c}!O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update()}{OBJECT\_real\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_real_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_abbe5cdc861f097aa41cb4e8ad88d53a8}{}\label{read_8c_abbe5cdc861f097aa41cb4e8ad88d53a8}
 
 
 Lit un réel sur une entrée utilisateur. 
@@ -200,12 +203,15 @@ strtold
 \begin{DoxyReturn}{Renvoie}
 Renvoie 2 si overflow, 1 si entrée mauvaise, 0 sinon. 
 \end{DoxyReturn}
-\hypertarget{read_8c_ac9ebedee6be777ef6b05c9b3a651aeee}{}\label{read_8c_ac9ebedee6be777ef6b05c9b3a651aeee} 
 \index{read.\+c@{read.\+c}!O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update()}{OBJECT\_string\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_string_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_ac9ebedee6be777ef6b05c9b3a651aeee}{}\label{read_8c_ac9ebedee6be777ef6b05c9b3a651aeee}
 
 
 Extrait la chaine de input et l\textquotesingle{}enregistre dans object. 
@@ -222,12 +228,15 @@ Extrait la chaine de input et l\textquotesingle{}enregistre dans object.
 \begin{DoxyReturn}{Renvoie}
 Renvoie 0 si tout de passe bien 1 sinon. 
 \end{DoxyReturn}
-\hypertarget{read_8c_a46c4c9ac5d3fa743f8b60a812c7620f7}{}\label{read_8c_a46c4c9ac5d3fa743f8b60a812c7620f7} 
 \index{read.\+c@{read.\+c}!O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update()}{OBJECT\_symbol\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_symbol_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_a46c4c9ac5d3fa743f8b60a812c7620f7}{}\label{read_8c_a46c4c9ac5d3fa743f8b60a812c7620f7}
 
 
 Extrait un symbole de la chaine input et met à jour l\textquotesingle{}object. 
@@ -244,12 +253,14 @@ Extrait un symbole de la chaine input et met à jour l\textquotesingle{}object.
 Cette fonction vérifie que chaque caractère du symbole est bien un supporté par scheme selon la R5\+RS voir isealum pour plus de détails. Dans le cas d\textquotesingle{}une erreur passe le type à S\+F\+S\+\_\+\+U\+N\+K\+N\+O\+WN . Dans ce cas elle renvoie 1. \begin{DoxyReturn}{Renvoie}
 \+: Renvoie O si Aucun problème n\textquotesingle{}est détecté, 1 sinon. 
 \end{DoxyReturn}
-\hypertarget{read_8c_a46cec1fd91fe64ce3df1940755ea173e}{}\label{read_8c_a46cec1fd91fe64ce3df1940755ea173e} 
 \index{read.\+c@{read.\+c}!sfs\+\_\+get\+\_\+sexpr@{sfs\+\_\+get\+\_\+sexpr}}
 \index{sfs\+\_\+get\+\_\+sexpr@{sfs\+\_\+get\+\_\+sexpr}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{sfs\+\_\+get\+\_\+sexpr()}{sfs\_get\_sexpr()}}
-{\footnotesize\ttfamily uint sfs\+\_\+get\+\_\+sexpr (\begin{DoxyParamCaption}\item[{char $\ast$}]{input,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{sfs\+\_\+get\+\_\+sexpr(char $\ast$input, F\+I\+L\+E $\ast$fp)}{sfs_get_sexpr(char *input, FILE *fp)}}]{\setlength{\rightskip}{0pt plus 5cm}uint sfs\+\_\+get\+\_\+sexpr (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{input, }
+\item[{F\+I\+LE $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_a46cec1fd91fe64ce3df1940755ea173e}{}\label{read_8c_a46cec1fd91fe64ce3df1940755ea173e}
 
 
 extrait la prochaine S-\/\+Expression dans le flux fp et la stocke dans input (meme si elle est repartie sur plusieurs lignes) 
@@ -288,12 +299,14 @@ fp doit etre prealablement ouvert en lecture
 
 input doit etre prealablement alloue en memoire, de taille B\+I\+G\+S\+T\+R\+I\+NG 
 \end{DoxyPrecond}
-\hypertarget{read_8c_a5eb9a4ca33faccde4ffe139eff1909e4}{}\label{read_8c_a5eb9a4ca33faccde4ffe139eff1909e4} 
 \index{read.\+c@{read.\+c}!sfs\+\_\+read@{sfs\+\_\+read}}
 \index{sfs\+\_\+read@{sfs\+\_\+read}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{sfs\+\_\+read()}{sfs\_read()}}
-{\footnotesize\ttfamily \hyperlink{structobject__t}{object} sfs\+\_\+read (\begin{DoxyParamCaption}\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{sfs\+\_\+read(char $\ast$input, uint $\ast$here)}{sfs_read(char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} sfs\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_a5eb9a4ca33faccde4ffe139eff1909e4}{}\label{read_8c_a5eb9a4ca33faccde4ffe139eff1909e4}
 
 
 Lit une expression entrée par l\textquotesingle{}utilisateur et construit l\textquotesingle{}objet correspondant. 
@@ -308,12 +321,14 @@ Lit une expression entrée par l\textquotesingle{}utilisateur et construit l\tex
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}object correspondant à l\textquotesingle{}input 
 \end{DoxyReturn}
-\hypertarget{read_8c_a6c3a38292d0be403baa7cc3cc2747849}{}\label{read_8c_a6c3a38292d0be403baa7cc3cc2747849} 
 \index{read.\+c@{read.\+c}!sfs\+\_\+read\+\_\+atom@{sfs\+\_\+read\+\_\+atom}}
 \index{sfs\+\_\+read\+\_\+atom@{sfs\+\_\+read\+\_\+atom}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{sfs\+\_\+read\+\_\+atom()}{sfs\_read\_atom()}}
-{\footnotesize\ttfamily \hyperlink{structobject__t}{object} sfs\+\_\+read\+\_\+atom (\begin{DoxyParamCaption}\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{sfs\+\_\+read\+\_\+atom(char $\ast$input, uint $\ast$here)}{sfs_read_atom(char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} sfs\+\_\+read\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_a6c3a38292d0be403baa7cc3cc2747849}{}\label{read_8c_a6c3a38292d0be403baa7cc3cc2747849}
 
 
 Lit une entrée utilisateur et construit l\textquotesingle{}objet correspondant. 
@@ -348,12 +363,14 @@ Types reconnus \+:
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}envoie construit. 
 \end{DoxyReturn}
-\hypertarget{read_8c_a8829af52b575d435c2919af838e459bc}{}\label{read_8c_a8829af52b575d435c2919af838e459bc} 
 \index{read.\+c@{read.\+c}!sfs\+\_\+read\+\_\+pair@{sfs\+\_\+read\+\_\+pair}}
 \index{sfs\+\_\+read\+\_\+pair@{sfs\+\_\+read\+\_\+pair}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{sfs\+\_\+read\+\_\+pair()}{sfs\_read\_pair()}}
-{\footnotesize\ttfamily \hyperlink{structobject__t}{object} sfs\+\_\+read\+\_\+pair (\begin{DoxyParamCaption}\item[{char $\ast$}]{stream,  }\item[{uint $\ast$}]{i }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{sfs\+\_\+read\+\_\+pair(char $\ast$stream, uint $\ast$i)}{sfs_read_pair(char *stream, uint *i)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} sfs\+\_\+read\+\_\+pair (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{stream, }
+\item[{uint $\ast$}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_a8829af52b575d435c2919af838e459bc}{}\label{read_8c_a8829af52b575d435c2919af838e459bc}
 
 
 Construit une liste à partir d\textquotesingle{}une entrée utilisateur. Récursif. 
@@ -373,12 +390,14 @@ Fonction récursive. Les conditions sont une parenthèse fermante ou une fin de 
 \begin{DoxyReturn}{Renvoie}
 \+: Renvoie un object qui correspond à la liste construite. 
 \end{DoxyReturn}
-\hypertarget{read_8c_ab21f6839688301ccb9e157c5f16c58b3}{}\label{read_8c_ab21f6839688301ccb9e157c5f16c58b3} 
 \index{read.\+c@{read.\+c}!sfs\+\_\+type\+\_\+atom@{sfs\+\_\+type\+\_\+atom}}
 \index{sfs\+\_\+type\+\_\+atom@{sfs\+\_\+type\+\_\+atom}!read.\+c@{read.\+c}}
-\subsubsection{\texorpdfstring{sfs\+\_\+type\+\_\+atom()}{sfs\_type\_atom()}}
-{\footnotesize\ttfamily int sfs\+\_\+type\+\_\+atom (\begin{DoxyParamCaption}\item[{char $\ast$}]{chaine,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{sfs\+\_\+type\+\_\+atom(char $\ast$chaine, uint $\ast$here)}{sfs_type_atom(char *chaine, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int sfs\+\_\+type\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{chaine, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8c_ab21f6839688301ccb9e157c5f16c58b3}{}\label{read_8c_ab21f6839688301ccb9e157c5f16c58b3}
 
 
 détermine le type d\textquotesingle{}un atome et le renvoie. N\textquotesingle{}incrémente pas here. 

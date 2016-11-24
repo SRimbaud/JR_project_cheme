@@ -5,11 +5,11 @@
 Read routine for S\+FS.  
 
 
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$ctype.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}eval.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}number.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}eval.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}number.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\\*
 Graphe des dépendances par inclusion de read.\+h\+:
 % FIG 0
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
@@ -17,23 +17,23 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \subsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{read_8h_af581f8cc2bba3b54da9fd9d7225cb1f2}{}\label{read_8h_af581f8cc2bba3b54da9fd9d7225cb1f2} 
-typedef struct \hyperlink{structobject__t}{object\+\_\+t} $\ast$ {\bfseries object}
+typedef struct \hyperlink{structobject__t}{object\+\_\+t} $\ast$ {\bfseries object}\hypertarget{read_8h_af581f8cc2bba3b54da9fd9d7225cb1f2}{}\label{read_8h_af581f8cc2bba3b54da9fd9d7225cb1f2}
+
 \end{DoxyCompactItemize}
 \subsection*{Énumérations}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{read_8h_a99fb83031ce9923c84392b4e92f956b5}{}\label{read_8h_a99fb83031ce9923c84392b4e92f956b5} 
 enum \{ {\bfseries S\+\_\+\+OK}, 
 {\bfseries S\+\_\+\+KO}, 
 {\bfseries S\+\_\+\+E\+ND}
- \}
+ \}\hypertarget{read_8h_a99fb83031ce9923c84392b4e92f956b5}{}\label{read_8h_a99fb83031ce9923c84392b4e92f956b5}
+
 \end{DoxyCompactItemize}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{read_8h_a5adb5752d0f4e59e3b98009ffaedbca7}{}\label{read_8h_a5adb5752d0f4e59e3b98009ffaedbca7} 
-uint {\bfseries sfs\+\_\+get\+\_\+sexpr} (string input, F\+I\+LE $\ast$fp)
+uint {\bfseries sfs\+\_\+get\+\_\+sexpr} (string input, F\+I\+LE $\ast$fp)\hypertarget{read_8h_a5adb5752d0f4e59e3b98009ffaedbca7}{}\label{read_8h_a5adb5752d0f4e59e3b98009ffaedbca7}
+
 \item 
 \hyperlink{structobject__t}{object} \hyperlink{read_8h_a5eb9a4ca33faccde4ffe139eff1909e4}{sfs\+\_\+read} (char $\ast$input, uint $\ast$here)
 \begin{DoxyCompactList}\small\item\em Lit une expression entrée par l\textquotesingle{}utilisateur et construit l\textquotesingle{}objet correspondant. \end{DoxyCompactList}\item 
@@ -58,8 +58,8 @@ int \hyperlink{read_8h_a46c4c9ac5d3fa743f8b60a812c7620f7}{O\+B\+J\+E\+C\+T\+\_\+
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{read_8h_a66e8aad941d446bb2fd11968edcfe8f0}{}\label{read_8h_a66e8aad941d446bb2fd11968edcfe8f0} 
-\hyperlink{structobject__t}{object} \hyperlink{read_8h_a66e8aad941d446bb2fd11968edcfe8f0}{nil}
+\hyperlink{structobject__t}{object} \hyperlink{read_8h_a66e8aad941d446bb2fd11968edcfe8f0}{nil}\hypertarget{read_8h_a66e8aad941d446bb2fd11968edcfe8f0}{}\label{read_8h_a66e8aad941d446bb2fd11968edcfe8f0}
+
 \begin{DoxyCompactList}\small\item\em Représente la fin d\textquotesingle{}une liste ou la liste vide. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -75,12 +75,15 @@ Fri Jun 15 18\+:30\+:11 2012 Read routine for S\+FS.
 
 
 \subsection{Documentation des fonctions}
-\hypertarget{read_8h_aaa7a3fe5326b17d2e2858848680c1b44}{}\label{read_8h_aaa7a3fe5326b17d2e2858848680c1b44} 
 \index{read.\+h@{read.\+h}!O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update}!read.\+h@{read.\+h}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update()}{OBJECT\_boolean\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object} $\ast$}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update(object $\ast$o, char $\ast$input, uint $\ast$here)}{OBJECT_boolean_update(object *o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+boolean\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object} $\ast$}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8h_aaa7a3fe5326b17d2e2858848680c1b44}{}\label{read_8h_aaa7a3fe5326b17d2e2858848680c1b44}
 
 
 Extrait le booléen de l\textquotesingle{}input. Déplace here au caractère suivant. 
@@ -99,12 +102,15 @@ La fonction vérifie que le booléen entré en est bien un (\#t ou \#f) autremen
 \begin{DoxyReturn}{Renvoie}
 Renvoie 0 si tout de passe bien, 1 sinon. 
 \end{DoxyReturn}
-\hypertarget{read_8h_aedd5c9ba9c7b85317ca31157893a9378}{}\label{read_8h_aedd5c9ba9c7b85317ca31157893a9378} 
 \index{read.\+h@{read.\+h}!O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update}!read.\+h@{read.\+h}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update()}{OBJECT\_character\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_character_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+character\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8h_aedd5c9ba9c7b85317ca31157893a9378}{}\label{read_8h_aedd5c9ba9c7b85317ca31157893a9378}
 
 
 Extrait le caractère de input et l\textquotesingle{}enregistre dans object. Place here sur caractère suivant. 
@@ -121,12 +127,15 @@ Extrait le caractère de input et l\textquotesingle{}enregistre dans object. Pla
 \begin{DoxyReturn}{Renvoie}
 Renvoie 0 si tout de passe bien 1 sinon. 
 \end{DoxyReturn}
-\hypertarget{read_8h_a9cc1a614faace621e97aa57ac764ec93}{}\label{read_8h_a9cc1a614faace621e97aa57ac764ec93} 
 \index{read.\+h@{read.\+h}!O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update}!read.\+h@{read.\+h}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update()}{OBJECT\_int\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_int_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+int\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8h_a9cc1a614faace621e97aa57ac764ec93}{}\label{read_8h_a9cc1a614faace621e97aa57ac764ec93}
 
 
 Extrait un entier de l\textquotesingle{}entrée utilisateur et créé l\textquotesingle{}objet correspondant. 
@@ -147,12 +156,15 @@ La fonction gère aussi l\textquotesingle{}overflow, si l\textquotesingle{}entie
 \begin{DoxyReturn}{Renvoie}
 Renvoie 0, 1 si l\textquotesingle{}entier entré n\textquotesingle{}en est pas un, 2 si overflow. 
 \end{DoxyReturn}
-\hypertarget{read_8h_abbe5cdc861f097aa41cb4e8ad88d53a8}{}\label{read_8h_abbe5cdc861f097aa41cb4e8ad88d53a8} 
 \index{read.\+h@{read.\+h}!O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update}!read.\+h@{read.\+h}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update()}{OBJECT\_real\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_real_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+real\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8h_abbe5cdc861f097aa41cb4e8ad88d53a8}{}\label{read_8h_abbe5cdc861f097aa41cb4e8ad88d53a8}
 
 
 Lit un réel sur une entrée utilisateur. 
@@ -165,12 +177,15 @@ strtold
 \begin{DoxyReturn}{Renvoie}
 Renvoie 2 si overflow, 1 si entrée mauvaise, 0 sinon. 
 \end{DoxyReturn}
-\hypertarget{read_8h_ac9ebedee6be777ef6b05c9b3a651aeee}{}\label{read_8h_ac9ebedee6be777ef6b05c9b3a651aeee} 
 \index{read.\+h@{read.\+h}!O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update}!read.\+h@{read.\+h}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update()}{OBJECT\_string\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_string_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+string\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8h_ac9ebedee6be777ef6b05c9b3a651aeee}{}\label{read_8h_ac9ebedee6be777ef6b05c9b3a651aeee}
 
 
 Extrait la chaine de input et l\textquotesingle{}enregistre dans object. 
@@ -187,12 +202,15 @@ Extrait la chaine de input et l\textquotesingle{}enregistre dans object.
 \begin{DoxyReturn}{Renvoie}
 Renvoie 0 si tout de passe bien 1 sinon. 
 \end{DoxyReturn}
-\hypertarget{read_8h_a46c4c9ac5d3fa743f8b60a812c7620f7}{}\label{read_8h_a46c4c9ac5d3fa743f8b60a812c7620f7} 
 \index{read.\+h@{read.\+h}!O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update}}
 \index{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update@{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update}!read.\+h@{read.\+h}}
-\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update()}{OBJECT\_symbol\_update()}}
-{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update(object o, char $\ast$input, uint $\ast$here)}{OBJECT_symbol_update(object o, char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+symbol\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8h_a46c4c9ac5d3fa743f8b60a812c7620f7}{}\label{read_8h_a46c4c9ac5d3fa743f8b60a812c7620f7}
 
 
 Extrait un symbole de la chaine input et met à jour l\textquotesingle{}object. 
@@ -209,12 +227,14 @@ Extrait un symbole de la chaine input et met à jour l\textquotesingle{}object.
 Cette fonction vérifie que chaque caractère du symbole est bien un supporté par scheme selon la R5\+RS voir isealum pour plus de détails. Dans le cas d\textquotesingle{}une erreur passe le type à S\+F\+S\+\_\+\+U\+N\+K\+N\+O\+WN . Dans ce cas elle renvoie 1. \begin{DoxyReturn}{Renvoie}
 \+: Renvoie O si Aucun problème n\textquotesingle{}est détecté, 1 sinon. 
 \end{DoxyReturn}
-\hypertarget{read_8h_a5eb9a4ca33faccde4ffe139eff1909e4}{}\label{read_8h_a5eb9a4ca33faccde4ffe139eff1909e4} 
 \index{read.\+h@{read.\+h}!sfs\+\_\+read@{sfs\+\_\+read}}
 \index{sfs\+\_\+read@{sfs\+\_\+read}!read.\+h@{read.\+h}}
-\subsubsection{\texorpdfstring{sfs\+\_\+read()}{sfs\_read()}}
-{\footnotesize\ttfamily \hyperlink{structobject__t}{object} sfs\+\_\+read (\begin{DoxyParamCaption}\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{sfs\+\_\+read(char $\ast$input, uint $\ast$here)}{sfs_read(char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} sfs\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8h_a5eb9a4ca33faccde4ffe139eff1909e4}{}\label{read_8h_a5eb9a4ca33faccde4ffe139eff1909e4}
 
 
 Lit une expression entrée par l\textquotesingle{}utilisateur et construit l\textquotesingle{}objet correspondant. 
@@ -229,12 +249,14 @@ Lit une expression entrée par l\textquotesingle{}utilisateur et construit l\tex
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}object correspondant à l\textquotesingle{}input 
 \end{DoxyReturn}
-\hypertarget{read_8h_a51259b1aabe7b4b7dcd75de6c37d3e89}{}\label{read_8h_a51259b1aabe7b4b7dcd75de6c37d3e89} 
 \index{read.\+h@{read.\+h}!sfs\+\_\+read\+\_\+atom@{sfs\+\_\+read\+\_\+atom}}
 \index{sfs\+\_\+read\+\_\+atom@{sfs\+\_\+read\+\_\+atom}!read.\+h@{read.\+h}}
-\subsubsection{\texorpdfstring{sfs\+\_\+read\+\_\+atom()}{sfs\_read\_atom()}}
-{\footnotesize\ttfamily sfs\+\_\+read\+\_\+atom (\begin{DoxyParamCaption}\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{sfs\+\_\+read\+\_\+atom(char $\ast$input, uint $\ast$here)}{sfs_read_atom(char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}sfs\+\_\+read\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{input, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8h_a51259b1aabe7b4b7dcd75de6c37d3e89}{}\label{read_8h_a51259b1aabe7b4b7dcd75de6c37d3e89}
 
 
 Lit une entrée utilisateur et construit l\textquotesingle{}objet correspondant. 
@@ -269,12 +291,14 @@ Types reconnus \+:
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}envoie construit. 
 \end{DoxyReturn}
-\hypertarget{read_8h_a10017da718aee17dce5ec698dab10751}{}\label{read_8h_a10017da718aee17dce5ec698dab10751} 
 \index{read.\+h@{read.\+h}!sfs\+\_\+read\+\_\+pair@{sfs\+\_\+read\+\_\+pair}}
 \index{sfs\+\_\+read\+\_\+pair@{sfs\+\_\+read\+\_\+pair}!read.\+h@{read.\+h}}
-\subsubsection{\texorpdfstring{sfs\+\_\+read\+\_\+pair()}{sfs\_read\_pair()}}
-{\footnotesize\ttfamily sfs\+\_\+read\+\_\+pair (\begin{DoxyParamCaption}\item[{char $\ast$}]{stream,  }\item[{uint $\ast$}]{i }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{sfs\+\_\+read\+\_\+pair(char $\ast$stream, uint $\ast$i)}{sfs_read_pair(char *stream, uint *i)}}]{\setlength{\rightskip}{0pt plus 5cm}sfs\+\_\+read\+\_\+pair (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{stream, }
+\item[{uint $\ast$}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8h_a10017da718aee17dce5ec698dab10751}{}\label{read_8h_a10017da718aee17dce5ec698dab10751}
 
 
 Construit une liste à partir d\textquotesingle{}une entrée utilisateur. Récursif. 
@@ -294,12 +318,14 @@ Fonction récursive. Les conditions sont une parenthèse fermante ou une fin de 
 \begin{DoxyReturn}{Renvoie}
 \+: Renvoie un object qui correspond à la liste construite. 
 \end{DoxyReturn}
-\hypertarget{read_8h_ab21f6839688301ccb9e157c5f16c58b3}{}\label{read_8h_ab21f6839688301ccb9e157c5f16c58b3} 
 \index{read.\+h@{read.\+h}!sfs\+\_\+type\+\_\+atom@{sfs\+\_\+type\+\_\+atom}}
 \index{sfs\+\_\+type\+\_\+atom@{sfs\+\_\+type\+\_\+atom}!read.\+h@{read.\+h}}
-\subsubsection{\texorpdfstring{sfs\+\_\+type\+\_\+atom()}{sfs\_type\_atom()}}
-{\footnotesize\ttfamily int sfs\+\_\+type\+\_\+atom (\begin{DoxyParamCaption}\item[{char $\ast$}]{chaine,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{sfs\+\_\+type\+\_\+atom(char $\ast$chaine, uint $\ast$here)}{sfs_type_atom(char *chaine, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}int sfs\+\_\+type\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{chaine, }
+\item[{uint $\ast$}]{here}
+\end{DoxyParamCaption}
+)}\hypertarget{read_8h_ab21f6839688301ccb9e157c5f16c58b3}{}\label{read_8h_ab21f6839688301ccb9e157c5f16c58b3}
 
 
 détermine le type d\textquotesingle{}un atome et le renvoie. N\textquotesingle{}incrémente pas here. 

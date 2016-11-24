@@ -561,16 +561,14 @@ int OBJECT_cmp_bool(object a, object b)
 	if(a== b)
 		return(1);
 	return(0);
-	/* On pourrait essayer d'améliorer la comparaison.
-	 * En vrai on devrait passer par un == mais j'ai des doutes sur 
-	 * la validité de mon implémentation des booléens et du nil.
-	 * Je garde donc cette implémentation pour l'instant qui est robuste.
-	 */
+	
 }
 
 /** @fn int OBJECT_cmp_number(object a, object b)
- * @brief Compare deux objets de type entier.
+ * @brief Compare deux objets de type SFS_NUMBER.
  *
+ * @sa NUM_cmp
+ * @sa OBJECT_cmp_is_equal
  * @return Renvoie 1 si a et b contiennent les mêmes entiers. 0 sinon.
  */
 int OBJECT_cmp_number(object a, object b)
@@ -584,6 +582,7 @@ int OBJECT_cmp_number(object a, object b)
 
 /** @fn int OBJECT_cmp_symb(object a, char* symbol)
  * @brief Compare a avec le symbol symbol.
+ *
  *
  * @return Renvoie 1 si égaux, O sinon.
  */
@@ -602,7 +601,7 @@ int OBJECT_cmp_symb(object a, char* symbol)
  * Le flag est mis à 1.
  * Si il y a une erreur dans le calcul, flag mis à 1.
  *
- * @sa NUM_is_inf()
+ * @sa NUM_is_inf
  *
  * @return Renvoie a < b, O si erreur alors flag mis à 1.
  */
@@ -620,10 +619,12 @@ int OBJECT_cmp_is_inf(const object a, const object b, int* flag)
 	return(NUM_is_inf(a->this.number, b->this.number, flag));
 
 }
+
 /** @fn int OBJECT_cmp_is_sup(const object a, const object b, int* flag)
  * @brief Renvoie a > b.
  *
- * @sa OBJECT_is_cmp_inf()
+ * @sa OBJECT_is_cmp_inf
+ * @sa NUM_is_sup
  *
  * @return a > b, 0 si erreur alors flag mis à 1.
  */
@@ -641,10 +642,12 @@ int OBJECT_cmp_is_sup(const object a, const object b, int* flag)
 	return(NUM_is_sup(a->this.number, b->this.number, flag));
 
 }
+
 /** @fn int OBJECT_cmp_is_sup_equal(const object a, const object b, int* flag)
  * @brief Renvoie a >= b.
  *
- * @sa OBJECT_is_cmp_inf.
+ * @sa OBJECT_is_cmp_inf
+ * @sa NUM_is_sup_equal
  *
  * @return Renvoie a >= b, 0 sinon, si erreur flag mis à 1.
  */
@@ -662,11 +665,12 @@ int OBJECT_cmp_is_sup_equal(const object a, const object b, int* flag)
 	return(NUM_is_sup_equal(a->this.number, b->this.number, flag));
 
 }
+
 /** @fn int OBJECT_cmp_is_inf_equal(const object a, const object b, int* flag)
  * @brief Renvoie a <= b.
  *
- * @sa OBJECT_is_cmp_inf()
- *
+ * @sa OBJECT_is_cmp_inf
+ * @sa NUM_is_inf_equal
  * @return Renvoie a <= b, 0 si erreur alors flag mis à 1.
  */
 int OBJECT_cmp_is_inf_equal(const object a, const object b, int* flag)
@@ -685,6 +689,30 @@ int OBJECT_cmp_is_inf_equal(const object a, const object b, int* flag)
 }
 
 
+/** @fn int OBJECT_cmp_is_equal(const object a, const object b, int* flag);
+ * @brief Compare deux SFS_NUMBER. Renvoie 1 si égaux 0 sinon.
+ *
+ * Compare a et b en les considérant comme entier.
+ * Si a ou b n'est pas entier le flag passe à 1 et elle renvoie 0.
+ * Deux infinis de même signe ne sont pas considéré comme égaux.
+ *
+ * @sa OBJECT_cmp_number
+ * @sa NUM_is_equal
+ *
+ * @return
+ */
+int OBJECT_cmp_is_equal(const object a, const object b, int* flag)
+{
+	if(!check_type(a, SFS_NUMBER) || !check_type(b, SFS_NUMBER))
+	{
+		if(flag) *flag = 1;
+		return(0);
+	}
+	else
+	{
+		return(NUM_is_equal(a->this.number, b->this.number, flag));
+	}
+}
 	
 /* Opérateurs arithmétiques */
 
@@ -701,7 +729,7 @@ int OBJECT_cmp_is_inf_equal(const object a, const object b, int* flag)
  * Retourne nil si la somme est irréalisable
  * (Utile pour les affectations).
  *
- * @sa NUM_sum(num a, num b)
+ * @sa NUM_sum
  *
  * @return Retourne le résultat de la somme ou nil si erreur.
  */
@@ -734,6 +762,7 @@ object OBJECT_add(const object a, const object b, object result)
  *
  * Fonctionnement similaire à OBJECT_add.
  * @sa OBJECT_add
+ * @sa NUM_sub
  *
  * @return Renvoie result mis à jour si opération possible, nil sinon.
  */
@@ -767,7 +796,8 @@ object OBJECT_sub(const object a, const object b, object result)
  * ce soit un nombre ou un infini on peut toujours calculer le produit
  * et trouver un résultat.
  *
- * @sa OBJECT_sum(const object a, const object b, object result)
+ * @sa OBJECT_add
+ * @sa NUM_mul
  *
  * @return Renvoie le result mis à jour si produit possible, nil sinon.
  */
@@ -798,7 +828,8 @@ object OBJECT_mul(const object a, const object b, object result)
 /** @fn object OBJECT_div(const object a, const object b, object result)
  * @brief Calcule la division de a par b.
  *
- * @sa OBJECT_sum();
+ * @sa OBJECT_add
+ * @sa NUM_div
  *
  * @return Renvoie result mis à jour. Nil si erreur.
  */
@@ -828,8 +859,9 @@ object OBJECT_div(const object a, const object b, object result)
 /** @fn object OBJECT_modulo(const object a, const object b, object result)
  * @brief Calcule a%b.
  *
- * Fonctionnement similaire à OBJECT_sum.
- * @sa OBJECT_add()
+ * Fonctionnement similaire à OBJECT_add.
+ * @sa OBJECT_add
+ * @sa NUM_modulo
  *
  * @return Renvoie le résultat.
  */
@@ -864,7 +896,8 @@ object OBJECT_modulo(const object a, const object b, object result)
  *
  * Similaire a OBJECT_add.
  *
- * @sa OBJECT_add()
+ * @sa OBJECT_add
+ * @sa NUM_quotient
  *
  * @return Renvoie le result mis à jour.
  */

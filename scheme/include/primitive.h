@@ -74,6 +74,7 @@ object PRIM_is_sup(object a);
 object PRIM_is_inf(object a);
 object PRIM_is_sup_equal(object a);
 object PRIM_is_inf_equal(object a);
+object PRIM_is_equal(object a);
 /*========= Manipulation liste============*/
 
 object PRIM_car(object a);

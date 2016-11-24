@@ -3,8 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.12"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
 <title>Livrable1 Informatique Phelma SICOM: Référence du fichier src/number.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -12,6 +11,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -30,19 +32,40 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.12 -->
+<!-- Généré par Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-$(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
-});
-</script>
-<div id="main-nav"></div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -109,6 +132,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a968d39ec3ecc0e720e61bd3657cec2a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="number_8c.html#a968d39ec3ecc0e720e61bd3657cec2a7">NUM_sign</a> (<a class="el" href="structnum__t.html">num</a> a)</td></tr>
 <tr class="memdesc:a968d39ec3ecc0e720e61bd3657cec2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si a positif, -1 si a négatif.  <a href="#a968d39ec3ecc0e720e61bd3657cec2a7">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a968d39ec3ecc0e720e61bd3657cec2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6277368742d428b9aacacc45280643a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="number_8c.html#a6277368742d428b9aacacc45280643a5">NUM_is_equal</a> (const <a class="el" href="structnum__t.html">num</a> a, const <a class="el" href="structnum__t.html">num</a> b, int *flag)</td></tr>
+<tr class="memdesc:a6277368742d428b9aacacc45280643a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie a==b.  <a href="#a6277368742d428b9aacacc45280643a5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6277368742d428b9aacacc45280643a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeecb8abee811d7a6fd66294707a6aef7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="number_8c.html#aeecb8abee811d7a6fd66294707a6aef7">NUM_is_inf</a> (const <a class="el" href="structnum__t.html">num</a> a, const <a class="el" href="structnum__t.html">num</a> b, int *flag)</td></tr>
 <tr class="memdesc:aeecb8abee811d7a6fd66294707a6aef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie a &lt; b.  <a href="#aeecb8abee811d7a6fd66294707a6aef7">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aeecb8abee811d7a6fd66294707a6aef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,9 +170,7 @@ Fonctions</h2></td></tr>
 <div class="textblock"><p>ensemble de fonctions relatives au type num. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Rimbaud Sébastien <a href="#" onclick="location.href='mai'+'lto:'+'seb'+'as'+'tie'+'n.'+'rim'+'ba'+'ud@'+'ph'+'elm'+'a.'+'gre'+'no'+'ble'+'-i'+'np.'+'fr'; return false;">sebas<span style="display: none;">.nosp@m.</span>tien<span style="display: none;">.nosp@m.</span>.rimb<span style="display: none;">.nosp@m.</span>aud@<span style="display: none;">.nosp@m.</span>phelm<span style="display: none;">.nosp@m.</span>a.gr<span style="display: none;">.nosp@m.</span>enobl<span style="display: none;">.nosp@m.</span>e-in<span style="display: none;">.nosp@m.</span>p.fr</a> </dd></dl>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a40e568f89f5199b124851d7d7c2ee0ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40e568f89f5199b124851d7d7c2ee0ef">&sect;&nbsp;</a></span>NUM_build()</h2>
-
+<a class="anchor" id="a40e568f89f5199b124851d7d7c2ee0ef"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -200,9 +224,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="aba35ad055dd8fd8e71bd2d7bc69a3cad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba35ad055dd8fd8e71bd2d7bc69a3cad">&sect;&nbsp;</a></span>NUM_cmp()</h2>
-
+<a class="anchor" id="aba35ad055dd8fd8e71bd2d7bc69a3cad"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -234,13 +256,12 @@ Fonctions</h2></td></tr>
 <li>NUM_MINFTY</li>
 <li>NUM_REAL</li>
 </ul>
+<p>Contrairement à NUM_is_equal, cette fonction considére que deux infinis de même signe sont égaux. </p><dl class="section see"><dt>Voir également</dt><dd><a class="el" href="number_8c.html#a6277368742d428b9aacacc45280643a5" title="Renvoie a==b. ">NUM_is_equal</a></dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie 1 si égaux 0 sinon. </dd></dl>
 
 </div>
 </div>
-<a id="aad8448d59850c6d4291f6a4f7ce7c0cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad8448d59850c6d4291f6a4f7ce7c0cc">&sect;&nbsp;</a></span>NUM_cmp_lint()</h2>
-
+<a class="anchor" id="aad8448d59850c6d4291f6a4f7ce7c0cc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -269,9 +290,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="afecc8f5832487583cdc2f0792c67091f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afecc8f5832487583cdc2f0792c67091f">&sect;&nbsp;</a></span>NUM_cmp_type()</h2>
-
+<a class="anchor" id="afecc8f5832487583cdc2f0792c67091f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -300,9 +319,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a33c7fe283eec368735c8619468ccaeb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33c7fe283eec368735c8619468ccaeb9">&sect;&nbsp;</a></span>NUM_div()</h2>
-
+<a class="anchor" id="a33c7fe283eec368735c8619468ccaeb9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -337,9 +354,44 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="aeecb8abee811d7a6fd66294707a6aef7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeecb8abee811d7a6fd66294707a6aef7">&sect;&nbsp;</a></span>NUM_is_inf()</h2>
+<a class="anchor" id="a6277368742d428b9aacacc45280643a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NUM_is_equal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structnum__t.html">num</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structnum__t.html">num</a>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
+<p>Renvoie a==b. </p>
+<p>Compare a et b S'ils sont égaux en valeur renvoie 1. Sinon renvoie 0. Passe le flag à 1 si il y a une erreur. Supporte un flag a NULL. Le flag est mis à 1 si on chercher à comparer un type non implémenté (On a implémenté NUM_REAL et NUM_INTEGER) En cas de comparaison entre infinis, renvoie 0 et passe le flag à 1.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="number_8c.html#aba35ad055dd8fd8e71bd2d7bc69a3cad" title="Compare deux num. Renvoie 1 si égaux, 0 sinon. ">NUM_cmp</a></dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Renvoie a ==b. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeecb8abee811d7a6fd66294707a6aef7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -382,9 +434,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa80212b266cf3e9ea95b1687faa851dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa80212b266cf3e9ea95b1687faa851dc">&sect;&nbsp;</a></span>NUM_is_inf_equal()</h2>
-
+<a class="anchor" id="aa80212b266cf3e9ea95b1687faa851dc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -420,9 +470,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a59ace3e4546feb54fbe6adc2aebc43b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59ace3e4546feb54fbe6adc2aebc43b7">&sect;&nbsp;</a></span>NUM_is_sup()</h2>
-
+<a class="anchor" id="a59ace3e4546feb54fbe6adc2aebc43b7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -458,9 +506,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a82f3036db60fc9e814e4648e37b725a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82f3036db60fc9e814e4648e37b725a2">&sect;&nbsp;</a></span>NUM_is_sup_equal()</h2>
-
+<a class="anchor" id="a82f3036db60fc9e814e4648e37b725a2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -496,9 +542,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1c5cedf6d188f7c15ba2395bc2e94ba6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c5cedf6d188f7c15ba2395bc2e94ba6">&sect;&nbsp;</a></span>NUM_lint_cmp()</h2>
-
+<a class="anchor" id="a1c5cedf6d188f7c15ba2395bc2e94ba6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -534,9 +578,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a99f71152b0d68cb8843d84e7af1bfc31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99f71152b0d68cb8843d84e7af1bfc31">&sect;&nbsp;</a></span>NUM_modulo()</h2>
-
+<a class="anchor" id="a99f71152b0d68cb8843d84e7af1bfc31"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -572,9 +614,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad7003e02f06ef1fd25a160c3b0a5b880"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7003e02f06ef1fd25a160c3b0a5b880">&sect;&nbsp;</a></span>NUM_mul()</h2>
-
+<a class="anchor" id="ad7003e02f06ef1fd25a160c3b0a5b880"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -611,9 +651,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="adee8e683b4a4606c79f5e1c97e984b67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adee8e683b4a4606c79f5e1c97e984b67">&sect;&nbsp;</a></span>NUM_print()</h2>
-
+<a class="anchor" id="adee8e683b4a4606c79f5e1c97e984b67"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -637,9 +675,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a52d0aa57fb2da6f67cd8f0ce42ed7454"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52d0aa57fb2da6f67cd8f0ce42ed7454">&sect;&nbsp;</a></span>NUM_quotient()</h2>
-
+<a class="anchor" id="a52d0aa57fb2da6f67cd8f0ce42ed7454"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -675,9 +711,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3f435b41cbf1032f18d3db201e69c386"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f435b41cbf1032f18d3db201e69c386">&sect;&nbsp;</a></span>NUM_set_int()</h2>
-
+<a class="anchor" id="a3f435b41cbf1032f18d3db201e69c386"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -713,9 +747,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5349d9a9575ccb62b3407900f3f46c18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5349d9a9575ccb62b3407900f3f46c18">&sect;&nbsp;</a></span>NUM_set_real()</h2>
-
+<a class="anchor" id="a5349d9a9575ccb62b3407900f3f46c18"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -751,9 +783,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a968d39ec3ecc0e720e61bd3657cec2a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a968d39ec3ecc0e720e61bd3657cec2a7">&sect;&nbsp;</a></span>NUM_sign()</h2>
-
+<a class="anchor" id="a968d39ec3ecc0e720e61bd3657cec2a7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -772,9 +802,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7790d6469a5253d77a41fe3066d69cb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7790d6469a5253d77a41fe3066d69cb7">&sect;&nbsp;</a></span>NUM_sub()</h2>
-
+<a class="anchor" id="a7790d6469a5253d77a41fe3066d69cb7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -810,9 +838,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa001b3a988a911dfb8b9db6c716f47a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa001b3a988a911dfb8b9db6c716f47a4">&sect;&nbsp;</a></span>NUM_sum()</h2>
-
+<a class="anchor" id="aa001b3a988a911dfb8b9db6c716f47a4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -856,7 +882,7 @@ Fonctions</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
+</a> 1.8.11
 </small></address>
 </body>
 </html>

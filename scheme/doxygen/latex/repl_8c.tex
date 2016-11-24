@@ -5,51 +5,51 @@
 Boucle principale interpréteur scheme.  
 
 
-{\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$string.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}primitive.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}read.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}eval.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}print.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}primitive.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}read.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}eval.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}print.\+h\char`\"{}}\\*
 Graphe des dépendances par inclusion de repl.\+c\+:
 % FIG 0
 \subsection*{Énumérations}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{repl_8c_a5950dde77323ac42d3e96193656e4514}{}\label{repl_8c_a5950dde77323ac42d3e96193656e4514} 
 enum {\bfseries inter\+\_\+mode} \{ {\bfseries I\+N\+T\+E\+R\+A\+C\+T\+IF}, 
 {\bfseries S\+C\+R\+I\+PT}
- \}
+ \}\hypertarget{repl_8c_a5950dde77323ac42d3e96193656e4514}{}\label{repl_8c_a5950dde77323ac42d3e96193656e4514}
+
 \end{DoxyCompactItemize}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{repl_8c_a4c6b444cc6a6c7911f55ae1745312033}{}\label{repl_8c_a4c6b444cc6a6c7911f55ae1745312033} 
-void \hyperlink{repl_8c_a4c6b444cc6a6c7911f55ae1745312033}{usage\+\_\+error} (char $\ast$command)
+void \hyperlink{repl_8c_a4c6b444cc6a6c7911f55ae1745312033}{usage\+\_\+error} (char $\ast$command)\hypertarget{repl_8c_a4c6b444cc6a6c7911f55ae1745312033}{}\label{repl_8c_a4c6b444cc6a6c7911f55ae1745312033}
+
 \begin{DoxyCompactList}\small\item\em Renvoie un message d\textquotesingle{}erreur si la fonction est mal utilisée en ligne de commande. \end{DoxyCompactList}\item 
 void \hyperlink{repl_8c_ac7892fa748bffcd6854f8b7adeb40ba0}{init\+\_\+interpreter} (void)
 \begin{DoxyCompactList}\small\item\em Initialise les variables globales de l\textquotesingle{}interpréteur. \end{DoxyCompactList}\item 
-\hypertarget{repl_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{repl_8c_a0ddf1224851353fc92bfbff6f499fa97} 
-int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})\hypertarget{repl_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{repl_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{repl_8c_a66e8aad941d446bb2fd11968edcfe8f0}{}\label{repl_8c_a66e8aad941d446bb2fd11968edcfe8f0} 
-\hyperlink{structobject__t}{object} \hyperlink{repl_8c_a66e8aad941d446bb2fd11968edcfe8f0}{nil}
+\hyperlink{structobject__t}{object} \hyperlink{repl_8c_a66e8aad941d446bb2fd11968edcfe8f0}{nil}\hypertarget{repl_8c_a66e8aad941d446bb2fd11968edcfe8f0}{}\label{repl_8c_a66e8aad941d446bb2fd11968edcfe8f0}
+
 \begin{DoxyCompactList}\small\item\em Représente la fin d\textquotesingle{}une liste ou la liste vide. \end{DoxyCompactList}\item 
-\hypertarget{repl_8c_ad0bbf8a55978ced29692b45921af4bc4}{}\label{repl_8c_ad0bbf8a55978ced29692b45921af4bc4} 
-\hyperlink{structobject__t}{object} \hyperlink{repl_8c_ad0bbf8a55978ced29692b45921af4bc4}{vrai}
+\hyperlink{structobject__t}{object} \hyperlink{repl_8c_ad0bbf8a55978ced29692b45921af4bc4}{vrai}\hypertarget{repl_8c_ad0bbf8a55978ced29692b45921af4bc4}{}\label{repl_8c_ad0bbf8a55978ced29692b45921af4bc4}
+
 \begin{DoxyCompactList}\small\item\em Représente booléen T\+R\+UE. \end{DoxyCompactList}\item 
-\hypertarget{repl_8c_aa7cbb88f06ae33db856de331a8395465}{}\label{repl_8c_aa7cbb88f06ae33db856de331a8395465} 
-\hyperlink{structobject__t}{object} \hyperlink{repl_8c_aa7cbb88f06ae33db856de331a8395465}{faux}
+\hyperlink{structobject__t}{object} \hyperlink{repl_8c_aa7cbb88f06ae33db856de331a8395465}{faux}\hypertarget{repl_8c_aa7cbb88f06ae33db856de331a8395465}{}\label{repl_8c_aa7cbb88f06ae33db856de331a8395465}
+
 \begin{DoxyCompactList}\small\item\em Représente booléen faux. \end{DoxyCompactList}\item 
-\hypertarget{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{}\label{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc} 
-\hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env}
+\hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env}\hypertarget{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{}\label{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}
+
 \begin{DoxyCompactList}\small\item\em Représente l\textquotesingle{}environnement courant. \end{DoxyCompactList}\item 
-\hypertarget{repl_8c_afbb046e7b56d659f37775ae86077abd5}{}\label{repl_8c_afbb046e7b56d659f37775ae86077abd5} 
-\hyperlink{structobject__t}{object} \hyperlink{repl_8c_afbb046e7b56d659f37775ae86077abd5}{form} \mbox{[}\hyperlink{object_8h_aacf24b05297ae7bbff3af215ec3259ff}{N\+B\+\_\+\+F\+O\+RM}\mbox{]}
+\hyperlink{structobject__t}{object} \hyperlink{repl_8c_afbb046e7b56d659f37775ae86077abd5}{form} \mbox{[}\hyperlink{object_8h_aacf24b05297ae7bbff3af215ec3259ff}{N\+B\+\_\+\+F\+O\+RM}\mbox{]}\hypertarget{repl_8c_afbb046e7b56d659f37775ae86077abd5}{}\label{repl_8c_afbb046e7b56d659f37775ae86077abd5}
+
 \begin{DoxyCompactList}\small\item\em Décrit l\textquotesingle{}ensemble des formes du langage. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -79,12 +79,13 @@ Rimbaud Sébastien.
 
 
 \subsection{Documentation des fonctions}
-\hypertarget{repl_8c_ac7892fa748bffcd6854f8b7adeb40ba0}{}\label{repl_8c_ac7892fa748bffcd6854f8b7adeb40ba0} 
 \index{repl.\+c@{repl.\+c}!init\+\_\+interpreter@{init\+\_\+interpreter}}
 \index{init\+\_\+interpreter@{init\+\_\+interpreter}!repl.\+c@{repl.\+c}}
-\subsubsection{\texorpdfstring{init\+\_\+interpreter()}{init\_interpreter()}}
-{\footnotesize\ttfamily void init\+\_\+interpreter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{init\+\_\+interpreter(void)}{init_interpreter(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+interpreter (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{repl_8c_ac7892fa748bffcd6854f8b7adeb40ba0}{}\label{repl_8c_ac7892fa748bffcd6854f8b7adeb40ba0}
 
 
 Initialise les variables globales de l\textquotesingle{}interpréteur. 

@@ -5,8 +5,8 @@
 Notification management.  
 
 
-{\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
 Graphe des dépendances par inclusion de notify.\+h\+:
 % FIG 0
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
@@ -14,84 +14,84 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{notify_8h_aadeeb4dafe17c7a9e1a99f21c61a77e2}{}\label{notify_8h_aadeeb4dafe17c7a9e1a99f21c61a77e2} 
-\#define {\bfseries F\+O\+R\+\_\+\+E\+R\+R\+O\+RS}~0x00
+\#define {\bfseries F\+O\+R\+\_\+\+E\+R\+R\+O\+RS}~0x00\hypertarget{notify_8h_aadeeb4dafe17c7a9e1a99f21c61a77e2}{}\label{notify_8h_aadeeb4dafe17c7a9e1a99f21c61a77e2}
+
 \item 
-\hypertarget{notify_8h_a73e9f0c4c8ec0c165519779de7a7bec7}{}\label{notify_8h_a73e9f0c4c8ec0c165519779de7a7bec7} 
-\#define {\bfseries F\+O\+R\+\_\+\+W\+A\+R\+N\+I\+N\+GS}~0x01
+\#define {\bfseries F\+O\+R\+\_\+\+W\+A\+R\+N\+I\+N\+GS}~0x01\hypertarget{notify_8h_a73e9f0c4c8ec0c165519779de7a7bec7}{}\label{notify_8h_a73e9f0c4c8ec0c165519779de7a7bec7}
+
 \item 
-\hypertarget{notify_8h_a189e6cf5e841495c54fac2a0c527e7a9}{}\label{notify_8h_a189e6cf5e841495c54fac2a0c527e7a9} 
-\#define {\bfseries F\+O\+R\+\_\+\+I\+N\+F\+OS}~0x02
+\#define {\bfseries F\+O\+R\+\_\+\+I\+N\+F\+OS}~0x02\hypertarget{notify_8h_a189e6cf5e841495c54fac2a0c527e7a9}{}\label{notify_8h_a189e6cf5e841495c54fac2a0c527e7a9}
+
 \item 
-\hypertarget{notify_8h_ad6baacc6caa0191e810735b01e81aec3}{}\label{notify_8h_ad6baacc6caa0191e810735b01e81aec3} 
-\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+O\+FF}~0x00
+\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+O\+FF}~0x00\hypertarget{notify_8h_ad6baacc6caa0191e810735b01e81aec3}{}\label{notify_8h_ad6baacc6caa0191e810735b01e81aec3}
+
 \item 
-\hypertarget{notify_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{}\label{notify_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e} 
-\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+B\+O\+LD}~0x01
+\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+B\+O\+LD}~0x01\hypertarget{notify_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{}\label{notify_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}
+
 \item 
-\hypertarget{notify_8h_ac5a7435261840035b1a6919dc7207be9}{}\label{notify_8h_ac5a7435261840035b1a6919dc7207be9} 
-\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+U\+S\+C\+O\+RE}~0x04
+\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+U\+S\+C\+O\+RE}~0x04\hypertarget{notify_8h_ac5a7435261840035b1a6919dc7207be9}{}\label{notify_8h_ac5a7435261840035b1a6919dc7207be9}
+
 \item 
-\hypertarget{notify_8h_a003d730c9ff7f83ca05b1aa28fa44fdd}{}\label{notify_8h_a003d730c9ff7f83ca05b1aa28fa44fdd} 
-\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+B\+L\+I\+NK}~0x05
+\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+B\+L\+I\+NK}~0x05\hypertarget{notify_8h_a003d730c9ff7f83ca05b1aa28fa44fdd}{}\label{notify_8h_a003d730c9ff7f83ca05b1aa28fa44fdd}
+
 \item 
-\hypertarget{notify_8h_a6f8e52655d37a72b5469ce655c4cb6f1}{}\label{notify_8h_a6f8e52655d37a72b5469ce655c4cb6f1} 
-\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+R\+E\+V\+E\+R\+SE}~0x07
+\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+R\+E\+V\+E\+R\+SE}~0x07\hypertarget{notify_8h_a6f8e52655d37a72b5469ce655c4cb6f1}{}\label{notify_8h_a6f8e52655d37a72b5469ce655c4cb6f1}
+
 \item 
-\hypertarget{notify_8h_a6f729201849854f38b1711b91c63cff5}{}\label{notify_8h_a6f729201849854f38b1711b91c63cff5} 
-\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+C\+O\+N\+C\+E\+A\+L\+ED}~0x08
+\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+C\+O\+N\+C\+E\+A\+L\+ED}~0x08\hypertarget{notify_8h_a6f729201849854f38b1711b91c63cff5}{}\label{notify_8h_a6f729201849854f38b1711b91c63cff5}
+
 \item 
-\hypertarget{notify_8h_aba2a7fe77a7501e5844370eec0185207}{}\label{notify_8h_aba2a7fe77a7501e5844370eec0185207} 
-\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+B\+L\+A\+CK}~30
+\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+B\+L\+A\+CK}~30\hypertarget{notify_8h_aba2a7fe77a7501e5844370eec0185207}{}\label{notify_8h_aba2a7fe77a7501e5844370eec0185207}
+
 \item 
-\hypertarget{notify_8h_ad86358bf19927183dd7b4ae215a29731}{}\label{notify_8h_ad86358bf19927183dd7b4ae215a29731} 
-\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+R\+ED}~31
+\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+R\+ED}~31\hypertarget{notify_8h_ad86358bf19927183dd7b4ae215a29731}{}\label{notify_8h_ad86358bf19927183dd7b4ae215a29731}
+
 \item 
-\hypertarget{notify_8h_afc9149f5de51bd9ac4f5ebbfa153f018}{}\label{notify_8h_afc9149f5de51bd9ac4f5ebbfa153f018} 
-\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+G\+R\+E\+EN}~32
+\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+G\+R\+E\+EN}~32\hypertarget{notify_8h_afc9149f5de51bd9ac4f5ebbfa153f018}{}\label{notify_8h_afc9149f5de51bd9ac4f5ebbfa153f018}
+
 \item 
-\hypertarget{notify_8h_a4534b577b74a58b0f4b7be027af664e0}{}\label{notify_8h_a4534b577b74a58b0f4b7be027af664e0} 
-\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+Y\+E\+L\+L\+OW}~33
+\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+Y\+E\+L\+L\+OW}~33\hypertarget{notify_8h_a4534b577b74a58b0f4b7be027af664e0}{}\label{notify_8h_a4534b577b74a58b0f4b7be027af664e0}
+
 \item 
-\hypertarget{notify_8h_a23c70d699a5a775bc2e1ebeb8603f630}{}\label{notify_8h_a23c70d699a5a775bc2e1ebeb8603f630} 
-\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+B\+L\+UE}~34
+\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+B\+L\+UE}~34\hypertarget{notify_8h_a23c70d699a5a775bc2e1ebeb8603f630}{}\label{notify_8h_a23c70d699a5a775bc2e1ebeb8603f630}
+
 \item 
-\hypertarget{notify_8h_a8deb0beccea721b35bdb1b4f7264fe75}{}\label{notify_8h_a8deb0beccea721b35bdb1b4f7264fe75} 
-\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+M\+A\+G\+E\+N\+TA}~35
+\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+M\+A\+G\+E\+N\+TA}~35\hypertarget{notify_8h_a8deb0beccea721b35bdb1b4f7264fe75}{}\label{notify_8h_a8deb0beccea721b35bdb1b4f7264fe75}
+
 \item 
-\hypertarget{notify_8h_a82573859711fce56f1aa0a76b18a9b18}{}\label{notify_8h_a82573859711fce56f1aa0a76b18a9b18} 
-\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+C\+Y\+AN}~36
+\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+C\+Y\+AN}~36\hypertarget{notify_8h_a82573859711fce56f1aa0a76b18a9b18}{}\label{notify_8h_a82573859711fce56f1aa0a76b18a9b18}
+
 \item 
-\hypertarget{notify_8h_a9b44987ffdc2af19b635206b94334b69}{}\label{notify_8h_a9b44987ffdc2af19b635206b94334b69} 
-\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+W\+H\+I\+TE}~37
+\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+W\+H\+I\+TE}~37\hypertarget{notify_8h_a9b44987ffdc2af19b635206b94334b69}{}\label{notify_8h_a9b44987ffdc2af19b635206b94334b69}
+
 \item 
-\hypertarget{notify_8h_a011bb291a0f03af56da9c5fff3fcacf9}{}\label{notify_8h_a011bb291a0f03af56da9c5fff3fcacf9} 
-\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+E\+R\+R\+OR}~S\+T\+Y\+L\+E\+\_\+\+B\+L\+I\+NK
+\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+E\+R\+R\+OR}~S\+T\+Y\+L\+E\+\_\+\+B\+L\+I\+NK\hypertarget{notify_8h_a011bb291a0f03af56da9c5fff3fcacf9}{}\label{notify_8h_a011bb291a0f03af56da9c5fff3fcacf9}
+
 \item 
-\hypertarget{notify_8h_a7422478a5ea88e3e80c74fda52fd9711}{}\label{notify_8h_a7422478a5ea88e3e80c74fda52fd9711} 
-\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+W\+A\+R\+N\+I\+NG}~S\+T\+Y\+L\+E\+\_\+\+B\+O\+LD
+\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+W\+A\+R\+N\+I\+NG}~S\+T\+Y\+L\+E\+\_\+\+B\+O\+LD\hypertarget{notify_8h_a7422478a5ea88e3e80c74fda52fd9711}{}\label{notify_8h_a7422478a5ea88e3e80c74fda52fd9711}
+
 \item 
-\hypertarget{notify_8h_ae3a086385379ed8e9c4fb21181b36385}{}\label{notify_8h_ae3a086385379ed8e9c4fb21181b36385} 
-\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+I\+N\+FO}~S\+T\+Y\+L\+E\+\_\+\+B\+O\+LD
+\#define {\bfseries S\+T\+Y\+L\+E\+\_\+\+I\+N\+FO}~S\+T\+Y\+L\+E\+\_\+\+B\+O\+LD\hypertarget{notify_8h_ae3a086385379ed8e9c4fb21181b36385}{}\label{notify_8h_ae3a086385379ed8e9c4fb21181b36385}
+
 \item 
-\hypertarget{notify_8h_ac7bab6591a09366d23b86d710ecc54af}{}\label{notify_8h_ac7bab6591a09366d23b86d710ecc54af} 
-\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+E\+R\+R\+OR}~C\+O\+L\+O\+R\+\_\+\+R\+ED
+\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+E\+R\+R\+OR}~C\+O\+L\+O\+R\+\_\+\+R\+ED\hypertarget{notify_8h_ac7bab6591a09366d23b86d710ecc54af}{}\label{notify_8h_ac7bab6591a09366d23b86d710ecc54af}
+
 \item 
-\hypertarget{notify_8h_a4d79f3f59a4d19b93eaf106105bddc90}{}\label{notify_8h_a4d79f3f59a4d19b93eaf106105bddc90} 
-\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+W\+A\+R\+N\+I\+NG}~C\+O\+L\+O\+R\+\_\+\+Y\+E\+L\+L\+OW
+\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+W\+A\+R\+N\+I\+NG}~C\+O\+L\+O\+R\+\_\+\+Y\+E\+L\+L\+OW\hypertarget{notify_8h_a4d79f3f59a4d19b93eaf106105bddc90}{}\label{notify_8h_a4d79f3f59a4d19b93eaf106105bddc90}
+
 \item 
-\hypertarget{notify_8h_a0d4d3a685f9501631d1feed1f4ba7577}{}\label{notify_8h_a0d4d3a685f9501631d1feed1f4ba7577} 
-\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+I\+N\+FO}~C\+O\+L\+O\+R\+\_\+\+G\+R\+E\+EN
+\#define {\bfseries C\+O\+L\+O\+R\+\_\+\+I\+N\+FO}~C\+O\+L\+O\+R\+\_\+\+G\+R\+E\+EN\hypertarget{notify_8h_a0d4d3a685f9501631d1feed1f4ba7577}{}\label{notify_8h_a0d4d3a685f9501631d1feed1f4ba7577}
+
 \item 
 \#define {\bfseries S\+T\+Y\+LE}(purpose)
 \item 
 \#define {\bfseries C\+O\+L\+OR}(purpose)
 \item 
-\hypertarget{notify_8h_ab852a4c4d5e17bad3a054528c10e080d}{}\label{notify_8h_ab852a4c4d5e17bad3a054528c10e080d} 
-\#define {\bfseries ON}(stream)~stream
+\#define {\bfseries ON}(stream)~stream\hypertarget{notify_8h_ab852a4c4d5e17bad3a054528c10e080d}{}\label{notify_8h_ab852a4c4d5e17bad3a054528c10e080d}
+
 \item 
-\hypertarget{notify_8h_a9a3d99d050d1adb88f2eb621a63c1c0d}{}\label{notify_8h_a9a3d99d050d1adb88f2eb621a63c1c0d} 
-\#define {\bfseries R\+E\+S\+E\+T\+\_\+\+C\+O\+L\+O\+RS}(on\+\_\+stream)~fprintf( on\+\_\+stream, \char`\"{}\%c\mbox{[}\%dm\char`\"{}, 0x1\+B, 0 )
+\#define {\bfseries R\+E\+S\+E\+T\+\_\+\+C\+O\+L\+O\+RS}(on\+\_\+stream)~fprintf( on\+\_\+stream, \char`\"{}\%c\mbox{[}\%dm\char`\"{}, 0x1\+B, 0 )\hypertarget{notify_8h_a9a3d99d050d1adb88f2eb621a63c1c0d}{}\label{notify_8h_a9a3d99d050d1adb88f2eb621a63c1c0d}
+
 \item 
 \#define {\bfseries S\+E\+T\+\_\+\+C\+O\+L\+O\+RS}(purpose,  on\+\_\+stream)
 \item 
@@ -99,14 +99,14 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \item 
 \#define {\bfseries W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+SG}(...)
 \item 
-\hypertarget{notify_8h_a17da880873d1c32f9086a9d92440d0b3}{}\label{notify_8h_a17da880873d1c32f9086a9d92440d0b3} 
-\#define {\bfseries I\+N\+F\+O\+\_\+\+M\+SG}(...)
+\#define {\bfseries I\+N\+F\+O\+\_\+\+M\+SG}(...)\hypertarget{notify_8h_a17da880873d1c32f9086a9d92440d0b3}{}\label{notify_8h_a17da880873d1c32f9086a9d92440d0b3}
+
 \item 
-\hypertarget{notify_8h_ae0188c06a0b9870c90e05292f629c1d1}{}\label{notify_8h_ae0188c06a0b9870c90e05292f629c1d1} 
-\#define {\bfseries D\+E\+B\+U\+G\+\_\+\+M\+SG}(...)
+\#define {\bfseries D\+E\+B\+U\+G\+\_\+\+M\+SG}(...)\hypertarget{notify_8h_ae0188c06a0b9870c90e05292f629c1d1}{}\label{notify_8h_ae0188c06a0b9870c90e05292f629c1d1}
+
 \item 
-\hypertarget{notify_8h_ae8568c79bbc5e19db459f479a98041f4}{}\label{notify_8h_ae8568c79bbc5e19db459f479a98041f4} 
-\#define {\bfseries D\+E\+B\+U\+G2\+\_\+\+M\+SG}(...)
+\#define {\bfseries D\+E\+B\+U\+G2\+\_\+\+M\+SG}(...)\hypertarget{notify_8h_ae8568c79bbc5e19db459f479a98041f4}{}\label{notify_8h_ae8568c79bbc5e19db459f479a98041f4}
+
 \end{DoxyCompactItemize}
 
 
@@ -122,23 +122,25 @@ Thu Mar 22 17\+:22\+:55 2012 Notification management.
 
 
 \subsection{Documentation des macros}
-\hypertarget{notify_8h_a152a45ff837ea67b591dd8b8c3018232}{}\label{notify_8h_a152a45ff837ea67b591dd8b8c3018232} 
 \index{notify.\+h@{notify.\+h}!C\+O\+L\+OR@{C\+O\+L\+OR}}
 \index{C\+O\+L\+OR@{C\+O\+L\+OR}!notify.\+h@{notify.\+h}}
-\subsubsection{\texorpdfstring{C\+O\+L\+OR}{COLOR}}
-{\footnotesize\ttfamily \#define C\+O\+L\+OR(\begin{DoxyParamCaption}\item[{}]{purpose }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{C\+O\+L\+OR}{COLOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+L\+OR(
+\begin{DoxyParamCaption}
+\item[{}]{purpose}
+\end{DoxyParamCaption}
+)}\hypertarget{notify_8h_a152a45ff837ea67b591dd8b8c3018232}{}\label{notify_8h_a152a45ff837ea67b591dd8b8c3018232}
 {\bfseries Valeur \+:}
 \begin{DoxyCode}
 (purpose == FOR\_ERRORS ? COLOR\_ERROR :              \(\backslash\)
    (purpose == FOR\_WARNINGS ? COLOR\_WARNING : COLOR\_INFO ))
 \end{DoxyCode}
-\hypertarget{notify_8h_a0bb65ef5baf847cd51e3ac4f5702019b}{}\label{notify_8h_a0bb65ef5baf847cd51e3ac4f5702019b} 
 \index{notify.\+h@{notify.\+h}!E\+R\+R\+O\+R\+\_\+\+M\+SG@{E\+R\+R\+O\+R\+\_\+\+M\+SG}}
 \index{E\+R\+R\+O\+R\+\_\+\+M\+SG@{E\+R\+R\+O\+R\+\_\+\+M\+SG}!notify.\+h@{notify.\+h}}
-\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+M\+SG}{ERROR\_MSG}}
-{\footnotesize\ttfamily \#define E\+R\+R\+O\+R\+\_\+\+M\+SG(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+M\+SG}{ERROR_MSG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+O\+R\+\_\+\+M\+SG(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{notify_8h_a0bb65ef5baf847cd51e3ac4f5702019b}{}\label{notify_8h_a0bb65ef5baf847cd51e3ac4f5702019b}
 {\bfseries Valeur \+:}
 \begin{DoxyCode}
 \textcolor{keywordflow}{do} \{                            \(\backslash\)
@@ -152,34 +154,38 @@ Thu Mar 22 17\+:22\+:55 2012 Notification management.
     exit( EXIT\_FAILURE );                       \(\backslash\)
 \} \textcolor{keywordflow}{while}( 0 )
 \end{DoxyCode}
-\hypertarget{notify_8h_a511f2e52b44bfddb2a467a1a19851662}{}\label{notify_8h_a511f2e52b44bfddb2a467a1a19851662} 
 \index{notify.\+h@{notify.\+h}!S\+E\+T\+\_\+\+C\+O\+L\+O\+RS@{S\+E\+T\+\_\+\+C\+O\+L\+O\+RS}}
 \index{S\+E\+T\+\_\+\+C\+O\+L\+O\+RS@{S\+E\+T\+\_\+\+C\+O\+L\+O\+RS}!notify.\+h@{notify.\+h}}
-\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+C\+O\+L\+O\+RS}{SET\_COLORS}}
-{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+C\+O\+L\+O\+RS(\begin{DoxyParamCaption}\item[{}]{purpose,  }\item[{}]{on\+\_\+stream }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{S\+E\+T\+\_\+\+C\+O\+L\+O\+RS}{SET_COLORS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+T\+\_\+\+C\+O\+L\+O\+RS(
+\begin{DoxyParamCaption}
+\item[{}]{purpose, }
+\item[{}]{on\+\_\+stream}
+\end{DoxyParamCaption}
+)}\hypertarget{notify_8h_a511f2e52b44bfddb2a467a1a19851662}{}\label{notify_8h_a511f2e52b44bfddb2a467a1a19851662}
 {\bfseries Valeur \+:}
 \begin{DoxyCode}
 fprintf( on\_stream, \textcolor{stringliteral}{"%c[%d;%dm"}, 0x1B,  \(\backslash\)
        STYLE(purpose), COLOR(purpose) )
 \end{DoxyCode}
-\hypertarget{notify_8h_ad03e9c909b32d5020e6213af09622a5c}{}\label{notify_8h_ad03e9c909b32d5020e6213af09622a5c} 
 \index{notify.\+h@{notify.\+h}!S\+T\+Y\+LE@{S\+T\+Y\+LE}}
 \index{S\+T\+Y\+LE@{S\+T\+Y\+LE}!notify.\+h@{notify.\+h}}
-\subsubsection{\texorpdfstring{S\+T\+Y\+LE}{STYLE}}
-{\footnotesize\ttfamily \#define S\+T\+Y\+LE(\begin{DoxyParamCaption}\item[{}]{purpose }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{S\+T\+Y\+LE}{STYLE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+Y\+LE(
+\begin{DoxyParamCaption}
+\item[{}]{purpose}
+\end{DoxyParamCaption}
+)}\hypertarget{notify_8h_ad03e9c909b32d5020e6213af09622a5c}{}\label{notify_8h_ad03e9c909b32d5020e6213af09622a5c}
 {\bfseries Valeur \+:}
 \begin{DoxyCode}
 (purpose == FOR\_ERRORS ? STYLE\_ERROR :          \(\backslash\)
    (purpose == FOR\_WARNINGS ? STYLE\_WARNING : STYLE\_INFO ))
 \end{DoxyCode}
-\hypertarget{notify_8h_ab45f4dc5f3514effe22ad6bc392f25f0}{}\label{notify_8h_ab45f4dc5f3514effe22ad6bc392f25f0} 
 \index{notify.\+h@{notify.\+h}!W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+SG@{W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+SG}}
 \index{W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+SG@{W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+SG}!notify.\+h@{notify.\+h}}
-\subsubsection{\texorpdfstring{W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+SG}{WARNING\_MSG}}
-{\footnotesize\ttfamily \#define W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+SG(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+SG}{WARNING_MSG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+SG(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{notify_8h_ab45f4dc5f3514effe22ad6bc392f25f0}{}\label{notify_8h_ab45f4dc5f3514effe22ad6bc392f25f0}
 {\bfseries Valeur \+:}
 \begin{DoxyCode}
 \textcolor{keywordflow}{do} \{                        \(\backslash\)

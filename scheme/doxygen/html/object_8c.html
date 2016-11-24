@@ -3,8 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.12"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
 <title>Livrable1 Informatique Phelma SICOM: Référence du fichier src/object.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -12,6 +11,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -30,19 +32,40 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.12 -->
+<!-- Généré par Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-$(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
-});
-</script>
-<div id="main-nav"></div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -140,7 +163,7 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a8467e456f150c3514808c26c6864497d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare 2 booléens. Renvoie 0 s'ils ne sont pas booléens.  <a href="#a8467e456f150c3514808c26c6864497d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8467e456f150c3514808c26c6864497d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8a7c4f6341e5477c8cf12d9fa4b8048"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8c.html#aa8a7c4f6341e5477c8cf12d9fa4b8048">OBJECT_cmp_number</a> (<a class="el" href="structobject__t.html">object</a> a, <a class="el" href="structobject__t.html">object</a> b)</td></tr>
-<tr class="memdesc:aa8a7c4f6341e5477c8cf12d9fa4b8048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare deux objets de type entier.  <a href="#aa8a7c4f6341e5477c8cf12d9fa4b8048">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:aa8a7c4f6341e5477c8cf12d9fa4b8048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare deux objets de type SFS_NUMBER.  <a href="#aa8a7c4f6341e5477c8cf12d9fa4b8048">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa8a7c4f6341e5477c8cf12d9fa4b8048"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85b5035114247cba825eafb2ef1d34c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8c.html#a85b5035114247cba825eafb2ef1d34c0">OBJECT_cmp_symb</a> (<a class="el" href="structobject__t.html">object</a> a, char *symbol)</td></tr>
 <tr class="memdesc:a85b5035114247cba825eafb2ef1d34c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare a avec le symbol symbol.  <a href="#a85b5035114247cba825eafb2ef1d34c0">Plus de détails...</a><br /></td></tr>
@@ -157,6 +180,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:aae53685d941d31264064ddb7bad1b2e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8c.html#aae53685d941d31264064ddb7bad1b2e9">OBJECT_cmp_is_inf_equal</a> (const <a class="el" href="structobject__t.html">object</a> a, const <a class="el" href="structobject__t.html">object</a> b, int *flag)</td></tr>
 <tr class="memdesc:aae53685d941d31264064ddb7bad1b2e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie a &lt;= b.  <a href="#aae53685d941d31264064ddb7bad1b2e9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aae53685d941d31264064ddb7bad1b2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213abc602996ba1343347dde5d4d6722"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8c.html#a213abc602996ba1343347dde5d4d6722">OBJECT_cmp_is_equal</a> (const <a class="el" href="structobject__t.html">object</a> a, const <a class="el" href="structobject__t.html">object</a> b, int *flag)</td></tr>
+<tr class="memdesc:a213abc602996ba1343347dde5d4d6722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare deux SFS_NUMBER. Renvoie 1 si égaux 0 sinon.  <a href="#a213abc602996ba1343347dde5d4d6722">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a213abc602996ba1343347dde5d4d6722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79151b36db8756df298be886a88dde6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8c.html#a79151b36db8756df298be886a88dde6a">OBJECT_add</a> (const <a class="el" href="structobject__t.html">object</a> a, const <a class="el" href="structobject__t.html">object</a> b, <a class="el" href="structobject__t.html">object</a> result)</td></tr>
 <tr class="memdesc:a79151b36db8756df298be886a88dde6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue la somme de 2 objets, écrit résultat dans résult.  <a href="#a79151b36db8756df298be886a88dde6a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a79151b36db8756df298be886a88dde6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,9 +246,7 @@ Fonctions</h2></td></tr>
 <dl class="section author"><dt>Auteur</dt><dd>François Cayre &lt;cayre.(null)&gt; and Rimbaud Sébastien <a href="#" onclick="location.href='mai'+'lto:'+'seb'+'as'+'tie'+'n.'+'rim'+'ba'+'ud@'+'ph'+'elm'+'a.'+'gre'+'no'+'ble'+'-i'+'np.'+'fr'; return false;">sebas<span style="display: none;">.nosp@m.</span>tien<span style="display: none;">.nosp@m.</span>.rimb<span style="display: none;">.nosp@m.</span>aud@<span style="display: none;">.nosp@m.</span>phelm<span style="display: none;">.nosp@m.</span>a.gr<span style="display: none;">.nosp@m.</span>enobl<span style="display: none;">.nosp@m.</span>e-in<span style="display: none;">.nosp@m.</span>p.fr</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>Sun September 2016 16:35 Contient toutes les fonctions permettant de manipuler (affichage, édition) de la structure object. Contient également les fonctions de création de NIL, TRUE et FALSE. </dd></dl>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a id="aa8d164b8e7142d98aaff83ccfcd48409"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8d164b8e7142d98aaff83ccfcd48409">&sect;&nbsp;</a></span>check()</h2>
-
+<a class="anchor" id="aa8d164b8e7142d98aaff83ccfcd48409"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -251,9 +275,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a457357b9ad319b66d3573aaeb2d77933"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a457357b9ad319b66d3573aaeb2d77933">&sect;&nbsp;</a></span>check_alloc()</h2>
-
+<a class="anchor" id="a457357b9ad319b66d3573aaeb2d77933"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -282,9 +304,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa57b70a35593ee0e9483282f796a5122"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa57b70a35593ee0e9483282f796a5122">&sect;&nbsp;</a></span>check_type()</h2>
-
+<a class="anchor" id="aa57b70a35593ee0e9483282f796a5122"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -313,9 +333,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="aad94ca4613c4d0f6214c77363f55008f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad94ca4613c4d0f6214c77363f55008f">&sect;&nbsp;</a></span>ENV_add_var()</h2>
-
+<a class="anchor" id="aad94ca4613c4d0f6214c77363f55008f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -352,9 +370,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a13394f7830becff1f3558b6f5b0969f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13394f7830becff1f3558b6f5b0969f9">&sect;&nbsp;</a></span>ENV_build()</h2>
-
+<a class="anchor" id="a13394f7830becff1f3558b6f5b0969f9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -374,9 +390,7 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7fb587a2ac0a4bebac5317ece2968594"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fb587a2ac0a4bebac5317ece2968594">&sect;&nbsp;</a></span>ENV_check_loop()</h2>
-
+<a class="anchor" id="a7fb587a2ac0a4bebac5317ece2968594"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -403,9 +417,7 @@ x-&gt;y-&gt;z-&gt;x-&gt;y... .</p>
 
 </div>
 </div>
-<a id="a9408de05ed658e0c2b39b06dfa52afc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9408de05ed658e0c2b39b06dfa52afc9">&sect;&nbsp;</a></span>ENV_get_var()</h2>
-
+<a class="anchor" id="a9408de05ed658e0c2b39b06dfa52afc9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -442,9 +454,7 @@ x-&gt;y-&gt;z-&gt;x-&gt;y... .</p>
 
 </div>
 </div>
-<a id="a6c450315c9bb5fc8d72fe422bccad428"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c450315c9bb5fc8d72fe422bccad428">&sect;&nbsp;</a></span>ENV_get_var_in_env()</h2>
-
+<a class="anchor" id="a6c450315c9bb5fc8d72fe422bccad428"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -487,9 +497,7 @@ x-&gt;y-&gt;z-&gt;x-&gt;y... .</p>
 
 </div>
 </div>
-<a id="a700e3a4614699deb08c3640cd18af8e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a700e3a4614699deb08c3640cd18af8e3">&sect;&nbsp;</a></span>ENV_update_var()</h2>
-
+<a class="anchor" id="a700e3a4614699deb08c3640cd18af8e3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -546,9 +554,7 @@ x-&gt;y-&gt;z-&gt;x-&gt;y... .</p>
 
 </div>
 </div>
-<a id="a54510b61c6f3490e0d71cbc71cc4225a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54510b61c6f3490e0d71cbc71cc4225a">&sect;&nbsp;</a></span>is_form()</h2>
-
+<a class="anchor" id="a54510b61c6f3490e0d71cbc71cc4225a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -588,9 +594,7 @@ NB_FORMS</dd></dl>
 
 </div>
 </div>
-<a id="a0fe65b3e6071e628e9dd27ceb779a253"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fe65b3e6071e628e9dd27ceb779a253">&sect;&nbsp;</a></span>isealnum()</h2>
-
+<a class="anchor" id="a0fe65b3e6071e628e9dd27ceb779a253"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -611,9 +615,7 @@ NB_FORMS</dd></dl>
 
 </div>
 </div>
-<a id="a0c208c0fbec6ecf85e3de7949b7691cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c208c0fbec6ecf85e3de7949b7691cf">&sect;&nbsp;</a></span>make_false()</h2>
-
+<a class="anchor" id="a0c208c0fbec6ecf85e3de7949b7691cf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -632,9 +634,7 @@ NB_FORMS</dd></dl>
 
 </div>
 </div>
-<a id="aabab05a704acf24c0040b7223908c858"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabab05a704acf24c0040b7223908c858">&sect;&nbsp;</a></span>make_forms()</h2>
-
+<a class="anchor" id="aabab05a704acf24c0040b7223908c858"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -652,9 +652,7 @@ NB_FORMS</dd></dl>
 
 </div>
 </div>
-<a id="a0175150d600f632a2675d80b72823f45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0175150d600f632a2675d80b72823f45">&sect;&nbsp;</a></span>make_nil()</h2>
-
+<a class="anchor" id="a0175150d600f632a2675d80b72823f45"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -675,9 +673,7 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 
 </div>
 </div>
-<a id="ae588b0336388f82cf984bca34a66fe99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae588b0336388f82cf984bca34a66fe99">&sect;&nbsp;</a></span>make_object()</h2>
-
+<a class="anchor" id="ae588b0336388f82cf984bca34a66fe99"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -702,9 +698,7 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 
 </div>
 </div>
-<a id="aa54a323be37760f91b9a423760d800d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa54a323be37760f91b9a423760d800d3">&sect;&nbsp;</a></span>make_true()</h2>
-
+<a class="anchor" id="aa54a323be37760f91b9a423760d800d3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -723,9 +717,7 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 
 </div>
 </div>
-<a id="a79151b36db8756df298be886a88dde6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79151b36db8756df298be886a88dde6a">&sect;&nbsp;</a></span>OBJECT_add()</h2>
-
+<a class="anchor" id="a79151b36db8756df298be886a88dde6a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -757,14 +749,12 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 
 <p>Effectue la somme de 2 objets, écrit résultat dans résult. </p>
 <p>La somme est faite sur des objects de type SFS_NUM. Le résultat est écrit dans result et result est retourné. Il faut toujours prendre la valeur retournée par la fonction, result permet d'éviter un trop grand nombre d'allocation dans PRIM_somme. Retourne nil si la somme est irréalisable (Utile pour les affectations).</p>
-<dl class="section see"><dt>Voir également</dt><dd>NUM_sum(num a, num b)</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="number_8c.html#aa001b3a988a911dfb8b9db6c716f47a4" title="Effectue la somme de 2 num. ">NUM_sum</a></dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Retourne le résultat de la somme ou nil si erreur. </dd></dl>
 
 </div>
 </div>
-<a id="a09933fca31b4b68d1e8d1d8f26f7ce45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09933fca31b4b68d1e8d1d8f26f7ce45">&sect;&nbsp;</a></span>OBJECT_build_cpy()</h2>
-
+<a class="anchor" id="a09933fca31b4b68d1e8d1d8f26f7ce45"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -784,9 +774,7 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 
 </div>
 </div>
-<a id="ade583a8335577c269af8b9cc37567699"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade583a8335577c269af8b9cc37567699">&sect;&nbsp;</a></span>OBJECT_build_pair()</h2>
-
+<a class="anchor" id="ade583a8335577c269af8b9cc37567699"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -819,9 +807,7 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 
 </div>
 </div>
-<a id="aba2f19194908157a74d7250b28929484"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba2f19194908157a74d7250b28929484">&sect;&nbsp;</a></span>OBJECT_build_symbol()</h2>
-
+<a class="anchor" id="aba2f19194908157a74d7250b28929484"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -841,9 +827,7 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 
 </div>
 </div>
-<a id="a1d783570ac14dc2efa3f0565e162a6e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d783570ac14dc2efa3f0565e162a6e8">&sect;&nbsp;</a></span>OBJECT_built_short_quote()</h2>
-
+<a class="anchor" id="a1d783570ac14dc2efa3f0565e162a6e8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -873,9 +857,7 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 
 </div>
 </div>
-<a id="a8467e456f150c3514808c26c6864497d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8467e456f150c3514808c26c6864497d">&sect;&nbsp;</a></span>OBJECT_cmp_bool()</h2>
-
+<a class="anchor" id="a8467e456f150c3514808c26c6864497d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -904,9 +886,46 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 
 </div>
 </div>
-<a id="ab4b6a20ced958c8d2f5fda6c0e8f191b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4b6a20ced958c8d2f5fda6c0e8f191b">&sect;&nbsp;</a></span>OBJECT_cmp_is_inf()</h2>
+<a class="anchor" id="a213abc602996ba1343347dde5d4d6722"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OBJECT_cmp_is_equal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
+<p>Compare deux SFS_NUMBER. Renvoie 1 si égaux 0 sinon. </p>
+<p>Compare a et b en les considérant comme entier. Si a ou b n'est pas entier le flag passe à 1 et elle renvoie 0. Deux infinis de même signe ne sont pas considéré comme égaux.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="object_8c.html#aa8a7c4f6341e5477c8cf12d9fa4b8048" title="Compare deux objets de type SFS_NUMBER. ">OBJECT_cmp_number</a> </dd>
+<dd>
+<a class="el" href="number_8c.html#a6277368742d428b9aacacc45280643a5" title="Renvoie a==b. ">NUM_is_equal</a></dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab4b6a20ced958c8d2f5fda6c0e8f191b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -938,14 +957,12 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 
 <p>Renvoie a &lt; b. </p>
 <p>Si a ou b ne sont pas des SFS_NUMBER renvoie 0 et affiche un warning. Le flag est mis à 1. Si il y a une erreur dans le calcul, flag mis à 1.</p>
-<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="number_8h.html#aeecb8abee811d7a6fd66294707a6aef7" title="Renvoie a &lt; b. ">NUM_is_inf()</a></dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="number_8c.html#aeecb8abee811d7a6fd66294707a6aef7" title="Renvoie a &lt; b. ">NUM_is_inf</a></dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie a &lt; b, O si erreur alors flag mis à 1. </dd></dl>
 
 </div>
 </div>
-<a id="aae53685d941d31264064ddb7bad1b2e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae53685d941d31264064ddb7bad1b2e9">&sect;&nbsp;</a></span>OBJECT_cmp_is_inf_equal()</h2>
-
+<a class="anchor" id="aae53685d941d31264064ddb7bad1b2e9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -976,14 +993,14 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 </div><div class="memdoc">
 
 <p>Renvoie a &lt;= b. </p>
-<dl class="section see"><dt>Voir également</dt><dd>OBJECT_is_cmp_inf()</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd>OBJECT_is_cmp_inf </dd>
+<dd>
+<a class="el" href="number_8c.html#aa80212b266cf3e9ea95b1687faa851dc" title="Renvoie a &lt;= b. ">NUM_is_inf_equal</a> </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie a &lt;= b, 0 si erreur alors flag mis à 1. </dd></dl>
 
 </div>
 </div>
-<a id="ab418f8b63a1b1ed89a04ea1cd566a31e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab418f8b63a1b1ed89a04ea1cd566a31e">&sect;&nbsp;</a></span>OBJECT_cmp_is_sup()</h2>
-
+<a class="anchor" id="ab418f8b63a1b1ed89a04ea1cd566a31e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1014,14 +1031,14 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 </div><div class="memdoc">
 
 <p>Renvoie a &gt; b. </p>
-<dl class="section see"><dt>Voir également</dt><dd>OBJECT_is_cmp_inf()</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd>OBJECT_is_cmp_inf </dd>
+<dd>
+<a class="el" href="number_8c.html#a59ace3e4546feb54fbe6adc2aebc43b7" title="renvoie a &gt; b. ">NUM_is_sup</a></dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>a &gt; b, 0 si erreur alors flag mis à 1. </dd></dl>
 
 </div>
 </div>
-<a id="a6bc0b088ee8b84a0f2fbd4fab3177b10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bc0b088ee8b84a0f2fbd4fab3177b10">&sect;&nbsp;</a></span>OBJECT_cmp_is_sup_equal()</h2>
-
+<a class="anchor" id="a6bc0b088ee8b84a0f2fbd4fab3177b10"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1052,14 +1069,14 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 </div><div class="memdoc">
 
 <p>Renvoie a &gt;= b. </p>
-<dl class="section see"><dt>Voir également</dt><dd>OBJECT_is_cmp_inf.</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd>OBJECT_is_cmp_inf </dd>
+<dd>
+<a class="el" href="number_8c.html#a82f3036db60fc9e814e4648e37b725a2" title="Renvoie a &gt;= b. ">NUM_is_sup_equal</a></dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie a &gt;= b, 0 sinon, si erreur flag mis à 1. </dd></dl>
 
 </div>
 </div>
-<a id="aa8a7c4f6341e5477c8cf12d9fa4b8048"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8a7c4f6341e5477c8cf12d9fa4b8048">&sect;&nbsp;</a></span>OBJECT_cmp_number()</h2>
-
+<a class="anchor" id="aa8a7c4f6341e5477c8cf12d9fa4b8048"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1083,14 +1100,15 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
       </table>
 </div><div class="memdoc">
 
-<p>Compare deux objets de type entier. </p>
+<p>Compare deux objets de type SFS_NUMBER. </p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="number_8c.html#aba35ad055dd8fd8e71bd2d7bc69a3cad" title="Compare deux num. Renvoie 1 si égaux, 0 sinon. ">NUM_cmp</a> </dd>
+<dd>
+<a class="el" href="object_8c.html#a213abc602996ba1343347dde5d4d6722" title="Compare deux SFS_NUMBER. Renvoie 1 si égaux 0 sinon. ">OBJECT_cmp_is_equal</a> </dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie 1 si a et b contiennent les mêmes entiers. 0 sinon. </dd></dl>
 
 </div>
 </div>
-<a id="a85b5035114247cba825eafb2ef1d34c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85b5035114247cba825eafb2ef1d34c0">&sect;&nbsp;</a></span>OBJECT_cmp_symb()</h2>
-
+<a class="anchor" id="a85b5035114247cba825eafb2ef1d34c0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1119,9 +1137,7 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 
 </div>
 </div>
-<a id="a5f88c49537b92e95b7d33660446ee8c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f88c49537b92e95b7d33660446ee8c7">&sect;&nbsp;</a></span>OBJECT_destroy()</h2>
-
+<a class="anchor" id="a5f88c49537b92e95b7d33660446ee8c7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1141,9 +1157,7 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 
 </div>
 </div>
-<a id="ad1356f35f47fdbb828bc06a5884d74ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1356f35f47fdbb828bc06a5884d74ed">&sect;&nbsp;</a></span>OBJECT_destroy_pair()</h2>
-
+<a class="anchor" id="ad1356f35f47fdbb828bc06a5884d74ed"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1162,9 +1176,7 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 
 </div>
 </div>
-<a id="a2edee12884f9288a6d9f1056f1ecc492"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2edee12884f9288a6d9f1056f1ecc492">&sect;&nbsp;</a></span>OBJECT_div()</h2>
-
+<a class="anchor" id="a2edee12884f9288a6d9f1056f1ecc492"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1195,14 +1207,14 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 </div><div class="memdoc">
 
 <p>Calcule la division de a par b. </p>
-<dl class="section see"><dt>Voir également</dt><dd>OBJECT_sum();</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="object_8c.html#a79151b36db8756df298be886a88dde6a" title="Effectue la somme de 2 objets, écrit résultat dans résult. ">OBJECT_add</a> </dd>
+<dd>
+<a class="el" href="number_8c.html#a33c7fe283eec368735c8619468ccaeb9" title="Calcule a/b. ">NUM_div</a></dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie result mis à jour. Nil si erreur. </dd></dl>
 
 </div>
 </div>
-<a id="a486b361de0c6c18f7227158b12dbfd4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a486b361de0c6c18f7227158b12dbfd4a">&sect;&nbsp;</a></span>OBJECT_get_cxr()</h2>
-
+<a class="anchor" id="a486b361de0c6c18f7227158b12dbfd4a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1232,9 +1244,7 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 
 </div>
 </div>
-<a id="a0d7084a07b321423f9cd922529fd8ed8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d7084a07b321423f9cd922529fd8ed8">&sect;&nbsp;</a></span>OBJECT_isempty()</h2>
-
+<a class="anchor" id="a0d7084a07b321423f9cd922529fd8ed8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1253,9 +1263,7 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 
 </div>
 </div>
-<a id="ab49b1649bad38a97c44b7713731cea48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab49b1649bad38a97c44b7713731cea48">&sect;&nbsp;</a></span>OBJECT_isEqual()</h2>
-
+<a class="anchor" id="ab49b1649bad38a97c44b7713731cea48"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1285,9 +1293,7 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 
 </div>
 </div>
-<a id="a122ef0bfddd5435072ae270c9192ee28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a122ef0bfddd5435072ae270c9192ee28">&sect;&nbsp;</a></span>OBJECT_modulo()</h2>
-
+<a class="anchor" id="a122ef0bfddd5435072ae270c9192ee28"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1318,14 +1324,14 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 </div><div class="memdoc">
 
 <p>Calcule ab. </p>
-<p>Fonctionnement similaire à OBJECT_sum. </p><dl class="section see"><dt>Voir également</dt><dd><a class="el" href="object_8c.html#a79151b36db8756df298be886a88dde6a" title="Effectue la somme de 2 objets, écrit résultat dans résult. ">OBJECT_add()</a></dd></dl>
+<p>Fonctionnement similaire à OBJECT_add. </p><dl class="section see"><dt>Voir également</dt><dd><a class="el" href="object_8c.html#a79151b36db8756df298be886a88dde6a" title="Effectue la somme de 2 objets, écrit résultat dans résult. ">OBJECT_add</a> </dd>
+<dd>
+<a class="el" href="number_8c.html#a99f71152b0d68cb8843d84e7af1bfc31" title="Calcule ab. ">NUM_modulo</a></dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie le résultat. </dd></dl>
 
 </div>
 </div>
-<a id="af66fca655ad9b5fafc4540f7dfc97127"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af66fca655ad9b5fafc4540f7dfc97127">&sect;&nbsp;</a></span>OBJECT_mul()</h2>
-
+<a class="anchor" id="af66fca655ad9b5fafc4540f7dfc97127"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1357,14 +1363,14 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 
 <p>Calcul le produit de 2 objects a par b. </p>
 <p>A priori, le produit ne pose pas d'impossibilité de calcul, que ce soit un nombre ou un infini on peut toujours calculer le produit et trouver un résultat.</p>
-<dl class="section see"><dt>Voir également</dt><dd>OBJECT_sum(const object a, const object b, object result)</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="object_8c.html#a79151b36db8756df298be886a88dde6a" title="Effectue la somme de 2 objets, écrit résultat dans résult. ">OBJECT_add</a> </dd>
+<dd>
+<a class="el" href="number_8c.html#ad7003e02f06ef1fd25a160c3b0a5b880" title="Produit de a par b. ">NUM_mul</a></dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie le result mis à jour si produit possible, nil sinon. </dd></dl>
 
 </div>
 </div>
-<a id="a10043e4705f4650f026a33121cd54815"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10043e4705f4650f026a33121cd54815">&sect;&nbsp;</a></span>OBJECT_quotient()</h2>
-
+<a class="anchor" id="a10043e4705f4650f026a33121cd54815"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1397,14 +1403,14 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 <p>Calcul la div entière de a par b. </p>
 <p>Si a et b non SFS_NUMBER renvoie NULL. Si a et b non entier renvoie NULL</p>
 <p>Similaire a OBJECT_add.</p>
-<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="object_8c.html#a79151b36db8756df298be886a88dde6a" title="Effectue la somme de 2 objets, écrit résultat dans résult. ">OBJECT_add()</a></dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="object_8c.html#a79151b36db8756df298be886a88dde6a" title="Effectue la somme de 2 objets, écrit résultat dans résult. ">OBJECT_add</a> </dd>
+<dd>
+<a class="el" href="number_8c.html#a52d0aa57fb2da6f67cd8f0ce42ed7454" title="Calcule a/b pour des entiers. ">NUM_quotient</a></dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie le result mis à jour. </dd></dl>
 
 </div>
 </div>
-<a id="a64f2fee85ada6041d0c74a250c419686"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64f2fee85ada6041d0c74a250c419686">&sect;&nbsp;</a></span>OBJECT_rewrite()</h2>
-
+<a class="anchor" id="a64f2fee85ada6041d0c74a250c419686"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1433,9 +1439,7 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 
 </div>
 </div>
-<a id="a8ccb3f30397a60a9d663f43c4dc28514"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ccb3f30397a60a9d663f43c4dc28514">&sect;&nbsp;</a></span>OBJECT_set_car()</h2>
-
+<a class="anchor" id="a8ccb3f30397a60a9d663f43c4dc28514"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1464,9 +1468,7 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 
 </div>
 </div>
-<a id="a4d4c460873067cf00d877f60cdd285ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d4c460873067cf00d877f60cdd285ec">&sect;&nbsp;</a></span>OBJECT_set_cdr()</h2>
-
+<a class="anchor" id="a4d4c460873067cf00d877f60cdd285ec"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1495,9 +1497,7 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 
 </div>
 </div>
-<a id="a421310d9e2d05d70789086bd9418656c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a421310d9e2d05d70789086bd9418656c">&sect;&nbsp;</a></span>OBJECT_set_cxr()</h2>
-
+<a class="anchor" id="a421310d9e2d05d70789086bd9418656c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1536,9 +1536,7 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 
 </div>
 </div>
-<a id="a600f7cb500116ca30a31e9ae9c39a469"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a600f7cb500116ca30a31e9ae9c39a469">&sect;&nbsp;</a></span>OBJECT_sub()</h2>
-
+<a class="anchor" id="a600f7cb500116ca30a31e9ae9c39a469"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1569,14 +1567,14 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 </div><div class="memdoc">
 
 <p>Soustraction de 2 object. Le résultat est mis dans résult. </p>
-<p>Fonctionnement similaire à OBJECT_add. </p><dl class="section see"><dt>Voir également</dt><dd><a class="el" href="object_8c.html#a79151b36db8756df298be886a88dde6a" title="Effectue la somme de 2 objets, écrit résultat dans résult. ">OBJECT_add</a></dd></dl>
+<p>Fonctionnement similaire à OBJECT_add. </p><dl class="section see"><dt>Voir également</dt><dd><a class="el" href="object_8c.html#a79151b36db8756df298be886a88dde6a" title="Effectue la somme de 2 objets, écrit résultat dans résult. ">OBJECT_add</a> </dd>
+<dd>
+<a class="el" href="number_8c.html#a7790d6469a5253d77a41fe3066d69cb7" title="Calcul a - b. ">NUM_sub</a></dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie result mis à jour si opération possible, nil sinon. </dd></dl>
 
 </div>
 </div>
-<a id="ae40aea5d87d9c145bfe576adb9a93f10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae40aea5d87d9c145bfe576adb9a93f10">&sect;&nbsp;</a></span>string_cmp()</h2>
-
+<a class="anchor" id="ae40aea5d87d9c145bfe576adb9a93f10"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1606,9 +1604,7 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 
 </div>
 </div>
-<a id="a8db21bf1c03bc99e813b38a77ff8792e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8db21bf1c03bc99e813b38a77ff8792e">&sect;&nbsp;</a></span>wait_first_non_blank_char()</h2>
-
+<a class="anchor" id="a8db21bf1c03bc99e813b38a77ff8792e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1650,7 +1646,7 @@ Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l'in
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
+</a> 1.8.11
 </small></address>
 </body>
 </html>

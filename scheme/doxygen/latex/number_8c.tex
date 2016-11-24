@@ -5,7 +5,7 @@
 ensemble de fonctions relatives au type num.  
 
 
-{\ttfamily \#include \char`\"{}number.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}number.\+h\char`\"{}}\\*
 Graphe des dépendances par inclusion de number.\+c\+:
 % FIG 0
 \subsection*{Fonctions}
@@ -29,6 +29,8 @@ int \hyperlink{number_8c_aba35ad055dd8fd8e71bd2d7bc69a3cad}{N\+U\+M\+\_\+cmp} (\
 \begin{DoxyCompactList}\small\item\em Compare deux num. Renvoie 1 si égaux, 0 sinon. \end{DoxyCompactList}\item 
 int \hyperlink{number_8c_a968d39ec3ecc0e720e61bd3657cec2a7}{N\+U\+M\+\_\+sign} (\hyperlink{structnum__t}{num} a)
 \begin{DoxyCompactList}\small\item\em Retourne 1 si a positif, -\/1 si a négatif. \end{DoxyCompactList}\item 
+int \hyperlink{number_8c_a6277368742d428b9aacacc45280643a5}{N\+U\+M\+\_\+is\+\_\+equal} (const \hyperlink{structnum__t}{num} a, const \hyperlink{structnum__t}{num} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Renvoie a==b. \end{DoxyCompactList}\item 
 int \hyperlink{number_8c_aeecb8abee811d7a6fd66294707a6aef7}{N\+U\+M\+\_\+is\+\_\+inf} (const \hyperlink{structnum__t}{num} a, const \hyperlink{structnum__t}{num} b, int $\ast$flag)
 \begin{DoxyCompactList}\small\item\em Renvoie a $<$ b. \end{DoxyCompactList}\item 
 int \hyperlink{number_8c_a59ace3e4546feb54fbe6adc2aebc43b7}{N\+U\+M\+\_\+is\+\_\+sup} (const \hyperlink{structnum__t}{num} a, const \hyperlink{structnum__t}{num} b, int $\ast$flag)
@@ -60,12 +62,15 @@ Rimbaud Sébastien \href{mailto:sebastien.rimbaud@phelma.grenoble-inp.fr}{\tt se
 
 
 \subsection{Documentation des fonctions}
-\hypertarget{number_8c_a40e568f89f5199b124851d7d7c2ee0ef}{}\label{number_8c_a40e568f89f5199b124851d7d7c2ee0ef} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+build@{N\+U\+M\+\_\+build}}
 \index{N\+U\+M\+\_\+build@{N\+U\+M\+\_\+build}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+build()}{NUM\_build()}}
-{\footnotesize\ttfamily \hyperlink{structnum__t}{num}$\ast$ N\+U\+M\+\_\+build (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num} $\ast$}]{a,  }\item[{void $\ast$}]{v\+\_\+ptr,  }\item[{int}]{mode }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+build(num $\ast$a, void $\ast$v\+\_\+ptr, int mode)}{NUM_build(num *a, void *v_ptr, int mode)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num}$\ast$ N\+U\+M\+\_\+build (
+\begin{DoxyParamCaption}
+\item[{{\bf num} $\ast$}]{a, }
+\item[{void $\ast$}]{v\+\_\+ptr, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a40e568f89f5199b124851d7d7c2ee0ef}{}\label{number_8c_a40e568f89f5199b124851d7d7c2ee0ef}
 
 
 Enregistre dans a la valeur v, retourne le nouveau num. 
@@ -95,12 +100,14 @@ Si le mode n\textquotesingle{}est pas une constante implémentée dans la foncti
 \+: Renvoie un pointeur sur le num modifié. 
 \end{DoxyReturn}
 
-\end{DoxyItemize}\hypertarget{number_8c_aba35ad055dd8fd8e71bd2d7bc69a3cad}{}\label{number_8c_aba35ad055dd8fd8e71bd2d7bc69a3cad} 
-\index{number.\+c@{number.\+c}!N\+U\+M\+\_\+cmp@{N\+U\+M\+\_\+cmp}}
+\end{DoxyItemize}\index{number.\+c@{number.\+c}!N\+U\+M\+\_\+cmp@{N\+U\+M\+\_\+cmp}}
 \index{N\+U\+M\+\_\+cmp@{N\+U\+M\+\_\+cmp}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+cmp()}{NUM\_cmp()}}
-{\footnotesize\ttfamily int N\+U\+M\+\_\+cmp (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{\hyperlink{structnum__t}{num}}]{b }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+cmp(num a, num b)}{NUM_cmp(num a, num b)}}]{\setlength{\rightskip}{0pt plus 5cm}int N\+U\+M\+\_\+cmp (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{{\bf num}}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_aba35ad055dd8fd8e71bd2d7bc69a3cad}{}\label{number_8c_aba35ad055dd8fd8e71bd2d7bc69a3cad}
 
 
 Compare deux num. Renvoie 1 si égaux, 0 sinon. 
@@ -114,15 +121,20 @@ Compare deux num. Si leurs types sont différents renvoie 0. Actuellement implé
 \item N\+U\+M\+\_\+\+R\+E\+AL
 \end{DoxyItemize}
 
+Contrairement à N\+U\+M\+\_\+is\+\_\+equal, cette fonction considére que deux infinis de même signe sont égaux. \begin{DoxySeeAlso}{Voir également}
+\hyperlink{number_8c_a6277368742d428b9aacacc45280643a5}{N\+U\+M\+\_\+is\+\_\+equal}
+\end{DoxySeeAlso}
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si égaux 0 sinon. 
 \end{DoxyReturn}
-\hypertarget{number_8c_aad8448d59850c6d4291f6a4f7ce7c0cc}{}\label{number_8c_aad8448d59850c6d4291f6a4f7ce7c0cc} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+cmp\+\_\+lint@{N\+U\+M\+\_\+cmp\+\_\+lint}}
 \index{N\+U\+M\+\_\+cmp\+\_\+lint@{N\+U\+M\+\_\+cmp\+\_\+lint}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+cmp\+\_\+lint()}{NUM\_cmp\_lint()}}
-{\footnotesize\ttfamily int N\+U\+M\+\_\+cmp\+\_\+lint (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{\hyperlink{structnum__t}{num}}]{b }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+cmp\+\_\+lint(num a, num b)}{NUM_cmp_lint(num a, num b)}}]{\setlength{\rightskip}{0pt plus 5cm}int N\+U\+M\+\_\+cmp\+\_\+lint (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{{\bf num}}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_aad8448d59850c6d4291f6a4f7ce7c0cc}{}\label{number_8c_aad8448d59850c6d4291f6a4f7ce7c0cc}
 
 
 Compare deux num de type N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER. 
@@ -130,12 +142,14 @@ Compare deux num de type N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER.
 Renvoie 0 si ils n\textquotesingle{}ont le même type. Est appelé par N\+U\+M\+\_\+cmp. Renvoie 0 si a ou b pas de type N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si égaux 0 sinon. 
 \end{DoxyReturn}
-\hypertarget{number_8c_afecc8f5832487583cdc2f0792c67091f}{}\label{number_8c_afecc8f5832487583cdc2f0792c67091f} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+cmp\+\_\+type@{N\+U\+M\+\_\+cmp\+\_\+type}}
 \index{N\+U\+M\+\_\+cmp\+\_\+type@{N\+U\+M\+\_\+cmp\+\_\+type}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+cmp\+\_\+type()}{NUM\_cmp\_type()}}
-{\footnotesize\ttfamily int N\+U\+M\+\_\+cmp\+\_\+type (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{\hyperlink{structnum__t}{num}}]{b }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+cmp\+\_\+type(num a, num b)}{NUM_cmp_type(num a, num b)}}]{\setlength{\rightskip}{0pt plus 5cm}int N\+U\+M\+\_\+cmp\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{{\bf num}}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_afecc8f5832487583cdc2f0792c67091f}{}\label{number_8c_afecc8f5832487583cdc2f0792c67091f}
 
 
 Compare les types de 2 structures num. Renvoie 1 si égale 0 sinon. 
@@ -143,12 +157,15 @@ Compare les types de 2 structures num. Renvoie 1 si égale 0 sinon.
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si égale 0 sinon. 
 \end{DoxyReturn}
-\hypertarget{number_8c_a33c7fe283eec368735c8619468ccaeb9}{}\label{number_8c_a33c7fe283eec368735c8619468ccaeb9} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+div@{N\+U\+M\+\_\+div}}
 \index{N\+U\+M\+\_\+div@{N\+U\+M\+\_\+div}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+div()}{NUM\_div()}}
-{\footnotesize\ttfamily \hyperlink{structnum__t}{num} N\+U\+M\+\_\+div (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{\hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+div(num a, num b, int $\ast$flag)}{NUM_div(num a, num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+div (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{{\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a33c7fe283eec368735c8619468ccaeb9}{}\label{number_8c_a33c7fe283eec368735c8619468ccaeb9}
 
 
 Calcule a/b. 
@@ -156,12 +173,36 @@ Calcule a/b.
 \begin{DoxyReturn}{Renvoie}
 Renvoie le résultat du calcul. 
 \end{DoxyReturn}
-\hypertarget{number_8c_aeecb8abee811d7a6fd66294707a6aef7}{}\label{number_8c_aeecb8abee811d7a6fd66294707a6aef7} 
+\index{number.\+c@{number.\+c}!N\+U\+M\+\_\+is\+\_\+equal@{N\+U\+M\+\_\+is\+\_\+equal}}
+\index{N\+U\+M\+\_\+is\+\_\+equal@{N\+U\+M\+\_\+is\+\_\+equal}!number.\+c@{number.\+c}}
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+equal(const num a, const num b, int $\ast$flag)}{NUM_is_equal(const num a, const num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}int N\+U\+M\+\_\+is\+\_\+equal (
+\begin{DoxyParamCaption}
+\item[{const {\bf num}}]{a, }
+\item[{const {\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a6277368742d428b9aacacc45280643a5}{}\label{number_8c_a6277368742d428b9aacacc45280643a5}
+
+
+Renvoie a==b. 
+
+Compare a et b S\textquotesingle{}ils sont égaux en valeur renvoie 1. Sinon renvoie 0. Passe le flag à 1 si il y a une erreur. Supporte un flag a N\+U\+LL. Le flag est mis à 1 si on chercher à comparer un type non implémenté (On a implémenté N\+U\+M\+\_\+\+R\+E\+AL et N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER) En cas de comparaison entre infinis, renvoie 0 et passe le flag à 1.
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{number_8c_aba35ad055dd8fd8e71bd2d7bc69a3cad}{N\+U\+M\+\_\+cmp}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie a ==b. 
+\end{DoxyReturn}
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+is\+\_\+inf@{N\+U\+M\+\_\+is\+\_\+inf}}
 \index{N\+U\+M\+\_\+is\+\_\+inf@{N\+U\+M\+\_\+is\+\_\+inf}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+inf()}{NUM\_is\_inf()}}
-{\footnotesize\ttfamily int N\+U\+M\+\_\+is\+\_\+inf (\begin{DoxyParamCaption}\item[{const \hyperlink{structnum__t}{num}}]{a,  }\item[{const \hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+inf(const num a, const num b, int $\ast$flag)}{NUM_is_inf(const num a, const num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}int N\+U\+M\+\_\+is\+\_\+inf (
+\begin{DoxyParamCaption}
+\item[{const {\bf num}}]{a, }
+\item[{const {\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_aeecb8abee811d7a6fd66294707a6aef7}{}\label{number_8c_aeecb8abee811d7a6fd66294707a6aef7}
 
 
 Renvoie a $<$ b. 
@@ -178,12 +219,15 @@ Renvoie a $<$ b.
 \begin{DoxyReturn}{Renvoie}
 
 \end{DoxyReturn}
-\hypertarget{number_8c_aa80212b266cf3e9ea95b1687faa851dc}{}\label{number_8c_aa80212b266cf3e9ea95b1687faa851dc} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal@{N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal}}
 \index{N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal@{N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal()}{NUM\_is\_inf\_equal()}}
-{\footnotesize\ttfamily int N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal (\begin{DoxyParamCaption}\item[{const \hyperlink{structnum__t}{num}}]{a,  }\item[{const \hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal(const num a, const num b, int $\ast$flag)}{NUM_is_inf_equal(const num a, const num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}int N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal (
+\begin{DoxyParamCaption}
+\item[{const {\bf num}}]{a, }
+\item[{const {\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_aa80212b266cf3e9ea95b1687faa851dc}{}\label{number_8c_aa80212b266cf3e9ea95b1687faa851dc}
 
 
 Renvoie a $<$= b. 
@@ -194,12 +238,15 @@ Renvoie a $<$= b.
 \begin{DoxyReturn}{Renvoie}
 Renvoie a$<$=b, 0 si évaluation impossible. 
 \end{DoxyReturn}
-\hypertarget{number_8c_a59ace3e4546feb54fbe6adc2aebc43b7}{}\label{number_8c_a59ace3e4546feb54fbe6adc2aebc43b7} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+is\+\_\+sup@{N\+U\+M\+\_\+is\+\_\+sup}}
 \index{N\+U\+M\+\_\+is\+\_\+sup@{N\+U\+M\+\_\+is\+\_\+sup}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+sup()}{NUM\_is\_sup()}}
-{\footnotesize\ttfamily int N\+U\+M\+\_\+is\+\_\+sup (\begin{DoxyParamCaption}\item[{const \hyperlink{structnum__t}{num}}]{a,  }\item[{const \hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+sup(const num a, const num b, int $\ast$flag)}{NUM_is_sup(const num a, const num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}int N\+U\+M\+\_\+is\+\_\+sup (
+\begin{DoxyParamCaption}
+\item[{const {\bf num}}]{a, }
+\item[{const {\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a59ace3e4546feb54fbe6adc2aebc43b7}{}\label{number_8c_a59ace3e4546feb54fbe6adc2aebc43b7}
 
 
 renvoie a $>$ b. 
@@ -210,12 +257,15 @@ Fonctionnement identique à N\+U\+M\+\_\+is\+\_\+inf. \begin{DoxySeeAlso}{Voir �
 \begin{DoxyReturn}{Renvoie}
 Renvoie a $>$ b si evaluation possible. 0 sinon. 
 \end{DoxyReturn}
-\hypertarget{number_8c_a82f3036db60fc9e814e4648e37b725a2}{}\label{number_8c_a82f3036db60fc9e814e4648e37b725a2} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal@{N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal}}
 \index{N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal@{N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal()}{NUM\_is\_sup\_equal()}}
-{\footnotesize\ttfamily int N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal (\begin{DoxyParamCaption}\item[{const \hyperlink{structnum__t}{num}}]{a,  }\item[{const \hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal(const num a, const num b, int $\ast$flag)}{NUM_is_sup_equal(const num a, const num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}int N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal (
+\begin{DoxyParamCaption}
+\item[{const {\bf num}}]{a, }
+\item[{const {\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a82f3036db60fc9e814e4648e37b725a2}{}\label{number_8c_a82f3036db60fc9e814e4648e37b725a2}
 
 
 Renvoie a $>$= b. 
@@ -226,12 +276,14 @@ Renvoie a $>$= b.
 \begin{DoxyReturn}{Renvoie}
 Renvoie a $>$= b si comparaison possible 0 sinon. 
 \end{DoxyReturn}
-\hypertarget{number_8c_a1c5cedf6d188f7c15ba2395bc2e94ba6}{}\label{number_8c_a1c5cedf6d188f7c15ba2395bc2e94ba6} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+lint\+\_\+cmp@{N\+U\+M\+\_\+lint\+\_\+cmp}}
 \index{N\+U\+M\+\_\+lint\+\_\+cmp@{N\+U\+M\+\_\+lint\+\_\+cmp}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+lint\+\_\+cmp()}{NUM\_lint\_cmp()}}
-{\footnotesize\ttfamily int N\+U\+M\+\_\+lint\+\_\+cmp (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{long int}]{v }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+lint\+\_\+cmp(num a, long int v)}{NUM_lint_cmp(num a, long int v)}}]{\setlength{\rightskip}{0pt plus 5cm}int N\+U\+M\+\_\+lint\+\_\+cmp (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{long int}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a1c5cedf6d188f7c15ba2395bc2e94ba6}{}\label{number_8c_a1c5cedf6d188f7c15ba2395bc2e94ba6}
 
 
 Compare le num avec l\textquotesingle{}int v. Num doit être de type N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER. 
@@ -246,12 +298,15 @@ Compare le num avec l\textquotesingle{}int v. Num doit être de type N\+U\+M\+\_
 \begin{DoxyReturn}{Renvoie}
 \+: Revoie 1 si num = v et 0 sinon (renvoie 0 si num n\textquotesingle{}est pas de type entier) 
 \end{DoxyReturn}
-\hypertarget{number_8c_a99f71152b0d68cb8843d84e7af1bfc31}{}\label{number_8c_a99f71152b0d68cb8843d84e7af1bfc31} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+modulo@{N\+U\+M\+\_\+modulo}}
 \index{N\+U\+M\+\_\+modulo@{N\+U\+M\+\_\+modulo}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+modulo()}{NUM\_modulo()}}
-{\footnotesize\ttfamily \hyperlink{structnum__t}{num} N\+U\+M\+\_\+modulo (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{\hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+modulo(num a, num b, int $\ast$flag)}{NUM_modulo(num a, num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+modulo (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{{\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a99f71152b0d68cb8843d84e7af1bfc31}{}\label{number_8c_a99f71152b0d68cb8843d84e7af1bfc31}
 
 
 Calcule ab. 
@@ -261,12 +316,15 @@ Renvoie le reste de la division euclidienne de a par b. Les num doivent être en
 \begin{DoxyReturn}{Renvoie}
 Renvoie un num résultat. 
 \end{DoxyReturn}
-\hypertarget{number_8c_ad7003e02f06ef1fd25a160c3b0a5b880}{}\label{number_8c_ad7003e02f06ef1fd25a160c3b0a5b880} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+mul@{N\+U\+M\+\_\+mul}}
 \index{N\+U\+M\+\_\+mul@{N\+U\+M\+\_\+mul}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+mul()}{NUM\_mul()}}
-{\footnotesize\ttfamily \hyperlink{structnum__t}{num} N\+U\+M\+\_\+mul (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{\hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+mul(num a, num b, int $\ast$flag)}{NUM_mul(num a, num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+mul (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{{\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_ad7003e02f06ef1fd25a160c3b0a5b880}{}\label{number_8c_ad7003e02f06ef1fd25a160c3b0a5b880}
 
 
 Produit de a par b. 
@@ -279,12 +337,13 @@ P\+R\+I\+M\+\_\+sum.
 \begin{DoxyReturn}{Renvoie}
 
 \end{DoxyReturn}
-\hypertarget{number_8c_adee8e683b4a4606c79f5e1c97e984b67}{}\label{number_8c_adee8e683b4a4606c79f5e1c97e984b67} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+print@{N\+U\+M\+\_\+print}}
 \index{N\+U\+M\+\_\+print@{N\+U\+M\+\_\+print}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+print()}{NUM\_print()}}
-{\footnotesize\ttfamily void N\+U\+M\+\_\+print (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{printed }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+print(num printed)}{NUM_print(num printed)}}]{\setlength{\rightskip}{0pt plus 5cm}void N\+U\+M\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{printed}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_adee8e683b4a4606c79f5e1c97e984b67}{}\label{number_8c_adee8e683b4a4606c79f5e1c97e984b67}
 
 
 Affiche un num. 
@@ -294,12 +353,15 @@ Affiche un num.
 {\em printed} & \+: le num à afficher. \\
 \hline
 \end{DoxyParams}
-\hypertarget{number_8c_a52d0aa57fb2da6f67cd8f0ce42ed7454}{}\label{number_8c_a52d0aa57fb2da6f67cd8f0ce42ed7454} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+quotient@{N\+U\+M\+\_\+quotient}}
 \index{N\+U\+M\+\_\+quotient@{N\+U\+M\+\_\+quotient}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+quotient()}{NUM\_quotient()}}
-{\footnotesize\ttfamily \hyperlink{structnum__t}{num} N\+U\+M\+\_\+quotient (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{\hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+quotient(num a, num b, int $\ast$flag)}{NUM_quotient(num a, num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+quotient (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{{\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a52d0aa57fb2da6f67cd8f0ce42ed7454}{}\label{number_8c_a52d0aa57fb2da6f67cd8f0ce42ed7454}
 
 
 Calcule a/b pour des entiers. 
@@ -309,12 +371,14 @@ Effectue une division euclidienne et renvoie le quotient. En pratique on reprend
 \begin{DoxyReturn}{Renvoie}
 Renvoie le num résultat. 
 \end{DoxyReturn}
-\hypertarget{number_8c_a3f435b41cbf1032f18d3db201e69c386}{}\label{number_8c_a3f435b41cbf1032f18d3db201e69c386} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+set\+\_\+int@{N\+U\+M\+\_\+set\+\_\+int}}
 \index{N\+U\+M\+\_\+set\+\_\+int@{N\+U\+M\+\_\+set\+\_\+int}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+set\+\_\+int()}{NUM\_set\_int()}}
-{\footnotesize\ttfamily \hyperlink{structnum__t}{num}$\ast$ N\+U\+M\+\_\+set\+\_\+int (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num} $\ast$}]{a,  }\item[{int}]{v }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+set\+\_\+int(num $\ast$a, int v)}{NUM_set_int(num *a, int v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num}$\ast$ N\+U\+M\+\_\+set\+\_\+int (
+\begin{DoxyParamCaption}
+\item[{{\bf num} $\ast$}]{a, }
+\item[{int}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a3f435b41cbf1032f18d3db201e69c386}{}\label{number_8c_a3f435b41cbf1032f18d3db201e69c386}
 
 
 Enregistre dans a l\textquotesingle{}entier v, retourne le nouveau num. Met à jour champ numtype à N\+U\+M\+\_\+\+I\+N\+T\+E\+G\+ER. 
@@ -329,12 +393,14 @@ Enregistre dans a l\textquotesingle{}entier v, retourne le nouveau num. Met à j
 \begin{DoxyReturn}{Renvoie}
 \+: Renvoie un pointeur sur le num modifié. 
 \end{DoxyReturn}
-\hypertarget{number_8c_a5349d9a9575ccb62b3407900f3f46c18}{}\label{number_8c_a5349d9a9575ccb62b3407900f3f46c18} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+set\+\_\+real@{N\+U\+M\+\_\+set\+\_\+real}}
 \index{N\+U\+M\+\_\+set\+\_\+real@{N\+U\+M\+\_\+set\+\_\+real}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+set\+\_\+real()}{NUM\_set\_real()}}
-{\footnotesize\ttfamily \hyperlink{structnum__t}{num}$\ast$ N\+U\+M\+\_\+set\+\_\+real (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num} $\ast$}]{a,  }\item[{double}]{v }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+set\+\_\+real(num $\ast$a, double v)}{NUM_set_real(num *a, double v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num}$\ast$ N\+U\+M\+\_\+set\+\_\+real (
+\begin{DoxyParamCaption}
+\item[{{\bf num} $\ast$}]{a, }
+\item[{double}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a5349d9a9575ccb62b3407900f3f46c18}{}\label{number_8c_a5349d9a9575ccb62b3407900f3f46c18}
 
 
 Enregistre dans a le réel v, retourne le nouveau num. Met à jour champ numtype à N\+U\+M\+\_\+\+R\+E\+AL. 
@@ -349,12 +415,13 @@ Enregistre dans a le réel v, retourne le nouveau num. Met à jour champ numtype
 \begin{DoxyReturn}{Renvoie}
 \+: Renvoie un pointeur sur le num modifié. 
 \end{DoxyReturn}
-\hypertarget{number_8c_a968d39ec3ecc0e720e61bd3657cec2a7}{}\label{number_8c_a968d39ec3ecc0e720e61bd3657cec2a7} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+sign@{N\+U\+M\+\_\+sign}}
 \index{N\+U\+M\+\_\+sign@{N\+U\+M\+\_\+sign}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+sign()}{NUM\_sign()}}
-{\footnotesize\ttfamily int N\+U\+M\+\_\+sign (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+sign(num a)}{NUM_sign(num a)}}]{\setlength{\rightskip}{0pt plus 5cm}int N\+U\+M\+\_\+sign (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a968d39ec3ecc0e720e61bd3657cec2a7}{}\label{number_8c_a968d39ec3ecc0e720e61bd3657cec2a7}
 
 
 Retourne 1 si a positif, -\/1 si a négatif. 
@@ -362,12 +429,15 @@ Retourne 1 si a positif, -\/1 si a négatif.
 Renvoie 0 pour un num non typé ou de type n\textquotesingle{}ayant pas de signe. N\+U\+M\+\_\+\+C\+O\+M\+P\+L\+EX \+: pas de signe. \begin{DoxyReturn}{Renvoie}
 1 si a $>$ 0, -\/1 si a $<$ 0 et 0 si a nul. 
 \end{DoxyReturn}
-\hypertarget{number_8c_a7790d6469a5253d77a41fe3066d69cb7}{}\label{number_8c_a7790d6469a5253d77a41fe3066d69cb7} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+sub@{N\+U\+M\+\_\+sub}}
 \index{N\+U\+M\+\_\+sub@{N\+U\+M\+\_\+sub}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+sub()}{NUM\_sub()}}
-{\footnotesize\ttfamily \hyperlink{structnum__t}{num} N\+U\+M\+\_\+sub (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{\hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+sub(num a, num b, int $\ast$flag)}{NUM_sub(num a, num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+sub (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{{\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_a7790d6469a5253d77a41fe3066d69cb7}{}\label{number_8c_a7790d6469a5253d77a41fe3066d69cb7}
 
 
 Calcul a -\/ b. 
@@ -377,12 +447,15 @@ Si les num ont des types dont la soustraction n\textquotesingle{}est pas défini
 \begin{DoxyReturn}{Renvoie}
 Renvoie le num résultat de la somme. a si erreur. 
 \end{DoxyReturn}
-\hypertarget{number_8c_aa001b3a988a911dfb8b9db6c716f47a4}{}\label{number_8c_aa001b3a988a911dfb8b9db6c716f47a4} 
 \index{number.\+c@{number.\+c}!N\+U\+M\+\_\+sum@{N\+U\+M\+\_\+sum}}
 \index{N\+U\+M\+\_\+sum@{N\+U\+M\+\_\+sum}!number.\+c@{number.\+c}}
-\subsubsection{\texorpdfstring{N\+U\+M\+\_\+sum()}{NUM\_sum()}}
-{\footnotesize\ttfamily \hyperlink{structnum__t}{num} N\+U\+M\+\_\+sum (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{\hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{N\+U\+M\+\_\+sum(num a, num b, int $\ast$flag)}{NUM_sum(num a, num b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf num} N\+U\+M\+\_\+sum (
+\begin{DoxyParamCaption}
+\item[{{\bf num}}]{a, }
+\item[{{\bf num}}]{b, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}\hypertarget{number_8c_aa001b3a988a911dfb8b9db6c716f47a4}{}\label{number_8c_aa001b3a988a911dfb8b9db6c716f47a4}
 
 
 Effectue la somme de 2 num. 
