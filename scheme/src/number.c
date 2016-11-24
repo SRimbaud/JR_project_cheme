@@ -558,7 +558,7 @@ num NUM_div(num a, num b, int* flag)
 		{
 			
 			a.numtype = NUM_REAL;
-			a.this.real = (double) a.this.integer/b.this.integer;
+			a.this.real = a.this.integer/b.this.integer;
 			return(a);
 		}
 		if(a.numtype == NUM_REAL)
@@ -648,4 +648,29 @@ num NUM_modulo(num a, num b, int* flag)
 	return(a);
 }
 
+/** @fn num NUM_quotient(num a, num b, int* flag)
+ * @brief Calcule a/b pour des entiers.
+ *
+ * Effectue une division euclidienne et renvoie le quotient.
+ * En pratique on reprend le code de la division uniquement sur
+ * les entiers et on ne caste pas en double. Flag mis à 
+ * 1 si jamais ce ne sont pas des entiers.
+ * Si b est O le flag est mis à 1 et un message de warning_msg apparaît.
+ *
+ * @return Renvoie le num résultat.
+ */
+num NUM_quotient(num a, num b, int* flag)
+{
+/* On vérifie que le flag existe */
+	char existing_flag = 0;
+	if(flag) existing_flag = 1;
+	/* Le résultat renvoyé est toujours a */
+	if(a.numtype ==NUM_INTEGER && NUM_cmp_type(a, b) )
+	{
+		a.this.integer = a.this.integer/b.this.integer;
+		return(a);
+	}
+	if(existing_flag) *flag = 1;
+	return(a);
 
+}

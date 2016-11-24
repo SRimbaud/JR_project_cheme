@@ -765,6 +765,45 @@ object OBJECT_modulo(const object a, const object b, object result)
 	return(result);
 }
 
+/** @fn object OBJECT_quotient(const object a, const object b, object result)
+ * @brief Calcul la div entière de a par b.
+ *
+ * Si a et b non SFS_NUMBER renvoie NULL.
+ * Si a et b non entier renvoie NULL
+ *
+ * Similaire a OBJECT_add.
+ *
+ * @sa OBJECT_add()
+ *
+ * @return Renvoie le result mis à jour.
+ */
+object OBJECT_quotient(const object a, const object b, object result)
+{
+	if(check_type(a, SFS_NIL) || check_type(b, SFS_NIL)) 
+	{
+		DEBUG_MSG("Quotient on nil, nil returned");
+		return(NULL);
+	}
+	if(!check_type(a, SFS_NUMBER) || !check_type(b, SFS_NUMBER))
+	{
+		WARNING_MSG("Quotient on not Number type");
+		return (NULL);
+	}
+	int flag = 0;
+	result->type = SFS_NUMBER;
+	result->this.number = NUM_quotient(a->this.number, b->this.number, &flag);
+	if(flag) 
+	{
+		WARNING_MSG(" Quotient : impossible to calculate result");
+		return(NULL);
+	}
+	return(result);
+}
+
+
+
+
+
 
 /** @fn  void check_alloc(void* ptr, char* message)
  * @brief Vérifie une allocation dynamique.

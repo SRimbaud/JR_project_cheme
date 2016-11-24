@@ -426,12 +426,8 @@ object PRIM_quotient(object a)
 			terme = terme->this.pair.cdr)
 	{
 		/* On test si c'est un entier */
-		if(terme->this.pair.car->this.number.numtype != NUM_INTEGER)
-		{
-			WARNING_MSG("quotient : Non integer type");
-			return(nil);
-		}
-		result = OBJECT_div(result, terme->this.pair.car, result);
+		
+		result = OBJECT_quotient(result, terme->this.pair.car, result);
 		if(result == nil || OBJECT_isempty(result) )
 		{
 			/* Cas ou la somme fail */

@@ -60,6 +60,7 @@ num NUM_sub(num a, num b, int* flag);
 num NUM_mul(num a, num b, int* flag);
 num NUM_div(num a, num b, int* flag);
 num NUM_modulo(num a, num b, int* flag);
+num NUM_quotient(num a, num b, int* flag);
 
 #ifdef __cplusplus
 }
