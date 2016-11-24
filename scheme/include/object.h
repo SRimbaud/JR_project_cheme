@@ -116,6 +116,11 @@ int OBJECT_cmp_bool(object a, object b);
 int OBJECT_cmp_number(object a, object b);
 int OBJECT_cmp_symb(object a, char* symbol);
 
+int OBJECT_cmp_is_inf(const object a, const object b, int* flag);
+int OBJECT_cmp_is_sup(const object a, const object b, int* flag);
+int OBJECT_cmp_is_sup_equal(const object a, const object b, int* flag);
+int OBJECT_cmp_is_inf_equal(const object a, const object b, int* flag);
+
 /* Opérateurs arithmétiques */
 object OBJECT_add(const object a, const object b, object result);
 object OBJECT_sub(const object a, const object b, object result);

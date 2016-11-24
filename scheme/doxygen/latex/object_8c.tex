@@ -53,6 +53,14 @@ int \hyperlink{object_8c_aa8a7c4f6341e5477c8cf12d9fa4b8048}{O\+B\+J\+E\+C\+T\+\_
 \begin{DoxyCompactList}\small\item\em Compare deux objets de type entier. \end{DoxyCompactList}\item 
 int \hyperlink{object_8c_a85b5035114247cba825eafb2ef1d34c0}{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb} (\hyperlink{structobject__t}{object} a, char $\ast$symbol)
 \begin{DoxyCompactList}\small\item\em Compare a avec le symbol symbol. \end{DoxyCompactList}\item 
+int \hyperlink{object_8c_ab4b6a20ced958c8d2f5fda6c0e8f191b}{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Renvoie a $<$ b. \end{DoxyCompactList}\item 
+int \hyperlink{object_8c_ab418f8b63a1b1ed89a04ea1cd566a31e}{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Renvoie a $>$ b. \end{DoxyCompactList}\item 
+int \hyperlink{object_8c_a6bc0b088ee8b84a0f2fbd4fab3177b10}{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Renvoie a $>$= b. \end{DoxyCompactList}\item 
+int \hyperlink{object_8c_aae53685d941d31264064ddb7bad1b2e9}{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Renvoie a $<$= b. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{object_8c_a79151b36db8756df298be886a88dde6a}{O\+B\+J\+E\+C\+T\+\_\+add} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, \hyperlink{structobject__t}{object} result)
 \begin{DoxyCompactList}\small\item\em Effectue la somme de 2 objets, écrit résultat dans résult. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{object_8c_a600f7cb500116ca30a31e9ae9c39a469}{O\+B\+J\+E\+C\+T\+\_\+sub} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, \hyperlink{structobject__t}{object} result)
@@ -61,6 +69,10 @@ int \hyperlink{object_8c_a85b5035114247cba825eafb2ef1d34c0}{O\+B\+J\+E\+C\+T\+\_
 \begin{DoxyCompactList}\small\item\em Calcul le produit de 2 objects a par b. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{object_8c_a2edee12884f9288a6d9f1056f1ecc492}{O\+B\+J\+E\+C\+T\+\_\+div} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, \hyperlink{structobject__t}{object} result)
 \begin{DoxyCompactList}\small\item\em Calcule la division de a par b. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{object_8c_a122ef0bfddd5435072ae270c9192ee28}{O\+B\+J\+E\+C\+T\+\_\+modulo} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, \hyperlink{structobject__t}{object} result)
+\begin{DoxyCompactList}\small\item\em Calcule ab. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{object_8c_a10043e4705f4650f026a33121cd54815}{O\+B\+J\+E\+C\+T\+\_\+quotient} (const \hyperlink{structobject__t}{object} a, const \hyperlink{structobject__t}{object} b, \hyperlink{structobject__t}{object} result)
+\begin{DoxyCompactList}\small\item\em Calcul la div entière de a par b. \end{DoxyCompactList}\item 
 void \hyperlink{object_8c_a457357b9ad319b66d3573aaeb2d77933}{check\+\_\+alloc} (void $\ast$ptr, char $\ast$message)
 \begin{DoxyCompactList}\small\item\em Vérifie une allocation dynamique. \end{DoxyCompactList}\item 
 int \hyperlink{object_8c_aa57b70a35593ee0e9483282f796a5122}{check\+\_\+type} (\hyperlink{structobject__t}{object} o, int sfs\+\_\+type)
@@ -485,6 +497,72 @@ Compare 2 booléens. Renvoie 0 s\textquotesingle{}ils ne sont pas booléens.
 \begin{DoxyReturn}{Renvoie}
 1 si les 2 booléens sont égaux, 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_ab4b6a20ced958c8d2f5fda6c0e8f191b}{}\label{object_8c_ab4b6a20ced958c8d2f5fda6c0e8f191b} 
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf}}
+\index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf()}{OBJECT\_cmp\_is\_inf()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Renvoie a $<$ b. 
+
+Si a ou b ne sont pas des S\+F\+S\+\_\+\+N\+U\+M\+B\+ER renvoie 0 et affiche un warning. Le flag est mis à 1. Si il y a une erreur dans le calcul, flag mis à 1.
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{number_8h_aeecb8abee811d7a6fd66294707a6aef7}{N\+U\+M\+\_\+is\+\_\+inf()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie a $<$ b, O si erreur alors flag mis à 1. 
+\end{DoxyReturn}
+\hypertarget{object_8c_aae53685d941d31264064ddb7bad1b2e9}{}\label{object_8c_aae53685d941d31264064ddb7bad1b2e9} 
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal}}
+\index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal()}{OBJECT\_cmp\_is\_inf\_equal()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Renvoie a $<$= b. 
+
+\begin{DoxySeeAlso}{Voir également}
+O\+B\+J\+E\+C\+T\+\_\+is\+\_\+cmp\+\_\+inf()
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie a $<$= b, 0 si erreur alors flag mis à 1. 
+\end{DoxyReturn}
+\hypertarget{object_8c_ab418f8b63a1b1ed89a04ea1cd566a31e}{}\label{object_8c_ab418f8b63a1b1ed89a04ea1cd566a31e} 
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup}}
+\index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup()}{OBJECT\_cmp\_is\_sup()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Renvoie a $>$ b. 
+
+\begin{DoxySeeAlso}{Voir également}
+O\+B\+J\+E\+C\+T\+\_\+is\+\_\+cmp\+\_\+inf()
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+a $>$ b, 0 si erreur alors flag mis à 1. 
+\end{DoxyReturn}
+\hypertarget{object_8c_a6bc0b088ee8b84a0f2fbd4fab3177b10}{}\label{object_8c_a6bc0b088ee8b84a0f2fbd4fab3177b10} 
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal}}
+\index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal()}{OBJECT\_cmp\_is\_sup\_equal()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Renvoie a $>$= b. 
+
+\begin{DoxySeeAlso}{Voir également}
+O\+B\+J\+E\+C\+T\+\_\+is\+\_\+cmp\+\_\+inf.
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie a $>$= b, 0 sinon, si erreur flag mis à 1. 
+\end{DoxyReturn}
 \hypertarget{object_8c_aa8a7c4f6341e5477c8cf12d9fa4b8048}{}\label{object_8c_aa8a7c4f6341e5477c8cf12d9fa4b8048} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number}!object.\+c@{object.\+c}}
@@ -591,6 +669,22 @@ Deux objets sont considérés comme égaux s\textquotesingle{}ils ont le même t
 \begin{DoxyReturn}{Renvoie}
 1 si a==b, 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a122ef0bfddd5435072ae270c9192ee28}{}\label{object_8c_a122ef0bfddd5435072ae270c9192ee28} 
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+modulo@{O\+B\+J\+E\+C\+T\+\_\+modulo}}
+\index{O\+B\+J\+E\+C\+T\+\_\+modulo@{O\+B\+J\+E\+C\+T\+\_\+modulo}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+modulo()}{OBJECT\_modulo()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+modulo (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
+
+
+Calcule ab. 
+
+Fonctionnement similaire à O\+B\+J\+E\+C\+T\+\_\+sum. \begin{DoxySeeAlso}{Voir également}
+\hyperlink{object_8c_a79151b36db8756df298be886a88dde6a}{O\+B\+J\+E\+C\+T\+\_\+add()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie le résultat. 
+\end{DoxyReturn}
 \hypertarget{object_8c_af66fca655ad9b5fafc4540f7dfc97127}{}\label{object_8c_af66fca655ad9b5fafc4540f7dfc97127} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+mul@{O\+B\+J\+E\+C\+T\+\_\+mul}}
 \index{O\+B\+J\+E\+C\+T\+\_\+mul@{O\+B\+J\+E\+C\+T\+\_\+mul}!object.\+c@{object.\+c}}
@@ -608,6 +702,26 @@ O\+B\+J\+E\+C\+T\+\_\+sum(const object a, const object b, object result)
 \end{DoxySeeAlso}
 \begin{DoxyReturn}{Renvoie}
 Renvoie le result mis à jour si produit possible, nil sinon. 
+\end{DoxyReturn}
+\hypertarget{object_8c_a10043e4705f4650f026a33121cd54815}{}\label{object_8c_a10043e4705f4650f026a33121cd54815} 
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+quotient@{O\+B\+J\+E\+C\+T\+\_\+quotient}}
+\index{O\+B\+J\+E\+C\+T\+\_\+quotient@{O\+B\+J\+E\+C\+T\+\_\+quotient}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+quotient()}{OBJECT\_quotient()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+quotient (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
+
+
+Calcul la div entière de a par b. 
+
+Si a et b non S\+F\+S\+\_\+\+N\+U\+M\+B\+ER renvoie N\+U\+LL. Si a et b non entier renvoie N\+U\+LL
+
+Similaire a O\+B\+J\+E\+C\+T\+\_\+add.
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{object_8c_a79151b36db8756df298be886a88dde6a}{O\+B\+J\+E\+C\+T\+\_\+add()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie le result mis à jour. 
 \end{DoxyReturn}
 \hypertarget{object_8c_a64f2fee85ada6041d0c74a250c419686}{}\label{object_8c_a64f2fee85ada6041d0c74a250c419686} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+rewrite@{O\+B\+J\+E\+C\+T\+\_\+rewrite}}

@@ -54,6 +54,10 @@ int NUM_cmp(num a, num b);
 int NUM_cmp_lint(num a, num b);
 int NUM_cmp_type(num a, num b);
 int NUM_sign(num a);
+int NUM_is_inf(const num a, const num b, int* flag);
+int NUM_is_sup(const num a, const num b, int* flag);
+int NUM_is_sup_equal(const num a, const num b, int* flag);
+int NUM_is_inf_equal(const num a, const num b, int* flag);
 /* Opérateur */
 num NUM_sum(num a, num b, int * flag);
 num NUM_sub(num a, num b, int* flag);

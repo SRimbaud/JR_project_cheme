@@ -47,6 +47,8 @@ void \hyperlink{primitive_8h_a71008e3b64854232352e9a010b0ec70f}{init\+\_\+primit
 \begin{DoxyCompactList}\small\item\em Evalue la liste d\textquotesingle{}arguments passé en paramètre. \end{DoxyCompactList}\item 
 int \hyperlink{primitive_8h_a8ab4a576c7ff2cfe21f1953320f4cddf}{P\+R\+I\+M\+\_\+check\+\_\+number\+\_\+arg} (\hyperlink{structobject__t}{object} args, int number)
 \begin{DoxyCompactList}\small\item\em Vérifie que args contient bien number arguments. \end{DoxyCompactList}\item 
+int \hyperlink{primitive_8h_ad23255a27f6fdb9d121e790cc5fe2711}{P\+R\+I\+M\+\_\+check\+\_\+enought\+\_\+number\+\_\+arg} (\hyperlink{structobject__t}{object} arg, int number)
+\begin{DoxyCompactList}\small\item\em Vérifie que l\textquotesingle{}on a au moins number arguments. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{primitive_8h_af5c8a6aeaab8a7127ca09a7d62d6c5ee}{P\+R\+I\+M\+\_\+check\+\_\+predicate} (\hyperlink{structobject__t}{object} a)
 \begin{DoxyCompactList}\small\item\em Met en forme le predicat en prenant le car de a. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a40befd1983531ea58c9048ec8f85544d}{P\+R\+I\+M\+\_\+is\+\_\+null} (\hyperlink{structobject__t}{object} a)
@@ -75,6 +77,18 @@ int \hyperlink{primitive_8h_a8ab4a576c7ff2cfe21f1953320f4cddf}{P\+R\+I\+M\+\_\+c
 \begin{DoxyCompactList}\small\item\em Calcul le produit de tous les objects a. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{primitive_8h_aa37a7bb955bdf1e25fc2d535322a9abe}{P\+R\+I\+M\+\_\+divise} (\hyperlink{structobject__t}{object} a)
 \item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a0c05b0b9e2577553cb3f9aaf860bf576}{P\+R\+I\+M\+\_\+quotient} (\hyperlink{structobject__t}{object} a)
+\begin{DoxyCompactList}\small\item\em Effectue la division des arguments de a. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a8fbb6dd70006ff4321997ab577a17697}{P\+R\+I\+M\+\_\+remainder} (\hyperlink{structobject__t}{object} a)
+\begin{DoxyCompactList}\small\item\em Calcul le reste de la division euclidienne des objets de a. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_aa105c6d8a470ff89ae8b960a48926932}{P\+R\+I\+M\+\_\+is\+\_\+sup} (\hyperlink{structobject__t}{object} a)
+\begin{DoxyCompactList}\small\item\em Regarde si le premier est supérieur aux autres. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_affe5c6429ee5bc0b9a9642a7806ce492}{P\+R\+I\+M\+\_\+is\+\_\+inf} (\hyperlink{structobject__t}{object} a)
+\begin{DoxyCompactList}\small\item\em Regarde si le premier argument est inférieur à tous les autres. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a8680de1b888c97da82fa1b4a5f69b5ab}{P\+R\+I\+M\+\_\+is\+\_\+sup\+\_\+equal} (\hyperlink{structobject__t}{object} a)
+\begin{DoxyCompactList}\small\item\em Regarde si le premier arg est supérieur ou égal à tous les autres. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a284e201342dea40179517f332b7dc4eb}{P\+R\+I\+M\+\_\+is\+\_\+inf\+\_\+equal} (\hyperlink{structobject__t}{object} a)
+\begin{DoxyCompactList}\small\item\em Regarde si le premier arguent est inférieur ou égal à tous les autres. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a6c7b00626cf4a8b6bd00a7cda3bfa628}{P\+R\+I\+M\+\_\+car} (\hyperlink{structobject__t}{object} a)
 \begin{DoxyCompactList}\small\item\em Renvoie le car de l\textquotesingle{}argument. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a9078c3c25fe9b584bf3a7b0d521ca354}{P\+R\+I\+M\+\_\+cdr} (\hyperlink{structobject__t}{object} a)
@@ -107,7 +121,11 @@ int {\bfseries P\+R\+I\+M\+\_\+check\+\_\+converted\+\_\+type} (\hyperlink{struc
 \hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a7ab8280cac0261a28d05d467aa2a2598}{P\+R\+I\+M\+\_\+string\+\_\+to\+\_\+real} (\hyperlink{structobject__t}{object} a)
 \begin{DoxyCompactList}\small\item\em Convertit un string en réel. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a7dbbf4259ddec65266ed1cbf834299df}{P\+R\+I\+M\+\_\+real\+\_\+to\+\_\+string} (\hyperlink{structobject__t}{object} a)
-\begin{DoxyCompactList}\small\item\em Convertit en reel en string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Convertit en reel en string. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a9d8ae1607902868361aabae9eb6be3cc}{P\+R\+I\+M\+\_\+string\+\_\+to\+\_\+number} (\hyperlink{structobject__t}{object} a)
+\begin{DoxyCompactList}\small\item\em Conversion d\textquotesingle{}une chaine en nombre (entier ou réel). \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_ac5ba1697302098fb8e405bf0999a5a18}{P\+R\+I\+M\+\_\+number\+\_\+to\+\_\+string} (\hyperlink{structobject__t}{object} a)
+\begin{DoxyCompactList}\small\item\em Convertit un number en chaine. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -204,6 +222,19 @@ Reçoit 1 argument. Convertit le premier argument qui est un char en entier. Ce 
 
 \begin{DoxyReturn}{Renvoie}
 Renvoie la conversion de l\textquotesingle{}object en integer. 
+\end{DoxyReturn}
+\hypertarget{primitive_8h_ad23255a27f6fdb9d121e790cc5fe2711}{}\label{primitive_8h_ad23255a27f6fdb9d121e790cc5fe2711} 
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+check\+\_\+enought\+\_\+number\+\_\+arg@{P\+R\+I\+M\+\_\+check\+\_\+enought\+\_\+number\+\_\+arg}}
+\index{P\+R\+I\+M\+\_\+check\+\_\+enought\+\_\+number\+\_\+arg@{P\+R\+I\+M\+\_\+check\+\_\+enought\+\_\+number\+\_\+arg}!primitive.\+h@{primitive.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+I\+M\+\_\+check\+\_\+enought\+\_\+number\+\_\+arg()}{PRIM\_check\_enought\_number\_arg()}}
+{\footnotesize\ttfamily int P\+R\+I\+M\+\_\+check\+\_\+enought\+\_\+number\+\_\+arg (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{arg,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Vérifie que l\textquotesingle{}on a au moins number arguments. 
+
+Fonctionnement similaire à \hyperlink{primitive_8h_a8ab4a576c7ff2cfe21f1953320f4cddf}{P\+R\+I\+M\+\_\+check\+\_\+number\+\_\+arg(object arg, int number)} \begin{DoxyReturn}{Renvoie}
+Renvoie 1 si il y a le bon nombre d\textquotesingle{}arguments 0 sinon. 
 \end{DoxyReturn}
 \hypertarget{primitive_8h_a8ab4a576c7ff2cfe21f1953320f4cddf}{}\label{primitive_8h_a8ab4a576c7ff2cfe21f1953320f4cddf} 
 \index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+check\+\_\+number\+\_\+arg@{P\+R\+I\+M\+\_\+check\+\_\+number\+\_\+arg}}
@@ -353,6 +384,38 @@ Renvoie vrai si a char.
 \begin{DoxyReturn}{Renvoie}
 Vrais si a char, faux sinon. 
 \end{DoxyReturn}
+\hypertarget{primitive_8h_affe5c6429ee5bc0b9a9642a7806ce492}{}\label{primitive_8h_affe5c6429ee5bc0b9a9642a7806ce492} 
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+is\+\_\+inf@{P\+R\+I\+M\+\_\+is\+\_\+inf}}
+\index{P\+R\+I\+M\+\_\+is\+\_\+inf@{P\+R\+I\+M\+\_\+is\+\_\+inf}!primitive.\+h@{primitive.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+I\+M\+\_\+is\+\_\+inf()}{PRIM\_is\_inf()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} P\+R\+I\+M\+\_\+is\+\_\+inf (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a }\end{DoxyParamCaption})}
+
+
+
+Regarde si le premier argument est inférieur à tous les autres. 
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{primitive_8h_aa105c6d8a470ff89ae8b960a48926932}{P\+R\+I\+M\+\_\+is\+\_\+sup()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie vrai si inf à tous les autres faux sinon. N\+U\+LL si erreur. 
+\end{DoxyReturn}
+\hypertarget{primitive_8h_a284e201342dea40179517f332b7dc4eb}{}\label{primitive_8h_a284e201342dea40179517f332b7dc4eb} 
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+is\+\_\+inf\+\_\+equal@{P\+R\+I\+M\+\_\+is\+\_\+inf\+\_\+equal}}
+\index{P\+R\+I\+M\+\_\+is\+\_\+inf\+\_\+equal@{P\+R\+I\+M\+\_\+is\+\_\+inf\+\_\+equal}!primitive.\+h@{primitive.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+I\+M\+\_\+is\+\_\+inf\+\_\+equal()}{PRIM\_is\_inf\_equal()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} P\+R\+I\+M\+\_\+is\+\_\+inf\+\_\+equal (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a }\end{DoxyParamCaption})}
+
+
+
+Regarde si le premier arguent est inférieur ou égal à tous les autres. 
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{primitive_8h_aa105c6d8a470ff89ae8b960a48926932}{P\+R\+I\+M\+\_\+is\+\_\+sup()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie vrai si premier arg $<$= a tous les autres, faux sinon. Renvoie N\+U\+LL si erreur. 
+\end{DoxyReturn}
 \hypertarget{primitive_8h_a0001269751ea91c9198314a816c45842}{}\label{primitive_8h_a0001269751ea91c9198314a816c45842} 
 \index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+is\+\_\+integer@{P\+R\+I\+M\+\_\+is\+\_\+integer}}
 \index{P\+R\+I\+M\+\_\+is\+\_\+integer@{P\+R\+I\+M\+\_\+is\+\_\+integer}!primitive.\+h@{primitive.\+h}}
@@ -440,6 +503,42 @@ Renvoie vrai si a string.
 \begin{DoxyReturn}{Renvoie}
 Vrai si a string, faux sinon. 
 \end{DoxyReturn}
+\hypertarget{primitive_8h_aa105c6d8a470ff89ae8b960a48926932}{}\label{primitive_8h_aa105c6d8a470ff89ae8b960a48926932} 
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+is\+\_\+sup@{P\+R\+I\+M\+\_\+is\+\_\+sup}}
+\index{P\+R\+I\+M\+\_\+is\+\_\+sup@{P\+R\+I\+M\+\_\+is\+\_\+sup}!primitive.\+h@{primitive.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+I\+M\+\_\+is\+\_\+sup()}{PRIM\_is\_sup()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} P\+R\+I\+M\+\_\+is\+\_\+sup (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a }\end{DoxyParamCaption})}
+
+
+
+Regarde si le premier est supérieur aux autres. 
+
+Regarde si le premier éléments est supérieur aux autres. Controle qu\textquotesingle{}il y a ait au moins 2 arguments. Renvoie N\+U\+LL si mauvais nombre d\textquotesingle{}arguments. Si il y a un problème dans la comparaison un warning est affiché et renvoie N\+U\+LL.
+
+\begin{DoxySeeAlso}{Voir également}
+O\+B\+J\+E\+C\+T\+\_\+is\+\_\+inf 
+
+\hyperlink{primitive_8h_ad23255a27f6fdb9d121e790cc5fe2711}{P\+R\+I\+M\+\_\+check\+\_\+enought\+\_\+number\+\_\+arg()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Vrai si premier arg supérieur aux autres, faux sinon. 
+\end{DoxyReturn}
+\hypertarget{primitive_8h_a8680de1b888c97da82fa1b4a5f69b5ab}{}\label{primitive_8h_a8680de1b888c97da82fa1b4a5f69b5ab} 
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+is\+\_\+sup\+\_\+equal@{P\+R\+I\+M\+\_\+is\+\_\+sup\+\_\+equal}}
+\index{P\+R\+I\+M\+\_\+is\+\_\+sup\+\_\+equal@{P\+R\+I\+M\+\_\+is\+\_\+sup\+\_\+equal}!primitive.\+h@{primitive.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+I\+M\+\_\+is\+\_\+sup\+\_\+equal()}{PRIM\_is\_sup\_equal()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} P\+R\+I\+M\+\_\+is\+\_\+sup\+\_\+equal (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a }\end{DoxyParamCaption})}
+
+
+
+Regarde si le premier arg est supérieur ou égal à tous les autres. 
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{primitive_8h_aa105c6d8a470ff89ae8b960a48926932}{P\+R\+I\+M\+\_\+is\+\_\+sup()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie vrai si le premier arg est supérieur ou égal à tous les autres, faux sinon. Renvoie N\+U\+LL si erreur. 
+\end{DoxyReturn}
 \hypertarget{primitive_8h_a518333b576c8399dc94dd3eb8687213e}{}\label{primitive_8h_a518333b576c8399dc94dd3eb8687213e} 
 \index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+is\+\_\+symbol@{P\+R\+I\+M\+\_\+is\+\_\+symbol}}
 \index{P\+R\+I\+M\+\_\+is\+\_\+symbol@{P\+R\+I\+M\+\_\+is\+\_\+symbol}!primitive.\+h@{primitive.\+h}}
@@ -499,6 +598,43 @@ Si a est nil ou N\+U\+LL retourne un object valant 1. (élément neutre du produ
 \begin{DoxyReturn}{Renvoie}
 
 \end{DoxyReturn}
+\hypertarget{primitive_8h_ac5ba1697302098fb8e405bf0999a5a18}{}\label{primitive_8h_ac5ba1697302098fb8e405bf0999a5a18} 
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+number\+\_\+to\+\_\+string@{P\+R\+I\+M\+\_\+number\+\_\+to\+\_\+string}}
+\index{P\+R\+I\+M\+\_\+number\+\_\+to\+\_\+string@{P\+R\+I\+M\+\_\+number\+\_\+to\+\_\+string}!primitive.\+h@{primitive.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+I\+M\+\_\+number\+\_\+to\+\_\+string()}{PRIM\_number\_to\_string()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} P\+R\+I\+M\+\_\+number\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a }\end{DoxyParamCaption})}
+
+
+
+Convertit un number en chaine. 
+
+Fait appel à snprintf. Renvoie N\+U\+LL si
+\begin{DoxyItemize}
+\item Plus d\textquotesingle{}un argument.
+\item Argument n\textquotesingle{}est pas un number.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie le resultat de la conversion. 
+\end{DoxyReturn}
+\hypertarget{primitive_8h_a0c05b0b9e2577553cb3f9aaf860bf576}{}\label{primitive_8h_a0c05b0b9e2577553cb3f9aaf860bf576} 
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+quotient@{P\+R\+I\+M\+\_\+quotient}}
+\index{P\+R\+I\+M\+\_\+quotient@{P\+R\+I\+M\+\_\+quotient}!primitive.\+h@{primitive.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+I\+M\+\_\+quotient()}{PRIM\_quotient()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} P\+R\+I\+M\+\_\+quotient (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a }\end{DoxyParamCaption})}
+
+
+
+Effectue la division des arguments de a. 
+
+Les arguments doivent être entier. Calcule le quotient d\textquotesingle{}entier uniquement en faisant appel à O\+B\+J\+E\+C\+T\+\_\+div.
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{primitive_8h_aa37a7bb955bdf1e25fc2d535322a9abe}{P\+R\+I\+M\+\_\+divise}.
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie l\textquotesingle{}object résultat. 
+\end{DoxyReturn}
 \hypertarget{primitive_8h_a7dbbf4259ddec65266ed1cbf834299df}{}\label{primitive_8h_a7dbbf4259ddec65266ed1cbf834299df} 
 \index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+real\+\_\+to\+\_\+string@{P\+R\+I\+M\+\_\+real\+\_\+to\+\_\+string}}
 \index{P\+R\+I\+M\+\_\+real\+\_\+to\+\_\+string@{P\+R\+I\+M\+\_\+real\+\_\+to\+\_\+string}!primitive.\+h@{primitive.\+h}}
@@ -513,6 +649,21 @@ Fait appel à snprintf. Renvoie N\+U\+LL en cas de pb.
 
 \begin{DoxyReturn}{Renvoie}
 Renvoie la chaine de caractère. 
+\end{DoxyReturn}
+\hypertarget{primitive_8h_a8fbb6dd70006ff4321997ab577a17697}{}\label{primitive_8h_a8fbb6dd70006ff4321997ab577a17697} 
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+remainder@{P\+R\+I\+M\+\_\+remainder}}
+\index{P\+R\+I\+M\+\_\+remainder@{P\+R\+I\+M\+\_\+remainder}!primitive.\+h@{primitive.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+I\+M\+\_\+remainder()}{PRIM\_remainder()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} P\+R\+I\+M\+\_\+remainder (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a }\end{DoxyParamCaption})}
+
+
+
+Calcul le reste de la division euclidienne des objets de a. 
+
+Prend une infinité d\textquotesingle{}arguments. Si un des arguments n\textquotesingle{}est pas un entier retourne N\+U\+LL. Calcul la division du premier pas le second puis le resultat par le troisième le résultat pas le quatrième ....
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie un S\+F\+S\+\_\+\+N\+U\+M\+B\+ER entier résultat. 
 \end{DoxyReturn}
 \hypertarget{primitive_8h_ac32d1e6a38e0e04d69974df8aa4704ed}{}\label{primitive_8h_ac32d1e6a38e0e04d69974df8aa4704ed} 
 \index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+set\+\_\+car@{P\+R\+I\+M\+\_\+set\+\_\+car}}
@@ -585,6 +736,21 @@ Conversion d\textquotesingle{}un string en entier. Utilisation de strtol. Gère 
 
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}objet convertie. 
+\end{DoxyReturn}
+\hypertarget{primitive_8h_a9d8ae1607902868361aabae9eb6be3cc}{}\label{primitive_8h_a9d8ae1607902868361aabae9eb6be3cc} 
+\index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+string\+\_\+to\+\_\+number@{P\+R\+I\+M\+\_\+string\+\_\+to\+\_\+number}}
+\index{P\+R\+I\+M\+\_\+string\+\_\+to\+\_\+number@{P\+R\+I\+M\+\_\+string\+\_\+to\+\_\+number}!primitive.\+h@{primitive.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+I\+M\+\_\+string\+\_\+to\+\_\+number()}{PRIM\_string\_to\_number()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} P\+R\+I\+M\+\_\+string\+\_\+to\+\_\+number (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a }\end{DoxyParamCaption})}
+
+
+
+Conversion d\textquotesingle{}une chaine en nombre (entier ou réel). 
+
+Pour cette fonction on fait appel à O\+B\+J\+E\+C\+T\+\_\+update. Renvoie N\+U\+LL si trop d\textquotesingle{}arguments et si ce n\textquotesingle{}est pas une chaine de caractère. Max 1 argument.
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie l\textquotesingle{}objet convertit. 
 \end{DoxyReturn}
 \hypertarget{primitive_8h_a7ab8280cac0261a28d05d467aa2a2598}{}\label{primitive_8h_a7ab8280cac0261a28d05d467aa2a2598} 
 \index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+string\+\_\+to\+\_\+real@{P\+R\+I\+M\+\_\+string\+\_\+to\+\_\+real}}

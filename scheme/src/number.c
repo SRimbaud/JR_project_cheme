@@ -250,6 +250,202 @@ int NUM_sign(num a)
 	return(0);
 }
 
+/** @fn int NUM_is_inf(const num a, const num b, int* flag)
+ * @brief Renvoie a < b
+ * @param a : premier paramètre de la comparaison.
+ * @param b : Deuxième paramètre de la comparaison.
+ * @param flag : Flag mis à 1 si erreur.
+ * Flag mit à 1 si jamais on a un type inconnu.
+ * Type comparable : REEL, ENTIER.
+ * On ne compare pas les infinis.
+ * Le flag peut valoir NULL.
+ * @return
+ */
+int NUM_is_inf(const num a, const num b, int* flag)
+{
+	int existing_flag = 0;
+	if(flag) existing_flag = 1;
+	if(NUM_cmp_type(a, b) )
+	{
+		/* Cas ou a et b sont de mêmes types */
+		if(a.numtype == NUM_REAL)
+		{
+			return(a.this.real < b.this.real);
+		}
+		if(a.numtype == NUM_INTEGER)
+		{
+			return(a.this.integer < b.this.integer);
+		}
+		/* Deux infinis de même signe ne sont pas comparables.
+		 */
+	}
+	else 
+	{
+		if(a.numtype == NUM_REAL && b.numtype == NUM_INTEGER)
+		{
+			return(a.this.real < b.this.integer);
+		}
+		if(a.numtype == NUM_INTEGER && b.numtype == NUM_REAL)
+		{
+			return(a.this.integer < b.this.real);
+		}
+		if(a.numtype == NUM_PINFTY) return (0);
+		if(a.numtype == NUM_MINFTY) return(1);
+		/* Inifini plus grand que tout !*/
+		if(b.numtype == NUM_MINFTY) return(0);
+		if(b.numtype == NUM_PINFTY) return(1);
+		/* Moins infini plus petit que tout */
+	}
+	WARNING_MSG("< : Impossible to evaluate");
+	if(existing_flag) *flag = 1;
+	return(0);
+
+}
+
+
+/** @fn int NUM_is_sup(const num a, const num b, int* flag)
+ * @brief renvoie a > b.
+ *
+ * Fonctionnement identique à NUM_is_inf.
+ * @sa NUM_is_inf()
+ *
+ * @return Renvoie a > b si evaluation possible. 0 sinon.
+ */
+int NUM_is_sup(const num a, const num b, int* flag)
+{
+	int existing_flag = 0;
+	if(flag) existing_flag = 1;
+	if(NUM_cmp_type(a, b) )
+	{
+		/* Cas ou a et b sont de mêmes types */
+		if(a.numtype == NUM_REAL)
+		{
+			return(a.this.real > b.this.real);
+		}
+		if(a.numtype == NUM_INTEGER)
+		{
+			return(a.this.integer > b.this.integer);
+		}
+		/* Deux infinis de même signe ne sont pas comparables.
+		 */
+	}
+	else 
+	{
+		if(a.numtype == NUM_REAL && b.numtype == NUM_INTEGER)
+		{
+			return(a.this.real > b.this.integer);
+		}
+		if(a.numtype == NUM_INTEGER && b.numtype == NUM_REAL)
+		{
+			return(a.this.integer > b.this.real);
+		}
+		if(a.numtype == NUM_PINFTY) return (1);
+		if(a.numtype == NUM_MINFTY) return(0);
+		/* Inifini plus grand que tout !*/
+		if(b.numtype == NUM_MINFTY) return(1);
+		if(b.numtype == NUM_PINFTY) return(0);
+		/* Moins infini plus petit que tout */
+		
+	}
+	WARNING_MSG("> : Impossible to evaluate");
+	if(existing_flag) *flag = 1;
+	return(0);
+}
+/** @fn int NUM_is_sup_equal(const num a, const num b, int* flag)
+ * @brief Renvoie a >= b.
+ *
+ * @sa NUM_is_inf().
+ *
+ * @return Renvoie a >= b si comparaison possible 0 sinon.
+ */
+int NUM_is_sup_equal(const num a, const num b, int* flag)
+{
+	int existing_flag = 0;
+	if(flag) existing_flag = 1;
+	if(NUM_cmp_type(a, b) )
+	{
+		/* Cas ou a et b sont de mêmes types */
+		if(a.numtype == NUM_REAL)
+		{
+			return(a.this.real >= b.this.real);
+		}
+		if(a.numtype == NUM_INTEGER)
+		{
+			return(a.this.integer >= b.this.integer);
+		}
+		/* Deux infinis de même signe ne sont pas comparables.
+		 */
+	}
+	else 
+	{
+		if(a.numtype == NUM_REAL && b.numtype == NUM_INTEGER)
+		{
+			return(a.this.real >= b.this.integer);
+		}
+		if(a.numtype == NUM_INTEGER && b.numtype == NUM_REAL)
+		{
+			return(a.this.integer >= b.this.real);
+		}
+		if(a.numtype == NUM_PINFTY) return (1);
+		if(a.numtype == NUM_MINFTY) return(0);
+		/* Inifini plus grand que tout !*/
+		if(b.numtype == NUM_MINFTY) return(1);
+		if(b.numtype == NUM_PINFTY) return(0);
+		/* Moins infini plus petit que tout */
+	}
+	WARNING_MSG(">= : Impossible to evaluate");
+	if(existing_flag) *flag = 1;
+	return(0);
+}
+/** @fn int NUM_is_inf_equal(const num a, const num b, int* flag)
+ * @brief Renvoie a <= b.
+ *
+ * @sa NUM_is_inf()
+ *
+ * @return Renvoie a<=b, 0 si évaluation impossible.
+ */
+int NUM_is_inf_equal(const num a, const num b, int* flag)
+{
+	int existing_flag = 0;
+	if(flag) existing_flag = 1;
+	if(NUM_cmp_type(a, b) )
+	{
+		/* Cas ou a et b sont de mêmes types */
+		if(a.numtype == NUM_REAL)
+		{
+			return(a.this.real <= b.this.real);
+		}
+		if(a.numtype == NUM_INTEGER)
+		{
+			return(a.this.integer <= b.this.integer);
+		}
+		/* Deux infinis de même signe ne sont pas comparables.
+		 */
+	}
+	else 
+	{
+		if(a.numtype == NUM_REAL && b.numtype == NUM_INTEGER)
+		{
+			return(a.this.real <= b.this.integer);
+		}
+		if(a.numtype == NUM_INTEGER && b.numtype == NUM_REAL)
+		{
+			return(a.this.integer <= b.this.real);
+		}
+		if(a.numtype == NUM_PINFTY) return (0);
+		if(a.numtype == NUM_MINFTY) return(1);
+		/* Inifini plus grand que tout !*/
+		if(b.numtype == NUM_MINFTY) return(0);
+		if(b.numtype == NUM_PINFTY) return(1);
+		/* Moins infini plus petit que tout */
+	}
+	WARNING_MSG("<= : Impossible to evaluate");
+	if(existing_flag) *flag = 1;
+	return(0);
+
+}
+
+
 
 /* Opérateur */
 
@@ -408,7 +604,6 @@ num NUM_sub(num a, num b, int* flag )
 	}
 }
 
-
 /** @fn num NUM_mul(num a, num b, int* flag )
  * @brief Produit de a par b.
  *
@@ -515,7 +710,6 @@ num NUM_mul(num a, num b, int* flag )
 		return(a);
 	}
 }
-
 
 /** @fn num NUM_div(num a, num b, int* flag)
  * @brief Calcule a/b.

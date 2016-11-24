@@ -67,6 +67,14 @@ int \hyperlink{number_8h_afecc8f5832487583cdc2f0792c67091f}{N\+U\+M\+\_\+cmp\+\_
 \begin{DoxyCompactList}\small\item\em Compare les types de 2 structures num. Renvoie 1 si égale 0 sinon. \end{DoxyCompactList}\item 
 int \hyperlink{number_8h_a968d39ec3ecc0e720e61bd3657cec2a7}{N\+U\+M\+\_\+sign} (\hyperlink{structnum__t}{num} a)
 \begin{DoxyCompactList}\small\item\em Retourne 1 si a positif, -\/1 si a négatif. \end{DoxyCompactList}\item 
+int \hyperlink{number_8h_aeecb8abee811d7a6fd66294707a6aef7}{N\+U\+M\+\_\+is\+\_\+inf} (const \hyperlink{structnum__t}{num} a, const \hyperlink{structnum__t}{num} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Renvoie a $<$ b. \end{DoxyCompactList}\item 
+int \hyperlink{number_8h_a59ace3e4546feb54fbe6adc2aebc43b7}{N\+U\+M\+\_\+is\+\_\+sup} (const \hyperlink{structnum__t}{num} a, const \hyperlink{structnum__t}{num} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em renvoie a $>$ b. \end{DoxyCompactList}\item 
+int \hyperlink{number_8h_a82f3036db60fc9e814e4648e37b725a2}{N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal} (const \hyperlink{structnum__t}{num} a, const \hyperlink{structnum__t}{num} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Renvoie a $>$= b. \end{DoxyCompactList}\item 
+int \hyperlink{number_8h_aa80212b266cf3e9ea95b1687faa851dc}{N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal} (const \hyperlink{structnum__t}{num} a, const \hyperlink{structnum__t}{num} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Renvoie a $<$= b. \end{DoxyCompactList}\item 
 \hyperlink{structnum__t}{num} \hyperlink{number_8h_aa001b3a988a911dfb8b9db6c716f47a4}{N\+U\+M\+\_\+sum} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b, int $\ast$flag)
 \begin{DoxyCompactList}\small\item\em Effectue la somme de 2 num. \end{DoxyCompactList}\item 
 \hyperlink{structnum__t}{num} \hyperlink{number_8h_a7790d6469a5253d77a41fe3066d69cb7}{N\+U\+M\+\_\+sub} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b, int $\ast$flag)
@@ -74,7 +82,11 @@ int \hyperlink{number_8h_a968d39ec3ecc0e720e61bd3657cec2a7}{N\+U\+M\+\_\+sign} (
 \hyperlink{structnum__t}{num} \hyperlink{number_8h_ad7003e02f06ef1fd25a160c3b0a5b880}{N\+U\+M\+\_\+mul} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b, int $\ast$flag)
 \begin{DoxyCompactList}\small\item\em Produit de a par b. \end{DoxyCompactList}\item 
 \hyperlink{structnum__t}{num} \hyperlink{number_8h_a33c7fe283eec368735c8619468ccaeb9}{N\+U\+M\+\_\+div} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b, int $\ast$flag)
-\begin{DoxyCompactList}\small\item\em Calcule a/b. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calcule a/b. \end{DoxyCompactList}\item 
+\hyperlink{structnum__t}{num} \hyperlink{number_8h_a99f71152b0d68cb8843d84e7af1bfc31}{N\+U\+M\+\_\+modulo} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Calcule ab. \end{DoxyCompactList}\item 
+\hyperlink{structnum__t}{num} \hyperlink{number_8h_a52d0aa57fb2da6f67cd8f0ce42ed7454}{N\+U\+M\+\_\+quotient} (\hyperlink{structnum__t}{num} a, \hyperlink{structnum__t}{num} b, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Calcule a/b pour des entiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -185,6 +197,76 @@ Calcule a/b.
 \begin{DoxyReturn}{Renvoie}
 Renvoie le résultat du calcul. 
 \end{DoxyReturn}
+\hypertarget{number_8h_aeecb8abee811d7a6fd66294707a6aef7}{}\label{number_8h_aeecb8abee811d7a6fd66294707a6aef7} 
+\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+is\+\_\+inf@{N\+U\+M\+\_\+is\+\_\+inf}}
+\index{N\+U\+M\+\_\+is\+\_\+inf@{N\+U\+M\+\_\+is\+\_\+inf}!number.\+h@{number.\+h}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+inf()}{NUM\_is\_inf()}}
+{\footnotesize\ttfamily int N\+U\+M\+\_\+is\+\_\+inf (\begin{DoxyParamCaption}\item[{const \hyperlink{structnum__t}{num}}]{a,  }\item[{const \hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Renvoie a $<$ b. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: premier paramètre de la comparaison. \\
+\hline
+{\em b} & \+: Deuxième paramètre de la comparaison. \\
+\hline
+{\em flag} & \+: Flag mis à 1 si erreur. Flag mit à 1 si jamais on a un type inconnu. Type comparable \+: R\+E\+EL, E\+N\+T\+I\+ER. On ne compare pas les infinis. Le flag peut valoir N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}
+\hypertarget{number_8h_aa80212b266cf3e9ea95b1687faa851dc}{}\label{number_8h_aa80212b266cf3e9ea95b1687faa851dc} 
+\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal@{N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal}}
+\index{N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal@{N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal}!number.\+h@{number.\+h}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal()}{NUM\_is\_inf\_equal()}}
+{\footnotesize\ttfamily int N\+U\+M\+\_\+is\+\_\+inf\+\_\+equal (\begin{DoxyParamCaption}\item[{const \hyperlink{structnum__t}{num}}]{a,  }\item[{const \hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Renvoie a $<$= b. 
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{number_8c_aeecb8abee811d7a6fd66294707a6aef7}{N\+U\+M\+\_\+is\+\_\+inf()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie a$<$=b, 0 si évaluation impossible. 
+\end{DoxyReturn}
+\hypertarget{number_8h_a59ace3e4546feb54fbe6adc2aebc43b7}{}\label{number_8h_a59ace3e4546feb54fbe6adc2aebc43b7} 
+\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+is\+\_\+sup@{N\+U\+M\+\_\+is\+\_\+sup}}
+\index{N\+U\+M\+\_\+is\+\_\+sup@{N\+U\+M\+\_\+is\+\_\+sup}!number.\+h@{number.\+h}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+sup()}{NUM\_is\_sup()}}
+{\footnotesize\ttfamily int N\+U\+M\+\_\+is\+\_\+sup (\begin{DoxyParamCaption}\item[{const \hyperlink{structnum__t}{num}}]{a,  }\item[{const \hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+renvoie a $>$ b. 
+
+Fonctionnement identique à N\+U\+M\+\_\+is\+\_\+inf. \begin{DoxySeeAlso}{Voir également}
+\hyperlink{number_8c_aeecb8abee811d7a6fd66294707a6aef7}{N\+U\+M\+\_\+is\+\_\+inf()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie a $>$ b si evaluation possible. 0 sinon. 
+\end{DoxyReturn}
+\hypertarget{number_8h_a82f3036db60fc9e814e4648e37b725a2}{}\label{number_8h_a82f3036db60fc9e814e4648e37b725a2} 
+\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal@{N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal}}
+\index{N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal@{N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal}!number.\+h@{number.\+h}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal()}{NUM\_is\_sup\_equal()}}
+{\footnotesize\ttfamily int N\+U\+M\+\_\+is\+\_\+sup\+\_\+equal (\begin{DoxyParamCaption}\item[{const \hyperlink{structnum__t}{num}}]{a,  }\item[{const \hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Renvoie a $>$= b. 
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{number_8c_aeecb8abee811d7a6fd66294707a6aef7}{N\+U\+M\+\_\+is\+\_\+inf()}.
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie a $>$= b si comparaison possible 0 sinon. 
+\end{DoxyReturn}
 \hypertarget{number_8h_a1c5cedf6d188f7c15ba2395bc2e94ba6}{}\label{number_8h_a1c5cedf6d188f7c15ba2395bc2e94ba6} 
 \index{number.\+h@{number.\+h}!N\+U\+M\+\_\+lint\+\_\+cmp@{N\+U\+M\+\_\+lint\+\_\+cmp}}
 \index{N\+U\+M\+\_\+lint\+\_\+cmp@{N\+U\+M\+\_\+lint\+\_\+cmp}!number.\+h@{number.\+h}}
@@ -204,6 +286,21 @@ Compare le num avec l\textquotesingle{}int v. Num doit être de type N\+U\+M\+\_
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 \+: Revoie 1 si num = v et 0 sinon (renvoie 0 si num n\textquotesingle{}est pas de type entier) 
+\end{DoxyReturn}
+\hypertarget{number_8h_a99f71152b0d68cb8843d84e7af1bfc31}{}\label{number_8h_a99f71152b0d68cb8843d84e7af1bfc31} 
+\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+modulo@{N\+U\+M\+\_\+modulo}}
+\index{N\+U\+M\+\_\+modulo@{N\+U\+M\+\_\+modulo}!number.\+h@{number.\+h}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+modulo()}{NUM\_modulo()}}
+{\footnotesize\ttfamily \hyperlink{structnum__t}{num} N\+U\+M\+\_\+modulo (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{\hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Calcule ab. 
+
+Renvoie le reste de la division euclidienne de a par b. Les num doivent être entier si ce n\textquotesingle{}est pas le cas le flag passe a 1.
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie un num résultat. 
 \end{DoxyReturn}
 \hypertarget{number_8h_ad7003e02f06ef1fd25a160c3b0a5b880}{}\label{number_8h_ad7003e02f06ef1fd25a160c3b0a5b880} 
 \index{number.\+h@{number.\+h}!N\+U\+M\+\_\+mul@{N\+U\+M\+\_\+mul}}
@@ -238,6 +335,21 @@ Affiche un num.
 {\em printed} & \+: le num à afficher. \\
 \hline
 \end{DoxyParams}
+\hypertarget{number_8h_a52d0aa57fb2da6f67cd8f0ce42ed7454}{}\label{number_8h_a52d0aa57fb2da6f67cd8f0ce42ed7454} 
+\index{number.\+h@{number.\+h}!N\+U\+M\+\_\+quotient@{N\+U\+M\+\_\+quotient}}
+\index{N\+U\+M\+\_\+quotient@{N\+U\+M\+\_\+quotient}!number.\+h@{number.\+h}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+quotient()}{NUM\_quotient()}}
+{\footnotesize\ttfamily \hyperlink{structnum__t}{num} N\+U\+M\+\_\+quotient (\begin{DoxyParamCaption}\item[{\hyperlink{structnum__t}{num}}]{a,  }\item[{\hyperlink{structnum__t}{num}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Calcule a/b pour des entiers. 
+
+Effectue une division euclidienne et renvoie le quotient. En pratique on reprend le code de la division uniquement sur les entiers et on ne caste pas en double. Flag mis à 1 si jamais ce ne sont pas des entiers. Si b est O le flag est mis à 1 et un message de warning\+\_\+msg apparaît.
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie le num résultat. 
+\end{DoxyReturn}
 \hypertarget{number_8h_a13c40a8c9f04c4212c928403d7b5d61c}{}\label{number_8h_a13c40a8c9f04c4212c928403d7b5d61c} 
 \index{number.\+h@{number.\+h}!N\+U\+M\+\_\+set\+\_\+int@{N\+U\+M\+\_\+set\+\_\+int}}
 \index{N\+U\+M\+\_\+set\+\_\+int@{N\+U\+M\+\_\+set\+\_\+int}!number.\+h@{number.\+h}}

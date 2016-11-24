@@ -42,6 +42,8 @@ object PRIM_make(char* name, ptr_primitive function);
 
 object PRIM_eval(const object args);
 int PRIM_check_number_arg(object args, int number);
+
+int PRIM_check_enought_number_arg(object arg, int number);
 /* ===========Predicats ================ */
 
 object PRIM_check_predicate(object a);
@@ -66,6 +68,12 @@ object PRIM_divise(object a);
 object PRIM_quotient(object a);
 object PRIM_remainder(object a);
 
+/* Comparaisons */
+
+object PRIM_is_sup(object a);
+object PRIM_is_inf(object a);
+object PRIM_is_sup_equal(object a);
+object PRIM_is_inf_equal(object a);
 /*========= Manipulation liste============*/
 
 object PRIM_car(object a);

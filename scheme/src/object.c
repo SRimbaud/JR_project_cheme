@@ -594,6 +594,97 @@ int OBJECT_cmp_symb(object a, char* symbol)
 	if(strcmp(a->this.symbol, symbol) == 0) return 1 ;
 	return(0);
 }
+
+/** @fn int OBJECT_cmp_is_inf(const object a, const object b, int* flag)
+ * @brief Renvoie a < b.
+ *
+ * Si a ou b ne sont pas des SFS_NUMBER renvoie 0 et affiche un warning.
+ * Le flag est mis à 1.
+ * Si il y a une erreur dans le calcul, flag mis à 1.
+ *
+ * @sa NUM_is_inf()
+ *
+ * @return Renvoie a < b, O si erreur alors flag mis à 1.
+ */
+int OBJECT_cmp_is_inf(const object a, const object b, int* flag)
+{
+	int existing_flag = 0;
+	if(flag) existing_flag = 1;
+
+	if(!check_type(a, SFS_NUMBER) && check_type(b, SFS_NUMBER))
+	{
+		WARNING_MSG("Cannot compare non number type.");
+		if(existing_flag) *flag = 1;
+		return(0);
+	}
+	return(NUM_is_inf(a->this.number, b->this.number, flag));
+
+}
+/** @fn int OBJECT_cmp_is_sup(const object a, const object b, int* flag)
+ * @brief Renvoie a > b.
+ *
+ * @sa OBJECT_is_cmp_inf()
+ *
+ * @return a > b, 0 si erreur alors flag mis à 1.
+ */
+int OBJECT_cmp_is_sup(const object a, const object b, int* flag)
+{
+	int existing_flag = 0;
+	if(flag) existing_flag = 1;
+
+	if(!check_type(a, SFS_NUMBER) && check_type(b, SFS_NUMBER))
+	{
+		WARNING_MSG("Cannot compare non number type.");
+		if(existing_flag) *flag = 1;
+		return(0);
+	}
+	return(NUM_is_sup(a->this.number, b->this.number, flag));
+
+}
+/** @fn int OBJECT_cmp_is_sup_equal(const object a, const object b, int* flag)
+ * @brief Renvoie a >= b.
+ *
+ * @sa OBJECT_is_cmp_inf.
+ *
+ * @return Renvoie a >= b, 0 sinon, si erreur flag mis à 1.
+ */
+int OBJECT_cmp_is_sup_equal(const object a, const object b, int* flag)
+{
+	int existing_flag = 0;
+	if(flag) existing_flag = 1;
+
+	if(!check_type(a, SFS_NUMBER) && check_type(b, SFS_NUMBER))
+	{
+		WARNING_MSG("Cannot compare non number type.");
+		if(existing_flag) *flag = 1;
+		return(0);
+	}
+	return(NUM_is_sup_equal(a->this.number, b->this.number, flag));
+
+}
+/** @fn int OBJECT_cmp_is_inf_equal(const object a, const object b, int* flag)
+ * @brief Renvoie a <= b.
+ *
+ * @sa OBJECT_is_cmp_inf()
+ *
+ * @return Renvoie a <= b, 0 si erreur alors flag mis à 1.
+ */
+int OBJECT_cmp_is_inf_equal(const object a, const object b, int* flag)
+{
+	int existing_flag = 0;
+	if(flag) existing_flag = 1;
+
+	if(!check_type(a, SFS_NUMBER) && check_type(b, SFS_NUMBER))
+	{
+		WARNING_MSG("Cannot compare non number type.");
+		if(existing_flag) *flag = 1;
+		return(0);
+	}
+	return(NUM_is_inf_equal(a->this.number, b->this.number, flag));
+
+}
+
+
 	
 /* Opérateurs arithmétiques */
 

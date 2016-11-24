@@ -20,6 +20,10 @@ void init_primitive()
 	PRIM_make("*" ,  PRIM_multiplie);
 	PRIM_make("remainder", PRIM_remainder);
 	PRIM_make("quotient", PRIM_quotient);
+	PRIM_make("<", PRIM_is_inf);
+	PRIM_make("<=", PRIM_is_inf_equal);
+	PRIM_make(">", PRIM_is_sup);
+	PRIM_make(">=", PRIM_is_sup_equal);
 	PRIM_make("null?", PRIM_is_null);
 	PRIM_make("boolean?", PRIM_is_boolean);
 	PRIM_make("symbol?", PRIM_is_symbol);
@@ -42,6 +46,7 @@ void init_primitive()
 	PRIM_make("symbol->string",PRIM_symbol_to_string);
 	PRIM_make("string->number",PRIM_string_to_number);
 	PRIM_make("number->string",PRIM_number_to_string);
+	
 	/* A retirer */
 	PRIM_make("string->integer",PRIM_string_to_integer);
 	PRIM_make("integer->string",PRIM_integer_to_string);
@@ -126,6 +131,30 @@ int PRIM_check_number_arg(object args, int number)
 	WARNING_MSG("%d arguments expected but %d given.", number, j); 
 	return(0);
 }
+
+/** @fn int PRIM_check_enought_number_arg(object arg, int number)
+ * @brief Vérifie que l'on a au moins number arguments.
+ *
+ * Fonctionnement similaire à PRIM_check_number_arg(object arg, int number)
+ * @return Renvoie 1 si il y a le bon nombre d'arguments 0 sinon.
+ */
+int PRIM_check_enought_number_arg(object arg, int number)
+{
+	object i = arg;
+	if(i->this.pair.cdr == nil)
+	{
+		WARNING_MSG("Expected at least %d arguments", number);
+		return(0);
+	}
+	int j =0 ;
+	for(i = arg, j = 0; !OBJECT_isempty(i) && check_type(i, SFS_PAIR);
+			i=i->this.pair.cdr, j++)
+	{}
+	if(j >= number) return(1);
+	WARNING_MSG("at least : %d arguments expected but %d given.", number, j); 
+	return(0);
+}
+
 /*========== Predicats============ */
 /* Chaque predicat reçoit en paramètre une liste 
  * d'argument.
@@ -418,7 +447,7 @@ object PRIM_quotient(object a)
 	 * entiers on va donc se contenter de vérifier
 	 * que les nombre sont bien des entiers.
 	 */
-{
+
 	if(a == nil) return(a);
 	object result = OBJECT_build_cpy(a->this.pair.car) ;
 	object terme = a ;
@@ -437,7 +466,7 @@ object PRIM_quotient(object a)
 	}	
 	return(result);
 }
-}
+
 /** @fn object PRIM_remainder(object a)
  * @brief Calcul le reste de la division euclidienne
  * des objets de a.
@@ -472,6 +501,150 @@ object PRIM_remainder(object a)
 	return(result);
 }
 
+/** @fn object PRIM_is_sup(object a)
+ * @brief Regarde si le premier est supérieur aux autres.
+ *
+ * Regarde si le premier éléments est supérieur aux autres.
+ * Controle qu'il y a ait au moins 2 arguments.
+ * Renvoie NULL si mauvais nombre d'arguments.
+ * Si il y a un problème dans la comparaison un warning est 
+ * affiché et renvoie NULL.
+ *
+ * @sa OBJECT_is_inf
+ * @sa PRIM_check_enought_number_arg()
+ *
+ * @return Vrai si premier arg supérieur aux autres, faux sinon.
+ */
+object PRIM_is_sup(object a)
+{
+	if(a==nil) return(NULL);
+	if(!PRIM_check_enought_number_arg(a, 2))
+	{
+		return(NULL);
+	}
+
+	object terme = a ;
+	object reference = OBJECT_get_cxr(a, "car");
+	int result = 0;
+	int flag = 0;
+	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
+			terme = terme->this.pair.cdr)
+	{
+		/* On test si c'est un entier */
+
+		result = OBJECT_cmp_is_sup(reference
+				, terme->this.pair.car, &flag);
+
+		if(flag) return(NULL);	
+		if(!result) return(faux);
+
+	}
+	/* Si on arrive ici on a tout vrai */
+	return(vrai);
+}
+/** @fn object PRIM_is_inf(object a)
+ * @brief Regarde si le premier argument est inférieur à tous les autres.
+ *
+ * @sa PRIM_is_sup()
+ *
+ * @return Renvoie vrai si inf à tous les autres faux sinon. NULL si erreur.
+ */
+object PRIM_is_inf(object a)
+{
+	if(a==nil) return(NULL);
+	if(!PRIM_check_enought_number_arg(a, 2))
+	{
+		return(NULL);
+	}
+
+	object terme = a ;
+	object reference = OBJECT_get_cxr(a, "car");
+	int result = 0;
+	int flag = 0;
+	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
+			terme = terme->this.pair.cdr)
+	{
+		/* On test si c'est un entier */
+
+		result = OBJECT_cmp_is_inf(reference
+				, terme->this.pair.car, &flag);
+
+		if(flag) return(NULL);	
+		if(!result) return(faux);
+
+	}
+	/* Si on arrive ici on a tout vrai */
+	return(vrai);
+}
+
+/** @fn object PRIM_is_sup_equal(object a)
+ * @brief Regarde si le premier arg est supérieur ou égal à tous les autres.
+ *
+ * @sa PRIM_is_sup()
+ *
+ * @return Renvoie vrai si le premier arg est supérieur ou égal à tous les autres, faux sinon. Renvoie NULL si erreur.
+ */
+object PRIM_is_sup_equal(object a)
+{
+	if(a==nil) return(NULL);
+	if(!PRIM_check_enought_number_arg(a, 2))
+	{
+		return(NULL);
+	}
+
+	object terme = a ;
+	object reference = OBJECT_get_cxr(a, "car");
+	int result = 0;
+	int flag = 0;
+	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
+			terme = terme->this.pair.cdr)
+	{
+		/* On test si c'est un entier */
+
+		result = OBJECT_cmp_is_sup_equal(reference
+				, terme->this.pair.car, &flag);
+
+		if(flag) return(NULL);	
+		if(!result) return(faux);
+
+	}
+	/* Si on arrive ici on a tout vrai */
+	return(vrai);
+}
+/** @fn object PRIM_is_inf_equal(object a)
+ * @brief Regarde si le premier arguent est inférieur ou égal à tous les autres.
+ *
+ * @sa PRIM_is_sup()
+ *
+ * @return Renvoie vrai si premier arg <= a tous les autres, faux sinon. Renvoie NULL si erreur.
+ */
+object PRIM_is_inf_equal(object a)
+{
+	if(a==nil) return(NULL);
+	if(!PRIM_check_enought_number_arg(a, 2))
+	{
+		return(NULL);
+	}
+
+	object terme = a ;
+	object reference = OBJECT_get_cxr(a, "car");
+	int result = 0;
+	int flag = 0;
+	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
+			terme = terme->this.pair.cdr)
+	{
+		/* On test si c'est un entier */
+
+		result = OBJECT_cmp_is_inf_equal(reference
+				, terme->this.pair.car, &flag);
+
+		if(flag) return(NULL);	
+		if(!result) return(faux);
+
+	}
+	/* Si on arrive ici on a tout vrai */
+	return(vrai);
+}
 
 
 

@@ -86,13 +86,19 @@ object sfs_eval( object input )
 			{
 				/* On gère le cas du 
 				 * Symbole en valant un autre
+				 * Cas faux que je laisse au cas ou.
+				 * Si la variable trouvée est un 
+				 * symbole on la renvoit tel quelle
+				 * c'est la valeur de la variable
+				 * inutile de l'évaluer.
 				 */
-				if(check_type(var, SFS_SYMBOL))
+				/*if(check_type(var, SFS_SYMBOL))
 				{
 					DEBUG_MSG("Symbol detected");
 					return(sfs_eval(var));
 				}
-				else if(check_type(var, SFS_PRIM))
+				else*/
+			        if(check_type(var, SFS_PRIM))
 				{
 					/* Cas ou on a une primitive seule 
 					 * Ne devrait pas se produire,
