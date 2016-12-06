@@ -47,7 +47,7 @@ void init_primitive()
 	PRIM_make("string->number",PRIM_string_to_number);
 	PRIM_make("number->string",PRIM_number_to_string);
 	
-	/* A retirer */
+	/* Présentes mais pas demandées. */
 	PRIM_make("string->integer",PRIM_string_to_integer);
 	PRIM_make("integer->string",PRIM_integer_to_string);
 	PRIM_make("string->real", PRIM_string_to_real);
