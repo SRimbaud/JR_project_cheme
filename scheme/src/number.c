@@ -185,6 +185,10 @@ int NUM_cmp_lint(num a, num b)
  * - NUM_PINFTY
  * - NUM_MINFTY
  * - NUM_REAL
+ *  
+ * Contrairement à NUM_is_equal, cette fonction considére
+ * que deux infinis de même signe sont égaux.
+ * @sa NUM_is_equal
  *
  * @return Renvoie 1 si égaux 0 sinon.
  */
@@ -250,6 +254,51 @@ int NUM_sign(num a)
 	return(0);
 }
 
+
+/** @fn int NUM_is_equal(const num a, const num b, int* flag);
+ * @brief Renvoie a==b. 
+ *
+ * Compare a et b S'ils sont égaux en valeur renvoie 1.
+ * Sinon renvoie 0.
+ * Passe le flag à 1 si il y a une erreur.
+ * Supporte un flag a NULL.
+ * Le flag est mis à 1 si on chercher à comparer un type
+ * non implémenté (On a implémenté NUM_REAL et NUM_INTEGER)
+ * En cas de comparaison entre infinis, renvoie 0 et passe le 
+ * flag à 1.
+ * 
+ * @sa NUM_cmp
+ *
+ * @return Renvoie a ==b.
+ */
+int NUM_is_equal(const num a, const num b, int* flag)
+{
+	if(!NUM_cmp_type(a,b))
+	{
+		if(a.numtype == NUM_INTEGER && b.numtype == NUM_REAL)
+			return(a.this.integer == b.this.real);
+		if(a.numtype==NUM_REAL && b.numtype == NUM_INTEGER)
+			return(a.this.real == b.this.integer);
+	}
+	int existing_flag = 0;
+	if(flag) existing_flag = 1;
+	if(a.numtype == NUM_INTEGER)
+	{
+		return(a.this.integer==b.this.integer);
+	}
+	if(a.numtype == NUM_REAL)
+	{
+		return(a.this.real == b.this.integer);
+	}
+	if(a.numtype == NUM_PINFTY || a.numtype == NUM_MINFTY)
+	{
+		/* On ne peut pas comparer des infinis */
+		if(existing_flag) *flag = 1;
+		WARNING_MSG("Impossible to compare infinite");
+		return(0);
+	}
+	return(0);
+}
 /** @fn int NUM_is_inf(const num a, const num b, int* flag)
  * @brief Renvoie a < b
  * @param a : premier paramètre de la comparaison.

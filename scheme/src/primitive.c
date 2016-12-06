@@ -4,12 +4,46 @@
  * @brief Initialise l'environnement courant avec toutes les 
  * primitives.
  *
- * Primitives implémentées le 17 Novembre 2016 :
+ * Primitives implémentées le 24 Novembre 2016 :
  *
  * - +
  * - -
  * - *
  * - /
+ * - remainder
+ * - quotient
+ * - <
+ * - >
+ * - <=
+ * - >=
+ * - =
+ * - null?
+ * - boolean?
+ * - symbol?
+ * - integer?
+ * - real?
+ * - char?
+ * - string?
+ * - pair?
+ * - list?
+ * - car
+ * - cdr
+ * - set-car!
+ * - set-cdr!
+ * - list
+ * - cons
+ * - eq?
+ * - char->integer
+ * - integer->char
+ * - string->symbole
+ * - symbole->string
+ * - string->number
+ * - number->string
+ * - string->integer
+ * - integer->string
+ * - string->real
+ * - real->string
+ *
  *
  */
 void init_primitive()
@@ -24,6 +58,7 @@ void init_primitive()
 	PRIM_make("<=", PRIM_is_inf_equal);
 	PRIM_make(">", PRIM_is_sup);
 	PRIM_make(">=", PRIM_is_sup_equal);
+	PRIM_make("=", PRIM_is_equal);
 	PRIM_make("null?", PRIM_is_null);
 	PRIM_make("boolean?", PRIM_is_boolean);
 	PRIM_make("symbol?", PRIM_is_symbol);
@@ -47,7 +82,6 @@ void init_primitive()
 	PRIM_make("string->number",PRIM_string_to_number);
 	PRIM_make("number->string",PRIM_number_to_string);
 	
-	/* Présentes mais pas demandées. */
 	PRIM_make("string->integer",PRIM_string_to_integer);
 	PRIM_make("integer->string",PRIM_integer_to_string);
 	PRIM_make("string->real", PRIM_string_to_real);
@@ -168,6 +202,7 @@ int PRIM_check_enought_number_arg(object arg, int number)
  *
  * Vérifie également qu'il y a bien qu'un seul argument
  * et non 2.
+ * Renvoie NULL si a n'est pas une paire.
  *
  * @return Renvoit le car de a.
  */
@@ -177,7 +212,7 @@ object PRIM_check_predicate(object a)
 	if(!check_type(a, SFS_PAIR))
 	{
 		WARNING_MSG("Error in predicate, need 1 argument");
-		return(nil);
+		return(NULL);
 	}
 	if(!check_type(a->this.pair.cdr, SFS_NIL))
 	{
@@ -321,6 +356,10 @@ object PRIM_is_list(object a)
  * On effectue une copie du premier élément de a. (son car).
  * On sommera ensuite tous les autres éléments dans celui-ci.
  * Si a est NULL ou nil on alloue un object valant 0.
+ * Renvoie NULL en cas d'erreur dans la somme.
+ *
+ * @sa OBJECT_add
+ *
  * @return Renvoie la somme des objets.
  */
 object PRIM_somme(object a) 
@@ -341,7 +380,7 @@ object PRIM_somme(object a)
 		if(result == nil || OBJECT_isempty(result) )
 		{
 			/* Cas ou la somme fail */
-			return(nil);
+			return(NULL);
 		}
 	}	
 	return(result);
@@ -352,7 +391,10 @@ object PRIM_somme(object a)
  *
  * Fonctionnement similaire a PRIM_somme()
  * Si a vaut nil ==> renvoie nil.
+ *
  * @sa PRIM_somme(object a )
+ * @sa OBJECT_sub
+ *
  * @return Renvoie un object alloué qui contient le résultat.
  */
 object PRIM_soustrait(object a) 
@@ -367,7 +409,7 @@ object PRIM_soustrait(object a)
 		if(result == nil || OBJECT_isempty(result) )
 		{
 			/* Cas ou la somme fail */
-			return(nil);
+			return(NULL);
 		}
 	}	
 	return(result);
@@ -378,9 +420,11 @@ object PRIM_soustrait(object a)
  *
  * Si a est nil ou NULL retourne un object valant 1.
  * (élément neutre du produit).
- * @sa PRIM_somme()
  *
- * @return
+ * @sa PRIM_somme()
+ * @sa OBJECT_mul
+ *
+ * @return Renvoie un object alloué qui contient le résultat.
  */
 object PRIM_multiplie(object a) 
 {
@@ -401,16 +445,22 @@ object PRIM_multiplie(object a)
 		if(result == nil || OBJECT_isempty(result) )
 		{
 			/* Cas ou la somme fail */
-			return(nil);
+			return(NULL);
 		}
 	}	
 	return(result);
 }
 
 /** @fn object PRIM_divise(object a)
- * @brief
+ * @brief Calcule le quotient de tous les objets.
  *
- * @return
+ * Si a contient a b c d renvoie a/b/c/d.
+ *
+ * Renvoie NULL si erreur.
+ *
+ * @sa OBJECT_div
+ * @sa OBJECT_add
+ * @return Renvoie le résultat.
  */
 object PRIM_divise(object a)
 {
@@ -424,7 +474,7 @@ object PRIM_divise(object a)
 		if(result == nil || OBJECT_isempty(result) )
 		{
 			/* Cas ou la somme fail */
-			return(nil);
+			return(NULL);
 		}
 	}	
 	return(result);
@@ -438,6 +488,7 @@ object PRIM_divise(object a)
  * appel à OBJECT_div.
  *
  * @sa PRIM_divise.
+ * @sa OBJECT_quotient
  *
  * @return Renvoie l'object résultat.
  */
@@ -460,7 +511,7 @@ object PRIM_quotient(object a)
 		if(result == nil || OBJECT_isempty(result) )
 		{
 			/* Cas ou la somme fail */
-			return(nil);
+			return(NULL);
 		}
 		
 	}	
@@ -475,6 +526,9 @@ object PRIM_quotient(object a)
  * Si un des arguments n'est pas un entier retourne NULL.
  * Calcul la division du premier pas le second puis le resultat
  * par le troisième le résultat pas le quatrième ....
+ *
+ * @sa PRIM_sum
+ * @sa OBJECT_modulo
  *
  * @return Renvoie un SFS_NUMBER entier résultat.
  */
@@ -495,12 +549,51 @@ object PRIM_remainder(object a)
 		if(result == nil || OBJECT_isempty(result) )
 		{
 			/* Cas ou la somme fail */
-			return(nil);
+			return(NULL);
 		}
 	}	
 	return(result);
 }
+/* Comparaisons */
 
+
+/** @fn object PRIM_is_equal(object a);
+ * @brief Compare le premier argument de a à tous les autres.
+ *
+ * Affiche un WARNING et renvoie NULL si un des arguments n'est pas
+ * un SFS_NUMBER.
+ *
+ * @sa OBJECT_cmp_is_equal
+ * @return Renvoie vrai si tous les arguments sont égaux faux sinon. Renvoie 1 si un des arguments
+ * n'est pas entier.
+ */
+object PRIM_is_equal(object a)
+{
+	if(!PRIM_check_enought_number_arg(a, 2))
+	{
+		return(NULL);
+	}
+
+	object terme = a ;
+	object reference = OBJECT_get_cxr(a, "car");
+	int result = 0;
+	int flag = 0;
+	for( terme = a->this.pair.cdr; terme != nil && !OBJECT_isempty(terme);
+			terme = terme->this.pair.cdr)
+	{
+		/* On test si c'est un entier */
+
+		result = OBJECT_cmp_is_equal(reference
+				, terme->this.pair.car, &flag);
+
+		if(flag) return(NULL);	
+		if(!result) return(faux);
+
+	}
+	/* Si on arrive ici on a tout vrai */
+	return(vrai);
+
+}
 /** @fn object PRIM_is_sup(object a)
  * @brief Regarde si le premier est supérieur aux autres.
  *
@@ -655,6 +748,10 @@ object PRIM_is_inf_equal(object a)
  *
  * En pratique on applique PRIM_check_predicate(), du coup
  * on renvoie exactement le cadr.
+ * Renvoie NULL si mauvais nombre d'arguments.
+ *
+ * @sa OBJECT_get_cxr
+ * @sa PRIM_checkpredicate
  *
  * @return Le car de a.
  */
@@ -674,6 +771,11 @@ object PRIM_car(object a)
  *
  * En pratique on applique PRIM_check_predicate(), du coup
  * on renvoie exactement le cadr.
+ * @n
+ * Renvoie NULL si mauvais nombre d'arguments
+ *
+ * @sa OBJECT_get_cxr
+ * @sa PRIM_check_number_arg
  *
  * @return car de a.
  */
@@ -693,6 +795,9 @@ object PRIM_cdr(object a)
  *
  * Cette fonction vérifie qu'elle ait le bon nombre d'arguments.
  *
+ * @sa PRIM_check_number_arg
+ * @sa OBJECT_get_cxr
+ *
  * @return Renvoie NULL.
  */
 object PRIM_set_car(object a)
@@ -711,6 +816,8 @@ object PRIM_set_car(object a)
 
 /** @fn object PRIM_set_cdr(object a);
  * @brief Met a jour le cdr du premier arg de a, avec son second.
+ *
+ * @sa PRIM_set_car
  *
  * @return Renvoie NULL.
  */
@@ -749,6 +856,10 @@ object PRIM_list(object a)
  * La paire ne contenir que deux arguments pas plus.
  * a doit posséder uniquement 2 arguments.
  *
+ * @sa PRIM_check_number_arg
+ * @sa OBJECT_build_pair
+ * @sa OBJECT_get_cxr
+ *
  * @return Renvoie une paire constituée des arguments de a.
  */
 object PRIM_cons(object a)
@@ -781,7 +892,7 @@ object PRIM_eq(object a)
 
 /* ========= Conversion de types ======= */
 
-/** @fn int PRIM_check_converted_type(object converted,char* name_type int type)
+/** @fn int PRIM_check_converted_type(object converted,char* name_type, int type)
  * @brief Vérifie que converted est de type type.
  * @param name_type : nom en str du type utilisé lors de l'affichage.
  * @param type : Valeur du type (voir SFS_NUMBER...)
@@ -815,6 +926,8 @@ int PRIM_check_converted_type(object converted,char* name_type, int type)
  * un char.
  * Renvoie NULL si nombre d'arguments différent de 1.
  *
+ * @sa PRIM_check_converted_type
+ *
  * @return Renvoie la conversion de l'object en integer.
  */
 object PRIM_char_to_integer(object a)
@@ -840,6 +953,9 @@ object PRIM_char_to_integer(object a)
  * et en gardant ceux de poids plus faibles.
  *
  * Fonctionnement similaire à PRIM_char_to_integer()
+ *
+ * @sa PRIM_check_converted_type
+ * @sa PRIM_char_to_integer
  *
  * @return Renvoie l'object convertit.
  */
@@ -871,6 +987,9 @@ object PRIM_integer_to_char(object a)
  * de string ou sous forme de symbole on voit la même chose.
  *
  * A modifier si on implémente une allocation dynamique.
+ *
+ * @sa PRIM_check_converted_type
+ * @sa PRIM_char_to_integer
  *
  * @return Renvoie l'objet convertit.
  */
@@ -911,6 +1030,9 @@ object PRIM_symbol_to_string(object a)
  * Utilisation de strtol.
  * Gère la conversion en infini si overflow.
  *
+ * @sa PRIM_check_converted_type
+ * @sa PRIM_char_to_integer
+ *
  * @return Renvoie l'objet convertie.
  */
 object PRIM_string_to_integer(object a)
@@ -936,6 +1058,9 @@ object PRIM_string_to_integer(object a)
  * @brief Convertit un entier en en string.
  *
  * Utilise snprintf.
+ *
+ * @sa PRIM_check_converted_type
+ * @sa PRIM_char_to_integer
  *
  * @return Renvoie l'objet convertit
  */
@@ -964,6 +1089,9 @@ object PRIM_integer_to_string(object a)
  * Fait appel à strtod.
  * Renvoie NULL en cas de problème.
  *
+ * @sa PRIM_check_converted_type
+ * @sa PRIM_char_to_integer
+ *
  * @return Renvoie le réel convertit.
  */
 object PRIM_string_to_real(object a)
@@ -990,6 +1118,9 @@ object PRIM_string_to_real(object a)
  *
  * Fait appel à snprintf.
  * Renvoie NULL en cas de pb.
+ *
+ * @sa PRIM_check_converted_type
+ * @sa PRIM_char_to_integer
  *
  * @return Renvoie la chaine de caractère.
  */
@@ -1018,6 +1149,9 @@ object PRIM_real_to_string(object a)
  * une chaine de caractère.
  * Max 1 argument.
  *
+ * @sa PRIM_check_converted_type
+ * @sa PRIM_char_to_integer
+ *
  * @return Renvoie l'objet convertit.
  */
 object PRIM_string_to_number(object a)
@@ -1041,6 +1175,9 @@ object PRIM_string_to_number(object a)
  * Renvoie NULL si 
  * - Plus d'un argument.
  * - Argument n'est pas un number.
+ *
+ *   @sa PRIM_check_converted_type
+ *   @sa PRIM_char_to_integer
  *
  * @return Renvoie le resultat de la conversion.
  */
