@@ -41,6 +41,7 @@ enum mots_clefs{
        	IF, /**< La forme IF valant 4 */
        	OR, /**< La forme IF valant 5 */
 	BEGIN, /**< La forme BEGIN valant 6 */
+	LAMBDA, /**< La forme LAMBDA valant 7 */
 	NONE = 9999 /**< Forme inconnue valant 9999*/
 };
 /* Prototypages supplémentaires car inclusion multiples. */
@@ -49,7 +50,7 @@ void check_alloc(void* ptr, char* message);
 
 /*Fin protoypage supplémentaires*/
 
-
+/* Structures */
 typedef struct object_t {
 
     uint type;
@@ -71,12 +72,17 @@ typedef struct object_t {
 	struct object_t* (*function)(struct object_t*);
 	struct object_t* name ;
 	} prim ;
-	compound compound;
-
+	struct agregat {
+		struct object_t *param;
+		struct object_t * body;
+		struct object_t * envt;
+	} compound; 
     } this;
 
 } *object;
+typedef struct agregat compound;
 
+/* Variables globales */
 extern object vrai;
 extern object faux;
 extern object nil;
@@ -181,13 +187,6 @@ int ENV_check_loop(object name);
 
 /* Compound */
 
-typedef struct agrega compound;
-struct agrega
-{
-	object param;
-	object body;
-	object envt;
-};
 
 compound COMP_build_empty();
 compound COMP_build(object param, object body, object envt);

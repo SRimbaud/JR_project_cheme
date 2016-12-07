@@ -112,6 +112,7 @@ void make_forms()
 	form[IF]= OBJECT_build_symbol("if");
 	form[OR]= OBJECT_build_symbol("or");
 	form[BEGIN] = OBJECT_build_symbol("begin");
+	form[LAMBDA] = OBJECT_build_symbol("lambda");
 	DEBUG_MSG(" init : %s", form[BEGIN]->this.symbol);
 }
 /*Accesseurs */

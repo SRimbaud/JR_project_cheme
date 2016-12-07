@@ -185,6 +185,9 @@ object sfs_eval(object input, object env)
 				case BEGIN :
 					return(EVAL_begin(input,env));
 					break;
+				case LAMBDA :
+					return(EVAL_lambda(input, env));
+					break;
 				default :
 					WARNING_MSG("Unrecognized form");
 					return(NULL);
@@ -603,8 +606,15 @@ object EVAL_lambda(object o, object env)
 
 	/* On vérifie que la structure du lambda est 
 	 * la bonne */
+	if(!LAMBDA_check_number_arg(o)) return(NULL);
+	/* compound agrega_lambda = COMP_build(LAMBDA_get_var(o),
+			LAMBDA_get_body(o), env); */
+
+	object retour = make_object(SFS_COMP);
+	retour->this.compound = COMP_build(LAMBDA_get_var(o),LAMBDA_get_body(o), env);
+
 	
-	return(nil);	
+	return(retour);	
 }
 /* Outils d'évaluation */
 
@@ -624,7 +634,7 @@ int LAMBDA_check_number_arg(object input)
 	object val = OBJECT_get_cxr(input, "cdr");
 	if( (!check_type(val->this.pair.car, SFS_NIL) ||
 			!check_type(val->this.pair.car, SFS_PAIR) )
-			&& (!check_type(val-this.pair.cdr, SFS_NIL)))
+			&& (!check_type(val->this.pair.cdr, SFS_NIL)))
 		return(0);
 	return(1);
 }
@@ -640,7 +650,7 @@ int LAMBDA_check_number_arg(object input)
  */
 object LAMBDA_get_var(object input)
 {
-	return(OBJECT_get_cxr(input, "caar");
+	return(OBJECT_get_cxr(input, "caar"));
 }
 
 /** @fn object LAMBDA_get_body(object input)
