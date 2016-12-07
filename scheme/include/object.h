@@ -20,7 +20,7 @@ extern "C" {
  *
  * 22 Oct 2016 ==> 6 formes.
  */
-#define NB_FORM 6
+#define NB_FORM 7
 
 #include<strings.h>
 #include<ctype.h>
@@ -40,6 +40,7 @@ enum mots_clefs{
        	AND, /**< La forme AND valant 3 */
        	IF, /**< La forme IF valant 4 */
        	OR, /**< La forme IF valant 5 */
+	BEGIN, /**< La forme BEGIN valant 6 */
 	NONE = 9999 /**< Forme inconnue valant 9999*/
 };
 /* Prototypages supplémentaires car inclusion multiples. */
@@ -70,6 +71,7 @@ typedef struct object_t {
 	struct object_t* (*function)(struct object_t*);
 	struct object_t* name ;
 	} prim ;
+	compound compound;
 
     } this;
 
@@ -153,6 +155,7 @@ int wait_first_non_blank_char(char* s1, uint* s1_cursor);
 #define SFS_CAR 	 0x09
 #define SFS_ENV 	 0x0A
 #define SFS_PRIM	 0x0B
+#define SFS_COMP	 0x0C
 
 
 /* Environnements */
@@ -175,6 +178,20 @@ object ENV_add_var(object name, object value);
 object ENV_update_var(object name,const object val, int mode, int* free_flag);
 object ENV_get_var_in_env(object var, object environ, int* flag);
 int ENV_check_loop(object name);
+
+/* Compound */
+
+typedef struct agrega compound;
+struct agrega
+{
+	object param;
+	object body;
+	object envt;
+};
+
+compound COMP_build_empty();
+compound COMP_build(object param, object body, object envt);
+compound COMP_set(compound* a, object param, object body, object envt);
 
 
 #ifdef __cplusplus

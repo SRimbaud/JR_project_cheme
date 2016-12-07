@@ -98,6 +98,7 @@ void init_primitive()
  * Celle ci aura le nom name et aura comme valeur un object
  * de type sfs_prim. Cet object contient un pointeur
  * de fonction sur la primitive voulue.
+ * L'environnement est la variable globale env.
  *
  * @return Renvoie un object de type primitive contenant function.
  */
@@ -118,6 +119,8 @@ object PRIM_make(char* name, ptr_primitive function)
  *
  * Effectue une copie des arguments dans la mémoire.
  * Les arguments ne sont donc pas modifiés.
+ * Evalue une liste d'object.
+ *
  * @return Renvoie La liste des arguments évalué.
  */
 object PRIM_eval(const object args)

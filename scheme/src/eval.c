@@ -10,7 +10,7 @@
 
 #include "eval.h"
 
-/** @fn object sfs_eval( object input ) 
+/** @fn object sfs_eval( object input, object env) 
  * @brief Fontion d'évalution d'expression scheme.
  *
  * Evaluation de l'input.
@@ -20,14 +20,14 @@
  * - Si on donne une variable inexistante.
  * - Si on commence une liste avec un symbole
  * qui n'est ni un mot ni une variable.
- * - Si par inadvertance le car de input est NULL.
+ * - Si par inadvertance le car de input est NULL. 
  *
  *
  * @sa is_form(object symbol, int* forme);
  *
  * @return Renvoie l'objet évalué.
  */
-object sfs_eval( object input ) 
+object sfs_eval(object input, object env) 
 {
 	/* La forme que l'on va identifier */
 	FORMS forme = NONE ;
@@ -95,7 +95,7 @@ object sfs_eval( object input )
 				/*if(check_type(var, SFS_SYMBOL))
 				{
 					DEBUG_MSG("Symbol detected");
-					return(sfs_eval(var));
+					return(sfs_eval(var, env));
 				}
 				else*/
 			        if(check_type(var, SFS_PRIM))
@@ -165,30 +165,33 @@ object sfs_eval( object input )
 			switch(forme)
 			{
 				case QUOTE : 
-					return(EVAL_quote(input));
+					return(EVAL_quote(input, env));
 					break;
 				case DEFINE : 
-					return(EVAL_define(input));
+					return(EVAL_define(input, env));
 					break;
 				case SET : 
-					return(EVAL_set(input));
+					return(EVAL_set(input, env));
 					break;
 				case AND :
-					return(EVAL_and(input));
+					return(EVAL_and(input, env));
 					break;
 				case IF :
-					return(EVAL_if(input));
+					return(EVAL_if(input, env));
 					break;
 				case OR :
-					return(EVAL_or(input));
+					return(EVAL_or(input, env));
 					break;
-				case NONE :
+				case BEGIN :
+					return(EVAL_begin(input,env));
+					break;
+				default :
 					WARNING_MSG("Unrecognized form");
 					return(NULL);
 					break;
-				/* Pas besoin de default, on serait pas
-				 * dans le switch sinon
-				 */
+					/* Pas besoin de default, on serait pas
+					 * dans le switch sinon
+					 */
 			}
 		}
 		else /* Cas ou c'est une variable définie par l'utilisateur
@@ -228,11 +231,11 @@ object sfs_eval( object input )
 	 * il est donc déjà créé par sfs_read on ne 
 	 * fait que retourne son pointeur.
 	 */
-    return sfs_eval(input);
+    return sfs_eval(input, env);
 }
 
 /*Evaluation*/
-/** @fn object EVAL_set(object o)
+/** @fn object EVAL_set(object o, object env)
  * @brief Mets à jour une variable.
  *
  * set! est de la forme :
@@ -248,7 +251,7 @@ object sfs_eval( object input )
  *
  * @return Renvoie le nom de la variable modifiée.
  */
-object EVAL_set(object o)
+object EVAL_set(object o, object env)
 {
 	object utile = OBJECT_get_cxr(o, "cdr");
 	object name = OBJECT_get_cxr(utile, "car");
@@ -272,7 +275,7 @@ object EVAL_set(object o)
 		return(NULL);
 	}
 	
-	evaluated = sfs_eval(evaluated);
+	evaluated = sfs_eval(evaluated, env);
 	if(OBJECT_isempty(evaluated) || check_type(evaluated, SFS_UNKNOWN))
 	{
 		WARNING_MSG("set! : Missing or wrong <value>.");
@@ -287,7 +290,7 @@ object EVAL_set(object o)
 	return(check);
 }
 
-/** @fn object EVAL_define(object o)
+/** @fn object EVAL_define(object o, object env)
  * @brief Evalue un define.
  *
  * Evalue un define.
@@ -301,7 +304,7 @@ object EVAL_set(object o)
  *
  * @return Renvoie le symbole crée.
  */
-object EVAL_define(object o)
+object EVAL_define(object o, object env)
 {
 	DEBUG_MSG("Call EVAL_define");
 	object name = OBJECT_get_cxr(o, "cadr");
@@ -334,7 +337,7 @@ object EVAL_define(object o)
 		WARNING_MSG("define : wrong number of args");
 		return(NULL);
 	}
-	evaluated = sfs_eval(evaluated);
+	evaluated = sfs_eval(evaluated, env);
 	/* petite ternaire pour gérer le cas NULL*/
 	DEBUG_MSG("Type evaluated %d", (evaluated ? evaluated->type : 7));
 	/* Vérification format de la variable. */
@@ -351,21 +354,21 @@ object EVAL_define(object o)
 	return(name);
 }
 
-/** @fn  object EVAL_quote(object o);
+/** @fn  object EVAL_quote(object o, object env);
  * @brief Evalue l'expression quote
  *
  * Concrètement retourne le cdr de o.
  *
  * @return Renvoie le cdr de o.
  */
-object EVAL_quote(object o)
+object EVAL_quote(object o, object env)
 { 
 	DEBUG_MSG("Call eval_quote");
 	return(o->this.pair.cdr->this.pair.car);
 }
 
 
-/** @fn object EVAL_and(object o)
+/** @fn object EVAL_and(object o, object env)
  * @brief Retourne un et logique de o.
  *
  * On évalue chaque terme si on croise
@@ -386,7 +389,7 @@ object EVAL_quote(object o)
  *
  * @return Renvoie le résultat. Renvoie un booléen !
  */
-object EVAL_and(object o)
+object EVAL_and(object o, object env)
 {
 	/* Vérifications */
 	if(!check(o, "and : NULL ptr given")) return NULL;
@@ -420,7 +423,7 @@ object EVAL_and(object o)
 		i= i->this.pair.cdr)
 	{
 		if(!check_type(i, SFS_PAIR)) return i;
-		tmp = sfs_eval(i->this.pair.car);	
+		tmp = sfs_eval(i->this.pair.car, env);	
 		/* S'il est faux on s'arrête */
 		if( tmp== faux) return(tmp) ;
 		/*et on renvoie faux */
@@ -434,7 +437,7 @@ object EVAL_and(object o)
 }
 
 
-/** @fn  object EVAL_or(object o)
+/** @fn  object EVAL_or(object o, object env)
  * @brief Evaluation de la forme or.
  *
  * On évalue chaque terme du or 
@@ -448,7 +451,7 @@ object EVAL_and(object o)
  *
  * @return Renvoie un booléen qui correspond à un ou logique.
  */
-object EVAL_or(object o)
+object EVAL_or(object o, object env)
 {
 	/* Vérifications */
 	if(!check(o, "if : NULL ptr given")) return NULL;
@@ -481,7 +484,7 @@ object EVAL_or(object o)
 		i= i->this.pair.cdr)
 	{
 		
-		tmp = sfs_eval(i->this.pair.car);
+		tmp = sfs_eval(i->this.pair.car, env);
 		if(check_type(tmp, SFS_BOOLEAN))
 		{
 			if(tmp== faux) continue;
@@ -495,7 +498,7 @@ object EVAL_or(object o)
 	return(default_result);
 }
 
-/** @fn  object EVAL_if(object o)
+/** @fn  object EVAL_if(object o, object env)
  * @brief Evalue un if.
  *
  * Si le prédicat est vrai renvoie la conséquence.@n
@@ -516,17 +519,17 @@ object EVAL_or(object o)
  *
  * @return Renvoie l'évaluation d'un if.
  */
-object EVAL_if(object o)
+object EVAL_if(object o, object env)
 {
-	object predicat = sfs_eval(IF_predicat(o));
+	object predicat = sfs_eval(IF_predicat(o), env);
 	DEBUG_MSG("Predicat %p", predicat);
 	if(OBJECT_isempty(predicat) ||  o ==  nil)
 	{
 		WARNING_MSG("if : need predicate");
 		return NULL;
 	}
-	object consequence = sfs_eval(IF_consequence(o));
-	object alternative = sfs_eval(IF_alternative(o));
+	object consequence = sfs_eval(IF_consequence(o), env);
+	object alternative = sfs_eval(IF_alternative(o), env);
 	if(OBJECT_isempty(consequence) || consequence==nil)
 	{
 		WARNING_MSG("if : need consequence");
@@ -553,7 +556,104 @@ object EVAL_if(object o)
 	}
 
 }
+
+/** @fn object EVAL_begin(object o, object env)
+ * @brief Evalue la forme begin.
+ *
+ * Evalue la forme begin :
+ * Chaque instruction de la forme
+ * est évaluée, l'évaluation de la dernière
+ * instruction est retournée.
+ * Prend en paramètre l'intégralité d'une instruction
+ * begin 
+ * ex : (begin (define a 4) (+ a 34) )
+ *
+ * @return Renvoie l'évaluation de la dernière
+ * instruction.
+ */
+object EVAL_begin(object o, object env)
+{
+	object premier_arg = OBJECT_get_cxr(o, "cdr");
+	/* La forme begin se renvoie elle même si
+	 * elle n'a pas d'arguments
+	 */
+        if(check_type(premier_arg, SFS_NIL)) return(o);
+	/* On évalue 1 par 1 les arguments */
+	object tmp = NULL, i = NULL;
+	for(i = premier_arg ; !check_type(i, SFS_NIL) ; 
+			i= i->this.pair.cdr)
+	{
+		tmp = sfs_eval(i->this.pair.car, env);
+	}
+
+	return(tmp);
+}
+
+/** @fn object EVAL_lambda(object o, object env)
+ * @brief Evalue lambda et créer l'objet de type
+ * compound correspondant
+ *
+ * Prend en entrée la ligne entrée par l'utilisateur.
+ *
+ * @return Renvoie un agrégat.
+ */
+object EVAL_lambda(object o, object env)
+{
+	/* Gérer le bordel du free. */
+
+	/* On vérifie que la structure du lambda est 
+	 * la bonne */
+	
+	return(nil);	
+}
 /* Outils d'évaluation */
+
+
+/** @fn int LAMBDA_check_number_arg(object input)
+ * @brief Vérifie que lambda ait bien le bon nombre 
+ * d'arguments.
+ *
+ * Au minimum lambda possède aucun arguments
+ * et un body qui est réduit à un atome.
+ *
+ * @return Renvoie 1 si le nombre d'arguments est
+ * correct 0 sinon.
+ */
+int LAMBDA_check_number_arg(object input)
+{
+	object val = OBJECT_get_cxr(input, "cdr");
+	if( (!check_type(val->this.pair.car, SFS_NIL) ||
+			!check_type(val->this.pair.car, SFS_PAIR) )
+			&& (!check_type(val-this.pair.cdr, SFS_NIL)))
+		return(0);
+	return(1);
+}
+
+/** @fn object LAMBDA_get_var(object input)
+ * @brief Renvoie le nom des variables d'une forme lambda.
+ *
+ * Prend en paramètre la liste qui doit être évaluée
+ * à lambda 
+ * ex : (lambda (x y) (corps))
+ *
+ * @return Renvoie une liste de noms de variable.
+ */
+object LAMBDA_get_var(object input)
+{
+	return(OBJECT_get_cxr(input, "caar");
+}
+
+/** @fn object LAMBDA_get_body(object input)
+ * @brief Renvoie les instructions d'un lambda.
+ *
+ * Prend en argument l'instruction lambda complète.
+ *
+ * @return renvoie la liste des instructions du body
+ */
+object LAMBDA_get_body(object input)
+{
+	return(OBJECT_get_cxr(input, "cddr"));
+}
 
 /** @fn  object IF_predicat(object input)
  * @brief Retourne le prédicat d'une structure if.

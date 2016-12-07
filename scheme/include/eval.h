@@ -1,4 +1,3 @@
-
 /**
  * @file eval.h
  * @author François Cayre <cayre@yiking.(null)>
@@ -21,25 +20,30 @@ extern "C" {
 
 /* fin */
 typedef struct object_t* object;
-object sfs_eval( object ); 
+object sfs_eval( object input, object env ); 
 
 
 
 
 /* Evaluation */
 
-object EVAL_quote(object o);
-object EVAL_define(object o);
-object EVAL_set(object o);
-object EVAL_and(object o);
-object EVAL_or(object o);
-object EVAL_if(object o);
+object EVAL_quote(object o,  object env);
+object EVAL_define(object o, object env);
+object EVAL_set(object o, object env);
+object EVAL_and(object o, object env);
+object EVAL_or(object o, object env);
+object EVAL_if(object o, object env);
+object EVAL_begin(object o, object env);
+object EVAL_lambda(object o, object env);
 
 /* Outils d'évaluation */
 object IF_predicat(object input);
 object IF_consequence(object input);
 object IF_alternative(object input);
 object IF_overargument(object input);
+object LAMBDA_get_var(object input);
+object LAMBDA_get_body(object input);
+int LAMBDA_check_number_arg(object input);
 #ifdef __cplusplus
 }
 #endif

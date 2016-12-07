@@ -111,7 +111,8 @@ void make_forms()
 	form[AND]= OBJECT_build_symbol("and");
 	form[IF]= OBJECT_build_symbol("if");
 	form[OR]= OBJECT_build_symbol("or");
-	DEBUG_MSG(" init : %s", form[QUOTE]->this.symbol);
+	form[BEGIN] = OBJECT_build_symbol("begin");
+	DEBUG_MSG(" init : %s", form[BEGIN]->this.symbol);
 }
 /*Accesseurs */
 
@@ -1348,5 +1349,44 @@ int ENV_check_loop(object name)
 		if(root==parcours) loop = TRUE;
 	}
 	return(loop);
+}
+
+/* Les agrégas */
+/** @fn compound COMP_build_empty()
+ * @brief Construit un agrégat vide.
+ *
+ * @return Renvoie l'agrégat construit.
+ */
+compound COMP_build_empty()
+{
+	compound val = { NULL, NULL, NULL };
+	return(val);
+}
+
+/** @fn compound COMP_build(object param, object body, object envt)
+ * @brief Construit un compound avec les arguments donnés.
+ * @param param : les paramètres de la fonction
+ * @param body : Les instructions de la fonction.
+ * @param envt : L'environnement dans lequel est définit le compound.
+ *
+ * @return Renvoit le compound construit.
+ */
+compound COMP_build(object param, object body, object envt)
+{
+	compound val = {param, body, envt};
+	return(val);
+}
+
+/** @fn compound COMP_set(compound* a, object param, object body, object envt)
+ * @brief Met à jour le compound a.
+ *
+ * @return Renvoie le compound mis à jour.
+ */
+compound COMP_set(compound* a, object param, object body, object envt)
+{
+	a->param = param;
+	a->body = body;
+	a->envt = envt;
+	return(*a);
 }
 
