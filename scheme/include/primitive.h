@@ -40,7 +40,7 @@ object PRIM_make(char* name, ptr_primitive function);
 
 /* Primitives */
 
-object PRIM_eval(const object args);
+object PRIM_eval(const object args, object env);
 int PRIM_check_number_arg(object args, int number);
 
 int PRIM_check_enought_number_arg(object arg, int number);

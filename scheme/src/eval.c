@@ -1,4 +1,3 @@
-
 /**
  * @file eval.c
  * @author François Cayre <cayre@yiking.(null)>
@@ -213,7 +212,7 @@ object sfs_eval(object input, object env)
 					/* Si le car est une primitive on l'applique à l'évaluation
 					 * de tous les object */
 					DEBUG_MSG("Primitive detected");
-					object argument = PRIM_eval(OBJECT_get_cxr(input, "cdr"));
+					object argument = PRIM_eval(OBJECT_get_cxr(input, "cdr"), env);
 					/* Pas d'erreur ici on a normalement une paire avec un car 
 					 * et cdr */
 					DEBUG_MSG("Type argument in primitive : %d", argument->type);

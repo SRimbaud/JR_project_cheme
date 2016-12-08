@@ -114,8 +114,9 @@ object PRIM_make(char* name, ptr_primitive function)
 
 /* Primitives */
 
-/** @fn object PRIM_eval(const object args)
- * @brief Evalue la liste d'arguments passé en paramètre.
+/** @fn object PRIM_eval(const object args, object env)
+ * @brief Evalue la liste d'arguments passé en paramètre dans
+ * l'environnement env.
  *
  * Effectue une copie des arguments dans la mémoire.
  * Les arguments ne sont donc pas modifiés.
@@ -123,7 +124,7 @@ object PRIM_make(char* name, ptr_primitive function)
  *
  * @return Renvoie La liste des arguments évalué.
  */
-object PRIM_eval(const object args)
+object PRIM_eval(const object args, object env)
 {
 	DEBUG_MSG("Begin evaluating primitiv arguments");
 	object evaluated = OBJECT_build_cpy(args);
@@ -137,11 +138,11 @@ object PRIM_eval(const object args)
 		if(!check_type(i, SFS_PAIR))
 		{
 			/* Gestion d'un cons */
-			i = sfs_eval(i);
+			i = sfs_eval(i, env);
 		}
 		else
 		{
-			i->this.pair.car = sfs_eval(i->this.pair.car);
+			i->this.pair.car = sfs_eval(i->this.pair.car, env);
 		}
 	}	
 	return(evaluated);
