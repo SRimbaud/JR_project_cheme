@@ -39,6 +39,8 @@ void \hyperlink{print_8h_a3937d61f164b6181c8137178eb66db03}{O\+B\+J\+E\+C\+T\+\_
 \begin{DoxyCompactList}\small\item\em Affiche un object de type nil. \end{DoxyCompactList}\item 
 void \hyperlink{print_8h_a478b35e75fe4de7f0cc70cf2b293edc3}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim} (\hyperlink{structobject__t}{object} o)
 \begin{DoxyCompactList}\small\item\em Affiche un type primitive. \end{DoxyCompactList}\item 
+void \hyperlink{print_8h_a27b4e3f4330aa0d45806ff5d1dea04b6}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound} (\hyperlink{structobject__t}{object} o)
+\begin{DoxyCompactList}\small\item\em Affiche un agrégat. \end{DoxyCompactList}\item 
 void \hyperlink{print_8h_abc700e5dc549b50ed2b811de1cb8c9ad}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail} ()
 \begin{DoxyCompactList}\small\item\em Affiche un object qui n\textquotesingle{}est pas reconnu. Affiche un warning. \end{DoxyCompactList}\item 
 void \hyperlink{print_8h_ad94ede42a4f72f61eccb7152d06345f4}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+pair} (\hyperlink{structobject__t}{object} o)
@@ -112,7 +114,18 @@ Affiche un object de type character.
 {\em object} & \+: l\textquotesingle{}objet à afficher. \\
 \hline
 \end{DoxyParams}
-\index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail}}
+\index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound}}
+\index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound}!print.\+h@{print.\+h}}
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound(object o)}{OBJECT_print_compound(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{print_8h_a27b4e3f4330aa0d45806ff5d1dea04b6}{}\label{print_8h_a27b4e3f4330aa0d45806ff5d1dea04b6}
+
+
+Affiche un agrégat. 
+
+Affiche \#$<$procedure$>$ \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail}!print.\+h@{print.\+h}}
 \subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail()}{OBJECT_print_fail()}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail (
 \begin{DoxyParamCaption}

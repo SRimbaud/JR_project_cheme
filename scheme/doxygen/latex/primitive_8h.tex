@@ -43,8 +43,8 @@ void \hyperlink{primitive_8h_a71008e3b64854232352e9a010b0ec70f}{init\+\_\+primit
 \begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}environnement courant avec toutes les primitives. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{primitive_8h_abee93397113dab4c44190e649c596c23}{P\+R\+I\+M\+\_\+make} (char $\ast$name, ptr\+\_\+primitive function)
 \begin{DoxyCompactList}\small\item\em Ajoute dans l\textquotesingle{}environnement la primitive name. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_a50f700a8f4b90445a7495f540da9b931}{P\+R\+I\+M\+\_\+eval} (const \hyperlink{structobject__t}{object} args)
-\begin{DoxyCompactList}\small\item\em Evalue la liste d\textquotesingle{}arguments passé en paramètre. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{primitive_8h_ab58ab6af3355ce24b7d00dabfdfdfa36}{P\+R\+I\+M\+\_\+eval} (const \hyperlink{structobject__t}{object} args, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
+\begin{DoxyCompactList}\small\item\em Evalue la liste d\textquotesingle{}arguments passé en paramètre dans l\textquotesingle{}environnement env. \end{DoxyCompactList}\item 
 int \hyperlink{primitive_8h_a8ab4a576c7ff2cfe21f1953320f4cddf}{P\+R\+I\+M\+\_\+check\+\_\+number\+\_\+arg} (\hyperlink{structobject__t}{object} args, int number)
 \begin{DoxyCompactList}\small\item\em Vérifie que args contient bien number arguments. \end{DoxyCompactList}\item 
 int \hyperlink{primitive_8h_ad23255a27f6fdb9d121e790cc5fe2711}{P\+R\+I\+M\+\_\+check\+\_\+enought\+\_\+number\+\_\+arg} (\hyperlink{structobject__t}{object} arg, int number)
@@ -422,16 +422,19 @@ Vrai si tous les arguments sont de même entité, faux sinon.
 \end{DoxyReturn}
 \index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+eval@{P\+R\+I\+M\+\_\+eval}}
 \index{P\+R\+I\+M\+\_\+eval@{P\+R\+I\+M\+\_\+eval}!primitive.\+h@{primitive.\+h}}
-\subsubsection[{\texorpdfstring{P\+R\+I\+M\+\_\+eval(const object args)}{PRIM_eval(const object args)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} P\+R\+I\+M\+\_\+eval (
+\subsubsection[{\texorpdfstring{P\+R\+I\+M\+\_\+eval(const object args, object env)}{PRIM_eval(const object args, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} P\+R\+I\+M\+\_\+eval (
 \begin{DoxyParamCaption}
-\item[{const {\bf object}}]{args}
+\item[{const {\bf object}}]{args, }
+\item[{{\bf object}}]{env}
 \end{DoxyParamCaption}
-)}\hypertarget{primitive_8h_a50f700a8f4b90445a7495f540da9b931}{}\label{primitive_8h_a50f700a8f4b90445a7495f540da9b931}
+)}\hypertarget{primitive_8h_ab58ab6af3355ce24b7d00dabfdfdfa36}{}\label{primitive_8h_ab58ab6af3355ce24b7d00dabfdfdfa36}
 
 
-Evalue la liste d\textquotesingle{}arguments passé en paramètre. 
+Evalue la liste d\textquotesingle{}arguments passé en paramètre dans l\textquotesingle{}environnement env. 
 
-Effectue une copie des arguments dans la mémoire. Les arguments ne sont donc pas modifiés. \begin{DoxyReturn}{Renvoie}
+Effectue une copie des arguments dans la mémoire. Les arguments ne sont donc pas modifiés. Evalue une liste d\textquotesingle{}object.
+
+\begin{DoxyReturn}{Renvoie}
 Renvoie La liste des arguments évalué. 
 \end{DoxyReturn}
 \index{primitive.\+h@{primitive.\+h}!P\+R\+I\+M\+\_\+integer\+\_\+to\+\_\+char@{P\+R\+I\+M\+\_\+integer\+\_\+to\+\_\+char}}
@@ -732,7 +735,7 @@ Renvoie a.
 
 Ajoute dans l\textquotesingle{}environnement la primitive name. 
 
-La primitive est ajoutée dans l\textquotesingle{}environnement en tant que variable. Celle ci aura le nom name et aura comme valeur un object de type sfs\+\_\+prim. Cet object contient un pointeur de fonction sur la primitive voulue.
+La primitive est ajoutée dans l\textquotesingle{}environnement en tant que variable. Celle ci aura le nom name et aura comme valeur un object de type sfs\+\_\+prim. Cet object contient un pointeur de fonction sur la primitive voulue. L\textquotesingle{}environnement est la variable globale env.
 
 \begin{DoxyReturn}{Renvoie}
 Renvoie un object de type primitive contenant function. 

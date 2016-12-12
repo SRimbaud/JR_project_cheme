@@ -1139,7 +1139,7 @@ object ENV_get_var_in_env(object var, object environ, int* flag)
 
 }
 
-/** @fn object ENV_get_var(object var, int* flag)
+/** @fn object ENV_get_var(object var, int* flag, object env)
  * @brief Cherche le symbole var dans les environnements.
  * @param var : Symbole à chercher.
  * @parem flat : Drapeau pour savoir s'il est trouvé. Mis à 1 si trouvé.
@@ -1159,7 +1159,7 @@ object ENV_get_var_in_env(object var, object environ, int* flag)
  * @return Renvoie une paire dont le car porte le nom de la variable
  * et le cdr sa valeur. 
  */
-object ENV_get_var(object var, int* flag)
+object ENV_get_var(object var, int* flag, object env)
 {
 	DEBUG_MSG("Call ENV_get_var");
 	if(check_type(var, SFS_ENV))
@@ -1189,7 +1189,7 @@ object ENV_get_var(object var, int* flag)
 }
 
 
-/** @fn object ENV_add_var(object name, object value)
+/** @fn object ENV_add_var(object name, object value, object env)
  * @brief Ajoute la variable de nom name et de valeur value
  * l'environnement courant.
  * @param name : Nom de la variable (symbole)
@@ -1197,9 +1197,9 @@ object ENV_get_var(object var, int* flag)
  *
  * Ajoute la variable de nom name et de valeur value
  * à l'environnement courant. Si jamais elle existe déjà
- * la variable est écrasée et reçoit une nouvelle valeur.
- * Renvoie name et affiche un warning si name n'est pas un symbole.
- * Renvoie value et affiche un warning si value est de type 
+ * elle reçoit une nouvelle valeur.
+ * Renvoie NULL et affiche un warning si name n'est pas un symbole.
+ * Renvoie NULL et affiche un warning si value est de type 
  * SFS_ENV.
  * Dans les 2 précédents cas quitte la fonction prématurément
  * sans effectuer d'actions.
@@ -1207,25 +1207,34 @@ object ENV_get_var(object var, int* flag)
  *
  * @return Renvoie la valeur de la variable crée.
  */
-object ENV_add_var(object name, object value)
+object ENV_add_var(object name, object value, object env)
 {
 	/* Ici algo simple on ajoute la variable au début de l'environnement
 	 * on ne cherche pas à le parcourir pour aller à la fin*/
 	if(!check_type(name, SFS_SYMBOL))
 	{
 		WARNING_MSG("Trying to name a variable with non symbol type");
-		return(name);
+		return(NULL);
 	}
 	if(check_type(value, SFS_ENV))
 	{
 		WARNING_MSG("Trying to create a variable which is an environment");
+		return(NULL);
+	}
+	/* On regarde sa la variable n'existe pas déjà dans l'environnement */
+	int trouve = 0;
+	object bloc = ENV_get_var_in_env(name, env, &trouve);
+	if(trouve)
+	{
+		OBJECT_set_cdr(bloc, value);
 		return(value);
 	}
 	DEBUG_MSG("Valid format for ENV_add_var");
 	object tmp = OBJECT_get_cxr(env, "cdr");
+	/** On fait un ajout tête en gros ! */
 	/* Les variables name et value sont déjà allouées normalement
 	 * c'est fait dans le define */
-	object bloc = OBJECT_build_pair(name, value);
+	bloc = OBJECT_build_pair(name, value);
 	/* COnstruction de la paire qui contient à la fois 
 	 * le nom et la valeur d'une variable.
 	 */
@@ -1237,44 +1246,31 @@ object ENV_add_var(object name, object value)
 }
 
 
-/** @fn object ENV_update_var(object name, object val, int mode, int* free_flag)
+/** @fn object ENV_update_var(object name, object val)
  * @brief Mets à jour la variable de nom name à la valeur val.
  * @param name : Symbole à modifier.
  * @param val : Nouvelle valeur.
- * @param mode : Mode de modification.
- * @param  free_flag : Flag mis à vrai si on a effectué une suppression.
  *
  * Si name n'est pas un symbole affiche un warning et retourne nul.
  * Si val est de type SFS_ENV affiche un warning et retourne nul.
  * Dans les 2 cas il n'y pas d'ajout de variable.
  *
- * Le flag free_flag est mis à vrai si la fonction appelle 
- * OBJECT_destroy. Dans ce cas la valeur associé au symbole
- * name est supprimée. Si elle est associée à un autre
- * symbole celui-ci perd également sa valeur, ainsi
- * le drapeau le signal.
- * De ce fait il faut toujours donner une copie de la valeur
- * à ajouter et non la valeur elle même ainsi un symbole
- * n'est associé qu'à une seule structure.
- *
- * La valeur initiale du drapeau importe peu, il est mis à 
- * faux automatiquement au début de la fonction.
- *
- * Lors de la mise à jour d'une variable existante,
- * cette fonction vérifie que ce n'est pas une primitive
- * du langage. Si c'est le cas elle affiche un warning et
- * renvoie le nom de la variable.
+ * Met à jour la variable de nom name à la valeur val.
+ * Si jamais la variable n'existe pas affiche un warning et retourne
+ * NULL.
+ * Effectue une copie de val avant de l'enregistrer.
+ * Parcours tous les environnements en remontant vers top level.
+ * Met à jour la première occurrence trouvée.
  *
  * @sa ENV_DISABLE_CREATION
  * @sa ENV_ENABLE_CREATION
  * @return Renvoie name.
  */
-object ENV_update_var(object name,const object val, int mode, int* free_flag)
+object ENV_update_var(object name,const object val, object env)
 {
 	/* Avant tout chose on copie le contenu de val et
 	 * on travaillera avec */
 	object val_cpy = OBJECT_build_cpy(val);
-	if(free_flag) *free_flag = 0;
 	DEBUG_MSG("val_cpy->type %d", val_cpy->type);
 	if(!check_type(name, SFS_SYMBOL))
 	{
@@ -1287,20 +1283,10 @@ object ENV_update_var(object name,const object val, int mode, int* free_flag)
 		return(val_cpy);
 	}
 	int flag = FALSE;
-	object variable= ENV_get_var(name, &flag);
+	object variable= ENV_get_var(name, &flag, env);
 	if(!flag) /* Cas ou la variable n'existe pas */
 	{
-
-		if(mode == ENV_ENABLE_CREATION)
-		{
-			return(ENV_add_var(name, val_cpy));
-		}
-		else if(mode == ENV_DISABLE_CREATION)
-		{
-			return(NULL);
-		}
-		else
-			return(NULL); /* Cas pour éviter bug*/
+		return(NULL); 
 	}
 	else
 	{
@@ -1319,9 +1305,7 @@ object ENV_update_var(object name,const object val, int mode, int* free_flag)
 			WARNING_MSG("%s is a scheme key word", name->this.string);
 		       return(name);	
 		}
-		OBJECT_destroy(&a_suppr);
 		DEBUG_MSG("val_cpy-type : %d", val_cpy->type);
-		if(free_flag) *free_flag = TRUE;
 		OBJECT_set_cdr(variable, val_cpy);
 	}
 	return(name);
@@ -1337,6 +1321,8 @@ object ENV_update_var(object name,const object val, int mode, int* free_flag)
  * de variable :@n
  * x->y->z->x->y... .
  *
+ * @bug Obsolete, implémentation mauvaise.
+ *
  * @return 0 si incohérences trouvées, 1 sinon.
  */
 int ENV_check_loop(object name)
@@ -1345,7 +1331,7 @@ int ENV_check_loop(object name)
 	object parcours = NULL;
 	int loop = FALSE ;
 	for(parcours = NULL; !loop && check_type(parcours, SFS_SYMBOL)
-			;parcours = ENV_get_var(name, NULL)->this.pair.car)
+			;parcours = ENV_get_var(name, NULL, env)->this.pair.car)
 	{
 		if(root==parcours) loop = TRUE;
 	}

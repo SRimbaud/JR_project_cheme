@@ -108,7 +108,7 @@ object PRIM_make(char* name, ptr_primitive function)
 	object value = make_object(SFS_PRIM);
 	value->this.prim.function = function ;
 	value->this.prim.name = nom ;
-	return(ENV_add_var(nom, value));
+	return(ENV_add_var(nom, value, env));
 }
 
 

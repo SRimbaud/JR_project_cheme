@@ -148,9 +148,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:abee93397113dab4c44190e649c596c23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="primitive_8h.html#abee93397113dab4c44190e649c596c23">PRIM_make</a> (char *name, ptr_primitive function)</td></tr>
 <tr class="memdesc:abee93397113dab4c44190e649c596c23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute dans l'environnement la primitive name.  <a href="#abee93397113dab4c44190e649c596c23">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abee93397113dab4c44190e649c596c23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50f700a8f4b90445a7495f540da9b931"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="primitive_8h.html#a50f700a8f4b90445a7495f540da9b931">PRIM_eval</a> (const <a class="el" href="structobject__t.html">object</a> args)</td></tr>
-<tr class="memdesc:a50f700a8f4b90445a7495f540da9b931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evalue la liste d'arguments passé en paramètre.  <a href="#a50f700a8f4b90445a7495f540da9b931">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a50f700a8f4b90445a7495f540da9b931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58ab6af3355ce24b7d00dabfdfdfa36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="primitive_8h.html#ab58ab6af3355ce24b7d00dabfdfdfa36">PRIM_eval</a> (const <a class="el" href="structobject__t.html">object</a> args, <a class="el" href="structobject__t.html">object</a> <a class="el" href="repl_8c.html#a062b7366fcc9f920dbb8475d815e0bfc">env</a>)</td></tr>
+<tr class="memdesc:ab58ab6af3355ce24b7d00dabfdfdfa36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evalue la liste d'arguments passé en paramètre dans l'environnement env.  <a href="#ab58ab6af3355ce24b7d00dabfdfdfa36">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab58ab6af3355ce24b7d00dabfdfdfa36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ab4a576c7ff2cfe21f1953320f4cddf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="primitive_8h.html#a8ab4a576c7ff2cfe21f1953320f4cddf">PRIM_check_number_arg</a> (<a class="el" href="structobject__t.html">object</a> args, int number)</td></tr>
 <tr class="memdesc:a8ab4a576c7ff2cfe21f1953320f4cddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie que args contient bien number arguments.  <a href="#a8ab4a576c7ff2cfe21f1953320f4cddf">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8ab4a576c7ff2cfe21f1953320f4cddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -626,7 +626,7 @@ Renvoie NULL si mauvais nombre d'arguments</p>
 
 </div>
 </div>
-<a class="anchor" id="a50f700a8f4b90445a7495f540da9b931"></a>
+<a class="anchor" id="ab58ab6af3355ce24b7d00dabfdfdfa36"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -634,14 +634,25 @@ Renvoie NULL si mauvais nombre d'arguments</p>
           <td class="memname"><a class="el" href="structobject__t.html">object</a> PRIM_eval </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structobject__t.html">object</a>&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>env</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Evalue la liste d'arguments passé en paramètre. </p>
-<p>Effectue une copie des arguments dans la mémoire. Les arguments ne sont donc pas modifiés. </p><dl class="section return"><dt>Renvoie</dt><dd>Renvoie La liste des arguments évalué. </dd></dl>
+<p>Evalue la liste d'arguments passé en paramètre dans l'environnement env. </p>
+<p>Effectue une copie des arguments dans la mémoire. Les arguments ne sont donc pas modifiés. Evalue une liste d'object.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Renvoie La liste des arguments évalué. </dd></dl>
 
 </div>
 </div>
@@ -1016,7 +1027,7 @@ Renvoie NULL si mauvais nombre d'arguments</p>
 </div><div class="memdoc">
 
 <p>Ajoute dans l'environnement la primitive name. </p>
-<p>La primitive est ajoutée dans l'environnement en tant que variable. Celle ci aura le nom name et aura comme valeur un object de type sfs_prim. Cet object contient un pointeur de fonction sur la primitive voulue.</p>
+<p>La primitive est ajoutée dans l'environnement en tant que variable. Celle ci aura le nom name et aura comme valeur un object de type sfs_prim. Cet object contient un pointeur de fonction sur la primitive voulue. L'environnement est la variable globale env.</p>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie un object de type primitive contenant function. </dd></dl>
 
 </div>

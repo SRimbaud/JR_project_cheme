@@ -9,8 +9,81 @@
 
 #include "eval.h"
 
+
+/** @fn object sfs_eval_compound(object pair, object env);
+ * @brief Evalue un agrégat.
+ * @pair : L'entrée de l'utilisateur dont le symbole est évalué.
+ * @env : L'environnement dans lequel on est.
+ *
+ * pair correspond à l'entrée de l'utilisateur à la seule différence
+ * que le premier élément de l'instruction n'est pas un symbole mais
+ * un agregat : Le symbole a été interprété.
+ * Procède par étape :
+ * Construit un environnement dont le père est env.
+ * Créer dans cet environnement les variables associées à
+ * l'agregat (paramètres).
+ * Exécute le body par sfs_eval dans cet environnement.
+ * Ne supprime pas l'environnement.
+ *
+ * Renvoie l'évaluation du body.
+ *
+ * Si trop d'arguments sont données affiche un warning,
+ * et retourne NULL.
+ * Si il manque des arguments, renvoie NULL et affiche un
+ * warning.
+ * @return Renvoie l'évaluation du body sur les arguments.
+ */
+object sfs_eval_compound(object pair, object env)
+{
+
+	/* On étend l'environnement */
+	object agregat = OBJECT_get_cxr(pair, "car");
+	agregat->this.compound.envt = ENV_build(env);
+	/* Création des paramètres dans l'environnement 
+	 * On parcours récursivement la liste des noms de 
+	 * paramètres et on associe à chaque nom sa valeur dans
+	 * l'environnement créé */
+	
+	object i = NULL, j = NULL;
+	int compteur_warning = 0;
+	/* i parcours valeurs des arguments, j leurs noms */
+	object arguments = OBJECT_get_cxr(pair, "cdr");
+	object noms = agregat->this.compound.param ;
+	for(i = arguments, j= noms, compteur_warning =0 ;
+		       	(i!= nil && !OBJECT_isempty(i)) &&
+			(j!=nil && !OBJECT_isempty(j)) ;
+			i =i->this.pair.cdr, j=j->this.pair.cdr,
+			compteur_warning ++)
+	{
+		object nom = j->this.pair.car ;
+		object valeur = i->this.pair.car ;
+		if(!ENV_add_var(nom,valeur, agregat->this.compound.envt))
+		{
+			WARNING_MSG("Error while extending environment in lambda");
+			return(NULL);
+		}
+		/* Test si jamais trop d'arguments */
+		if((j->this.pair.cdr == nil && OBJECT_isempty(j->this.pair.cdr))
+				&& (i->this.pair.cdr != nil || OBJECT_isempty(i->this.pair.cdr)))
+		{
+			WARNING_MSG("Too many arguments %d needed", compteur_warning);
+			return(NULL);
+		}
+		if((i->this.pair.cdr == nil && OBJECT_isempty(i->this.pair.cdr))
+				&& (j->this.pair.cdr != nil || OBJECT_isempty(j->this.pair.cdr)))
+		{
+			WARNING_MSG("Too few arguments %d given", compteur_warning);
+			return(NULL);
+		}
+	}
+
+	
+	/* Evaluation du body dans l'environnement */
+	return(sfs_eval(agregat->this.compound.body, agregat->this.compound.envt));
+}
+
 /** @fn object sfs_eval( object input, object env) 
- * @brief Fontion d'évalution d'expression scheme.
+ * @brief Fonction d'évaluation d'expression scheme.
  *
  * Evaluation de l'input.
  * Renvoie NULL si :
@@ -72,7 +145,7 @@ object sfs_eval(object input, object env)
 		}
 		else
 		{
-			var = ENV_get_var(input, &flag);
+			var = ENV_get_var(input, &flag, env);
 			if(OBJECT_isempty(var))
 			{
 				WARNING_MSG("Error or variable doesn't exist");
@@ -83,31 +156,15 @@ object sfs_eval(object input, object env)
 			DEBUG_MSG("Var->type %d", var->type);
 			if(flag)
 			{
-				/* On gère le cas du 
-				 * Symbole en valant un autre
-				 * Cas faux que je laisse au cas ou.
-				 * Si la variable trouvée est un 
-				 * symbole on la renvoit tel quelle
-				 * c'est la valeur de la variable
-				 * inutile de l'évaluer.
-				 */
-				/*if(check_type(var, SFS_SYMBOL))
-				{
-					DEBUG_MSG("Symbol detected");
-					return(sfs_eval(var, env));
-				}
-				else*/
+				
 			        if(check_type(var, SFS_PRIM))
 				{
-					/* Cas ou on a une primitive seule 
-					 * Ne devrait pas se produire,
-					 * les primitives sont évaluées seulement
-					 * dans des paires. Une primitive hors d'une paire
-					 * ne devrait pas se produire.
-					 */
-					WARNING_MSG("Wrong format for primitive type : %s ",
-							saved_name->this.symbol);
-					return(NULL);
+					/* Cas d'une primitive seule :
+					 * On la renvoie sans l'interpréter
+					 */	
+					/*WARNING_MSG("Wrong format for primitive type : %s ",
+							saved_name->this.symbol);*/
+					return(var);
 				}
 				else
 				{
@@ -160,7 +217,7 @@ object sfs_eval(object input, object env)
 				if(is_form(symb, &forme) )
 		{
 			/* Cas ou c'est une forme du langage */
-			DEBUG_MSG("Scheme form identified");
+			DEBUG_MSG("Scheme form identified : %d", forme);
 			switch(forme)
 			{
 				case QUOTE : 
@@ -201,7 +258,7 @@ object sfs_eval(object input, object env)
 		      */
 		{
 			DEBUG_MSG("Star looking for %s", symb->this.symbol);
-			var = ENV_get_var(symb, &flag)->this.pair.cdr;
+			var = ENV_get_var(symb, &flag, env)->this.pair.cdr;
 			DEBUG_MSG("Finded ? %d", flag);
 			
 			if(flag) /* On a trouvé quelque chose */
@@ -218,6 +275,14 @@ object sfs_eval(object input, object env)
 					DEBUG_MSG("Type argument in primitive : %d", argument->type);
 					return((*var->this.prim.function)(argument) );
 				}
+				else if(check_type(var, SFS_COMP))
+				{
+					/* Cas agregat */
+					OBJECT_set_car(input, var);
+					/* On a évalué le symbole en un compound*/
+					return(sfs_eval_compound(input, env));
+				}
+
 				return(var);
 			}
 			else
@@ -283,7 +348,7 @@ object EVAL_set(object o, object env)
 		WARNING_MSG("set! : Missing or wrong <value>.");
 		return(NULL);
 	}
-	object check =ENV_update_var(name, evaluated, ENV_DISABLE_CREATION, NULL);
+	object check =ENV_update_var(name, evaluated, env);
 	if(OBJECT_isempty(check))
 	{
 		WARNING_MSG("set! : <variable> not defined");
@@ -295,6 +360,8 @@ object EVAL_set(object o, object env)
 /** @fn object EVAL_define(object o, object env)
  * @brief Evalue un define.
  *
+ * Prend en paramètre une instruction complète d'une
+ * entrée define.
  * Evalue un define.
  * évalue également de cddr.
  * Effectue également la création dans l'environnement
@@ -313,7 +380,6 @@ object EVAL_define(object o, object env)
 	/* Faut copier le nom pour pas la perdre à la 
 	 * libération de ce qu'on a lu
 	 */
-	object name_cpy = OBJECT_build_cpy(name);
 	/* Vérification du format*/
 	if(OBJECT_isempty(name))
 	{
@@ -350,9 +416,7 @@ object EVAL_define(object o, object env)
 	}
 	DEBUG_MSG("Type evaluated %d\n", evaluated->type);
 
-	int free_flag = FALSE;
-	ENV_update_var(name_cpy, evaluated, ENV_ENABLE_CREATION, &free_flag);
-	if(free_flag) INFO_MSG("Destruction effectuée");
+	ENV_add_var(name, evaluated, env);
 	return(name);
 }
 
@@ -601,13 +665,14 @@ object EVAL_begin(object o, object env)
  */
 object EVAL_lambda(object o, object env)
 {
-	/* Gérer le bordel du free. */
 
 	/* On vérifie que la structure du lambda est 
 	 * la bonne */
-	if(!LAMBDA_check_number_arg(o)) return(NULL);
-	/* compound agrega_lambda = COMP_build(LAMBDA_get_var(o),
-			LAMBDA_get_body(o), env); */
+	if(!LAMBDA_check_number_arg(o))
+	{
+		WARNING_MSG("Wrong number of args for lambda form");
+		return(NULL);
+	}
 
 	object retour = make_object(SFS_COMP);
 	retour->this.compound = COMP_build(LAMBDA_get_var(o),LAMBDA_get_body(o), env);
@@ -624,6 +689,7 @@ object EVAL_lambda(object o, object env)
  *
  * Au minimum lambda possède aucun arguments
  * et un body qui est réduit à un atome.
+ * Prend la ligne entrée par l'utilisateur (lambda ...)
  *
  * @return Renvoie 1 si le nombre d'arguments est
  * correct 0 sinon.
@@ -631,9 +697,9 @@ object EVAL_lambda(object o, object env)
 int LAMBDA_check_number_arg(object input)
 {
 	object val = OBJECT_get_cxr(input, "cdr");
-	if( (!check_type(val->this.pair.car, SFS_NIL) ||
-			!check_type(val->this.pair.car, SFS_PAIR) )
-			&& (!check_type(val->this.pair.cdr, SFS_NIL)))
+	if( (check_type(val->this.pair.car, SFS_NIL) ||
+			check_type(val->this.pair.car, SFS_PAIR) )
+			&& (check_type(val->this.pair.cdr, SFS_NIL)))
 		return(0);
 	return(1);
 }
@@ -649,7 +715,7 @@ int LAMBDA_check_number_arg(object input)
  */
 object LAMBDA_get_var(object input)
 {
-	return(OBJECT_get_cxr(input, "caar"));
+	return(OBJECT_get_cxr(input, "cadr"));
 }
 
 /** @fn object LAMBDA_get_body(object input)
@@ -661,7 +727,7 @@ object LAMBDA_get_var(object input)
  */
 object LAMBDA_get_body(object input)
 {
-	return(OBJECT_get_cxr(input, "cddr"));
+	return(OBJECT_get_cxr(input, "caddr"));
 }
 
 /** @fn  object IF_predicat(object input)

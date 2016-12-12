@@ -21,11 +21,12 @@ extern "C" {
 /* fin */
 typedef struct object_t* object;
 object sfs_eval( object input, object env ); 
+object sfs_eval_compound(object pair, object env);
 
 
 
 
-/* Evaluation */
+/* Evaluation formes */
 
 object EVAL_quote(object o,  object env);
 object EVAL_define(object o, object env);

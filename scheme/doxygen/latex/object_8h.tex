@@ -25,7 +25,7 @@ struct \hyperlink{structobject__t}{object\+\_\+t}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{object_8h_aacf24b05297ae7bbff3af215ec3259ff}{N\+B\+\_\+\+F\+O\+RM}~6
+\#define \hyperlink{object_8h_aacf24b05297ae7bbff3af215ec3259ff}{N\+B\+\_\+\+F\+O\+RM}~8
 \begin{DoxyCompactList}\small\item\em Nombre de formes reconnues par l\textquotesingle{}interpréteur. \end{DoxyCompactList}\item 
 \#define {\bfseries S\+F\+S\+\_\+\+N\+U\+M\+B\+ER}~0x00\hypertarget{object_8h_a858bd2deff1d4b07656f8fdfd4484af0}{}\label{object_8h_a858bd2deff1d4b07656f8fdfd4484af0}
 
@@ -63,6 +63,9 @@ struct \hyperlink{structobject__t}{object\+\_\+t}
 \#define {\bfseries S\+F\+S\+\_\+\+P\+R\+IM}~0x0B\hypertarget{object_8h_ad95e386ed6e743f5aba98b37e5e9cde4}{}\label{object_8h_ad95e386ed6e743f5aba98b37e5e9cde4}
 
 \item 
+\#define {\bfseries S\+F\+S\+\_\+\+C\+O\+MP}~0x0C\hypertarget{object_8h_add681fd8eaa0215a2f9beff9ff11efb9}{}\label{object_8h_add681fd8eaa0215a2f9beff9ff11efb9}
+
+\item 
 \#define \hyperlink{object_8h_a4e8777591d506b4f54d8c4ff94cdf2a3}{E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}~1
 \item 
 \#define \hyperlink{object_8h_ad6ae71669c1596ca1e441c7da58c3655}{E\+N\+V\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}~0
@@ -74,6 +77,9 @@ typedef enum \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4}{mots\+\_\+c
 
 \item 
 typedef struct \hyperlink{structobject__t}{object\+\_\+t} $\ast$ {\bfseries object}\hypertarget{object_8h_adbb8ed13377cc3cd105cbdb0e70cb2c8}{}\label{object_8h_adbb8ed13377cc3cd105cbdb0e70cb2c8}
+
+\item 
+typedef struct agregat {\bfseries compound}\hypertarget{object_8h_a6be32de8dc3b5d26344fb19d1ee07d36}{}\label{object_8h_a6be32de8dc3b5d26344fb19d1ee07d36}
 
 \end{DoxyCompactItemize}
 \subsection*{Énumérations}
@@ -87,6 +93,9 @@ enum \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4}{mots\+\_\+clefs} \{
 \\*
 \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4a252802eda493fb6b4a279c4452acb547}{IF}, 
 \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4a96727447c0ad447987df1c6415aef074}{OR}, 
+\hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4a368db50032da622d4c456ef7eaf9cb67}{B\+E\+G\+IN}, 
+\hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4a40176493726a127184ca47ea6352dc1f}{L\+A\+M\+B\+DA}, 
+\\*
 \hyperlink{object_8h_a0b6a835fc6107eae744ba88c03f404d4ac157bdf0b85a40d2619cbc8bc1ae5fe2}{N\+O\+NE} = 9999
  \}
 \end{DoxyCompactItemize}
@@ -176,16 +185,23 @@ int \hyperlink{object_8h_a8db21bf1c03bc99e813b38a77ff8792e}{wait\+\_\+first\+\_\
 \begin{DoxyCompactList}\small\item\em incrémente le curseur tant qu\textquotesingle{}il y indique un espace dans la chaine \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{object_8h_a13394f7830becff1f3558b6f5b0969f9}{E\+N\+V\+\_\+build} (\hyperlink{structobject__t}{object} father)
 \begin{DoxyCompactList}\small\item\em Construit un environnement dont le père est father. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{object_8h_a9408de05ed658e0c2b39b06dfa52afc9}{E\+N\+V\+\_\+get\+\_\+var} (\hyperlink{structobject__t}{object} var, int $\ast$flag)
+\hyperlink{structobject__t}{object} \hyperlink{object_8h_a4067fb8e91d359bbdb385e9ec352f6f7}{E\+N\+V\+\_\+get\+\_\+var} (\hyperlink{structobject__t}{object} var, int $\ast$flag, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \begin{DoxyCompactList}\small\item\em Cherche le symbole var dans les environnements. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{object_8h_aad94ca4613c4d0f6214c77363f55008f}{E\+N\+V\+\_\+add\+\_\+var} (\hyperlink{structobject__t}{object} name, \hyperlink{structobject__t}{object} value)
+\hyperlink{structobject__t}{object} \hyperlink{object_8h_aa5e97aa15404862a8399b65de323e79a}{E\+N\+V\+\_\+add\+\_\+var} (\hyperlink{structobject__t}{object} name, \hyperlink{structobject__t}{object} value, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \begin{DoxyCompactList}\small\item\em Ajoute la variable de nom name et de valeur value l\textquotesingle{}environnement courant. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{object_8h_a700e3a4614699deb08c3640cd18af8e3}{E\+N\+V\+\_\+update\+\_\+var} (\hyperlink{structobject__t}{object} name, const \hyperlink{structobject__t}{object} val, int mode, int $\ast$free\+\_\+flag)
-\begin{DoxyCompactList}\small\item\em Mets à jour la variable de nom name à la valeur val. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} {\bfseries E\+N\+V\+\_\+update\+\_\+var} (\hyperlink{structobject__t}{object} name, const \hyperlink{structobject__t}{object} val, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})\hypertarget{object_8h_a2df9f8fb71e31bff32346db4f05c0b26}{}\label{object_8h_a2df9f8fb71e31bff32346db4f05c0b26}
+
+\item 
 \hyperlink{structobject__t}{object} \hyperlink{object_8h_a6c450315c9bb5fc8d72fe422bccad428}{E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env} (\hyperlink{structobject__t}{object} var, \hyperlink{structobject__t}{object} environ, int $\ast$flag)
 \begin{DoxyCompactList}\small\item\em Chercher la variable de nom var dans l\textquotesingle{}environnement environ. \end{DoxyCompactList}\item 
 int \hyperlink{object_8h_a7fb587a2ac0a4bebac5317ece2968594}{E\+N\+V\+\_\+check\+\_\+loop} (\hyperlink{structobject__t}{object} name)
-\begin{DoxyCompactList}\small\item\em Vérifie la validité d\textquotesingle{}un environnement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Vérifie la validité d\textquotesingle{}un environnement. \end{DoxyCompactList}\item 
+compound \hyperlink{object_8h_aefcd2aa34b5206d99869c3df1e292cc8}{C\+O\+M\+P\+\_\+build\+\_\+empty} ()
+\begin{DoxyCompactList}\small\item\em Construit un agrégat vide. \end{DoxyCompactList}\item 
+compound \hyperlink{object_8h_a24f0fc998b6f930d64cdd92ca8fecb90}{C\+O\+M\+P\+\_\+build} (\hyperlink{structobject__t}{object} param, \hyperlink{structobject__t}{object} body, \hyperlink{structobject__t}{object} envt)
+\begin{DoxyCompactList}\small\item\em Construit un compound avec les arguments donnés. \end{DoxyCompactList}\item 
+compound \hyperlink{object_8h_a6ea04d47288e13db0b8bebfcd1fe1042}{C\+O\+M\+P\+\_\+set} (compound $\ast$a, \hyperlink{structobject__t}{object} param, \hyperlink{structobject__t}{object} body, \hyperlink{structobject__t}{object} envt)
+\begin{DoxyCompactList}\small\item\em Met à jour le compound a. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -226,7 +242,7 @@ Empêche la création d\textquotesingle{}une variable lorsqu\textquotesingle{}on
 \subsubsection[{\texorpdfstring{E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON}{ENV_ENABLE_CREATION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON~1}\hypertarget{object_8h_a4e8777591d506b4f54d8c4ff94cdf2a3}{}\label{object_8h_a4e8777591d506b4f54d8c4ff94cdf2a3}
 Autorise la création d\textquotesingle{}une variable lorsqu\textquotesingle{}on essaie d\textquotesingle{}en modifier une inexistante. \index{object.\+h@{object.\+h}!N\+B\+\_\+\+F\+O\+RM@{N\+B\+\_\+\+F\+O\+RM}}
 \index{N\+B\+\_\+\+F\+O\+RM@{N\+B\+\_\+\+F\+O\+RM}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{N\+B\+\_\+\+F\+O\+RM}{NB_FORM}}]{\setlength{\rightskip}{0pt plus 5cm}N\+B\+\_\+\+F\+O\+RM~6}\hypertarget{object_8h_aacf24b05297ae7bbff3af215ec3259ff}{}\label{object_8h_aacf24b05297ae7bbff3af215ec3259ff}
+\subsubsection[{\texorpdfstring{N\+B\+\_\+\+F\+O\+RM}{NB_FORM}}]{\setlength{\rightskip}{0pt plus 5cm}N\+B\+\_\+\+F\+O\+RM~8}\hypertarget{object_8h_aacf24b05297ae7bbff3af215ec3259ff}{}\label{object_8h_aacf24b05297ae7bbff3af215ec3259ff}
 
 
 Nombre de formes reconnues par l\textquotesingle{}interpréteur. 
@@ -252,7 +268,11 @@ A\+ND\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4a865555c9f2e0458a70
 IF\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4a252802eda493fb6b4a279c4452acb547}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4a252802eda493fb6b4a279c4452acb547}
 }]La forme IF valant 4 \index{OR@{OR}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!OR@{OR}}\item[{\em 
 OR\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4a96727447c0ad447987df1c6415aef074}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4a96727447c0ad447987df1c6415aef074}
-}]La forme IF valant 5 \index{N\+O\+NE@{N\+O\+NE}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!N\+O\+NE@{N\+O\+NE}}\item[{\em 
+}]La forme IF valant 5 \index{B\+E\+G\+IN@{B\+E\+G\+IN}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!B\+E\+G\+IN@{B\+E\+G\+IN}}\item[{\em 
+B\+E\+G\+IN\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4a368db50032da622d4c456ef7eaf9cb67}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4a368db50032da622d4c456ef7eaf9cb67}
+}]La forme B\+E\+G\+IN valant 6 \index{L\+A\+M\+B\+DA@{L\+A\+M\+B\+DA}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!L\+A\+M\+B\+DA@{L\+A\+M\+B\+DA}}\item[{\em 
+L\+A\+M\+B\+DA\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4a40176493726a127184ca47ea6352dc1f}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4a40176493726a127184ca47ea6352dc1f}
+}]La forme L\+A\+M\+B\+DA valant 7 \index{N\+O\+NE@{N\+O\+NE}!object.\+h@{object.\+h}}\index{object.\+h@{object.\+h}!N\+O\+NE@{N\+O\+NE}}\item[{\em 
 N\+O\+NE\hypertarget{object_8h_a0b6a835fc6107eae744ba88c03f404d4ac157bdf0b85a40d2619cbc8bc1ae5fe2}{}\label{object_8h_a0b6a835fc6107eae744ba88c03f404d4ac157bdf0b85a40d2619cbc8bc1ae5fe2}
 }]Forme inconnue valant 9999 \end{description}
 \end{Desc}
@@ -301,14 +321,71 @@ Vérifie que o est bien de type sfs\+\_\+type.
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si o est de type sfs\+\_\+type, 0 sinon. Renvoie 0 si o de type S\+F\+S\+\_\+\+U\+N\+K\+N\+OW quelque soit sfs\+\_\+type. 
 \end{DoxyReturn}
+\index{object.\+h@{object.\+h}!C\+O\+M\+P\+\_\+build@{C\+O\+M\+P\+\_\+build}}
+\index{C\+O\+M\+P\+\_\+build@{C\+O\+M\+P\+\_\+build}!object.\+h@{object.\+h}}
+\subsubsection[{\texorpdfstring{C\+O\+M\+P\+\_\+build(object param, object body, object envt)}{COMP_build(object param, object body, object envt)}}]{\setlength{\rightskip}{0pt plus 5cm}compound C\+O\+M\+P\+\_\+build (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{param, }
+\item[{{\bf object}}]{body, }
+\item[{{\bf object}}]{envt}
+\end{DoxyParamCaption}
+)}\hypertarget{object_8h_a24f0fc998b6f930d64cdd92ca8fecb90}{}\label{object_8h_a24f0fc998b6f930d64cdd92ca8fecb90}
+
+
+Construit un compound avec les arguments donnés. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em param} & \+: les paramètres de la fonction \\
+\hline
+{\em body} & \+: Les instructions de la fonction. \\
+\hline
+{\em envt} & \+: L\textquotesingle{}environnement dans lequel est définit le compound.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Renvoit le compound construit. 
+\end{DoxyReturn}
+\index{object.\+h@{object.\+h}!C\+O\+M\+P\+\_\+build\+\_\+empty@{C\+O\+M\+P\+\_\+build\+\_\+empty}}
+\index{C\+O\+M\+P\+\_\+build\+\_\+empty@{C\+O\+M\+P\+\_\+build\+\_\+empty}!object.\+h@{object.\+h}}
+\subsubsection[{\texorpdfstring{C\+O\+M\+P\+\_\+build\+\_\+empty()}{COMP_build_empty()}}]{\setlength{\rightskip}{0pt plus 5cm}compound C\+O\+M\+P\+\_\+build\+\_\+empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{object_8h_aefcd2aa34b5206d99869c3df1e292cc8}{}\label{object_8h_aefcd2aa34b5206d99869c3df1e292cc8}
+
+
+Construit un agrégat vide. 
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie l\textquotesingle{}agrégat construit. 
+\end{DoxyReturn}
+\index{object.\+h@{object.\+h}!C\+O\+M\+P\+\_\+set@{C\+O\+M\+P\+\_\+set}}
+\index{C\+O\+M\+P\+\_\+set@{C\+O\+M\+P\+\_\+set}!object.\+h@{object.\+h}}
+\subsubsection[{\texorpdfstring{C\+O\+M\+P\+\_\+set(compound $\ast$a, object param, object body, object envt)}{COMP_set(compound *a, object param, object body, object envt)}}]{\setlength{\rightskip}{0pt plus 5cm}compound C\+O\+M\+P\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{compound $\ast$}]{a, }
+\item[{{\bf object}}]{param, }
+\item[{{\bf object}}]{body, }
+\item[{{\bf object}}]{envt}
+\end{DoxyParamCaption}
+)}\hypertarget{object_8h_a6ea04d47288e13db0b8bebfcd1fe1042}{}\label{object_8h_a6ea04d47288e13db0b8bebfcd1fe1042}
+
+
+Met à jour le compound a. 
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie le compound mis à jour. 
+\end{DoxyReturn}
 \index{object.\+h@{object.\+h}!E\+N\+V\+\_\+add\+\_\+var@{E\+N\+V\+\_\+add\+\_\+var}}
 \index{E\+N\+V\+\_\+add\+\_\+var@{E\+N\+V\+\_\+add\+\_\+var}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+add\+\_\+var(object name, object value)}{ENV_add_var(object name, object value)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+add\+\_\+var (
+\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+add\+\_\+var(object name, object value, object env)}{ENV_add_var(object name, object value, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+add\+\_\+var (
 \begin{DoxyParamCaption}
 \item[{{\bf object}}]{name, }
-\item[{{\bf object}}]{value}
+\item[{{\bf object}}]{value, }
+\item[{{\bf object}}]{env}
 \end{DoxyParamCaption}
-)}\hypertarget{object_8h_aad94ca4613c4d0f6214c77363f55008f}{}\label{object_8h_aad94ca4613c4d0f6214c77363f55008f}
+)}\hypertarget{object_8h_aa5e97aa15404862a8399b65de323e79a}{}\label{object_8h_aa5e97aa15404862a8399b65de323e79a}
 
 
 Ajoute la variable de nom name et de valeur value l\textquotesingle{}environnement courant. 
@@ -325,7 +402,7 @@ Ajoute la variable de nom name et de valeur value à l\textquotesingle{}environn
 \begin{DoxyReturn}{Renvoie}
 Renvoie la valeur de la variable crée. 
 \end{DoxyReturn}
-\index{object.\+h@{object.\+h}!E\+N\+V\+\_\+build@{E\+N\+V\+\_\+build}}
+On fait un ajout tête en gros ! \index{object.\+h@{object.\+h}!E\+N\+V\+\_\+build@{E\+N\+V\+\_\+build}}
 \index{E\+N\+V\+\_\+build@{E\+N\+V\+\_\+build}!object.\+h@{object.\+h}}
 \subsubsection[{\texorpdfstring{E\+N\+V\+\_\+build(object father)}{ENV_build(object father)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+build (
 \begin{DoxyParamCaption}
@@ -360,17 +437,22 @@ Vérifie la validité d\textquotesingle{}un environnement.
 Vérifie qu\textquotesingle{}un environnement en présente pas d\textquotesingle{}incohérences comme des appels circulaires de variable \+:~\newline
 x-\/$>$y-\/$>$z-\/$>$x-\/$>$y... .
 
+\begin{DoxyRefDesc}{Bogue}
+\item[\hyperlink{bug__bug000002}{Bogue}]Obsolete, implémentation mauvaise.\end{DoxyRefDesc}
+
+
 \begin{DoxyReturn}{Renvoie}
 0 si incohérences trouvées, 1 sinon. 
 \end{DoxyReturn}
 \index{object.\+h@{object.\+h}!E\+N\+V\+\_\+get\+\_\+var@{E\+N\+V\+\_\+get\+\_\+var}}
 \index{E\+N\+V\+\_\+get\+\_\+var@{E\+N\+V\+\_\+get\+\_\+var}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+get\+\_\+var(object var, int $\ast$flag)}{ENV_get_var(object var, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+get\+\_\+var (
+\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+get\+\_\+var(object var, int $\ast$flag, object env)}{ENV_get_var(object var, int *flag, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+get\+\_\+var (
 \begin{DoxyParamCaption}
 \item[{{\bf object}}]{var, }
-\item[{int $\ast$}]{flag}
+\item[{int $\ast$}]{flag, }
+\item[{{\bf object}}]{env}
 \end{DoxyParamCaption}
-)}\hypertarget{object_8h_a9408de05ed658e0c2b39b06dfa52afc9}{}\label{object_8h_a9408de05ed658e0c2b39b06dfa52afc9}
+)}\hypertarget{object_8h_a4067fb8e91d359bbdb385e9ec352f6f7}{}\label{object_8h_a4067fb8e91d359bbdb385e9ec352f6f7}
 
 
 Cherche le symbole var dans les environnements. 
@@ -412,47 +494,6 @@ Chercher la variable de nom var dans l\textquotesingle{}environnement environ.
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 Renvoie une paire dont le car porte le nom de la variable (symbole) et le cdr sa valeur. 
-\end{DoxyReturn}
-\index{object.\+h@{object.\+h}!E\+N\+V\+\_\+update\+\_\+var@{E\+N\+V\+\_\+update\+\_\+var}}
-\index{E\+N\+V\+\_\+update\+\_\+var@{E\+N\+V\+\_\+update\+\_\+var}!object.\+h@{object.\+h}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+update\+\_\+var(object name, const object val, int mode, int $\ast$free\+\_\+flag)}{ENV_update_var(object name, const object val, int mode, int *free_flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+update\+\_\+var (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{name, }
-\item[{const {\bf object}}]{val, }
-\item[{int}]{mode, }
-\item[{int $\ast$}]{free\+\_\+flag}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8h_a700e3a4614699deb08c3640cd18af8e3}{}\label{object_8h_a700e3a4614699deb08c3640cd18af8e3}
-
-
-Mets à jour la variable de nom name à la valeur val. 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em name} & \+: Symbole à modifier. \\
-\hline
-{\em val} & \+: Nouvelle valeur. \\
-\hline
-{\em mode} & \+: Mode de modification. \\
-\hline
-{\em free\+\_\+flag} & \+: Flag mis à vrai si on a effectué une suppression.\\
-\hline
-\end{DoxyParams}
-Si name n\textquotesingle{}est pas un symbole affiche un warning et retourne nul. Si val est de type S\+F\+S\+\_\+\+E\+NV affiche un warning et retourne nul. Dans les 2 cas il n\textquotesingle{}y pas d\textquotesingle{}ajout de variable.
-
-Le flag free\+\_\+flag est mis à vrai si la fonction appelle O\+B\+J\+E\+C\+T\+\_\+destroy. Dans ce cas la valeur associé au symbole name est supprimée. Si elle est associée à un autre symbole celui-\/ci perd également sa valeur, ainsi le drapeau le signal. De ce fait il faut toujours donner une copie de la valeur à ajouter et non la valeur elle même ainsi un symbole n\textquotesingle{}est associé qu\textquotesingle{}à une seule structure.
-
-La valeur initiale du drapeau importe peu, il est mis à faux automatiquement au début de la fonction.
-
-Lors de la mise à jour d\textquotesingle{}une variable existante, cette fonction vérifie que ce n\textquotesingle{}est pas une primitive du langage. Si c\textquotesingle{}est le cas elle affiche un warning et renvoie le nom de la variable.
-
-\begin{DoxySeeAlso}{Voir également}
-\hyperlink{object_8h_ad6ae71669c1596ca1e441c7da58c3655}{E\+N\+V\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON} 
-
-\hyperlink{object_8h_a4e8777591d506b4f54d8c4ff94cdf2a3}{E\+N\+V\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+R\+E\+A\+T\+I\+ON} 
-\end{DoxySeeAlso}
-\begin{DoxyReturn}{Renvoie}
-Renvoie name. 
 \end{DoxyReturn}
 \index{object.\+h@{object.\+h}!is\+\_\+form@{is\+\_\+form}}
 \index{is\+\_\+form@{is\+\_\+form}!object.\+h@{object.\+h}}

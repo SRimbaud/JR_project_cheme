@@ -282,6 +282,9 @@ void OBJECT_print_atom ( object o )
 	    case SFS_PRIM :
 		    OBJECT_print_prim(o);
 		    break;
+	    case SFS_COMP :
+		    OBJECT_print_compound(o);
+		    break;
 	    default :
 		    OBJECT_print_fail(); /* Cas ou on a pas de correspondance.*/
     }
@@ -289,3 +292,12 @@ void OBJECT_print_atom ( object o )
 }
 
 
+/** @fn void OBJECT_print_compound(object o);
+ * @brief Affiche un agrégat.
+ *
+ * Affiche #<procedure>
+ */
+void OBJECT_print_compound(object o)
+{
+	printf("#<procedure>");
+}

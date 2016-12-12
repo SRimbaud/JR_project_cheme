@@ -19,20 +19,26 @@ typedef struct \hyperlink{structobject__t}{object\+\_\+t} $\ast$ {\bfseries obje
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structobject__t}{object} \hyperlink{eval_8h_ae3d0e6146540807f51d3f98bcc072dec}{sfs\+\_\+eval} (\hyperlink{structobject__t}{object})
-\begin{DoxyCompactList}\small\item\em Fontion d\textquotesingle{}évalution d\textquotesingle{}expression scheme. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{eval_8h_ab3046168bcbd3ea1c3b2b256c52f3381}{E\+V\+A\+L\+\_\+quote} (\hyperlink{structobject__t}{object} o)
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_ae380eb697aba625d9557508c5ce78230}{sfs\+\_\+eval} (\hyperlink{structobject__t}{object} input, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}évaluation d\textquotesingle{}expression scheme. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a63409534cf57d947724747bcfea47071}{sfs\+\_\+eval\+\_\+compound} (\hyperlink{structobject__t}{object} pair, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
+\begin{DoxyCompactList}\small\item\em Evalue un agrégat.  \+: L\textquotesingle{}entrée de l\textquotesingle{}utilisateur dont le symbole est évalué.  \+: L\textquotesingle{}environnement dans lequel on est. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a4fa12a03242edab3d6319587d2cbf59a}{E\+V\+A\+L\+\_\+quote} (\hyperlink{structobject__t}{object} o, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \begin{DoxyCompactList}\small\item\em Evalue l\textquotesingle{}expression quote. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a3ab5f3daaa76ecdb200516edaeb5f1de}{E\+V\+A\+L\+\_\+define} (\hyperlink{structobject__t}{object} o)
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a019ed7c50b864c42ea880ac81aec0048}{E\+V\+A\+L\+\_\+define} (\hyperlink{structobject__t}{object} o, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \begin{DoxyCompactList}\small\item\em Evalue un define. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{eval_8h_aaf33772424539f09fb5cf02f68539a27}{E\+V\+A\+L\+\_\+set} (\hyperlink{structobject__t}{object} o)
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a721bfb9ef69a26cf3ae3784d46e4e620}{E\+V\+A\+L\+\_\+set} (\hyperlink{structobject__t}{object} o, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \begin{DoxyCompactList}\small\item\em Mets à jour une variable. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a5d2f9663d35a3771d2199c8a982571db}{E\+V\+A\+L\+\_\+and} (\hyperlink{structobject__t}{object} o)
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_aac2cfb148bd205981b2b064910faf3a6}{E\+V\+A\+L\+\_\+and} (\hyperlink{structobject__t}{object} o, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \begin{DoxyCompactList}\small\item\em Retourne un et logique de o. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a8cf3f371a46ed2d9a0c49c65397b704f}{E\+V\+A\+L\+\_\+or} (\hyperlink{structobject__t}{object} o)
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a8ca142d5d9bdbf2d494608d6700010c8}{E\+V\+A\+L\+\_\+or} (\hyperlink{structobject__t}{object} o, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \begin{DoxyCompactList}\small\item\em Evaluation de la forme or. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a92d6d091093aca2cc461305af9898a57}{E\+V\+A\+L\+\_\+if} (\hyperlink{structobject__t}{object} o)
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a714a5266b28df03925d36547221130e3}{E\+V\+A\+L\+\_\+if} (\hyperlink{structobject__t}{object} o, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \begin{DoxyCompactList}\small\item\em Evalue un if. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a6b626fbe83d75afeb2c6183f35bd90bc}{E\+V\+A\+L\+\_\+begin} (\hyperlink{structobject__t}{object} o, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
+\begin{DoxyCompactList}\small\item\em Evalue la forme begin. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_af4e01ebbfbff53c2221b64ce542d5703}{E\+V\+A\+L\+\_\+lambda} (\hyperlink{structobject__t}{object} o, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
+\begin{DoxyCompactList}\small\item\em Evalue lambda et créer l\textquotesingle{}objet de type compound correspondant. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{eval_8h_a0059ac2d5fc1abec50561b5b9a1b494e}{I\+F\+\_\+predicat} (\hyperlink{structobject__t}{object} input)
 \begin{DoxyCompactList}\small\item\em Retourne le prédicat d\textquotesingle{}une structure if. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{eval_8h_ae2d724e0225104a8dcd621f5f691c601}{I\+F\+\_\+consequence} (\hyperlink{structobject__t}{object} input)
@@ -40,7 +46,13 @@ typedef struct \hyperlink{structobject__t}{object\+\_\+t} $\ast$ {\bfseries obje
 \hyperlink{structobject__t}{object} \hyperlink{eval_8h_aefec57e38712b1baf88ee81276fe57ed}{I\+F\+\_\+alternative} (\hyperlink{structobject__t}{object} input)
 \begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}alternative d\textquotesingle{}une structure if. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{eval_8h_a026bb47409acef4341f840fc817b292c}{I\+F\+\_\+overargument} (\hyperlink{structobject__t}{object} input)
-\begin{DoxyCompactList}\small\item\em Vérifie que if n\textquotesingle{}ait pas un argument en trop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Vérifie que if n\textquotesingle{}ait pas un argument en trop. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_a05993cb29ab0fc9204e80695ce39a4c2}{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var} (\hyperlink{structobject__t}{object} input)
+\begin{DoxyCompactList}\small\item\em Renvoie le nom des variables d\textquotesingle{}une forme lambda. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8h_ab23dd5520e0d7fcaec96318ff9b52d1c}{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body} (\hyperlink{structobject__t}{object} input)
+\begin{DoxyCompactList}\small\item\em Renvoie les instructions d\textquotesingle{}un lambda. \end{DoxyCompactList}\item 
+int \hyperlink{eval_8h_a2d5c4441d55f4188c8bf913120643eb4}{L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg} (\hyperlink{structobject__t}{object} input)
+\begin{DoxyCompactList}\small\item\em Vérifie que lambda ait bien le bon nombre d\textquotesingle{}arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -57,11 +69,12 @@ Fri Jun 22 20\+:10\+:38 2012 Evaluation stuff for S\+FS.
 \subsection{Documentation des fonctions}
 \index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+and@{E\+V\+A\+L\+\_\+and}}
 \index{E\+V\+A\+L\+\_\+and@{E\+V\+A\+L\+\_\+and}!eval.\+h@{eval.\+h}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+and(object o)}{EVAL_and(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+and (
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+and(object o, object env)}{EVAL_and(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+and (
 \begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
+\item[{{\bf object}}]{o, }
+\item[{{\bf object}}]{env}
 \end{DoxyParamCaption}
-)}\hypertarget{eval_8h_a5d2f9663d35a3771d2199c8a982571db}{}\label{eval_8h_a5d2f9663d35a3771d2199c8a982571db}
+)}\hypertarget{eval_8h_aac2cfb148bd205981b2b064910faf3a6}{}\label{eval_8h_aac2cfb148bd205981b2b064910faf3a6}
 
 
 Retourne un et logique de o. 
@@ -73,29 +86,48 @@ Renvoie N\+U\+LL et affiche un warning en cas de problème.
 \begin{DoxyReturn}{Renvoie}
 Renvoie le résultat. Renvoie un booléen ! 
 \end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+begin@{E\+V\+A\+L\+\_\+begin}}
+\index{E\+V\+A\+L\+\_\+begin@{E\+V\+A\+L\+\_\+begin}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+begin(object o, object env)}{EVAL_begin(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+begin (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{{\bf object}}]{env}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_a6b626fbe83d75afeb2c6183f35bd90bc}{}\label{eval_8h_a6b626fbe83d75afeb2c6183f35bd90bc}
+
+
+Evalue la forme begin. 
+
+Evalue la forme begin \+: Chaque instruction de la forme est évaluée, l\textquotesingle{}évaluation de la dernière instruction est retournée. Prend en paramètre l\textquotesingle{}intégralité d\textquotesingle{}une instruction begin ex \+: (begin (define a 4) (+ a 34) )
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie l\textquotesingle{}évaluation de la dernière instruction. 
+\end{DoxyReturn}
 \index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+define@{E\+V\+A\+L\+\_\+define}}
 \index{E\+V\+A\+L\+\_\+define@{E\+V\+A\+L\+\_\+define}!eval.\+h@{eval.\+h}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+define(object o)}{EVAL_define(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+define (
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+define(object o, object env)}{EVAL_define(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+define (
 \begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
+\item[{{\bf object}}]{o, }
+\item[{{\bf object}}]{env}
 \end{DoxyParamCaption}
-)}\hypertarget{eval_8h_a3ab5f3daaa76ecdb200516edaeb5f1de}{}\label{eval_8h_a3ab5f3daaa76ecdb200516edaeb5f1de}
+)}\hypertarget{eval_8h_a019ed7c50b864c42ea880ac81aec0048}{}\label{eval_8h_a019ed7c50b864c42ea880ac81aec0048}
 
 
 Evalue un define. 
 
-Evalue un define. évalue également de cddr. Effectue également la création dans l\textquotesingle{}environnement courant de la variable. Retourne le nom de la variable créée c\textquotesingle{}est à dire le symbole. Si le format de la chaine n\textquotesingle{}est pas bon elle retourne N\+U\+LL et affiche un warning.
+Prend en paramètre une instruction complète d\textquotesingle{}une entrée define. Evalue un define. évalue également de cddr. Effectue également la création dans l\textquotesingle{}environnement courant de la variable. Retourne le nom de la variable créée c\textquotesingle{}est à dire le symbole. Si le format de la chaine n\textquotesingle{}est pas bon elle retourne N\+U\+LL et affiche un warning.
 
 \begin{DoxyReturn}{Renvoie}
 Renvoie le symbole crée. 
 \end{DoxyReturn}
 \index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+if@{E\+V\+A\+L\+\_\+if}}
 \index{E\+V\+A\+L\+\_\+if@{E\+V\+A\+L\+\_\+if}!eval.\+h@{eval.\+h}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+if(object o)}{EVAL_if(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+if (
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+if(object o, object env)}{EVAL_if(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+if (
 \begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
+\item[{{\bf object}}]{o, }
+\item[{{\bf object}}]{env}
 \end{DoxyParamCaption}
-)}\hypertarget{eval_8h_a92d6d091093aca2cc461305af9898a57}{}\label{eval_8h_a92d6d091093aca2cc461305af9898a57}
+)}\hypertarget{eval_8h_a714a5266b28df03925d36547221130e3}{}\label{eval_8h_a714a5266b28df03925d36547221130e3}
 
 
 Evalue un if. 
@@ -115,13 +147,31 @@ S\textquotesingle{}il n\textquotesingle{}y a pas de prédicat retourne N\+U\+LL 
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}évaluation d\textquotesingle{}un if. 
 \end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+lambda@{E\+V\+A\+L\+\_\+lambda}}
+\index{E\+V\+A\+L\+\_\+lambda@{E\+V\+A\+L\+\_\+lambda}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+lambda(object o, object env)}{EVAL_lambda(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+lambda (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o, }
+\item[{{\bf object}}]{env}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_af4e01ebbfbff53c2221b64ce542d5703}{}\label{eval_8h_af4e01ebbfbff53c2221b64ce542d5703}
+
+
+Evalue lambda et créer l\textquotesingle{}objet de type compound correspondant. 
+
+Prend en entrée la ligne entrée par l\textquotesingle{}utilisateur.
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie un agrégat. 
+\end{DoxyReturn}
 \index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+or@{E\+V\+A\+L\+\_\+or}}
 \index{E\+V\+A\+L\+\_\+or@{E\+V\+A\+L\+\_\+or}!eval.\+h@{eval.\+h}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+or(object o)}{EVAL_or(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+or (
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+or(object o, object env)}{EVAL_or(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+or (
 \begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
+\item[{{\bf object}}]{o, }
+\item[{{\bf object}}]{env}
 \end{DoxyParamCaption}
-)}\hypertarget{eval_8h_a8cf3f371a46ed2d9a0c49c65397b704f}{}\label{eval_8h_a8cf3f371a46ed2d9a0c49c65397b704f}
+)}\hypertarget{eval_8h_a8ca142d5d9bdbf2d494608d6700010c8}{}\label{eval_8h_a8ca142d5d9bdbf2d494608d6700010c8}
 
 
 Evaluation de la forme or. 
@@ -133,11 +183,12 @@ Renvoie un booléen qui correspond à un ou logique.
 \end{DoxyReturn}
 \index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+quote@{E\+V\+A\+L\+\_\+quote}}
 \index{E\+V\+A\+L\+\_\+quote@{E\+V\+A\+L\+\_\+quote}!eval.\+h@{eval.\+h}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+quote(object o)}{EVAL_quote(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+quote (
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+quote(object o, object env)}{EVAL_quote(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+quote (
 \begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
+\item[{{\bf object}}]{o, }
+\item[{{\bf object}}]{env}
 \end{DoxyParamCaption}
-)}\hypertarget{eval_8h_ab3046168bcbd3ea1c3b2b256c52f3381}{}\label{eval_8h_ab3046168bcbd3ea1c3b2b256c52f3381}
+)}\hypertarget{eval_8h_a4fa12a03242edab3d6319587d2cbf59a}{}\label{eval_8h_a4fa12a03242edab3d6319587d2cbf59a}
 
 
 Evalue l\textquotesingle{}expression quote. 
@@ -149,11 +200,12 @@ Renvoie le cdr de o.
 \end{DoxyReturn}
 \index{eval.\+h@{eval.\+h}!E\+V\+A\+L\+\_\+set@{E\+V\+A\+L\+\_\+set}}
 \index{E\+V\+A\+L\+\_\+set@{E\+V\+A\+L\+\_\+set}!eval.\+h@{eval.\+h}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+set(object o)}{EVAL_set(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+set (
+\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+set(object o, object env)}{EVAL_set(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+set (
 \begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
+\item[{{\bf object}}]{o, }
+\item[{{\bf object}}]{env}
 \end{DoxyParamCaption}
-)}\hypertarget{eval_8h_aaf33772424539f09fb5cf02f68539a27}{}\label{eval_8h_aaf33772424539f09fb5cf02f68539a27}
+)}\hypertarget{eval_8h_a721bfb9ef69a26cf3ae3784d46e4e620}{}\label{eval_8h_a721bfb9ef69a26cf3ae3784d46e4e620}
 
 
 Mets à jour une variable. 
@@ -230,16 +282,65 @@ Revient à prendre le cadr. \begin{DoxySeeAlso}{Voir également}
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}alternative (le cadr). 
 \end{DoxyReturn}
-\index{eval.\+h@{eval.\+h}!sfs\+\_\+eval@{sfs\+\_\+eval}}
-\index{sfs\+\_\+eval@{sfs\+\_\+eval}!eval.\+h@{eval.\+h}}
-\subsubsection[{\texorpdfstring{sfs\+\_\+eval(object)}{sfs_eval(object)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} sfs\+\_\+eval (
+\index{eval.\+h@{eval.\+h}!L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg@{L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg}}
+\index{L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg@{L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg(object input)}{LAMBDA_check_number_arg(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}int L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg (
 \begin{DoxyParamCaption}
 \item[{{\bf object}}]{input}
 \end{DoxyParamCaption}
-)}\hypertarget{eval_8h_ae3d0e6146540807f51d3f98bcc072dec}{}\label{eval_8h_ae3d0e6146540807f51d3f98bcc072dec}
+)}\hypertarget{eval_8h_a2d5c4441d55f4188c8bf913120643eb4}{}\label{eval_8h_a2d5c4441d55f4188c8bf913120643eb4}
 
 
-Fontion d\textquotesingle{}évalution d\textquotesingle{}expression scheme. 
+Vérifie que lambda ait bien le bon nombre d\textquotesingle{}arguments. 
+
+Au minimum lambda possède aucun arguments et un body qui est réduit à un atome. Prend la ligne entrée par l\textquotesingle{}utilisateur (lambda ...)
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie 1 si le nombre d\textquotesingle{}arguments est correct 0 sinon. 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body@{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body}}
+\index{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body@{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body(object input)}{LAMBDA_get_body(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_ab23dd5520e0d7fcaec96318ff9b52d1c}{}\label{eval_8h_ab23dd5520e0d7fcaec96318ff9b52d1c}
+
+
+Renvoie les instructions d\textquotesingle{}un lambda. 
+
+Prend en argument l\textquotesingle{}instruction lambda complète.
+
+\begin{DoxyReturn}{Renvoie}
+renvoie la liste des instructions du body 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var@{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var}}
+\index{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var@{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var(object input)}{LAMBDA_get_var(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_a05993cb29ab0fc9204e80695ce39a4c2}{}\label{eval_8h_a05993cb29ab0fc9204e80695ce39a4c2}
+
+
+Renvoie le nom des variables d\textquotesingle{}une forme lambda. 
+
+Prend en paramètre la liste qui doit être évaluée à lambda ex \+: (lambda (x y) (corps))
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie une liste de noms de variable. 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!sfs\+\_\+eval@{sfs\+\_\+eval}}
+\index{sfs\+\_\+eval@{sfs\+\_\+eval}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{sfs\+\_\+eval(object input, object env)}{sfs_eval(object input, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} sfs\+\_\+eval (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{input, }
+\item[{{\bf object}}]{env}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_ae380eb697aba625d9557508c5ce78230}{}\label{eval_8h_ae380eb697aba625d9557508c5ce78230}
+
+
+Fonction d\textquotesingle{}évaluation d\textquotesingle{}expression scheme. 
 
 Evaluation de l\textquotesingle{}input. Renvoie N\+U\+LL si \+: input est N\+U\+LL
 \begin{DoxyItemize}
@@ -254,4 +355,23 @@ is\+\_\+form(object symbol, int$\ast$ forme);
 \end{DoxySeeAlso}
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}objet évalué. 
+\end{DoxyReturn}
+\index{eval.\+h@{eval.\+h}!sfs\+\_\+eval\+\_\+compound@{sfs\+\_\+eval\+\_\+compound}}
+\index{sfs\+\_\+eval\+\_\+compound@{sfs\+\_\+eval\+\_\+compound}!eval.\+h@{eval.\+h}}
+\subsubsection[{\texorpdfstring{sfs\+\_\+eval\+\_\+compound(object pair, object env)}{sfs_eval_compound(object pair, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} sfs\+\_\+eval\+\_\+compound (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{pair, }
+\item[{{\bf object}}]{env}
+\end{DoxyParamCaption}
+)}\hypertarget{eval_8h_a63409534cf57d947724747bcfea47071}{}\label{eval_8h_a63409534cf57d947724747bcfea47071}
+
+
+Evalue un agrégat.  \+: L\textquotesingle{}entrée de l\textquotesingle{}utilisateur dont le symbole est évalué.  \+: L\textquotesingle{}environnement dans lequel on est. 
+
+pair correspond à l\textquotesingle{}entrée de l\textquotesingle{}utilisateur à la seule différence que le premier élément de l\textquotesingle{}instruction n\textquotesingle{}est pas un symbole mais un agregat \+: Le symbole a été interprété. Procède par étape \+: Construit un environnement dont le père est env. Créer dans cet environnement les variables associées à l\textquotesingle{}agregat (paramètres). Exécute le body par sfs\+\_\+eval dans cet environnement. Ne supprime pas l\textquotesingle{}environnement.
+
+Renvoie l\textquotesingle{}évaluation du body.
+
+Si trop d\textquotesingle{}arguments sont données affiche un warning, et retourne N\+U\+LL. Si il manque des arguments, renvoie N\+U\+LL et affiche un warning. \begin{DoxyReturn}{Renvoie}
+Renvoie l\textquotesingle{}évaluation du body sur les arguments. 
 \end{DoxyReturn}

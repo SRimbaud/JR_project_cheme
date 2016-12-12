@@ -130,7 +130,7 @@ Structures de données</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aacf24b05297ae7bbff3af215ec3259ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#aacf24b05297ae7bbff3af215ec3259ff">NB_FORM</a>&#160;&#160;&#160;6</td></tr>
+<tr class="memitem:aacf24b05297ae7bbff3af215ec3259ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#aacf24b05297ae7bbff3af215ec3259ff">NB_FORM</a>&#160;&#160;&#160;8</td></tr>
 <tr class="memdesc:aacf24b05297ae7bbff3af215ec3259ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de formes reconnues par l'interpréteur.  <a href="#aacf24b05297ae7bbff3af215ec3259ff">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aacf24b05297ae7bbff3af215ec3259ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a858bd2deff1d4b07656f8fdfd4484af0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a858bd2deff1d4b07656f8fdfd4484af0"></a>
@@ -169,6 +169,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ad95e386ed6e743f5aba98b37e5e9cde4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad95e386ed6e743f5aba98b37e5e9cde4"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SFS_PRIM</b>&#160;&#160;&#160;0x0B</td></tr>
 <tr class="separator:ad95e386ed6e743f5aba98b37e5e9cde4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add681fd8eaa0215a2f9beff9ff11efb9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add681fd8eaa0215a2f9beff9ff11efb9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SFS_COMP</b>&#160;&#160;&#160;0x0C</td></tr>
+<tr class="separator:add681fd8eaa0215a2f9beff9ff11efb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e8777591d506b4f54d8c4ff94cdf2a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a4e8777591d506b4f54d8c4ff94cdf2a3">ENV_ENABLE_CREATION</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a4e8777591d506b4f54d8c4ff94cdf2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6ae71669c1596ca1e441c7da58c3655"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#ad6ae71669c1596ca1e441c7da58c3655">ENV_DISABLE_CREATION</a>&#160;&#160;&#160;0</td></tr>
@@ -182,6 +185,9 @@ typedef enum <a class="el" href="object_8h.html#a0b6a835fc6107eae744ba88c03f404d
 <tr class="memitem:adbb8ed13377cc3cd105cbdb0e70cb2c8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adbb8ed13377cc3cd105cbdb0e70cb2c8"></a>
 typedef struct <a class="el" href="structobject__t.html">object_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>object</b></td></tr>
 <tr class="separator:adbb8ed13377cc3cd105cbdb0e70cb2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6be32de8dc3b5d26344fb19d1ee07d36"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6be32de8dc3b5d26344fb19d1ee07d36"></a>
+typedef struct agregat&#160;</td><td class="memItemRight" valign="bottom"><b>compound</b></td></tr>
+<tr class="separator:a6be32de8dc3b5d26344fb19d1ee07d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Énumérations</h2></td></tr>
@@ -193,7 +199,10 @@ typedef struct <a class="el" href="structobject__t.html">object_t</a> *&#160;</t
 <br />
 &#160;&#160;<a class="el" href="object_8h.html#a0b6a835fc6107eae744ba88c03f404d4a252802eda493fb6b4a279c4452acb547">IF</a>, 
 <a class="el" href="object_8h.html#a0b6a835fc6107eae744ba88c03f404d4a96727447c0ad447987df1c6415aef074">OR</a>, 
-<a class="el" href="object_8h.html#a0b6a835fc6107eae744ba88c03f404d4ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a> = 9999
+<a class="el" href="object_8h.html#a0b6a835fc6107eae744ba88c03f404d4a368db50032da622d4c456ef7eaf9cb67">BEGIN</a>, 
+<a class="el" href="object_8h.html#a0b6a835fc6107eae744ba88c03f404d4a40176493726a127184ca47ea6352dc1f">LAMBDA</a>, 
+<br />
+&#160;&#160;<a class="el" href="object_8h.html#a0b6a835fc6107eae744ba88c03f404d4ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a> = 9999
 <br />
  }</td></tr>
 <tr class="separator:a0b6a835fc6107eae744ba88c03f404d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -323,21 +332,30 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>free_forms</b> (void)
 <tr class="memitem:a13394f7830becff1f3558b6f5b0969f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a13394f7830becff1f3558b6f5b0969f9">ENV_build</a> (<a class="el" href="structobject__t.html">object</a> father)</td></tr>
 <tr class="memdesc:a13394f7830becff1f3558b6f5b0969f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un environnement dont le père est father.  <a href="#a13394f7830becff1f3558b6f5b0969f9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a13394f7830becff1f3558b6f5b0969f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9408de05ed658e0c2b39b06dfa52afc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a9408de05ed658e0c2b39b06dfa52afc9">ENV_get_var</a> (<a class="el" href="structobject__t.html">object</a> var, int *flag)</td></tr>
-<tr class="memdesc:a9408de05ed658e0c2b39b06dfa52afc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cherche le symbole var dans les environnements.  <a href="#a9408de05ed658e0c2b39b06dfa52afc9">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a9408de05ed658e0c2b39b06dfa52afc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad94ca4613c4d0f6214c77363f55008f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#aad94ca4613c4d0f6214c77363f55008f">ENV_add_var</a> (<a class="el" href="structobject__t.html">object</a> name, <a class="el" href="structobject__t.html">object</a> value)</td></tr>
-<tr class="memdesc:aad94ca4613c4d0f6214c77363f55008f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute la variable de nom name et de valeur value l'environnement courant.  <a href="#aad94ca4613c4d0f6214c77363f55008f">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aad94ca4613c4d0f6214c77363f55008f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a700e3a4614699deb08c3640cd18af8e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a700e3a4614699deb08c3640cd18af8e3">ENV_update_var</a> (<a class="el" href="structobject__t.html">object</a> name, const <a class="el" href="structobject__t.html">object</a> val, int mode, int *free_flag)</td></tr>
-<tr class="memdesc:a700e3a4614699deb08c3640cd18af8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jour la variable de nom name à la valeur val.  <a href="#a700e3a4614699deb08c3640cd18af8e3">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a700e3a4614699deb08c3640cd18af8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4067fb8e91d359bbdb385e9ec352f6f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a4067fb8e91d359bbdb385e9ec352f6f7">ENV_get_var</a> (<a class="el" href="structobject__t.html">object</a> var, int *flag, <a class="el" href="structobject__t.html">object</a> <a class="el" href="repl_8c.html#a062b7366fcc9f920dbb8475d815e0bfc">env</a>)</td></tr>
+<tr class="memdesc:a4067fb8e91d359bbdb385e9ec352f6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cherche le symbole var dans les environnements.  <a href="#a4067fb8e91d359bbdb385e9ec352f6f7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4067fb8e91d359bbdb385e9ec352f6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5e97aa15404862a8399b65de323e79a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#aa5e97aa15404862a8399b65de323e79a">ENV_add_var</a> (<a class="el" href="structobject__t.html">object</a> name, <a class="el" href="structobject__t.html">object</a> value, <a class="el" href="structobject__t.html">object</a> <a class="el" href="repl_8c.html#a062b7366fcc9f920dbb8475d815e0bfc">env</a>)</td></tr>
+<tr class="memdesc:aa5e97aa15404862a8399b65de323e79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute la variable de nom name et de valeur value l'environnement courant.  <a href="#aa5e97aa15404862a8399b65de323e79a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa5e97aa15404862a8399b65de323e79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df9f8fb71e31bff32346db4f05c0b26"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2df9f8fb71e31bff32346db4f05c0b26"></a>
+<a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ENV_update_var</b> (<a class="el" href="structobject__t.html">object</a> name, const <a class="el" href="structobject__t.html">object</a> val, <a class="el" href="structobject__t.html">object</a> <a class="el" href="repl_8c.html#a062b7366fcc9f920dbb8475d815e0bfc">env</a>)</td></tr>
+<tr class="separator:a2df9f8fb71e31bff32346db4f05c0b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c450315c9bb5fc8d72fe422bccad428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structobject__t.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a6c450315c9bb5fc8d72fe422bccad428">ENV_get_var_in_env</a> (<a class="el" href="structobject__t.html">object</a> var, <a class="el" href="structobject__t.html">object</a> environ, int *flag)</td></tr>
 <tr class="memdesc:a6c450315c9bb5fc8d72fe422bccad428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chercher la variable de nom var dans l'environnement environ.  <a href="#a6c450315c9bb5fc8d72fe422bccad428">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a6c450315c9bb5fc8d72fe422bccad428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fb587a2ac0a4bebac5317ece2968594"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a7fb587a2ac0a4bebac5317ece2968594">ENV_check_loop</a> (<a class="el" href="structobject__t.html">object</a> name)</td></tr>
 <tr class="memdesc:a7fb587a2ac0a4bebac5317ece2968594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie la validité d'un environnement.  <a href="#a7fb587a2ac0a4bebac5317ece2968594">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7fb587a2ac0a4bebac5317ece2968594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefcd2aa34b5206d99869c3df1e292cc8"><td class="memItemLeft" align="right" valign="top">compound&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#aefcd2aa34b5206d99869c3df1e292cc8">COMP_build_empty</a> ()</td></tr>
+<tr class="memdesc:aefcd2aa34b5206d99869c3df1e292cc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un agrégat vide.  <a href="#aefcd2aa34b5206d99869c3df1e292cc8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aefcd2aa34b5206d99869c3df1e292cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f0fc998b6f930d64cdd92ca8fecb90"><td class="memItemLeft" align="right" valign="top">compound&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a24f0fc998b6f930d64cdd92ca8fecb90">COMP_build</a> (<a class="el" href="structobject__t.html">object</a> param, <a class="el" href="structobject__t.html">object</a> body, <a class="el" href="structobject__t.html">object</a> envt)</td></tr>
+<tr class="memdesc:a24f0fc998b6f930d64cdd92ca8fecb90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un compound avec les arguments donnés.  <a href="#a24f0fc998b6f930d64cdd92ca8fecb90">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a24f0fc998b6f930d64cdd92ca8fecb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea04d47288e13db0b8bebfcd1fe1042"><td class="memItemLeft" align="right" valign="top">compound&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a6ea04d47288e13db0b8bebfcd1fe1042">COMP_set</a> (compound *a, <a class="el" href="structobject__t.html">object</a> param, <a class="el" href="structobject__t.html">object</a> body, <a class="el" href="structobject__t.html">object</a> envt)</td></tr>
+<tr class="memdesc:a6ea04d47288e13db0b8bebfcd1fe1042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le compound a.  <a href="#a6ea04d47288e13db0b8bebfcd1fe1042">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6ea04d47288e13db0b8bebfcd1fe1042"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -398,7 +416,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">NB_FORM&#160;&#160;&#160;6</td>
+          <td class="memname">NB_FORM&#160;&#160;&#160;8</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -436,6 +454,12 @@ Variables</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a0b6a835fc6107eae744ba88c03f404d4a96727447c0ad447987df1c6415aef074"></a>OR&#160;</td><td class="fielddoc">
 <p>La forme IF valant 5 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a0b6a835fc6107eae744ba88c03f404d4a368db50032da622d4c456ef7eaf9cb67"></a>BEGIN&#160;</td><td class="fielddoc">
+<p>La forme BEGIN valant 6 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a0b6a835fc6107eae744ba88c03f404d4a40176493726a127184ca47ea6352dc1f"></a>LAMBDA&#160;</td><td class="fielddoc">
+<p>La forme LAMBDA valant 7 </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a0b6a835fc6107eae744ba88c03f404d4ac157bdf0b85a40d2619cbc8bc1ae5fe2"></a>NONE&#160;</td><td class="fielddoc">
 <p>Forme inconnue valant 9999 </p>
@@ -532,7 +556,109 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aad94ca4613c4d0f6214c77363f55008f"></a>
+<a class="anchor" id="a24f0fc998b6f930d64cdd92ca8fecb90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">compound COMP_build </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>envt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un compound avec les arguments donnés. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>: les paramètres de la fonction </td></tr>
+    <tr><td class="paramname">body</td><td>: Les instructions de la fonction. </td></tr>
+    <tr><td class="paramname">envt</td><td>: L'environnement dans lequel est définit le compound.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Renvoit le compound construit. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aefcd2aa34b5206d99869c3df1e292cc8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">compound COMP_build_empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un agrégat vide. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Renvoie l'agrégat construit. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6ea04d47288e13db0b8bebfcd1fe1042"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">compound COMP_set </td>
+          <td>(</td>
+          <td class="paramtype">compound *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>envt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Met à jour le compound a. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Renvoie le compound mis à jour. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa5e97aa15404862a8399b65de323e79a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -546,7 +672,13 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>env</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -566,6 +698,7 @@ Variables</h2></td></tr>
 </dl>
 <p>Ajoute la variable de nom name et de valeur value à l'environnement courant. Si jamais elle existe déjà la variable est écrasée et reçoit une nouvelle valeur. Renvoie name et affiche un warning si name n'est pas un symbole. Renvoie value et affiche un warning si value est de type SFS_ENV. Dans les 2 précédents cas quitte la fonction prématurément sans effectuer d'actions.</p>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie la valeur de la variable crée. </dd></dl>
+<p>On fait un ajout tête en gros ! </p>
 
 </div>
 </div>
@@ -612,11 +745,12 @@ Variables</h2></td></tr>
 </dl>
 <p>Vérifie qu'un environnement en présente pas d'incohérences comme des appels circulaires de variable :<br />
 x-&gt;y-&gt;z-&gt;x-&gt;y... .</p>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bogue:</a></b></dt><dd>Obsolete, implémentation mauvaise.</dd></dl>
 <dl class="section return"><dt>Renvoie</dt><dd>0 si incohérences trouvées, 1 sinon. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a9408de05ed658e0c2b39b06dfa52afc9"></a>
+<a class="anchor" id="a4067fb8e91d359bbdb385e9ec352f6f7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -630,7 +764,13 @@ x-&gt;y-&gt;z-&gt;x-&gt;y... .</p>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>flag</em>&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>env</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -693,63 +833,6 @@ x-&gt;y-&gt;z-&gt;x-&gt;y... .</p>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Renvoie une paire dont le car porte le nom de la variable (symbole) et le cdr sa valeur. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a700e3a4614699deb08c3640cd18af8e3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structobject__t.html">object</a> ENV_update_var </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structobject__t.html">object</a>&#160;</td>
-          <td class="paramname"><em>val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>mode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>free_flag</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mets à jour la variable de nom name à la valeur val. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>: Symbole à modifier. </td></tr>
-    <tr><td class="paramname">val</td><td>: Nouvelle valeur. </td></tr>
-    <tr><td class="paramname">mode</td><td>: Mode de modification. </td></tr>
-    <tr><td class="paramname">free_flag</td><td>: Flag mis à vrai si on a effectué une suppression.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Si name n'est pas un symbole affiche un warning et retourne nul. Si val est de type SFS_ENV affiche un warning et retourne nul. Dans les 2 cas il n'y pas d'ajout de variable.</p>
-<p>Le flag free_flag est mis à vrai si la fonction appelle OBJECT_destroy. Dans ce cas la valeur associé au symbole name est supprimée. Si elle est associée à un autre symbole celui-ci perd également sa valeur, ainsi le drapeau le signal. De ce fait il faut toujours donner une copie de la valeur à ajouter et non la valeur elle même ainsi un symbole n'est associé qu'à une seule structure.</p>
-<p>La valeur initiale du drapeau importe peu, il est mis à faux automatiquement au début de la fonction.</p>
-<p>Lors de la mise à jour d'une variable existante, cette fonction vérifie que ce n'est pas une primitive du langage. Si c'est le cas elle affiche un warning et renvoie le nom de la variable.</p>
-<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="object_8h.html#ad6ae71669c1596ca1e441c7da58c3655">ENV_DISABLE_CREATION</a> </dd>
-<dd>
-<a class="el" href="object_8h.html#a4e8777591d506b4f54d8c4ff94cdf2a3">ENV_ENABLE_CREATION</a> </dd></dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Renvoie name. </dd></dl>
 
 </div>
 </div>

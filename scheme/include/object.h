@@ -20,7 +20,7 @@ extern "C" {
  *
  * 22 Oct 2016 ==> 6 formes.
  */
-#define NB_FORM 7
+#define NB_FORM 8
 
 #include<strings.h>
 #include<ctype.h>
@@ -179,9 +179,9 @@ extern object env;
  */
 #define ENV_DISABLE_CREATION 0 
 object ENV_build(object father);
-object ENV_get_var(object var, int* flag);
-object ENV_add_var(object name, object value);
-object ENV_update_var(object name,const object val, int mode, int* free_flag);
+object ENV_get_var(object var, int* flag, object env);
+object ENV_add_var(object name, object value, object env);
+object ENV_update_var(object name,const object val, object env);
 object ENV_get_var_in_env(object var, object environ, int* flag);
 int ENV_check_loop(object name);
 

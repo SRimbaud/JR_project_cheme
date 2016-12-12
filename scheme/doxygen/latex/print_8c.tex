@@ -37,7 +37,9 @@ void \hyperlink{print_8c_ad94ede42a4f72f61eccb7152d06345f4}{O\+B\+J\+E\+C\+T\+\_
 void \hyperlink{print_8c_a478b35e75fe4de7f0cc70cf2b293edc3}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim} (\hyperlink{structobject__t}{object} o)
 \begin{DoxyCompactList}\small\item\em Affiche un type primitive. \end{DoxyCompactList}\item 
 void \hyperlink{print_8c_ab688e6db514483a6f4f2050ae774ecb0}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+atom} (\hyperlink{structobject__t}{object} o)
-\begin{DoxyCompactList}\small\item\em Affiche un atome. Appel \hyperlink{print_8c_abc700e5dc549b50ed2b811de1cb8c9ad}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail()} si le type est non reconnu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Affiche un atome. Appel \hyperlink{print_8c_abc700e5dc549b50ed2b811de1cb8c9ad}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail()} si le type est non reconnu. \end{DoxyCompactList}\item 
+void \hyperlink{print_8c_a27b4e3f4330aa0d45806ff5d1dea04b6}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound} (\hyperlink{structobject__t}{object} o)
+\begin{DoxyCompactList}\small\item\em Affiche un agrégat. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -102,7 +104,18 @@ Affiche un object de type character.
 {\em object} & \+: l\textquotesingle{}objet à afficher. \\
 \hline
 \end{DoxyParams}
-\index{print.\+c@{print.\+c}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail}}
+\index{print.\+c@{print.\+c}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound}}
+\index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound}!print.\+c@{print.\+c}}
+\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound(object o)}{OBJECT_print_compound(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound (
+\begin{DoxyParamCaption}
+\item[{{\bf object}}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{print_8c_a27b4e3f4330aa0d45806ff5d1dea04b6}{}\label{print_8c_a27b4e3f4330aa0d45806ff5d1dea04b6}
+
+
+Affiche un agrégat. 
+
+Affiche \#$<$procedure$>$ \index{print.\+c@{print.\+c}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail}!print.\+c@{print.\+c}}
 \subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail()}{OBJECT_print_fail()}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail (
 \begin{DoxyParamCaption}

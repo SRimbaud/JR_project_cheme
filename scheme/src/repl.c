@@ -199,17 +199,7 @@ int main ( int argc, char *argv[] ) {
         }
 
         sfs_print( output );
-	/* On free tout ce qu'on a lu et évalué
-	 * Normalement eval travaille sur la même
-	 * allocation que celle de read,
-	 * elle ne fait de nouvelles allocations
-	 * que pour enregistrer ou mettre à jour
-	 * des variables. Dans ce second cas elle
-	 * se charge de la suppression des anciennes
-	 * valeurs.
-	 */
-	/*OBJECT_destroy(&sexpr);*/
-    }
+	    }
 
     if (mode == SCRIPT) {
         fclose( fp );
