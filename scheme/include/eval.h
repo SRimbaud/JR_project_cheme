@@ -21,7 +21,7 @@ extern "C" {
 /* fin */
 typedef struct object_t* object;
 object sfs_eval( object input, object env ); 
-object sfs_eval_compound(object pair, object env);
+object sfs_eval_compound(object pair);
 
 
 

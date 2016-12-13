@@ -10,7 +10,7 @@
 #include "eval.h"
 
 
-/** @fn object sfs_eval_compound(object pair, object env);
+/** @fn object sfs_eval_compound(object pair);
  * @brief Evalue un agrégat.
  * @pair : L'entrée de l'utilisateur dont le symbole est évalué.
  * @env : L'environnement dans lequel on est.
@@ -33,12 +33,12 @@
  * warning.
  * @return Renvoie l'évaluation du body sur les arguments.
  */
-object sfs_eval_compound(object pair, object env)
+object sfs_eval_compound(object pair)
 {
 
 	/* On étend l'environnement */
 	object agregat = OBJECT_get_cxr(pair, "car");
-	agregat->this.compound.envt = ENV_build(env);
+	object env = ENV_build(agregat->this.compound.envt);
 	/* Création des paramètres dans l'environnement 
 	 * On parcours récursivement la liste des noms de 
 	 * paramètres et on associe à chaque nom sa valeur dans
@@ -57,29 +57,43 @@ object sfs_eval_compound(object pair, object env)
 	{
 		object nom = j->this.pair.car ;
 		object valeur = i->this.pair.car ;
-		if(!ENV_add_var(nom,valeur, agregat->this.compound.envt))
+		if(!ENV_add_var(nom,valeur, env))
 		{
 			WARNING_MSG("Error while extending environment in lambda");
 			return(NULL);
 		}
-		/* Test si jamais trop d'arguments */
-		if((j->this.pair.cdr == nil && OBJECT_isempty(j->this.pair.cdr))
-				&& (i->this.pair.cdr != nil || OBJECT_isempty(i->this.pair.cdr)))
-		{
-			WARNING_MSG("Too many arguments %d needed", compteur_warning);
-			return(NULL);
-		}
-		if((i->this.pair.cdr == nil && OBJECT_isempty(i->this.pair.cdr))
-				&& (j->this.pair.cdr != nil || OBJECT_isempty(j->this.pair.cdr)))
-		{
-			WARNING_MSG("Too few arguments %d given", compteur_warning);
-			return(NULL);
-		}
+		
+	}
+	/* Test si jamais trop d'arguments */
+	if((j == nil || OBJECT_isempty(j))
+			&& (i != nil && !OBJECT_isempty(i)))
+	{
+		WARNING_MSG("Too many arguments %d needed", compteur_warning);
+		return(NULL);
+	}
+	if((i == nil || OBJECT_isempty(i))
+			&& (j != nil && !OBJECT_isempty(j)))
+	{
+		WARNING_MSG("Too few arguments %d given", compteur_warning);
+		return(NULL);
 	}
 
-	
-	/* Evaluation du body dans l'environnement */
-	return(sfs_eval(agregat->this.compound.body, agregat->this.compound.envt));
+
+	/* Evaluation du body dans l'environnement 
+	 * Evaluation récursive
+	 * Petit if au cas ou, mais ne devrait pas
+	 * se produire.
+	 */
+	if(!check_type(agregat->this.compound.body, SFS_PAIR))
+		return( sfs_eval(agregat->this.compound.body, env));
+
+	object tmp = NULL ;
+	for(i = agregat->this.compound.body ; i!= nil && !OBJECT_isempty(i);
+			i=i->this.pair.cdr)
+	{
+		tmp = sfs_eval(i->this.pair.car, env);
+	}
+	return(tmp);
 }
 
 /** @fn object sfs_eval( object input, object env) 
@@ -101,6 +115,7 @@ object sfs_eval_compound(object pair, object env)
  */
 object sfs_eval(object input, object env) 
 {
+	DEBUG_MSG("Call sfs_eval");
 	/* La forme que l'on va identifier */
 	FORMS forme = NONE ;
 	/* la variable que l'on va chercher */
@@ -206,9 +221,32 @@ object sfs_eval(object input, object env)
 		DEBUG_MSG("Start compare eval");
 		if(symb->type != SFS_SYMBOL)
 		{
-			WARNING_MSG("Pair should begin with symbol");
-			/* Construire plus proprement le message */
-			return(input);
+			/* Si on a une paire on évalue le car, et on recommence
+			 * l'évaluation
+			 */
+			if(check_type(symb, SFS_PAIR))
+			{
+				DEBUG_MSG("Pair instead of symb, evaluating");
+				OBJECT_set_car(input, sfs_eval(symb, env));
+				return(sfs_eval(input, env));
+			}
+			else if(check_type(symb, SFS_COMP))
+			{
+				/* si on a un compound on l'évalue sur ses
+				 * arguments
+				 */
+				/* Evaluation des arguments du compound
+				 * On recycle PRIM_eval pour l'occasion
+				 */
+				OBJECT_set_cdr(input, PRIM_eval(OBJECT_get_cxr(input, "cdr"), env));
+				return(sfs_eval_compound(input));
+			}
+			else 
+			{
+				WARNING_MSG("Pair should begin with symbol");
+				/* Construire plus proprement le message */
+				return(input);
+			}
 		}
 
 		/* On a une liste avec un symbole au début on peut traiter */
@@ -242,6 +280,7 @@ object sfs_eval(object input, object env)
 					return(EVAL_begin(input,env));
 					break;
 				case LAMBDA :
+					DEBUG_MSG("Call EVAL_lambda");
 					return(EVAL_lambda(input, env));
 					break;
 				default :
@@ -280,7 +319,7 @@ object sfs_eval(object input, object env)
 					/* Cas agregat */
 					OBJECT_set_car(input, var);
 					/* On a évalué le symbole en un compound*/
-					return(sfs_eval_compound(input, env));
+					return(sfs_eval_compound(input));
 				}
 
 				return(var);
@@ -727,7 +766,7 @@ object LAMBDA_get_var(object input)
  */
 object LAMBDA_get_body(object input)
 {
-	return(OBJECT_get_cxr(input, "caddr"));
+	return(OBJECT_get_cxr(input, "cddr"));
 }
 
 /** @fn  object IF_predicat(object input)

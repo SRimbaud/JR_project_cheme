@@ -122,7 +122,7 @@ void make_forms()
 /** @fn void OBJECT_set_cxr(object o, object val, char* place)
  * @brief Modifie l'emplacement donné et y met la variable val.
  *
- * Cette fonction libère l'ancienne valeur.
+ * Cette fonction ne libère pas l'ancienne valeur.
  * L'objet à ajouter doit-être préalablement alloué.
  * Ne fait rien si o est a NULL.
  * Ajoute nil si val est a NULL avec un appel récursif.
@@ -162,13 +162,11 @@ void OBJECT_set_cxr(object o, object val, char* place)
 	object before_changed = OBJECT_get_cxr(o, cpy + 1);
 	if(position == 'a')
 	{
-		OBJECT_destroy(&(before_changed->this.pair.car));
 		OBJECT_set_car(before_changed, val);
 	}
 	else if(position== 'd')
 	{
 		
-		OBJECT_destroy(&(before_changed->this.pair.cdr));
 		OBJECT_set_cdr(before_changed, val);
 	}
 	else 
@@ -185,6 +183,9 @@ void OBJECT_set_cxr(object o, object val, char* place)
  * @brief Met à jour le cdr de o avec l'object cdr.
  *
  * Si cdr est a NULL place la variable globale nil.
+ * Si o n'est pas une paire ni un environnement
+ * ne fait rien et affiche
+ * un warning.
  *
  */
 void OBJECT_set_cdr(object o, object cdr)
@@ -192,6 +193,11 @@ void OBJECT_set_cdr(object o, object cdr)
 	if(cdr ==NULL)
 	{
 		o->this.pair.cdr = nil;
+		return;
+	}
+	if(!check_type(o, SFS_PAIR) && !check_type(o, SFS_ENV))
+	{
+		WARNING_MSG(" Cannot change cdr of a non pair type");
 		return;
 	}
 	o->this.pair.cdr = cdr;
@@ -202,6 +208,9 @@ void OBJECT_set_cdr(object o, object cdr)
  * @brief Met à jour le car de o avec l'objet car.
  * 
  * Si car est NULL place la variable globale nil.
+ * Si jamais o n'est pas une paire ni un environnement
+ * ne fait rien et affiche
+ * un warning.
  *
  */
 void OBJECT_set_car(object o, object car)
@@ -209,6 +218,11 @@ void OBJECT_set_car(object o, object car)
 	if(car ==NULL)
 	{
 		o->this.pair.car = nil;
+		return;
+	}
+	if(!check_type(o, SFS_PAIR) && !check_type(o, SFS_ENV))
+	{
+		WARNING_MSG(" Cannot change car of a non pair type");
 		return;
 	}
 	o->this.pair.car = car;
@@ -1175,7 +1189,7 @@ object ENV_get_var(object var, int* flag, object env)
 		for(j=env; !OBJECT_isempty(j) && !(*flag) ;
 				j = OBJECT_get_cxr(j, "car"))
 		{
-			trouve = ENV_get_var_in_env(var, env, flag);	
+			trouve = ENV_get_var_in_env(var, j, flag);	
 		}
 		return(trouve);
 
