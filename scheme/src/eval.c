@@ -245,7 +245,7 @@ object sfs_eval(object input, object env)
 			{
 				WARNING_MSG("Pair should begin with symbol");
 				/* Construire plus proprement le message */
-				return(input);
+				return(NULL);
 			}
 		}
 
@@ -319,6 +319,8 @@ object sfs_eval(object input, object env)
 					/* Cas agregat */
 					OBJECT_set_car(input, var);
 					/* On a évalué le symbole en un compound*/
+					/* On évalue les arguments */
+					OBJECT_set_cdr(input, PRIM_eval(OBJECT_get_cxr(input, "cdr"), env));
 					return(sfs_eval_compound(input));
 				}
 
@@ -574,12 +576,7 @@ object EVAL_or(object o, object env)
 	 * sinon on prend le cddr et rebelotte.
 	 * On s'arrête si on arrive à nil.
 	 */
-	object default_result = make_object(SFS_BOOLEAN);
-	/* Résultat que l'on retourne si tous les éléments sont 
-	 * faux
-	 */
-	default_result==faux;
-
+	
 	object premier_terme = o->this.pair.cdr;
 	if(!check(o,"or : NULL ptr given in cdr")) return NULL;
 	object i = premier_terme;
@@ -600,7 +597,7 @@ object EVAL_or(object o, object env)
 	}
 	/* Si on est là c'est qu'on a atteint nil */
 	/* On a donc tout faux */
-	return(default_result);
+	return(faux);
 }
 
 /** @fn  object EVAL_if(object o, object env)
@@ -633,8 +630,8 @@ object EVAL_if(object o, object env)
 		WARNING_MSG("if : need predicate");
 		return NULL;
 	}
-	object consequence = sfs_eval(IF_consequence(o), env);
-	object alternative = sfs_eval(IF_alternative(o), env);
+	object consequence = IF_consequence(o);
+	object alternative = IF_alternative(o);
 	if(OBJECT_isempty(consequence) || consequence==nil)
 	{
 		WARNING_MSG("if : need consequence");
@@ -652,11 +649,11 @@ object EVAL_if(object o, object env)
 	{
 		DEBUG_MSG("Alternative");
 		if(alternative == nil) return(faux);
-		return(alternative);
+		return(sfs_eval(alternative,env));
 	}
 	else
 	{
-		return(consequence);
+		return(sfs_eval(consequence, env));
 		DEBUG_MSG("Conséquence");
 	}
 

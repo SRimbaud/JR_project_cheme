@@ -202,11 +202,12 @@ int PRIM_check_enought_number_arg(object arg, int number)
 
 /** @fn object PRIM_check_predicate(object a);
  * @brief Met en forme le predicat en prenant le car de a.
- * @param Flag mis a 1 si il y a plus d'un paramètre.
  *
  * Vérifie également qu'il y a bien qu'un seul argument
  * et non 2.
  * Renvoie NULL si a n'est pas une paire.
+ * Renvoie NULL si format mauvais
+ * a doit être les arguments du prédicat.
  *
  * @return Renvoit le car de a.
  */
@@ -215,12 +216,13 @@ object PRIM_check_predicate(object a)
 	/* On vérifie qu'on ait bien une paire */
 	if(!check_type(a, SFS_PAIR))
 	{
-		WARNING_MSG("Error in predicate, need 1 argument");
+		WARNING_MSG("Predicate error : need 1 argument, 0 given.");
 		return(NULL);
 	}
 	if(!check_type(a->this.pair.cdr, SFS_NIL))
 	{
-		WARNING_MSG("Too many arguments one needed.\nContinuing on first one");
+		WARNING_MSG("Predicate error : Too many arguments one needed");
+		return(NULL);
 	}
 	return(OBJECT_get_cxr(a, "car"));
 }
@@ -233,6 +235,7 @@ object PRIM_check_predicate(object a)
 object PRIM_is_null(object a)
 {
 	a = PRIM_check_predicate(a);
+	if(!a) return(NULL); /* Cas mauvais format d'arguments */
 	if(check_type(a, SFS_NIL)) return(vrai);
 	if(a==nil) return(vrai);
 	return(faux);
@@ -247,6 +250,7 @@ object PRIM_is_boolean(object a)
 {
 	
 	a = PRIM_check_predicate(a);
+	if(!a) return(NULL); /* Cas mauvais format d'arguments */
 	if(a==vrai || a==faux) return(vrai);
 	return(faux);
 }
@@ -259,6 +263,7 @@ object PRIM_is_boolean(object a)
 object PRIM_is_symbol(object a)
 {
 	a = PRIM_check_predicate(a);
+	if(!a) return(NULL); /* Cas mauvais format d'arguments */
 	if(check_type(a, SFS_SYMBOL)) return(vrai);
 	return(faux);
 }
@@ -274,6 +279,7 @@ object PRIM_is_symbol(object a)
 object PRIM_is_integer(object a)
 {
 	a = PRIM_check_predicate(a);
+	if(!a) return(NULL); /* Cas mauvais format d'arguments */
 	if(!check_type(a, SFS_NUMBER)) return(faux);
 	if(a->this.number.numtype == NUM_INTEGER) return(vrai);
 	return(faux);
@@ -289,6 +295,7 @@ object PRIM_is_integer(object a)
 object PRIM_is_real(object a)
 {
 	a = PRIM_check_predicate(a);
+	if(!a) return(NULL); /* Cas mauvais format d'arguments */
 	if(!check_type(a, SFS_NUMBER)) return(faux);
 	if(a->this.number.numtype == NUM_REAL) return(vrai);
 	return(faux);
@@ -302,6 +309,7 @@ object PRIM_is_real(object a)
 object PRIM_is_char(object a)
 {
 	a = PRIM_check_predicate(a);
+	if(!a) return(NULL); /* Cas mauvais format d'arguments */
 	if(check_type(a, SFS_CHARACTER)) return(vrai);
 	return(faux);
 }
@@ -314,6 +322,7 @@ object PRIM_is_char(object a)
 object PRIM_is_string(object a)
 {
 	a = PRIM_check_predicate(a);
+	if(!a) return(NULL); /* Cas mauvais format d'arguments */
 	if(check_type(a, SFS_STRING)) return(vrai);
 	return(faux);
 }
@@ -332,6 +341,7 @@ object PRIM_is_string(object a)
 object PRIM_is_pair(object a)
 {
 	a = PRIM_check_predicate(a);
+	if(!a) return(NULL); /* Cas mauvais format d'arguments */
 	if(check_type(a, SFS_PAIR)) return(vrai);
 	return(faux);
 }
@@ -348,10 +358,28 @@ object PRIM_is_pair(object a)
 object PRIM_is_list(object a)
 {
 	a = PRIM_check_predicate(a);
+	if(!a) return(NULL); /* Cas mauvais format d'arguments */
 	if(!check_type(a, SFS_PAIR)) return(faux);
 	if(!check_type(OBJECT_get_cxr(a, "cdr"), SFS_PAIR) ) return(faux);
 	return(vrai);
 }
+
+
+/** @fn object PRIM_is_procedure(object a);
+ * @brief Test si a est une procedure.
+ *
+ * Supporte 1 seul argument.
+ *
+ * @return Renvoie vrai ou faux. NULL si erreur.
+ */
+object PRIM_is_procedure(object a)
+{
+	a = PRIM_check_predicate(a);
+	if(!a) return(NULL); /* Cas mauvais format d'arguments */
+	if(check_type(a, SFS_COMP)) return(vrai);
+	return(faux);
+}
+
 
 /* Opérateurs mathématiques */
 /** @fn object PRIM_somme(object a) 

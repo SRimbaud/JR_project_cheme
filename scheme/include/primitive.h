@@ -56,6 +56,7 @@ object PRIM_is_char(object a);
 object PRIM_is_string(object a);
 object PRIM_is_pair(object a);
 object PRIM_is_list(object a);
+object PRIM_is_procedure(object a);
 
 /* =============Arithmétique============= */
 
