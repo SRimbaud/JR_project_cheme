@@ -458,6 +458,8 @@ int OBJECT_isempty(object o)
  * Si on spécifie une location inexistante dans la paire la fonction
  * affiche un warning et renvoie NULL.
  * Si o n'est pas une paire, revoie NULL.
+ * Si dans le parcours on croise un élément qui n'est pas une paire,
+ * on renvoie NULL avec WARNING_MSG.
  *
  * @return Renvoie l'objet lu correspondant à la chaine.
  */
@@ -479,6 +481,11 @@ object OBJECT_get_cxr(object o, char* place)
 		{
 			WARNING_MSG("Try to access an unreachable point in OBJECT_get_cxr");
 			return(resultat);
+		}
+		if(!check_type(resultat, SFS_PAIR) && !check_type(resultat, SFS_ENV))
+		{
+			WARNING_MSG("Cannot get car or cdr of non pair type");
+			return(NULL);
 		}
 
 		if(place[i] == 'a')
