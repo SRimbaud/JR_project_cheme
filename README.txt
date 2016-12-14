@@ -1,12 +1,20 @@
-Livrable 1 : Rimbaud Sébastien, Jaoua Donia
+Rimbaud Jaoua
 
-Archive contenant l'ensemble des données nécessaire au livrable 1.
-l'archive contient les répertoires :
-- scheme contient :
-Le code source du livrable 1 réparti dans include/ et src/
-La documentation du code source généré à partir de doxygen dans le dossier doxygen.
-Elle est disponible au format html et LaTeX mais n'est pas compilée. Pour la consulter
-lire le fichier html/index.html.
-scheme contient les fichiers de test du livrable 0 fourni au début du projet et du livrable 1.
-Il contient également le rapport au format PDF sous le nom rapport_RS_JD.pdf.
-- testing : qui contient le script de test à utiliser aussi souvent que possible
+Livrable final.
+
+Date mercredi 14 décembre 19H00.
+
+Vous trouverez dans ce livrable :
+les sources
+les fichiers test
+simpleunittest.sh
+Une documentation au format HTML générée par doxygen.
+Pour la lire se mettre dans le dossier scheme
+et lire :
+
+doxygen/html/index.html
+
+Vous trouverez le rapport du livrable 4 
+ainsi qu'un tableau récapitulatif de
+toutes nos formes et primitives, leur langage
+d'implémentation, si elles sont fonctionnelles ou non.
