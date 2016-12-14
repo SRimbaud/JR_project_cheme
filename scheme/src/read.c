@@ -310,7 +310,7 @@ object sfs_read( char *input, uint *here )
     if ( input[*here] == '(' ) {
 	    DEBUG_MSG("Pair detected");
 	*here = wait_first_non_blank_char(input, here);
-        if ( input[(*here)] == ')' ) {
+        if ( input[(*here +1)] == ')' ) {
             *here += 1;
             return nil;
         }

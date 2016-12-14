@@ -53,16 +53,12 @@ void sfs_print_pair( object o )
  */
 void sfs_print( object o )
 {
-
 	if(OBJECT_isempty(o))
-	{
-		return;
-	}
-	if(o->type == SFS_UNKNOWN || OBJECT_isempty(o))
 	{
 		OBJECT_print_fail();
 		return;
 	}
+	if(check_type(o, SFS_UNKNOWN)) return;
 	printf( "==> " );
 
     if ( SFS_PAIR == o->type ) {
@@ -180,10 +176,16 @@ void OBJECT_print_fail()
  * selon si il se trouve dans le car ou le cdr.
  * Un nil seul est géré par sfs_print()
  *
- * Gestion d'une paire pure :
+ * @n Gestion d'une paire impure :
  * Une paire pure, contient une paire et
  * un cdr qui n'est pas une paire.
  * Dans ce cas affiche au forme (car . cdr)
+ *
+ * @n Gestion type unknown :
+ * Si un type unknown est croisé dans une liste
+ * affiche #undef pour avoir un affichage cohérent.
+ *
+ * @sa OBJECT_print_unknown
  *
  */
 void OBJECT_print_pair(object o)
@@ -203,6 +205,8 @@ void OBJECT_print_pair(object o)
 			OBJECT_print_nil(SFS_CAR);
 			
 		}
+		else if(check_type(o->this.pair.car, SFS_UNKNOWN))
+			OBJECT_print_unknown(o);
 		else OBJECT_print_pair(o->this.pair.car);
 
 		/*affichage cdr */
@@ -213,6 +217,8 @@ void OBJECT_print_pair(object o)
 				/* Cas d'une paire pure */
 				printf(" . ");
 				OBJECT_print_atom(o->this.pair.cdr);
+				if(check_type(o->this.pair.cdr, SFS_UNKNOWN))
+					OBJECT_print_unknown(o);
 				printf(")");
 			}
 			else
@@ -285,7 +291,10 @@ void OBJECT_print_atom ( object o )
 	    case SFS_COMP :
 		    OBJECT_print_compound(o);
 		    break;
+	    case SFS_UNKNOWN :
+		    break;
 	    default :
+		    DEBUG_MSG("Fail print :");
 		    OBJECT_print_fail(); /* Cas ou on a pas de correspondance.*/
     }
     return;
@@ -300,4 +309,19 @@ void OBJECT_print_atom ( object o )
 void OBJECT_print_compound(object o)
 {
 	printf("#<procedure>");
+}
+
+/** @fn void OBJECT_print_unknown(object o)
+ * @brief Affiche un type unknown (de base : #undef)
+ *
+ * Affiche un type unknown. De base affiche #undef.
+ * Peut-être enrichi pour afficher des messages
+ * d'erreur selon le contenu de o.
+ * Utile pour l'affiche d'un unknown dans une paire.
+ *
+ * @return
+ */
+void OBJECT_print_unknown(object o)
+{
+	printf("#undef");
 }

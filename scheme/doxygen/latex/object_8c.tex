@@ -5,7 +5,7 @@
 Fonctions relatives à la structure object.  
 
 
-{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\newline
 Graphe des dépendances par inclusion de object.\+c\+:
 % FIG 0
 \subsection*{Fonctions}
@@ -97,8 +97,8 @@ int \hyperlink{object_8c_a8db21bf1c03bc99e813b38a77ff8792e}{wait\+\_\+first\+\_\
 \begin{DoxyCompactList}\small\item\em Cherche le symbole var dans les environnements. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{object_8c_aa5e97aa15404862a8399b65de323e79a}{E\+N\+V\+\_\+add\+\_\+var} (\hyperlink{structobject__t}{object} name, \hyperlink{structobject__t}{object} value, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \begin{DoxyCompactList}\small\item\em Ajoute la variable de nom name et de valeur value l\textquotesingle{}environnement courant. \end{DoxyCompactList}\item 
-\hyperlink{structobject__t}{object} {\bfseries E\+N\+V\+\_\+update\+\_\+var} (\hyperlink{structobject__t}{object} name, const \hyperlink{structobject__t}{object} val, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})\hypertarget{object_8c_a2df9f8fb71e31bff32346db4f05c0b26}{}\label{object_8c_a2df9f8fb71e31bff32346db4f05c0b26}
-
+\hypertarget{object_8c_a2df9f8fb71e31bff32346db4f05c0b26}{}\label{object_8c_a2df9f8fb71e31bff32346db4f05c0b26} 
+\hyperlink{structobject__t}{object} {\bfseries E\+N\+V\+\_\+update\+\_\+var} (\hyperlink{structobject__t}{object} name, const \hyperlink{structobject__t}{object} val, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \item 
 int \hyperlink{object_8c_a7fb587a2ac0a4bebac5317ece2968594}{E\+N\+V\+\_\+check\+\_\+loop} (\hyperlink{structobject__t}{object} name)
 \begin{DoxyCompactList}\small\item\em Vérifie la validité d\textquotesingle{}un environnement. \end{DoxyCompactList}\item 
@@ -122,14 +122,12 @@ Sun September 2016 16\+:35 Contient toutes les fonctions permettant de manipuler
 
 
 \subsection{Documentation des fonctions}
+\hypertarget{object_8c_aa8d164b8e7142d98aaff83ccfcd48409}{}\label{object_8c_aa8d164b8e7142d98aaff83ccfcd48409} 
 \index{object.\+c@{object.\+c}!check@{check}}
 \index{check@{check}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{check(void $\ast$ptr, char $\ast$message)}{check(void *ptr, char *message)}}]{\setlength{\rightskip}{0pt plus 5cm}int check (
-\begin{DoxyParamCaption}
-\item[{void $\ast$}]{ptr, }
-\item[{char $\ast$}]{message}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_aa8d164b8e7142d98aaff83ccfcd48409}{}\label{object_8c_aa8d164b8e7142d98aaff83ccfcd48409}
+\subsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily int check (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
 
 
 Si ptr est N\+U\+LL affiche message dans un warning. 
@@ -137,42 +135,35 @@ Si ptr est N\+U\+LL affiche message dans un warning.
 \begin{DoxyReturn}{Renvoie}
 Renvoie 0 si ptr==N\+U\+LL 
 \end{DoxyReturn}
+\hypertarget{object_8c_a457357b9ad319b66d3573aaeb2d77933}{}\label{object_8c_a457357b9ad319b66d3573aaeb2d77933} 
 \index{object.\+c@{object.\+c}!check\+\_\+alloc@{check\+\_\+alloc}}
 \index{check\+\_\+alloc@{check\+\_\+alloc}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{check\+\_\+alloc(void $\ast$ptr, char $\ast$message)}{check_alloc(void *ptr, char *message)}}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+alloc (
-\begin{DoxyParamCaption}
-\item[{void $\ast$}]{ptr, }
-\item[{char $\ast$}]{message}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a457357b9ad319b66d3573aaeb2d77933}{}\label{object_8c_a457357b9ad319b66d3573aaeb2d77933}
+\subsubsection{\texorpdfstring{check\+\_\+alloc()}{check\_alloc()}}
+{\footnotesize\ttfamily void check\+\_\+alloc (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
 
 
 Vérifie une allocation dynamique. 
 
-Quitte le programme avec un E\+R\+R\+O\+R\+\_\+\+M\+SG si une alloc rate. \index{object.\+c@{object.\+c}!check\+\_\+type@{check\+\_\+type}}
+Quitte le programme avec un E\+R\+R\+O\+R\+\_\+\+M\+SG si une alloc rate. \hypertarget{object_8c_aa57b70a35593ee0e9483282f796a5122}{}\label{object_8c_aa57b70a35593ee0e9483282f796a5122} 
+\index{object.\+c@{object.\+c}!check\+\_\+type@{check\+\_\+type}}
 \index{check\+\_\+type@{check\+\_\+type}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{check\+\_\+type(object o, int sfs\+\_\+type)}{check_type(object o, int sfs_type)}}]{\setlength{\rightskip}{0pt plus 5cm}int check\+\_\+type (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{int}]{sfs\+\_\+type}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_aa57b70a35593ee0e9483282f796a5122}{}\label{object_8c_aa57b70a35593ee0e9483282f796a5122}
+\subsubsection{\texorpdfstring{check\+\_\+type()}{check\_type()}}
+{\footnotesize\ttfamily int check\+\_\+type (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{int}]{sfs\+\_\+type }\end{DoxyParamCaption})}
+
 
 
 Vérifie que o est bien de type sfs\+\_\+type. 
 
-\begin{DoxyReturn}{Renvoie}
-Renvoie 1 si o est de type sfs\+\_\+type, 0 sinon. Renvoie 0 si o de type S\+F\+S\+\_\+\+U\+N\+K\+N\+OW quelque soit sfs\+\_\+type. 
+Renvoie 0 si o N\+U\+LL. \begin{DoxyReturn}{Renvoie}
+Renvoie 1 si o est de type sfs\+\_\+type, 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a24f0fc998b6f930d64cdd92ca8fecb90}{}\label{object_8c_a24f0fc998b6f930d64cdd92ca8fecb90} 
 \index{object.\+c@{object.\+c}!C\+O\+M\+P\+\_\+build@{C\+O\+M\+P\+\_\+build}}
 \index{C\+O\+M\+P\+\_\+build@{C\+O\+M\+P\+\_\+build}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{C\+O\+M\+P\+\_\+build(object param, object body, object envt)}{COMP_build(object param, object body, object envt)}}]{\setlength{\rightskip}{0pt plus 5cm}compound C\+O\+M\+P\+\_\+build (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{param, }
-\item[{{\bf object}}]{body, }
-\item[{{\bf object}}]{envt}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a24f0fc998b6f930d64cdd92ca8fecb90}{}\label{object_8c_a24f0fc998b6f930d64cdd92ca8fecb90}
+\subsubsection{\texorpdfstring{C\+O\+M\+P\+\_\+build()}{COMP\_build()}}
+{\footnotesize\ttfamily compound C\+O\+M\+P\+\_\+build (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{param,  }\item[{\hyperlink{structobject__t}{object}}]{body,  }\item[{\hyperlink{structobject__t}{object}}]{envt }\end{DoxyParamCaption})}
+
 
 
 Construit un compound avec les arguments donnés. 
@@ -189,13 +180,12 @@ Construit un compound avec les arguments donnés.
 \begin{DoxyReturn}{Renvoie}
 Renvoit le compound construit. 
 \end{DoxyReturn}
+\hypertarget{object_8c_aefcd2aa34b5206d99869c3df1e292cc8}{}\label{object_8c_aefcd2aa34b5206d99869c3df1e292cc8} 
 \index{object.\+c@{object.\+c}!C\+O\+M\+P\+\_\+build\+\_\+empty@{C\+O\+M\+P\+\_\+build\+\_\+empty}}
 \index{C\+O\+M\+P\+\_\+build\+\_\+empty@{C\+O\+M\+P\+\_\+build\+\_\+empty}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{C\+O\+M\+P\+\_\+build\+\_\+empty()}{COMP_build_empty()}}]{\setlength{\rightskip}{0pt plus 5cm}compound C\+O\+M\+P\+\_\+build\+\_\+empty (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_aefcd2aa34b5206d99869c3df1e292cc8}{}\label{object_8c_aefcd2aa34b5206d99869c3df1e292cc8}
+\subsubsection{\texorpdfstring{C\+O\+M\+P\+\_\+build\+\_\+empty()}{COMP\_build\_empty()}}
+{\footnotesize\ttfamily compound C\+O\+M\+P\+\_\+build\+\_\+empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Construit un agrégat vide. 
@@ -203,16 +193,12 @@ Construit un agrégat vide.
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}agrégat construit. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a6ea04d47288e13db0b8bebfcd1fe1042}{}\label{object_8c_a6ea04d47288e13db0b8bebfcd1fe1042} 
 \index{object.\+c@{object.\+c}!C\+O\+M\+P\+\_\+set@{C\+O\+M\+P\+\_\+set}}
 \index{C\+O\+M\+P\+\_\+set@{C\+O\+M\+P\+\_\+set}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{C\+O\+M\+P\+\_\+set(compound $\ast$a, object param, object body, object envt)}{COMP_set(compound *a, object param, object body, object envt)}}]{\setlength{\rightskip}{0pt plus 5cm}compound C\+O\+M\+P\+\_\+set (
-\begin{DoxyParamCaption}
-\item[{compound $\ast$}]{a, }
-\item[{{\bf object}}]{param, }
-\item[{{\bf object}}]{body, }
-\item[{{\bf object}}]{envt}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a6ea04d47288e13db0b8bebfcd1fe1042}{}\label{object_8c_a6ea04d47288e13db0b8bebfcd1fe1042}
+\subsubsection{\texorpdfstring{C\+O\+M\+P\+\_\+set()}{COMP\_set()}}
+{\footnotesize\ttfamily compound C\+O\+M\+P\+\_\+set (\begin{DoxyParamCaption}\item[{compound $\ast$}]{a,  }\item[{\hyperlink{structobject__t}{object}}]{param,  }\item[{\hyperlink{structobject__t}{object}}]{body,  }\item[{\hyperlink{structobject__t}{object}}]{envt }\end{DoxyParamCaption})}
+
 
 
 Met à jour le compound a. 
@@ -220,15 +206,12 @@ Met à jour le compound a.
 \begin{DoxyReturn}{Renvoie}
 Renvoie le compound mis à jour. 
 \end{DoxyReturn}
+\hypertarget{object_8c_aa5e97aa15404862a8399b65de323e79a}{}\label{object_8c_aa5e97aa15404862a8399b65de323e79a} 
 \index{object.\+c@{object.\+c}!E\+N\+V\+\_\+add\+\_\+var@{E\+N\+V\+\_\+add\+\_\+var}}
 \index{E\+N\+V\+\_\+add\+\_\+var@{E\+N\+V\+\_\+add\+\_\+var}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+add\+\_\+var(object name, object value, object env)}{ENV_add_var(object name, object value, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+add\+\_\+var (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{name, }
-\item[{{\bf object}}]{value, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_aa5e97aa15404862a8399b65de323e79a}{}\label{object_8c_aa5e97aa15404862a8399b65de323e79a}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+add\+\_\+var()}{ENV\_add\_var()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+N\+V\+\_\+add\+\_\+var (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{name,  }\item[{\hyperlink{structobject__t}{object}}]{value,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
 
 
 Ajoute la variable de nom name et de valeur value l\textquotesingle{}environnement courant. 
@@ -240,18 +223,17 @@ Ajoute la variable de nom name et de valeur value l\textquotesingle{}environneme
 {\em value} & \+: valeur de la variable.\\
 \hline
 \end{DoxyParams}
-Ajoute la variable de nom name et de valeur value à l\textquotesingle{}environnement courant. Si jamais elle existe déjà la variable est écrasée et reçoit une nouvelle valeur. Renvoie name et affiche un warning si name n\textquotesingle{}est pas un symbole. Renvoie value et affiche un warning si value est de type S\+F\+S\+\_\+\+E\+NV. Dans les 2 précédents cas quitte la fonction prématurément sans effectuer d\textquotesingle{}actions.
+Ajoute la variable de nom name et de valeur value à l\textquotesingle{}environnement courant. Si jamais elle existe déjà elle reçoit une nouvelle valeur. Renvoie N\+U\+LL et affiche un warning si name n\textquotesingle{}est pas un symbole. Renvoie N\+U\+LL et affiche un warning si value est de type S\+F\+S\+\_\+\+E\+NV. Dans les 2 précédents cas quitte la fonction prématurément sans effectuer d\textquotesingle{}actions.
 
 \begin{DoxyReturn}{Renvoie}
 Renvoie la valeur de la variable crée. 
 \end{DoxyReturn}
-On fait un ajout tête en gros ! \index{object.\+c@{object.\+c}!E\+N\+V\+\_\+build@{E\+N\+V\+\_\+build}}
+On fait un ajout tête en gros ! \hypertarget{object_8c_a13394f7830becff1f3558b6f5b0969f9}{}\label{object_8c_a13394f7830becff1f3558b6f5b0969f9} 
+\index{object.\+c@{object.\+c}!E\+N\+V\+\_\+build@{E\+N\+V\+\_\+build}}
 \index{E\+N\+V\+\_\+build@{E\+N\+V\+\_\+build}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+build(object father)}{ENV_build(object father)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+build (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{father}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a13394f7830becff1f3558b6f5b0969f9}{}\label{object_8c_a13394f7830becff1f3558b6f5b0969f9}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+build()}{ENV\_build()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+N\+V\+\_\+build (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{father }\end{DoxyParamCaption})}
+
 
 
 Construit un environnement dont le père est father. 
@@ -261,13 +243,12 @@ L\textquotesingle{}environnement construit possède comme parent father. Si fath
 \begin{DoxyReturn}{Renvoie}
 
 \end{DoxyReturn}
+\hypertarget{object_8c_a7fb587a2ac0a4bebac5317ece2968594}{}\label{object_8c_a7fb587a2ac0a4bebac5317ece2968594} 
 \index{object.\+c@{object.\+c}!E\+N\+V\+\_\+check\+\_\+loop@{E\+N\+V\+\_\+check\+\_\+loop}}
 \index{E\+N\+V\+\_\+check\+\_\+loop@{E\+N\+V\+\_\+check\+\_\+loop}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+check\+\_\+loop(object name)}{ENV_check_loop(object name)}}]{\setlength{\rightskip}{0pt plus 5cm}int E\+N\+V\+\_\+check\+\_\+loop (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{name}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a7fb587a2ac0a4bebac5317ece2968594}{}\label{object_8c_a7fb587a2ac0a4bebac5317ece2968594}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+check\+\_\+loop()}{ENV\_check\_loop()}}
+{\footnotesize\ttfamily int E\+N\+V\+\_\+check\+\_\+loop (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{name }\end{DoxyParamCaption})}
+
 
 
 Vérifie la validité d\textquotesingle{}un environnement. 
@@ -287,15 +268,12 @@ x-\/$>$y-\/$>$z-\/$>$x-\/$>$y... .
 \begin{DoxyReturn}{Renvoie}
 0 si incohérences trouvées, 1 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a4067fb8e91d359bbdb385e9ec352f6f7}{}\label{object_8c_a4067fb8e91d359bbdb385e9ec352f6f7} 
 \index{object.\+c@{object.\+c}!E\+N\+V\+\_\+get\+\_\+var@{E\+N\+V\+\_\+get\+\_\+var}}
 \index{E\+N\+V\+\_\+get\+\_\+var@{E\+N\+V\+\_\+get\+\_\+var}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+get\+\_\+var(object var, int $\ast$flag, object env)}{ENV_get_var(object var, int *flag, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+get\+\_\+var (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{var, }
-\item[{int $\ast$}]{flag, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a4067fb8e91d359bbdb385e9ec352f6f7}{}\label{object_8c_a4067fb8e91d359bbdb385e9ec352f6f7}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+get\+\_\+var()}{ENV\_get\_var()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+N\+V\+\_\+get\+\_\+var (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{var,  }\item[{int $\ast$}]{flag,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
 
 
 Cherche le symbole var dans les environnements. 
@@ -313,15 +291,12 @@ Cherche la variable var dans les environnements. Si var n\textquotesingle{}est p
 \begin{DoxyReturn}{Renvoie}
 Renvoie une paire dont le car porte le nom de la variable et le cdr sa valeur. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a6c450315c9bb5fc8d72fe422bccad428}{}\label{object_8c_a6c450315c9bb5fc8d72fe422bccad428} 
 \index{object.\+c@{object.\+c}!E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env@{E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env}}
 \index{E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env@{E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env(object var, object environ, int $\ast$flag)}{ENV_get_var_in_env(object var, object environ, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{var, }
-\item[{{\bf object}}]{environ, }
-\item[{int $\ast$}]{flag}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a6c450315c9bb5fc8d72fe422bccad428}{}\label{object_8c_a6c450315c9bb5fc8d72fe422bccad428}
+\subsubsection{\texorpdfstring{E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env()}{ENV\_get\_var\_in\_env()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+N\+V\+\_\+get\+\_\+var\+\_\+in\+\_\+env (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{var,  }\item[{\hyperlink{structobject__t}{object}}]{environ,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
 
 
 Chercher la variable de nom var dans l\textquotesingle{}environnement environ. 
@@ -338,14 +313,12 @@ Chercher la variable de nom var dans l\textquotesingle{}environnement environ.
 \begin{DoxyReturn}{Renvoie}
 Renvoie une paire dont le car porte le nom de la variable (symbole) et le cdr sa valeur. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a54510b61c6f3490e0d71cbc71cc4225a}{}\label{object_8c_a54510b61c6f3490e0d71cbc71cc4225a} 
 \index{object.\+c@{object.\+c}!is\+\_\+form@{is\+\_\+form}}
 \index{is\+\_\+form@{is\+\_\+form}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{is\+\_\+form(object symbol, F\+O\+R\+M\+S $\ast$forme)}{is_form(object symbol, FORMS *forme)}}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+form (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{symbol, }
-\item[{F\+O\+R\+MS $\ast$}]{forme}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a54510b61c6f3490e0d71cbc71cc4225a}{}\label{object_8c_a54510b61c6f3490e0d71cbc71cc4225a}
+\subsubsection{\texorpdfstring{is\+\_\+form()}{is\_form()}}
+{\footnotesize\ttfamily int is\+\_\+form (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{symbol,  }\item[{F\+O\+R\+MS $\ast$}]{forme }\end{DoxyParamCaption})}
+
 
 
 Renvoie 1 si symbol est un mot clef du langage scheme. 
@@ -367,13 +340,12 @@ N\+B\+\_\+\+F\+O\+R\+MS
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si c\textquotesingle{}est une forme, 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a0fe65b3e6071e628e9dd27ceb779a253}{}\label{object_8c_a0fe65b3e6071e628e9dd27ceb779a253} 
 \index{object.\+c@{object.\+c}!isealnum@{isealnum}}
 \index{isealnum@{isealnum}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{isealnum(char c)}{isealnum(char c)}}]{\setlength{\rightskip}{0pt plus 5cm}int isealnum (
-\begin{DoxyParamCaption}
-\item[{char}]{c}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a0fe65b3e6071e628e9dd27ceb779a253}{}\label{object_8c_a0fe65b3e6071e628e9dd27ceb779a253}
+\subsubsection{\texorpdfstring{isealnum()}{isealnum()}}
+{\footnotesize\ttfamily int isealnum (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
 
 
 Vérifie si c est un caractère compatible pour une expression scheme (voir R5\+RS) 
@@ -386,24 +358,22 @@ Les caractères compatibles sont \mbox{[}a-\/z\mbox{]} \mbox{[}A-\/Z\mbox{]} \mb
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si c est compatible 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a0c208c0fbec6ecf85e3de7949b7691cf}{}\label{object_8c_a0c208c0fbec6ecf85e3de7949b7691cf} 
 \index{object.\+c@{object.\+c}!make\+\_\+false@{make\+\_\+false}}
 \index{make\+\_\+false@{make\+\_\+false}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{make\+\_\+false(void)}{make_false(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} make\+\_\+false (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a0c208c0fbec6ecf85e3de7949b7691cf}{}\label{object_8c_a0c208c0fbec6ecf85e3de7949b7691cf}
+\subsubsection{\texorpdfstring{make\+\_\+false()}{make\_false()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} make\+\_\+false (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
 
 
 Créé le booléen faux (variable globale). Fonction appelée dans \hyperlink{repl_8c_ac7892fa748bffcd6854f8b7adeb40ba0}{init\+\_\+interpreter()}. 
 
-Cette fonction quitte l\textquotesingle{}interpréteur si l\textquotesingle{}allocation échoue. Inutile de continuer si le booléen n\textquotesingle{}existe pas dans l\textquotesingle{}interpréteur. L\textquotesingle{}objet vrai est de type S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN et possède son this.\+number mis à 0. \index{object.\+c@{object.\+c}!make\+\_\+forms@{make\+\_\+forms}}
+Cette fonction quitte l\textquotesingle{}interpréteur si l\textquotesingle{}allocation échoue. Inutile de continuer si le booléen n\textquotesingle{}existe pas dans l\textquotesingle{}interpréteur. L\textquotesingle{}objet vrai est de type S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN et possède son this.\+number mis à 0. \hypertarget{object_8c_aabab05a704acf24c0040b7223908c858}{}\label{object_8c_aabab05a704acf24c0040b7223908c858} 
+\index{object.\+c@{object.\+c}!make\+\_\+forms@{make\+\_\+forms}}
 \index{make\+\_\+forms@{make\+\_\+forms}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{make\+\_\+forms()}{make_forms()}}]{\setlength{\rightskip}{0pt plus 5cm}void make\+\_\+forms (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_aabab05a704acf24c0040b7223908c858}{}\label{object_8c_aabab05a704acf24c0040b7223908c858}
+\subsubsection{\texorpdfstring{make\+\_\+forms()}{make\_forms()}}
+{\footnotesize\ttfamily void make\+\_\+forms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Initialise formes de l\textquotesingle{}interpréteur. 
@@ -411,13 +381,12 @@ Initialise formes de l\textquotesingle{}interpréteur.
 \begin{DoxySeeAlso}{Voir également}
 F\+O\+R\+MS; 
 \end{DoxySeeAlso}
+\hypertarget{object_8c_a0175150d600f632a2675d80b72823f45}{}\label{object_8c_a0175150d600f632a2675d80b72823f45} 
 \index{object.\+c@{object.\+c}!make\+\_\+nil@{make\+\_\+nil}}
 \index{make\+\_\+nil@{make\+\_\+nil}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{make\+\_\+nil(void)}{make_nil(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} make\+\_\+nil (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a0175150d600f632a2675d80b72823f45}{}\label{object_8c_a0175150d600f632a2675d80b72823f45}
+\subsubsection{\texorpdfstring{make\+\_\+nil()}{make\_nil()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} make\+\_\+nil (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
 
 
 Alloue l\textquotesingle{}objet nil qui marque fin de o. Programme se termine si l\textquotesingle{}alloc rate. 
@@ -428,13 +397,12 @@ les listes scheme, un échec de sa création empêchera inévitablement le bon f
 \begin{DoxyReturn}{Renvoie}
 Renvoie un pointeur sur l\textquotesingle{}objet créé. 
 \end{DoxyReturn}
+\hypertarget{object_8c_ae588b0336388f82cf984bca34a66fe99}{}\label{object_8c_ae588b0336388f82cf984bca34a66fe99} 
 \index{object.\+c@{object.\+c}!make\+\_\+object@{make\+\_\+object}}
 \index{make\+\_\+object@{make\+\_\+object}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{make\+\_\+object(uint type)}{make_object(uint type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} make\+\_\+object (
-\begin{DoxyParamCaption}
-\item[{uint}]{type}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_ae588b0336388f82cf984bca34a66fe99}{}\label{object_8c_ae588b0336388f82cf984bca34a66fe99}
+\subsubsection{\texorpdfstring{make\+\_\+object()}{make\_object()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} make\+\_\+object (\begin{DoxyParamCaption}\item[{uint}]{type }\end{DoxyParamCaption})}
+
 
 
 Alloue un objet de type type, vérifie l\textquotesingle{}alloc. 
@@ -447,26 +415,22 @@ Alloue un objet de type type, vérifie l\textquotesingle{}alloc.
 \begin{DoxyReturn}{Renvoie}
 Renvoie un pointeur sur l\textquotesingle{}objet créé. 
 \end{DoxyReturn}
+\hypertarget{object_8c_aa54a323be37760f91b9a423760d800d3}{}\label{object_8c_aa54a323be37760f91b9a423760d800d3} 
 \index{object.\+c@{object.\+c}!make\+\_\+true@{make\+\_\+true}}
 \index{make\+\_\+true@{make\+\_\+true}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{make\+\_\+true(void)}{make_true(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} make\+\_\+true (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_aa54a323be37760f91b9a423760d800d3}{}\label{object_8c_aa54a323be37760f91b9a423760d800d3}
+\subsubsection{\texorpdfstring{make\+\_\+true()}{make\_true()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} make\+\_\+true (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
 
 
 Créé le booléen vrai (variable globale). Fonction appelée dans \hyperlink{repl_8c_ac7892fa748bffcd6854f8b7adeb40ba0}{init\+\_\+interpreter()}. 
 
-Cette fonction quitte l\textquotesingle{}interpréteur si l\textquotesingle{}allocation échoue. Inutile de continuer si le booléen n\textquotesingle{}existe pas dans l\textquotesingle{}interpréteur. L\textquotesingle{}objet vrai est de type S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN et possède son this.\+number mis à 1. \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+add@{O\+B\+J\+E\+C\+T\+\_\+add}}
+Cette fonction quitte l\textquotesingle{}interpréteur si l\textquotesingle{}allocation échoue. Inutile de continuer si le booléen n\textquotesingle{}existe pas dans l\textquotesingle{}interpréteur. L\textquotesingle{}objet vrai est de type S\+F\+S\+\_\+\+B\+O\+O\+L\+E\+AN et possède son this.\+number mis à 1. \hypertarget{object_8c_a79151b36db8756df298be886a88dde6a}{}\label{object_8c_a79151b36db8756df298be886a88dde6a} 
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+add@{O\+B\+J\+E\+C\+T\+\_\+add}}
 \index{O\+B\+J\+E\+C\+T\+\_\+add@{O\+B\+J\+E\+C\+T\+\_\+add}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+add(const object a, const object b, object result)}{OBJECT_add(const object a, const object b, object result)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+add (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{{\bf object}}]{result}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a79151b36db8756df298be886a88dde6a}{}\label{object_8c_a79151b36db8756df298be886a88dde6a}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+add()}{OBJECT\_add()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+add (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
 
 
 Effectue la somme de 2 objets, écrit résultat dans résult. 
@@ -479,13 +443,12 @@ La somme est faite sur des objects de type S\+F\+S\+\_\+\+N\+UM. Le résultat es
 \begin{DoxyReturn}{Renvoie}
 Retourne le résultat de la somme ou nil si erreur. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a09933fca31b4b68d1e8d1d8f26f7ce45}{}\label{object_8c_a09933fca31b4b68d1e8d1d8f26f7ce45} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy}}
 \index{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy(object o)}{OBJECT_build_cpy(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a09933fca31b4b68d1e8d1d8f26f7ce45}{}\label{object_8c_a09933fca31b4b68d1e8d1d8f26f7ce45}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy()}{OBJECT\_build\_cpy()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+cpy (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Copie l\textquotesingle{}objet o en en allouant un nouveau. 
@@ -495,14 +458,12 @@ Si l\textquotesingle{}objet est nil ou un booléen on ne refait pas d\textquotes
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}objet créé. 
 \end{DoxyReturn}
+\hypertarget{object_8c_ade583a8335577c269af8b9cc37567699}{}\label{object_8c_ade583a8335577c269af8b9cc37567699} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair}}
 \index{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair(object car, object cdr)}{OBJECT_build_pair(object car, object cdr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{car, }
-\item[{{\bf object}}]{cdr}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_ade583a8335577c269af8b9cc37567699}{}\label{object_8c_ade583a8335577c269af8b9cc37567699}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair()}{OBJECT\_build\_pair()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+pair (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{car,  }\item[{\hyperlink{structobject__t}{object}}]{cdr }\end{DoxyParamCaption})}
+
 
 
 Construit une paire avec un car et cdr donné. 
@@ -517,13 +478,12 @@ Construit une liste avec un car et cdr donné. Si car ou cdr == N\+U\+LL alors i
 \begin{DoxyReturn}{Renvoie}
 Renvoie un object avec car et le cdr donné. 
 \end{DoxyReturn}
+\hypertarget{object_8c_aba2f19194908157a74d7250b28929484}{}\label{object_8c_aba2f19194908157a74d7250b28929484} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol}}
 \index{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol@{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol(char $\ast$symbol)}{OBJECT_build_symbol(char *symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol (
-\begin{DoxyParamCaption}
-\item[{char $\ast$}]{symbol}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_aba2f19194908157a74d7250b28929484}{}\label{object_8c_aba2f19194908157a74d7250b28929484}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol()}{OBJECT\_build\_symbol()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+build\+\_\+symbol (\begin{DoxyParamCaption}\item[{char $\ast$}]{symbol }\end{DoxyParamCaption})}
+
 
 
 Construit un object de type symbole contenant symbole. 
@@ -533,14 +493,12 @@ Doit contenir 256 caractère définit pas string et S\+T\+R\+L\+EN.
 \begin{DoxyReturn}{Renvoie}
 
 \end{DoxyReturn}
+\hypertarget{object_8c_a1d783570ac14dc2efa3f0565e162a6e8}{}\label{object_8c_a1d783570ac14dc2efa3f0565e162a6e8} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote@{O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote}}
 \index{O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote@{O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote(char $\ast$input, uint $\ast$here)}{OBJECT_built_short_quote(char *input, uint *here)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote (
-\begin{DoxyParamCaption}
-\item[{char $\ast$}]{input, }
-\item[{uint $\ast$}]{here}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a1d783570ac14dc2efa3f0565e162a6e8}{}\label{object_8c_a1d783570ac14dc2efa3f0565e162a6e8}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote()}{OBJECT\_built\_short\_quote()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+built\+\_\+short\+\_\+quote (\begin{DoxyParamCaption}\item[{char $\ast$}]{input,  }\item[{uint $\ast$}]{here }\end{DoxyParamCaption})}
+
 
 
 Construit le début de pair pour quote sous forme \textquotesingle{}. 
@@ -550,14 +508,12 @@ Lorsque que l\textquotesingle{}on a \textquotesingle{}(objects) cette fonction c
 \begin{DoxyReturn}{Renvoie}
 Renvoie une forme quote. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a8467e456f150c3514808c26c6864497d}{}\label{object_8c_a8467e456f150c3514808c26c6864497d} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool(object a, object b)}{OBJECT_cmp_bool(object a, object b)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{a, }
-\item[{{\bf object}}]{b}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a8467e456f150c3514808c26c6864497d}{}\label{object_8c_a8467e456f150c3514808c26c6864497d}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool()}{OBJECT\_cmp\_bool()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+bool (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a,  }\item[{\hyperlink{structobject__t}{object}}]{b }\end{DoxyParamCaption})}
+
 
 
 Compare 2 booléens. Renvoie 0 s\textquotesingle{}ils ne sont pas booléens. 
@@ -565,15 +521,12 @@ Compare 2 booléens. Renvoie 0 s\textquotesingle{}ils ne sont pas booléens.
 \begin{DoxyReturn}{Renvoie}
 1 si les 2 booléens sont égaux, 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a213abc602996ba1343347dde5d4d6722}{}\label{object_8c_a213abc602996ba1343347dde5d4d6722} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+equal@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+equal}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+equal@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+equal}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+equal(const object a, const object b, int $\ast$flag)}{OBJECT_cmp_is_equal(const object a, const object b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+equal (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{int $\ast$}]{flag}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a213abc602996ba1343347dde5d4d6722}{}\label{object_8c_a213abc602996ba1343347dde5d4d6722}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+equal()}{OBJECT\_cmp\_is\_equal()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+equal (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
 
 
 Compare deux S\+F\+S\+\_\+\+N\+U\+M\+B\+ER. Renvoie 1 si égaux 0 sinon. 
@@ -588,15 +541,12 @@ Compare a et b en les considérant comme entier. Si a ou b n\textquotesingle{}es
 \begin{DoxyReturn}{Renvoie}
 
 \end{DoxyReturn}
+\hypertarget{object_8c_ab4b6a20ced958c8d2f5fda6c0e8f191b}{}\label{object_8c_ab4b6a20ced958c8d2f5fda6c0e8f191b} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf(const object a, const object b, int $\ast$flag)}{OBJECT_cmp_is_inf(const object a, const object b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{int $\ast$}]{flag}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_ab4b6a20ced958c8d2f5fda6c0e8f191b}{}\label{object_8c_ab4b6a20ced958c8d2f5fda6c0e8f191b}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf()}{OBJECT\_cmp\_is\_inf()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
 
 
 Renvoie a $<$ b. 
@@ -609,15 +559,12 @@ Si a ou b ne sont pas des S\+F\+S\+\_\+\+N\+U\+M\+B\+ER renvoie 0 et affiche un 
 \begin{DoxyReturn}{Renvoie}
 Renvoie a $<$ b, O si erreur alors flag mis à 1. 
 \end{DoxyReturn}
+\hypertarget{object_8c_aae53685d941d31264064ddb7bad1b2e9}{}\label{object_8c_aae53685d941d31264064ddb7bad1b2e9} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal(const object a, const object b, int $\ast$flag)}{OBJECT_cmp_is_inf_equal(const object a, const object b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{int $\ast$}]{flag}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_aae53685d941d31264064ddb7bad1b2e9}{}\label{object_8c_aae53685d941d31264064ddb7bad1b2e9}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal()}{OBJECT\_cmp\_is\_inf\_equal()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+inf\+\_\+equal (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
 
 
 Renvoie a $<$= b. 
@@ -630,15 +577,12 @@ O\+B\+J\+E\+C\+T\+\_\+is\+\_\+cmp\+\_\+inf
 \begin{DoxyReturn}{Renvoie}
 Renvoie a $<$= b, 0 si erreur alors flag mis à 1. 
 \end{DoxyReturn}
+\hypertarget{object_8c_ab418f8b63a1b1ed89a04ea1cd566a31e}{}\label{object_8c_ab418f8b63a1b1ed89a04ea1cd566a31e} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup(const object a, const object b, int $\ast$flag)}{OBJECT_cmp_is_sup(const object a, const object b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{int $\ast$}]{flag}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_ab418f8b63a1b1ed89a04ea1cd566a31e}{}\label{object_8c_ab418f8b63a1b1ed89a04ea1cd566a31e}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup()}{OBJECT\_cmp\_is\_sup()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
 
 
 Renvoie a $>$ b. 
@@ -651,15 +595,12 @@ O\+B\+J\+E\+C\+T\+\_\+is\+\_\+cmp\+\_\+inf
 \begin{DoxyReturn}{Renvoie}
 a $>$ b, 0 si erreur alors flag mis à 1. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a6bc0b088ee8b84a0f2fbd4fab3177b10}{}\label{object_8c_a6bc0b088ee8b84a0f2fbd4fab3177b10} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal(const object a, const object b, int $\ast$flag)}{OBJECT_cmp_is_sup_equal(const object a, const object b, int *flag)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{int $\ast$}]{flag}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a6bc0b088ee8b84a0f2fbd4fab3177b10}{}\label{object_8c_a6bc0b088ee8b84a0f2fbd4fab3177b10}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal()}{OBJECT\_cmp\_is\_sup\_equal()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+is\+\_\+sup\+\_\+equal (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{int $\ast$}]{flag }\end{DoxyParamCaption})}
+
 
 
 Renvoie a $>$= b. 
@@ -672,14 +613,12 @@ O\+B\+J\+E\+C\+T\+\_\+is\+\_\+cmp\+\_\+inf
 \begin{DoxyReturn}{Renvoie}
 Renvoie a $>$= b, 0 sinon, si erreur flag mis à 1. 
 \end{DoxyReturn}
+\hypertarget{object_8c_aa8a7c4f6341e5477c8cf12d9fa4b8048}{}\label{object_8c_aa8a7c4f6341e5477c8cf12d9fa4b8048} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number(object a, object b)}{OBJECT_cmp_number(object a, object b)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{a, }
-\item[{{\bf object}}]{b}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_aa8a7c4f6341e5477c8cf12d9fa4b8048}{}\label{object_8c_aa8a7c4f6341e5477c8cf12d9fa4b8048}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number()}{OBJECT\_cmp\_number()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+number (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a,  }\item[{\hyperlink{structobject__t}{object}}]{b }\end{DoxyParamCaption})}
+
 
 
 Compare deux objets de type S\+F\+S\+\_\+\+N\+U\+M\+B\+ER. 
@@ -692,14 +631,12 @@ Compare deux objets de type S\+F\+S\+\_\+\+N\+U\+M\+B\+ER.
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si a et b contiennent les mêmes entiers. 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a85b5035114247cba825eafb2ef1d34c0}{}\label{object_8c_a85b5035114247cba825eafb2ef1d34c0} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb}}
 \index{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb@{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb(object a, char $\ast$symbol)}{OBJECT_cmp_symb(object a, char *symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{a, }
-\item[{char $\ast$}]{symbol}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a85b5035114247cba825eafb2ef1d34c0}{}\label{object_8c_a85b5035114247cba825eafb2ef1d34c0}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb()}{OBJECT\_cmp\_symb()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+cmp\+\_\+symb (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a,  }\item[{char $\ast$}]{symbol }\end{DoxyParamCaption})}
+
 
 
 Compare a avec le symbol symbol. 
@@ -707,38 +644,33 @@ Compare a avec le symbol symbol.
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si égaux, O sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a5f88c49537b92e95b7d33660446ee8c7}{}\label{object_8c_a5f88c49537b92e95b7d33660446ee8c7} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+destroy@{O\+B\+J\+E\+C\+T\+\_\+destroy}}
 \index{O\+B\+J\+E\+C\+T\+\_\+destroy@{O\+B\+J\+E\+C\+T\+\_\+destroy}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+destroy(object $\ast$o)}{OBJECT_destroy(object *o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+destroy (
-\begin{DoxyParamCaption}
-\item[{{\bf object} $\ast$}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a5f88c49537b92e95b7d33660446ee8c7}{}\label{object_8c_a5f88c49537b92e95b7d33660446ee8c7}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+destroy()}{OBJECT\_destroy()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object} $\ast$}]{o }\end{DoxyParamCaption})}
+
 
 
 Supprime un objet. 
 
 Supprime tous les éléments d\textquotesingle{}un objet si c\textquotesingle{}est une paire, de même pour un environnement. ~\newline
-Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l\textquotesingle{}instant c\textquotesingle{}est un free classique. Voir le pb sur les booléens aussi. \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair}}
+Fonction a modifier si on alloue dynamiquement les string et symboles. Pour l\textquotesingle{}instant c\textquotesingle{}est un free classique. Voir le pb sur les booléens aussi. \hypertarget{object_8c_ad1356f35f47fdbb828bc06a5884d74ed}{}\label{object_8c_ad1356f35f47fdbb828bc06a5884d74ed} 
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair}}
 \index{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair(object $\ast$o)}{OBJECT_destroy_pair(object *o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair (
-\begin{DoxyParamCaption}
-\item[{{\bf object} $\ast$}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_ad1356f35f47fdbb828bc06a5884d74ed}{}\label{object_8c_ad1356f35f47fdbb828bc06a5884d74ed}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair()}{OBJECT\_destroy\_pair()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+destroy\+\_\+pair (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object} $\ast$}]{o }\end{DoxyParamCaption})}
+
 
 
 Supprime une paire. Fonction récursive. 
 
-Pas de controle sur o pour savoir si c\textquotesingle{}est bien une paire. Fonction appelée par O\+B\+J\+E\+C\+T\+\_\+destroy. N\textquotesingle{}utiliser que O\+B\+J\+E\+C\+T\+\_\+destroy pas celle-\/ci, elle n\textquotesingle{}est utile qu\textquotesingle{}à l\textquotesingle{}implémentation du destructeur général. \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+div@{O\+B\+J\+E\+C\+T\+\_\+div}}
+Pas de controle sur o pour savoir si c\textquotesingle{}est bien une paire. Fonction appelée par O\+B\+J\+E\+C\+T\+\_\+destroy. N\textquotesingle{}utiliser que O\+B\+J\+E\+C\+T\+\_\+destroy pas celle-\/ci, elle n\textquotesingle{}est utile qu\textquotesingle{}à l\textquotesingle{}implémentation du destructeur général. \hypertarget{object_8c_a2edee12884f9288a6d9f1056f1ecc492}{}\label{object_8c_a2edee12884f9288a6d9f1056f1ecc492} 
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+div@{O\+B\+J\+E\+C\+T\+\_\+div}}
 \index{O\+B\+J\+E\+C\+T\+\_\+div@{O\+B\+J\+E\+C\+T\+\_\+div}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+div(const object a, const object b, object result)}{OBJECT_div(const object a, const object b, object result)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+div (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{{\bf object}}]{result}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a2edee12884f9288a6d9f1056f1ecc492}{}\label{object_8c_a2edee12884f9288a6d9f1056f1ecc492}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+div()}{OBJECT\_div()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+div (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
 
 
 Calcule la division de a par b. 
@@ -751,30 +683,27 @@ Calcule la division de a par b.
 \begin{DoxyReturn}{Renvoie}
 Renvoie result mis à jour. Nil si erreur. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a486b361de0c6c18f7227158b12dbfd4a}{}\label{object_8c_a486b361de0c6c18f7227158b12dbfd4a} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr@{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr}}
 \index{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr@{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr(object o, char $\ast$place)}{OBJECT_get_cxr(object o, char *place)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{char $\ast$}]{place}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a486b361de0c6c18f7227158b12dbfd4a}{}\label{object_8c_a486b361de0c6c18f7227158b12dbfd4a}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr()}{OBJECT\_get\_cxr()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+get\+\_\+cxr (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{char $\ast$}]{place }\end{DoxyParamCaption})}
+
 
 
 Renvoie de l\textquotesingle{}élement de la pair correspondant à la chaine. 
 
-Renvoie l\textquotesingle{}élément car si la chaine \char`\"{}car\char`\"{} est donnée. Renvoie l\textquotesingle{}élément cdr si la chaine \char`\"{}cdr\char`\"{} est donnée. Renvoie le car du cdr si la chaine \char`\"{}cadr\char`\"{} est donnée. Lis la chaine à l\textquotesingle{}envers et prend le cdr si d est donné ou le car si a est donnée. Le format d\textquotesingle{}entré doit contenir en première lettre un c en dernière un r. En pratique si d\textquotesingle{}autres lettres sont placées la fonction ne fera pas la différence car elle les ignore. Au milieu on aura que des a et des d. Si on trouve une autre lettre affiche un warning et retourne N\+U\+LL. Si on spécifie une location inexistante dans la paire la fonction affiche un warning et renvoie N\+U\+LL. Si o n\textquotesingle{}est pas une paire, revoie N\+U\+LL.
+Renvoie l\textquotesingle{}élément car si la chaine \char`\"{}car\char`\"{} est donnée. Renvoie l\textquotesingle{}élément cdr si la chaine \char`\"{}cdr\char`\"{} est donnée. Renvoie le car du cdr si la chaine \char`\"{}cadr\char`\"{} est donnée. Lis la chaine à l\textquotesingle{}envers et prend le cdr si d est donné ou le car si a est donnée. Le format d\textquotesingle{}entré doit contenir en première lettre un c en dernière un r. En pratique si d\textquotesingle{}autres lettres sont placées la fonction ne fera pas la différence car elle les ignore. Au milieu on aura que des a et des d. Si on trouve une autre lettre affiche un warning et retourne N\+U\+LL. Si on spécifie une location inexistante dans la paire la fonction affiche un warning et renvoie N\+U\+LL. Si o n\textquotesingle{}est pas une paire, revoie N\+U\+LL. Si dans le parcours on croise un élément qui n\textquotesingle{}est pas une paire, on renvoie N\+U\+LL avec W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+SG.
 
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}objet lu correspondant à la chaine. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a0d7084a07b321423f9cd922529fd8ed8}{}\label{object_8c_a0d7084a07b321423f9cd922529fd8ed8} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+isempty@{O\+B\+J\+E\+C\+T\+\_\+isempty}}
 \index{O\+B\+J\+E\+C\+T\+\_\+isempty@{O\+B\+J\+E\+C\+T\+\_\+isempty}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+isempty(object o)}{OBJECT_isempty(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+isempty (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a0d7084a07b321423f9cd922529fd8ed8}{}\label{object_8c_a0d7084a07b321423f9cd922529fd8ed8}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+isempty()}{OBJECT\_isempty()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+isempty (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Vérifie si un objet est vide (égal à N\+U\+LL) 
@@ -782,14 +711,12 @@ Vérifie si un objet est vide (égal à N\+U\+LL)
 \begin{DoxyReturn}{Renvoie}
 Vrai si vide, faux sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_ab49b1649bad38a97c44b7713731cea48}{}\label{object_8c_ab49b1649bad38a97c44b7713731cea48} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+is\+Equal@{O\+B\+J\+E\+C\+T\+\_\+is\+Equal}}
 \index{O\+B\+J\+E\+C\+T\+\_\+is\+Equal@{O\+B\+J\+E\+C\+T\+\_\+is\+Equal}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+is\+Equal(object a, object b)}{OBJECT_isEqual(object a, object b)}}]{\setlength{\rightskip}{0pt plus 5cm}int O\+B\+J\+E\+C\+T\+\_\+is\+Equal (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{a, }
-\item[{{\bf object}}]{b}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_ab49b1649bad38a97c44b7713731cea48}{}\label{object_8c_ab49b1649bad38a97c44b7713731cea48}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+is\+Equal()}{OBJECT\_isEqual()}}
+{\footnotesize\ttfamily int O\+B\+J\+E\+C\+T\+\_\+is\+Equal (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{a,  }\item[{\hyperlink{structobject__t}{object}}]{b }\end{DoxyParamCaption})}
+
 
 
 Compare deux object Renvoie 1 s\textquotesingle{}ils sont égaux 0 sinon. 
@@ -799,15 +726,12 @@ Deux objets sont considérés comme égaux s\textquotesingle{}ils ont le même t
 \begin{DoxyReturn}{Renvoie}
 1 si a==b, 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a122ef0bfddd5435072ae270c9192ee28}{}\label{object_8c_a122ef0bfddd5435072ae270c9192ee28} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+modulo@{O\+B\+J\+E\+C\+T\+\_\+modulo}}
 \index{O\+B\+J\+E\+C\+T\+\_\+modulo@{O\+B\+J\+E\+C\+T\+\_\+modulo}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+modulo(const object a, const object b, object result)}{OBJECT_modulo(const object a, const object b, object result)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+modulo (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{{\bf object}}]{result}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a122ef0bfddd5435072ae270c9192ee28}{}\label{object_8c_a122ef0bfddd5435072ae270c9192ee28}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+modulo()}{OBJECT\_modulo()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+modulo (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
 
 
 Calcule ab. 
@@ -820,15 +744,12 @@ Fonctionnement similaire à O\+B\+J\+E\+C\+T\+\_\+add. \begin{DoxySeeAlso}{Voir 
 \begin{DoxyReturn}{Renvoie}
 Renvoie le résultat. 
 \end{DoxyReturn}
+\hypertarget{object_8c_af66fca655ad9b5fafc4540f7dfc97127}{}\label{object_8c_af66fca655ad9b5fafc4540f7dfc97127} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+mul@{O\+B\+J\+E\+C\+T\+\_\+mul}}
 \index{O\+B\+J\+E\+C\+T\+\_\+mul@{O\+B\+J\+E\+C\+T\+\_\+mul}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+mul(const object a, const object b, object result)}{OBJECT_mul(const object a, const object b, object result)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+mul (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{{\bf object}}]{result}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_af66fca655ad9b5fafc4540f7dfc97127}{}\label{object_8c_af66fca655ad9b5fafc4540f7dfc97127}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+mul()}{OBJECT\_mul()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+mul (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
 
 
 Calcul le produit de 2 objects a par b. 
@@ -843,15 +764,12 @@ A priori, le produit ne pose pas d\textquotesingle{}impossibilité de calcul, qu
 \begin{DoxyReturn}{Renvoie}
 Renvoie le result mis à jour si produit possible, nil sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a10043e4705f4650f026a33121cd54815}{}\label{object_8c_a10043e4705f4650f026a33121cd54815} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+quotient@{O\+B\+J\+E\+C\+T\+\_\+quotient}}
 \index{O\+B\+J\+E\+C\+T\+\_\+quotient@{O\+B\+J\+E\+C\+T\+\_\+quotient}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+quotient(const object a, const object b, object result)}{OBJECT_quotient(const object a, const object b, object result)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+quotient (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{{\bf object}}]{result}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a10043e4705f4650f026a33121cd54815}{}\label{object_8c_a10043e4705f4650f026a33121cd54815}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+quotient()}{OBJECT\_quotient()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+quotient (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
 
 
 Calcul la div entière de a par b. 
@@ -868,58 +786,49 @@ Similaire a O\+B\+J\+E\+C\+T\+\_\+add.
 \begin{DoxyReturn}{Renvoie}
 Renvoie le result mis à jour. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a64f2fee85ada6041d0c74a250c419686}{}\label{object_8c_a64f2fee85ada6041d0c74a250c419686} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+rewrite@{O\+B\+J\+E\+C\+T\+\_\+rewrite}}
 \index{O\+B\+J\+E\+C\+T\+\_\+rewrite@{O\+B\+J\+E\+C\+T\+\_\+rewrite}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+rewrite(object changed, object nouveau)}{OBJECT_rewrite(object changed, object nouveau)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+rewrite (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{changed, }
-\item[{{\bf object}}]{nouveau}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a64f2fee85ada6041d0c74a250c419686}{}\label{object_8c_a64f2fee85ada6041d0c74a250c419686}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+rewrite()}{OBJECT\_rewrite()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+rewrite (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{changed,  }\item[{\hyperlink{structobject__t}{object}}]{nouveau }\end{DoxyParamCaption})}
+
 
 
 Réécris avec la valeur de nouveau. 
 
 Attention si changed est de type S\+F\+S\+\_\+\+N\+IL, un nouvel objet est renvoyé. \begin{DoxyRefDesc}{Bogue}
 \item[\hyperlink{bug__bug000001}{Bogue}]Incomplète\end{DoxyRefDesc}
+\hypertarget{object_8c_a8ccb3f30397a60a9d663f43c4dc28514}{}\label{object_8c_a8ccb3f30397a60a9d663f43c4dc28514} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car}}
 \index{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car(object o, object car)}{OBJECT_set_car(object o, object car)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{car}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a8ccb3f30397a60a9d663f43c4dc28514}{}\label{object_8c_a8ccb3f30397a60a9d663f43c4dc28514}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car()}{OBJECT\_set\_car()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+car (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{car }\end{DoxyParamCaption})}
+
 
 
 Met à jour le car de o avec l\textquotesingle{}objet car. 
 
-Si car est N\+U\+LL place la variable globale nil. \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr}}
+Si car est N\+U\+LL place la variable globale nil. Si jamais o n\textquotesingle{}est pas une paire ni un environnement ne fait rien et affiche un warning. \hypertarget{object_8c_a4d4c460873067cf00d877f60cdd285ec}{}\label{object_8c_a4d4c460873067cf00d877f60cdd285ec} 
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr}}
 \index{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr(object o, object cdr)}{OBJECT_set_cdr(object o, object cdr)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{cdr}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a4d4c460873067cf00d877f60cdd285ec}{}\label{object_8c_a4d4c460873067cf00d877f60cdd285ec}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr()}{OBJECT\_set\_cdr()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cdr (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{cdr }\end{DoxyParamCaption})}
+
 
 
 Met à jour le cdr de o avec l\textquotesingle{}object cdr. 
 
-Si cdr est a N\+U\+LL place la variable globale nil. \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr}}
+Si cdr est a N\+U\+LL place la variable globale nil. Si o n\textquotesingle{}est pas une paire ni un environnement ne fait rien et affiche un warning. \hypertarget{object_8c_a421310d9e2d05d70789086bd9418656c}{}\label{object_8c_a421310d9e2d05d70789086bd9418656c} 
+\index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr}}
 \index{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr@{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr(object o, object val, char $\ast$place)}{OBJECT_set_cxr(object o, object val, char *place)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{val, }
-\item[{char $\ast$}]{place}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a421310d9e2d05d70789086bd9418656c}{}\label{object_8c_a421310d9e2d05d70789086bd9418656c}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr()}{OBJECT\_set\_cxr()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+set\+\_\+cxr (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{val,  }\item[{char $\ast$}]{place }\end{DoxyParamCaption})}
+
 
 
 Modifie l\textquotesingle{}emplacement donné et y met la variable val. 
 
-Cette fonction libère l\textquotesingle{}ancienne valeur. L\textquotesingle{}objet à ajouter doit-\/être préalablement alloué. Ne fait rien si o est a N\+U\+LL. Ajoute nil si val est a N\+U\+LL avec un appel récursif.
+Cette fonction ne libère pas l\textquotesingle{}ancienne valeur. L\textquotesingle{}objet à ajouter doit-\/être préalablement alloué. Ne fait rien si o est a N\+U\+LL. Ajoute nil si val est a N\+U\+LL avec un appel récursif.
 
 \begin{DoxySeeAlso}{Voir également}
 \hyperlink{object_8c_a5f88c49537b92e95b7d33660446ee8c7}{O\+B\+J\+E\+C\+T\+\_\+destroy} 
@@ -929,15 +838,12 @@ Cette fonction libère l\textquotesingle{}ancienne valeur. L\textquotesingle{}ob
 \begin{DoxyReturn}{Renvoie}
 
 \end{DoxyReturn}
+\hypertarget{object_8c_a600f7cb500116ca30a31e9ae9c39a469}{}\label{object_8c_a600f7cb500116ca30a31e9ae9c39a469} 
 \index{object.\+c@{object.\+c}!O\+B\+J\+E\+C\+T\+\_\+sub@{O\+B\+J\+E\+C\+T\+\_\+sub}}
 \index{O\+B\+J\+E\+C\+T\+\_\+sub@{O\+B\+J\+E\+C\+T\+\_\+sub}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+sub(const object a, const object b, object result)}{OBJECT_sub(const object a, const object b, object result)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} O\+B\+J\+E\+C\+T\+\_\+sub (
-\begin{DoxyParamCaption}
-\item[{const {\bf object}}]{a, }
-\item[{const {\bf object}}]{b, }
-\item[{{\bf object}}]{result}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a600f7cb500116ca30a31e9ae9c39a469}{}\label{object_8c_a600f7cb500116ca30a31e9ae9c39a469}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+sub()}{OBJECT\_sub()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} O\+B\+J\+E\+C\+T\+\_\+sub (\begin{DoxyParamCaption}\item[{const \hyperlink{structobject__t}{object}}]{a,  }\item[{const \hyperlink{structobject__t}{object}}]{b,  }\item[{\hyperlink{structobject__t}{object}}]{result }\end{DoxyParamCaption})}
+
 
 
 Soustraction de 2 object. Le résultat est mis dans résult. 
@@ -950,14 +856,12 @@ Fonctionnement similaire à O\+B\+J\+E\+C\+T\+\_\+add. \begin{DoxySeeAlso}{Voir 
 \begin{DoxyReturn}{Renvoie}
 Renvoie result mis à jour si opération possible, nil sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_ae40aea5d87d9c145bfe576adb9a93f10}{}\label{object_8c_ae40aea5d87d9c145bfe576adb9a93f10} 
 \index{object.\+c@{object.\+c}!string\+\_\+cmp@{string\+\_\+cmp}}
 \index{string\+\_\+cmp@{string\+\_\+cmp}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{string\+\_\+cmp(char $\ast$a, char $\ast$b)}{string_cmp(char *a, char *b)}}]{\setlength{\rightskip}{0pt plus 5cm}int string\+\_\+cmp (
-\begin{DoxyParamCaption}
-\item[{char $\ast$}]{a, }
-\item[{char $\ast$}]{b}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_ae40aea5d87d9c145bfe576adb9a93f10}{}\label{object_8c_ae40aea5d87d9c145bfe576adb9a93f10}
+\subsubsection{\texorpdfstring{string\+\_\+cmp()}{string\_cmp()}}
+{\footnotesize\ttfamily int string\+\_\+cmp (\begin{DoxyParamCaption}\item[{char $\ast$}]{a,  }\item[{char $\ast$}]{b }\end{DoxyParamCaption})}
+
 
 
 Compare chaine a et b. Renvoie 1 si égale 0 sinon. 
@@ -967,14 +871,12 @@ Si les chaines n\textquotesingle{}ont pas la même longueur renvoie 0. Compare l
 \begin{DoxyReturn}{Renvoie}
 1 si chaine égales, 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{object_8c_a8db21bf1c03bc99e813b38a77ff8792e}{}\label{object_8c_a8db21bf1c03bc99e813b38a77ff8792e} 
 \index{object.\+c@{object.\+c}!wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char@{wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char}}
 \index{wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char@{wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char}!object.\+c@{object.\+c}}
-\subsubsection[{\texorpdfstring{wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char(char $\ast$s1, uint $\ast$s1\+\_\+cursor)}{wait_first_non_blank_char(char *s1, uint *s1_cursor)}}]{\setlength{\rightskip}{0pt plus 5cm}int wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char (
-\begin{DoxyParamCaption}
-\item[{char $\ast$}]{s1, }
-\item[{uint $\ast$}]{s1\+\_\+cursor}
-\end{DoxyParamCaption}
-)}\hypertarget{object_8c_a8db21bf1c03bc99e813b38a77ff8792e}{}\label{object_8c_a8db21bf1c03bc99e813b38a77ff8792e}
+\subsubsection{\texorpdfstring{wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char()}{wait\_first\_non\_blank\_char()}}
+{\footnotesize\ttfamily int wait\+\_\+first\+\_\+non\+\_\+blank\+\_\+char (\begin{DoxyParamCaption}\item[{char $\ast$}]{s1,  }\item[{uint $\ast$}]{s1\+\_\+cursor }\end{DoxyParamCaption})}
+
 
 
 incrémente le curseur tant qu\textquotesingle{}il y indique un espace dans la chaine 

@@ -5,13 +5,13 @@
 Outils d\textquotesingle{}évaluation pour interpréteurs et d\textquotesingle{}autres utilitaires.  
 
 
-{\ttfamily \#include \char`\"{}eval.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}eval.\+h\char`\"{}}\newline
 Graphe des dépendances par inclusion de eval.\+c\+:
 % FIG 0
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structobject__t}{object} \hyperlink{eval_8c_a63409534cf57d947724747bcfea47071}{sfs\+\_\+eval\+\_\+compound} (\hyperlink{structobject__t}{object} pair, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
+\hyperlink{structobject__t}{object} \hyperlink{eval_8c_ae6a1f129c513c24456d85a102835bd32}{sfs\+\_\+eval\+\_\+compound} (\hyperlink{structobject__t}{object} pair)
 \begin{DoxyCompactList}\small\item\em Evalue un agrégat.  \+: L\textquotesingle{}entrée de l\textquotesingle{}utilisateur dont le symbole est évalué.  \+: L\textquotesingle{}environnement dans lequel on est. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{eval_8c_ae380eb697aba625d9557508c5ce78230}{sfs\+\_\+eval} (\hyperlink{structobject__t}{object} input, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}évaluation d\textquotesingle{}expression scheme. \end{DoxyCompactList}\item 
@@ -31,6 +31,8 @@ Graphe des dépendances par inclusion de eval.\+c\+:
 \begin{DoxyCompactList}\small\item\em Evalue la forme begin. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{eval_8c_af4e01ebbfbff53c2221b64ce542d5703}{E\+V\+A\+L\+\_\+lambda} (\hyperlink{structobject__t}{object} o, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
 \begin{DoxyCompactList}\small\item\em Evalue lambda et créer l\textquotesingle{}objet de type compound correspondant. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8c_a742e61207e511c960890af404ad64d97}{E\+V\+A\+L\+\_\+let} (\hyperlink{structobject__t}{object} o, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
+\begin{DoxyCompactList}\small\item\em Evalue la forme let. \end{DoxyCompactList}\item 
 int \hyperlink{eval_8c_a2d5c4441d55f4188c8bf913120643eb4}{L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg} (\hyperlink{structobject__t}{object} input)
 \begin{DoxyCompactList}\small\item\em Vérifie que lambda ait bien le bon nombre d\textquotesingle{}arguments. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{eval_8c_a05993cb29ab0fc9204e80695ce39a4c2}{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var} (\hyperlink{structobject__t}{object} input)
@@ -44,7 +46,11 @@ int \hyperlink{eval_8c_a2d5c4441d55f4188c8bf913120643eb4}{L\+A\+M\+B\+D\+A\+\_\+
 \hyperlink{structobject__t}{object} \hyperlink{eval_8c_aefec57e38712b1baf88ee81276fe57ed}{I\+F\+\_\+alternative} (\hyperlink{structobject__t}{object} input)
 \begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}alternative d\textquotesingle{}une structure if. \end{DoxyCompactList}\item 
 \hyperlink{structobject__t}{object} \hyperlink{eval_8c_a026bb47409acef4341f840fc817b292c}{I\+F\+\_\+overargument} (\hyperlink{structobject__t}{object} input)
-\begin{DoxyCompactList}\small\item\em Vérifie que if n\textquotesingle{}ait pas un argument en trop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Vérifie que if n\textquotesingle{}ait pas un argument en trop. \end{DoxyCompactList}\item 
+\hyperlink{structobject__t}{object} \hyperlink{eval_8c_ae625530b96120d1101e6332938c8d580}{L\+E\+T\+\_\+eval} (\hyperlink{structobject__t}{object} input, \hyperlink{structobject__t}{object} \hyperlink{repl_8c_a062b7366fcc9f920dbb8475d815e0bfc}{env})
+\begin{DoxyCompactList}\small\item\em Evalue le corps d\textquotesingle{}un let dans l\textquotesingle{}environnement env. \end{DoxyCompactList}\item 
+int \hyperlink{eval_8c_aae0f95ddf7f8793c2333e1ff0acdb74d}{L\+E\+T\+\_\+check} (\hyperlink{structobject__t}{object} input)
+\begin{DoxyCompactList}\small\item\em Vérifie que input possède bien la structure minimale de let. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -59,14 +65,12 @@ Fri Jun 22 20\+:11\+:30 2012 Evaluation stuff for S\+FS.
 
 
 \subsection{Documentation des fonctions}
+\hypertarget{eval_8c_aac2cfb148bd205981b2b064910faf3a6}{}\label{eval_8c_aac2cfb148bd205981b2b064910faf3a6} 
 \index{eval.\+c@{eval.\+c}!E\+V\+A\+L\+\_\+and@{E\+V\+A\+L\+\_\+and}}
 \index{E\+V\+A\+L\+\_\+and@{E\+V\+A\+L\+\_\+and}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+and(object o, object env)}{EVAL_and(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+and (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_aac2cfb148bd205981b2b064910faf3a6}{}\label{eval_8c_aac2cfb148bd205981b2b064910faf3a6}
+\subsubsection{\texorpdfstring{E\+V\+A\+L\+\_\+and()}{EVAL\_and()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+V\+A\+L\+\_\+and (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
 
 
 Retourne un et logique de o. 
@@ -78,14 +82,12 @@ Renvoie N\+U\+LL et affiche un warning en cas de problème.
 \begin{DoxyReturn}{Renvoie}
 Renvoie le résultat. Renvoie un booléen ! 
 \end{DoxyReturn}
+\hypertarget{eval_8c_a6b626fbe83d75afeb2c6183f35bd90bc}{}\label{eval_8c_a6b626fbe83d75afeb2c6183f35bd90bc} 
 \index{eval.\+c@{eval.\+c}!E\+V\+A\+L\+\_\+begin@{E\+V\+A\+L\+\_\+begin}}
 \index{E\+V\+A\+L\+\_\+begin@{E\+V\+A\+L\+\_\+begin}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+begin(object o, object env)}{EVAL_begin(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+begin (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_a6b626fbe83d75afeb2c6183f35bd90bc}{}\label{eval_8c_a6b626fbe83d75afeb2c6183f35bd90bc}
+\subsubsection{\texorpdfstring{E\+V\+A\+L\+\_\+begin()}{EVAL\_begin()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+V\+A\+L\+\_\+begin (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
 
 
 Evalue la forme begin. 
@@ -95,14 +97,12 @@ Evalue la forme begin \+: Chaque instruction de la forme est évaluée, l\textqu
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}évaluation de la dernière instruction. 
 \end{DoxyReturn}
+\hypertarget{eval_8c_a019ed7c50b864c42ea880ac81aec0048}{}\label{eval_8c_a019ed7c50b864c42ea880ac81aec0048} 
 \index{eval.\+c@{eval.\+c}!E\+V\+A\+L\+\_\+define@{E\+V\+A\+L\+\_\+define}}
 \index{E\+V\+A\+L\+\_\+define@{E\+V\+A\+L\+\_\+define}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+define(object o, object env)}{EVAL_define(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+define (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_a019ed7c50b864c42ea880ac81aec0048}{}\label{eval_8c_a019ed7c50b864c42ea880ac81aec0048}
+\subsubsection{\texorpdfstring{E\+V\+A\+L\+\_\+define()}{EVAL\_define()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+V\+A\+L\+\_\+define (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
 
 
 Evalue un define. 
@@ -112,14 +112,12 @@ Prend en paramètre une instruction complète d\textquotesingle{}une entrée def
 \begin{DoxyReturn}{Renvoie}
 Renvoie le symbole crée. 
 \end{DoxyReturn}
+\hypertarget{eval_8c_a714a5266b28df03925d36547221130e3}{}\label{eval_8c_a714a5266b28df03925d36547221130e3} 
 \index{eval.\+c@{eval.\+c}!E\+V\+A\+L\+\_\+if@{E\+V\+A\+L\+\_\+if}}
 \index{E\+V\+A\+L\+\_\+if@{E\+V\+A\+L\+\_\+if}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+if(object o, object env)}{EVAL_if(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+if (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_a714a5266b28df03925d36547221130e3}{}\label{eval_8c_a714a5266b28df03925d36547221130e3}
+\subsubsection{\texorpdfstring{E\+V\+A\+L\+\_\+if()}{EVAL\_if()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+V\+A\+L\+\_\+if (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
 
 
 Evalue un if. 
@@ -139,14 +137,12 @@ S\textquotesingle{}il n\textquotesingle{}y a pas de prédicat retourne N\+U\+LL 
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}évaluation d\textquotesingle{}un if. 
 \end{DoxyReturn}
+\hypertarget{eval_8c_af4e01ebbfbff53c2221b64ce542d5703}{}\label{eval_8c_af4e01ebbfbff53c2221b64ce542d5703} 
 \index{eval.\+c@{eval.\+c}!E\+V\+A\+L\+\_\+lambda@{E\+V\+A\+L\+\_\+lambda}}
 \index{E\+V\+A\+L\+\_\+lambda@{E\+V\+A\+L\+\_\+lambda}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+lambda(object o, object env)}{EVAL_lambda(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+lambda (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_af4e01ebbfbff53c2221b64ce542d5703}{}\label{eval_8c_af4e01ebbfbff53c2221b64ce542d5703}
+\subsubsection{\texorpdfstring{E\+V\+A\+L\+\_\+lambda()}{EVAL\_lambda()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+V\+A\+L\+\_\+lambda (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
 
 
 Evalue lambda et créer l\textquotesingle{}objet de type compound correspondant. 
@@ -156,14 +152,32 @@ Prend en entrée la ligne entrée par l\textquotesingle{}utilisateur.
 \begin{DoxyReturn}{Renvoie}
 Renvoie un agrégat. 
 \end{DoxyReturn}
+\hypertarget{eval_8c_a742e61207e511c960890af404ad64d97}{}\label{eval_8c_a742e61207e511c960890af404ad64d97} 
+\index{eval.\+c@{eval.\+c}!E\+V\+A\+L\+\_\+let@{E\+V\+A\+L\+\_\+let}}
+\index{E\+V\+A\+L\+\_\+let@{E\+V\+A\+L\+\_\+let}!eval.\+c@{eval.\+c}}
+\subsubsection{\texorpdfstring{E\+V\+A\+L\+\_\+let()}{EVAL\_let()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+V\+A\+L\+\_\+let (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
+
+
+Evalue la forme let. 
+
+Renvoie N\+U\+LL si erreur. Appel de L\+E\+T\+\_\+check. Création d\textquotesingle{}un environnement dont env est le père. Appel de L\+E\+T\+\_\+eval si celui-\/ci.
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{eval_8c_ae625530b96120d1101e6332938c8d580}{L\+E\+T\+\_\+eval} 
+
+\hyperlink{eval_8c_aae0f95ddf7f8793c2333e1ff0acdb74d}{L\+E\+T\+\_\+check}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie evaluation de let. 
+\end{DoxyReturn}
+\hypertarget{eval_8c_a8ca142d5d9bdbf2d494608d6700010c8}{}\label{eval_8c_a8ca142d5d9bdbf2d494608d6700010c8} 
 \index{eval.\+c@{eval.\+c}!E\+V\+A\+L\+\_\+or@{E\+V\+A\+L\+\_\+or}}
 \index{E\+V\+A\+L\+\_\+or@{E\+V\+A\+L\+\_\+or}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+or(object o, object env)}{EVAL_or(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+or (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_a8ca142d5d9bdbf2d494608d6700010c8}{}\label{eval_8c_a8ca142d5d9bdbf2d494608d6700010c8}
+\subsubsection{\texorpdfstring{E\+V\+A\+L\+\_\+or()}{EVAL\_or()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+V\+A\+L\+\_\+or (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
 
 
 Evaluation de la forme or. 
@@ -173,14 +187,12 @@ On évalue chaque terme du or tant qu\textquotesingle{}on a pas de terme vrai. C
 \begin{DoxyReturn}{Renvoie}
 Renvoie un booléen qui correspond à un ou logique. 
 \end{DoxyReturn}
+\hypertarget{eval_8c_a4fa12a03242edab3d6319587d2cbf59a}{}\label{eval_8c_a4fa12a03242edab3d6319587d2cbf59a} 
 \index{eval.\+c@{eval.\+c}!E\+V\+A\+L\+\_\+quote@{E\+V\+A\+L\+\_\+quote}}
 \index{E\+V\+A\+L\+\_\+quote@{E\+V\+A\+L\+\_\+quote}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+quote(object o, object env)}{EVAL_quote(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+quote (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_a4fa12a03242edab3d6319587d2cbf59a}{}\label{eval_8c_a4fa12a03242edab3d6319587d2cbf59a}
+\subsubsection{\texorpdfstring{E\+V\+A\+L\+\_\+quote()}{EVAL\_quote()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+V\+A\+L\+\_\+quote (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
 
 
 Evalue l\textquotesingle{}expression quote. 
@@ -190,14 +202,12 @@ Concrètement retourne le cdr de o.
 \begin{DoxyReturn}{Renvoie}
 Renvoie le cdr de o. 
 \end{DoxyReturn}
+\hypertarget{eval_8c_a721bfb9ef69a26cf3ae3784d46e4e620}{}\label{eval_8c_a721bfb9ef69a26cf3ae3784d46e4e620} 
 \index{eval.\+c@{eval.\+c}!E\+V\+A\+L\+\_\+set@{E\+V\+A\+L\+\_\+set}}
 \index{E\+V\+A\+L\+\_\+set@{E\+V\+A\+L\+\_\+set}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{E\+V\+A\+L\+\_\+set(object o, object env)}{EVAL_set(object o, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} E\+V\+A\+L\+\_\+set (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_a721bfb9ef69a26cf3ae3784d46e4e620}{}\label{eval_8c_a721bfb9ef69a26cf3ae3784d46e4e620}
+\subsubsection{\texorpdfstring{E\+V\+A\+L\+\_\+set()}{EVAL\_set()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} E\+V\+A\+L\+\_\+set (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
 
 
 Mets à jour une variable. 
@@ -207,13 +217,12 @@ set! est de la forme \+: (set! x $<$valeur$>$) x le symbole à mettre à jour et
 \begin{DoxyReturn}{Renvoie}
 Renvoie le nom de la variable modifiée. 
 \end{DoxyReturn}
+\hypertarget{eval_8c_aefec57e38712b1baf88ee81276fe57ed}{}\label{eval_8c_aefec57e38712b1baf88ee81276fe57ed} 
 \index{eval.\+c@{eval.\+c}!I\+F\+\_\+alternative@{I\+F\+\_\+alternative}}
 \index{I\+F\+\_\+alternative@{I\+F\+\_\+alternative}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{I\+F\+\_\+alternative(object input)}{IF_alternative(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} I\+F\+\_\+alternative (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{input}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_aefec57e38712b1baf88ee81276fe57ed}{}\label{eval_8c_aefec57e38712b1baf88ee81276fe57ed}
+\subsubsection{\texorpdfstring{I\+F\+\_\+alternative()}{IF\_alternative()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} I\+F\+\_\+alternative (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{input }\end{DoxyParamCaption})}
+
 
 
 Retourne l\textquotesingle{}alternative d\textquotesingle{}une structure if. 
@@ -224,13 +233,12 @@ Renvoie le cadddr. \begin{DoxySeeAlso}{Voir également}
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}alternative (le cadddr) 
 \end{DoxyReturn}
+\hypertarget{eval_8c_ae2d724e0225104a8dcd621f5f691c601}{}\label{eval_8c_ae2d724e0225104a8dcd621f5f691c601} 
 \index{eval.\+c@{eval.\+c}!I\+F\+\_\+consequence@{I\+F\+\_\+consequence}}
 \index{I\+F\+\_\+consequence@{I\+F\+\_\+consequence}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{I\+F\+\_\+consequence(object input)}{IF_consequence(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} I\+F\+\_\+consequence (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{input}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_ae2d724e0225104a8dcd621f5f691c601}{}\label{eval_8c_ae2d724e0225104a8dcd621f5f691c601}
+\subsubsection{\texorpdfstring{I\+F\+\_\+consequence()}{IF\_consequence()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} I\+F\+\_\+consequence (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{input }\end{DoxyParamCaption})}
+
 
 
 Renvoie la conséquence d\textquotesingle{}une structure if. 
@@ -241,13 +249,12 @@ Renvoie le caddr. \begin{DoxySeeAlso}{Voir également}
 \begin{DoxyReturn}{Renvoie}
 Renvoie la conséquence (le caddr). 
 \end{DoxyReturn}
+\hypertarget{eval_8c_a026bb47409acef4341f840fc817b292c}{}\label{eval_8c_a026bb47409acef4341f840fc817b292c} 
 \index{eval.\+c@{eval.\+c}!I\+F\+\_\+overargument@{I\+F\+\_\+overargument}}
 \index{I\+F\+\_\+overargument@{I\+F\+\_\+overargument}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{I\+F\+\_\+overargument(object input)}{IF_overargument(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} I\+F\+\_\+overargument (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{input}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_a026bb47409acef4341f840fc817b292c}{}\label{eval_8c_a026bb47409acef4341f840fc817b292c}
+\subsubsection{\texorpdfstring{I\+F\+\_\+overargument()}{IF\_overargument()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} I\+F\+\_\+overargument (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{input }\end{DoxyParamCaption})}
+
 
 
 Vérifie que if n\textquotesingle{}ait pas un argument en trop. 
@@ -257,13 +264,12 @@ Renvoie nil si if contient le bon nombre d\textquotesingle{}argument ce nil prov
 \begin{DoxyReturn}{Renvoie}
 Renvoie nil si if est bon, autre chose sinon. 
 \end{DoxyReturn}
+\hypertarget{eval_8c_a0059ac2d5fc1abec50561b5b9a1b494e}{}\label{eval_8c_a0059ac2d5fc1abec50561b5b9a1b494e} 
 \index{eval.\+c@{eval.\+c}!I\+F\+\_\+predicat@{I\+F\+\_\+predicat}}
 \index{I\+F\+\_\+predicat@{I\+F\+\_\+predicat}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{I\+F\+\_\+predicat(object input)}{IF_predicat(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} I\+F\+\_\+predicat (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{input}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_a0059ac2d5fc1abec50561b5b9a1b494e}{}\label{eval_8c_a0059ac2d5fc1abec50561b5b9a1b494e}
+\subsubsection{\texorpdfstring{I\+F\+\_\+predicat()}{IF\_predicat()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} I\+F\+\_\+predicat (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{input }\end{DoxyParamCaption})}
+
 
 
 Retourne le prédicat d\textquotesingle{}une structure if. 
@@ -274,13 +280,12 @@ Revient à prendre le cadr. \begin{DoxySeeAlso}{Voir également}
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}alternative (le cadr). 
 \end{DoxyReturn}
+\hypertarget{eval_8c_a2d5c4441d55f4188c8bf913120643eb4}{}\label{eval_8c_a2d5c4441d55f4188c8bf913120643eb4} 
 \index{eval.\+c@{eval.\+c}!L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg@{L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg}}
 \index{L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg@{L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg(object input)}{LAMBDA_check_number_arg(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}int L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{input}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_a2d5c4441d55f4188c8bf913120643eb4}{}\label{eval_8c_a2d5c4441d55f4188c8bf913120643eb4}
+\subsubsection{\texorpdfstring{L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg()}{LAMBDA\_check\_number\_arg()}}
+{\footnotesize\ttfamily int L\+A\+M\+B\+D\+A\+\_\+check\+\_\+number\+\_\+arg (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{input }\end{DoxyParamCaption})}
+
 
 
 Vérifie que lambda ait bien le bon nombre d\textquotesingle{}arguments. 
@@ -290,13 +295,12 @@ Au minimum lambda possède aucun arguments et un body qui est réduit à un atom
 \begin{DoxyReturn}{Renvoie}
 Renvoie 1 si le nombre d\textquotesingle{}arguments est correct 0 sinon. 
 \end{DoxyReturn}
+\hypertarget{eval_8c_ab23dd5520e0d7fcaec96318ff9b52d1c}{}\label{eval_8c_ab23dd5520e0d7fcaec96318ff9b52d1c} 
 \index{eval.\+c@{eval.\+c}!L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body@{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body}}
 \index{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body@{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body(object input)}{LAMBDA_get_body(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{input}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_ab23dd5520e0d7fcaec96318ff9b52d1c}{}\label{eval_8c_ab23dd5520e0d7fcaec96318ff9b52d1c}
+\subsubsection{\texorpdfstring{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body()}{LAMBDA\_get\_body()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} L\+A\+M\+B\+D\+A\+\_\+get\+\_\+body (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{input }\end{DoxyParamCaption})}
+
 
 
 Renvoie les instructions d\textquotesingle{}un lambda. 
@@ -306,13 +310,12 @@ Prend en argument l\textquotesingle{}instruction lambda complète.
 \begin{DoxyReturn}{Renvoie}
 renvoie la liste des instructions du body 
 \end{DoxyReturn}
+\hypertarget{eval_8c_a05993cb29ab0fc9204e80695ce39a4c2}{}\label{eval_8c_a05993cb29ab0fc9204e80695ce39a4c2} 
 \index{eval.\+c@{eval.\+c}!L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var@{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var}}
 \index{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var@{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var(object input)}{LAMBDA_get_var(object input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{input}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_a05993cb29ab0fc9204e80695ce39a4c2}{}\label{eval_8c_a05993cb29ab0fc9204e80695ce39a4c2}
+\subsubsection{\texorpdfstring{L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var()}{LAMBDA\_get\_var()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} L\+A\+M\+B\+D\+A\+\_\+get\+\_\+var (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{input }\end{DoxyParamCaption})}
+
 
 
 Renvoie le nom des variables d\textquotesingle{}une forme lambda. 
@@ -322,14 +325,56 @@ Prend en paramètre la liste qui doit être évaluée à lambda ex \+: (lambda (
 \begin{DoxyReturn}{Renvoie}
 Renvoie une liste de noms de variable. 
 \end{DoxyReturn}
+\hypertarget{eval_8c_aae0f95ddf7f8793c2333e1ff0acdb74d}{}\label{eval_8c_aae0f95ddf7f8793c2333e1ff0acdb74d} 
+\index{eval.\+c@{eval.\+c}!L\+E\+T\+\_\+check@{L\+E\+T\+\_\+check}}
+\index{L\+E\+T\+\_\+check@{L\+E\+T\+\_\+check}!eval.\+c@{eval.\+c}}
+\subsubsection{\texorpdfstring{L\+E\+T\+\_\+check()}{LET\_check()}}
+{\footnotesize\ttfamily int L\+E\+T\+\_\+check (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie que input possède bien la structure minimale de let. 
+
+Vérifie que let ait le bon format \+: Format minimal \+: (let () atome) qui renvoie atome. Ne vérifie pas que les arguments ont le bon format c\textquotesingle{}est L\+E\+T\+\_\+eval qui s\textquotesingle{}en charge. Si erreur affiche un W\+A\+R\+N\+I\+N\+G\+\_\+\+M\+SG et renvoie 0.
+
+\begin{DoxyReturn}{Renvoie}
+Renvoie 1 si format correct, 0 sinon. 
+\end{DoxyReturn}
+\hypertarget{eval_8c_ae625530b96120d1101e6332938c8d580}{}\label{eval_8c_ae625530b96120d1101e6332938c8d580} 
+\index{eval.\+c@{eval.\+c}!L\+E\+T\+\_\+eval@{L\+E\+T\+\_\+eval}}
+\index{L\+E\+T\+\_\+eval@{L\+E\+T\+\_\+eval}!eval.\+c@{eval.\+c}}
+\subsubsection{\texorpdfstring{L\+E\+T\+\_\+eval()}{LET\_eval()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} L\+E\+T\+\_\+eval (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{input,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
+
+
+Evalue le corps d\textquotesingle{}un let dans l\textquotesingle{}environnement env. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em input} & \+: input total d\textquotesingle{}un let (let ...) \\
+\hline
+{\em env} & \+: Environnement dans lequel seront faite les évaluations.\\
+\hline
+\end{DoxyParams}
+Evalue les arguments à l\textquotesingle{}aide de sfs\+\_\+eval, en construisant une instruction (define args value). La gestion des erreurs est donc faite par sfs\+\_\+eval et E\+V\+A\+L\+\_\+define. Evalue le body avec sfs\+\_\+eval dans l\textquotesingle{}env en ayant construit une instruction avec begin \+: (begin body ..) ~\newline
+ A\+T\+T\+E\+N\+T\+I\+ON ~\newline
+Ne fait pas de test de la forme de input.
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{eval_8c_a019ed7c50b864c42ea880ac81aec0048}{E\+V\+A\+L\+\_\+define} 
+
+\hyperlink{eval_8c_ae380eb697aba625d9557508c5ce78230}{sfs\+\_\+eval}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Renvoie}
+Renvoie l\textquotesingle{}évaluation de d\textquotesingle{}un let dans env. 
+\end{DoxyReturn}
+\hypertarget{eval_8c_ae380eb697aba625d9557508c5ce78230}{}\label{eval_8c_ae380eb697aba625d9557508c5ce78230} 
 \index{eval.\+c@{eval.\+c}!sfs\+\_\+eval@{sfs\+\_\+eval}}
 \index{sfs\+\_\+eval@{sfs\+\_\+eval}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{sfs\+\_\+eval(object input, object env)}{sfs_eval(object input, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} sfs\+\_\+eval (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{input, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_ae380eb697aba625d9557508c5ce78230}{}\label{eval_8c_ae380eb697aba625d9557508c5ce78230}
+\subsubsection{\texorpdfstring{sfs\+\_\+eval()}{sfs\_eval()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} sfs\+\_\+eval (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{input,  }\item[{\hyperlink{structobject__t}{object}}]{env }\end{DoxyParamCaption})}
+
 
 
 Fonction d\textquotesingle{}évaluation d\textquotesingle{}expression scheme. 
@@ -348,14 +393,12 @@ is\+\_\+form(object symbol, int$\ast$ forme);
 \begin{DoxyReturn}{Renvoie}
 Renvoie l\textquotesingle{}objet évalué. 
 \end{DoxyReturn}
+\hypertarget{eval_8c_ae6a1f129c513c24456d85a102835bd32}{}\label{eval_8c_ae6a1f129c513c24456d85a102835bd32} 
 \index{eval.\+c@{eval.\+c}!sfs\+\_\+eval\+\_\+compound@{sfs\+\_\+eval\+\_\+compound}}
 \index{sfs\+\_\+eval\+\_\+compound@{sfs\+\_\+eval\+\_\+compound}!eval.\+c@{eval.\+c}}
-\subsubsection[{\texorpdfstring{sfs\+\_\+eval\+\_\+compound(object pair, object env)}{sfs_eval_compound(object pair, object env)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object} sfs\+\_\+eval\+\_\+compound (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{pair, }
-\item[{{\bf object}}]{env}
-\end{DoxyParamCaption}
-)}\hypertarget{eval_8c_a63409534cf57d947724747bcfea47071}{}\label{eval_8c_a63409534cf57d947724747bcfea47071}
+\subsubsection{\texorpdfstring{sfs\+\_\+eval\+\_\+compound()}{sfs\_eval\_compound()}}
+{\footnotesize\ttfamily \hyperlink{structobject__t}{object} sfs\+\_\+eval\+\_\+compound (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{pair }\end{DoxyParamCaption})}
+
 
 
 Evalue un agrégat.  \+: L\textquotesingle{}entrée de l\textquotesingle{}utilisateur dont le symbole est évalué.  \+: L\textquotesingle{}environnement dans lequel on est. 

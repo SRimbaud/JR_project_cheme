@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Livrable1 Informatique Phelma SICOM: Référence du fichier include/print.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -11,9 +12,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -32,40 +30,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.11 -->
+<!-- Généré par Doxygen 1.8.12 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
-      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
-      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -114,7 +91,7 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
-<tr class="memitem:af581f8cc2bba3b54da9fd9d7225cb1f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af581f8cc2bba3b54da9fd9d7225cb1f2"></a>
+<tr class="memitem:af581f8cc2bba3b54da9fd9d7225cb1f2"><td class="memItemLeft" align="right" valign="top"><a id="af581f8cc2bba3b54da9fd9d7225cb1f2"></a>
 typedef struct <a class="el" href="structobject__t.html">object_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>object</b></td></tr>
 <tr class="separator:af581f8cc2bba3b54da9fd9d7225cb1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -156,6 +133,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:abc700e5dc549b50ed2b811de1cb8c9ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print_8h.html#abc700e5dc549b50ed2b811de1cb8c9ad">OBJECT_print_fail</a> ()</td></tr>
 <tr class="memdesc:abc700e5dc549b50ed2b811de1cb8c9ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche un object qui n'est pas reconnu. Affiche un warning.  <a href="#abc700e5dc549b50ed2b811de1cb8c9ad">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abc700e5dc549b50ed2b811de1cb8c9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cd9dabf1e49f781eb8689a2be80fadf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print_8h.html#a9cd9dabf1e49f781eb8689a2be80fadf">OBJECT_print_unknown</a> (<a class="el" href="structobject__t.html">object</a> o)</td></tr>
+<tr class="memdesc:a9cd9dabf1e49f781eb8689a2be80fadf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche un type unknown (de base : #undef)  <a href="#a9cd9dabf1e49f781eb8689a2be80fadf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9cd9dabf1e49f781eb8689a2be80fadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad94ede42a4f72f61eccb7152d06345f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print_8h.html#ad94ede42a4f72f61eccb7152d06345f4">OBJECT_print_pair</a> (<a class="el" href="structobject__t.html">object</a> o)</td></tr>
 <tr class="memdesc:ad94ede42a4f72f61eccb7152d06345f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche un object de type pair. Fonction récursive.  <a href="#ad94ede42a4f72f61eccb7152d06345f4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad94ede42a4f72f61eccb7152d06345f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,7 +151,9 @@ Fonctions</h2></td></tr>
 </li>
 </ul>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a class="anchor" id="ab688e6db514483a6f4f2050ae774ecb0"></a>
+<a id="ab688e6db514483a6f4f2050ae774ecb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab688e6db514483a6f4f2050ae774ecb0">&sect;&nbsp;</a></span>OBJECT_print_atom()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -196,7 +178,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a76c85a78447173279ae36a78110b030e"></a>
+<a id="a76c85a78447173279ae36a78110b030e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76c85a78447173279ae36a78110b030e">&sect;&nbsp;</a></span>OBJECT_print_bool()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -220,7 +204,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a87f45fb95773a0da0a3412e7985796a2"></a>
+<a id="a87f45fb95773a0da0a3412e7985796a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87f45fb95773a0da0a3412e7985796a2">&sect;&nbsp;</a></span>OBJECT_print_character()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -244,7 +230,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a27b4e3f4330aa0d45806ff5d1dea04b6"></a>
+<a id="a27b4e3f4330aa0d45806ff5d1dea04b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27b4e3f4330aa0d45806ff5d1dea04b6">&sect;&nbsp;</a></span>OBJECT_print_compound()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -263,7 +251,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abc700e5dc549b50ed2b811de1cb8c9ad"></a>
+<a id="abc700e5dc549b50ed2b811de1cb8c9ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc700e5dc549b50ed2b811de1cb8c9ad">&sect;&nbsp;</a></span>OBJECT_print_fail()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -281,7 +271,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3937d61f164b6181c8137178eb66db03"></a>
+<a id="a3937d61f164b6181c8137178eb66db03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3937d61f164b6181c8137178eb66db03">&sect;&nbsp;</a></span>OBJECT_print_nil()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -311,7 +303,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8033d733dc35e34a52f66de5b93745f9"></a>
+<a id="a8033d733dc35e34a52f66de5b93745f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8033d733dc35e34a52f66de5b93745f9">&sect;&nbsp;</a></span>OBJECT_print_number()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -335,7 +329,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad94ede42a4f72f61eccb7152d06345f4"></a>
+<a id="ad94ede42a4f72f61eccb7152d06345f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad94ede42a4f72f61eccb7152d06345f4">&sect;&nbsp;</a></span>OBJECT_print_pair()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -357,11 +353,17 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <p>La fonction gére de façon particulière le cas de nil selon si il se trouve dans le car ou le cdr. Un nil seul est géré par <a class="el" href="print_8c.html#a7e845724ec647ec44337e2e3e86bd8f7" title="Affiche un objet dans l&#39;interpréteur. ">sfs_print()</a></p>
-<p>Gestion d'une paire pure : Une paire pure, contient une paire et un cdr qui n'est pas une paire. Dans ce cas affiche au forme (car . cdr) </p>
+<p><br />
+ Gestion d'une paire impure : Une paire pure, contient une paire et un cdr qui n'est pas une paire. Dans ce cas affiche au forme (car . cdr)</p>
+<p><br />
+ Gestion type unknown : Si un type unknown est croisé dans une liste affiche #undef pour avoir un affichage cohérent.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="print_8c.html#a9cd9dabf1e49f781eb8689a2be80fadf" title="Affiche un type unknown (de base : #undef) ">OBJECT_print_unknown</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a478b35e75fe4de7f0cc70cf2b293edc3"></a>
+<a id="a478b35e75fe4de7f0cc70cf2b293edc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a478b35e75fe4de7f0cc70cf2b293edc3">&sect;&nbsp;</a></span>OBJECT_print_prim()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -380,7 +382,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aff768f8d6724ee59c7b3e197b26be34b"></a>
+<a id="aff768f8d6724ee59c7b3e197b26be34b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff768f8d6724ee59c7b3e197b26be34b">&sect;&nbsp;</a></span>OBJECT_print_string()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -404,7 +408,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a87ea9fe33284f8018de8808803b4803a"></a>
+<a id="a87ea9fe33284f8018de8808803b4803a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ea9fe33284f8018de8808803b4803a">&sect;&nbsp;</a></span>OBJECT_print_symbol()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -428,7 +434,31 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7e845724ec647ec44337e2e3e86bd8f7"></a>
+<a id="a9cd9dabf1e49f781eb8689a2be80fadf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cd9dabf1e49f781eb8689a2be80fadf">&sect;&nbsp;</a></span>OBJECT_print_unknown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OBJECT_print_unknown </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structobject__t.html">object</a>&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche un type unknown (de base : #undef) </p>
+<p>Affiche un type unknown. De base affiche #undef. Peut-être enrichi pour afficher des messages d'erreur selon le contenu de o. Utile pour l'affiche d'un unknown dans une paire.</p>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a7e845724ec647ec44337e2e3e86bd8f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e845724ec647ec44337e2e3e86bd8f7">&sect;&nbsp;</a></span>sfs_print()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -450,7 +480,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa53e30749d79b20fec111373db54be3d"></a>
+<a id="aa53e30749d79b20fec111373db54be3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa53e30749d79b20fec111373db54be3d">&sect;&nbsp;</a></span>sfs_print_atom()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -469,7 +501,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab68c60a5d4852af0ba78130cbd30592a"></a>
+<a id="ab68c60a5d4852af0ba78130cbd30592a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab68c60a5d4852af0ba78130cbd30592a">&sect;&nbsp;</a></span>sfs_print_pair()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -493,7 +527,7 @@ Fonctions</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+</a> 1.8.12
 </small></address>
 </body>
 </html>

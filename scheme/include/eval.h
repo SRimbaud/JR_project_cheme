@@ -36,6 +36,7 @@ object EVAL_or(object o, object env);
 object EVAL_if(object o, object env);
 object EVAL_begin(object o, object env);
 object EVAL_lambda(object o, object env);
+object EVAL_let(object o, object env);
 
 /* Outils d'évaluation */
 object IF_predicat(object input);
@@ -45,6 +46,8 @@ object IF_overargument(object input);
 object LAMBDA_get_var(object input);
 object LAMBDA_get_body(object input);
 int LAMBDA_check_number_arg(object input);
+object LET_eval(object input, object env);
+int LET_check(object input);
 #ifdef __cplusplus
 }
 #endif

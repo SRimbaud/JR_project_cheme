@@ -283,6 +283,10 @@ object sfs_eval(object input, object env)
 					DEBUG_MSG("Call EVAL_lambda");
 					return(EVAL_lambda(input, env));
 					break;
+				case LET :
+					DEBUG_MSG("Call EVAL_let");
+					return(EVAL_let(input, env));
+					break;
 				default :
 					WARNING_MSG("Unrecognized form");
 					return(NULL);
@@ -395,7 +399,7 @@ object EVAL_set(object o, object env)
 		WARNING_MSG("set! : <variable> not defined");
 		return(check);
 	}
-	return(check);
+	return(make_object(SFS_UNKNOWN));
 }
 
 /** @fn object EVAL_define(object o, object env)
@@ -458,7 +462,7 @@ object EVAL_define(object o, object env)
 	DEBUG_MSG("Type evaluated %d\n", evaluated->type);
 
 	ENV_add_var(name, evaluated, env);
-	return(name);
+	return(make_object(SFS_UNKNOWN));
 }
 
 /** @fn  object EVAL_quote(object o, object env);
@@ -716,6 +720,27 @@ object EVAL_lambda(object o, object env)
 	
 	return(retour);	
 }
+
+
+/** @fn object EVAL_let(object o, object env)
+ * @brief Evalue la forme let.
+ *
+ * Renvoie NULL si erreur.
+ * Appel de LET_check.
+ * Création d'un environnement dont env est le père.
+ * Appel de LET_eval si celui-ci.
+ *
+ * @sa LET_eval
+ * @sa LET_check
+ *
+ * @return Renvoie evaluation de let.
+ */
+object EVAL_let(object o, object env)
+{
+	if(!LET_check(o)) return NULL;
+	object environment = ENV_build(env);
+	return(LET_eval(o, environment));
+}
 /* Outils d'évaluation */
 
 
@@ -819,4 +844,96 @@ object IF_alternative(object input)
 object IF_overargument(object input)
 {
 	return(OBJECT_get_cxr(input, "cddddr"));
+}
+
+
+/** @fn object LET_eval(object input, object env)
+ * @brief Evalue le corps d'un let dans l'environnement env.
+ * @param input : input total d'un let (let ...)
+ * @param env : Environnement dans lequel seront faite les évaluations.
+ *
+ * Evalue les arguments à l'aide de sfs_eval, en construisant
+ * une instruction (define args value). La gestion des erreurs
+ * est donc faite par sfs_eval et EVAL_define.
+ *  Evalue le body avec sfs_eval dans l'env en ayant construit
+ *  une instruction avec begin : (begin body ..)
+ * @n
+ *  ATTENTION
+ * @n
+ * Ne fait pas de test de la forme de input.
+ *
+ *  @sa EVAL_define
+ *  @sa sfs_eval
+ *
+ *
+ * @return Renvoie l'évaluation de d'un let dans env.
+ */
+object LET_eval(object input, object env)
+{
+	object args = OBJECT_get_cxr(input, "cadr");
+	object i = args ;
+	
+	object i_car= i->this.pair.car, tmp_pair = NULL;
+	if(!check_type(i, SFS_NIL))
+	{
+		for(i = args; i!=nil &&
+				!OBJECT_isempty(i) ;
+				i = i->this.pair.cdr)
+		{
+			i_car = i->this.pair.car ;
+			DEBUG_MSG("LET_eval : i : %p, i_car : %p, nil : %p", i, i_car, nil);
+			tmp_pair = OBJECT_build_pair(OBJECT_build_symbol("define"),
+					i_car);
+
+			if(!sfs_eval(tmp_pair, env))
+			{
+				WARNING_MSG("Error evaluating arguments");
+				return(NULL);
+			}
+		}
+	}
+
+	object body = OBJECT_get_cxr(input, "cddr");
+	tmp_pair = OBJECT_build_pair(OBJECT_build_symbol("begin"), body);
+	return(sfs_eval(tmp_pair, env));
+
+
+}
+
+
+/** @fn int LET_check(object input)
+ * @brief Vérifie que input possède bien la structure minimale de let.
+ *
+ * Vérifie que let ait le bon format :
+ * Format minimal : (let () atome) qui renvoie atome.
+ * Ne vérifie pas que les arguments ont le bon format c'est
+ * LET_eval qui s'en charge.
+ * Si erreur affiche un WARNING_MSG et renvoie 0.
+ *
+ * @return Renvoie 1 si format correct, 0 sinon.
+ */
+int LET_check(object input)
+{
+	object args= OBJECT_get_cxr(input, "cadr");
+	object body = OBJECT_get_cxr(input, "cddr");
+	if(!args || !check_type(body, SFS_PAIR))
+	{
+		WARNING_MSG("Let : Parsing error");
+		DEBUG_MSG(" args : %p, body : %p", args, body);
+		return(0);
+	}
+	if(!check_type(args, SFS_NIL) && !check_type(args, SFS_PAIR))
+	{
+		WARNING_MSG("(let xxx ...) Wrong format for xxx");
+		return(0);
+	}
+	/* Si les args sont une paire il faut qu'ils soient bien
+	 * une liste de liste ce qu'on va vérifier
+	 */
+	if(check_type(args, SFS_PAIR) && !check_type(args->this.pair.car, SFS_PAIR)) 
+	{
+		WARNING_MSG("(let xxx ... ) Wrong format for xxx");
+		return(0);
+	}
+	return(1) ;
 }

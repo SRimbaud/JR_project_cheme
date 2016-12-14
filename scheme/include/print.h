@@ -33,6 +33,7 @@ void OBJECT_print_nil(int place);
 void OBJECT_print_prim(object o);
 void OBJECT_print_compound(object o);
 void OBJECT_print_fail();
+void OBJECT_print_unknown(object o);
 void OBJECT_print_pair(object o);
 void OBJECT_print_atom(object o);
 

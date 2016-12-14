@@ -5,7 +5,7 @@
 Printing stuff for S\+FS.  
 
 
-{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\newline
 Graphe des dépendances par inclusion de print.\+h\+:
 % FIG 0
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
@@ -13,8 +13,8 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \subsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \hyperlink{structobject__t}{object\+\_\+t} $\ast$ {\bfseries object}\hypertarget{print_8h_af581f8cc2bba3b54da9fd9d7225cb1f2}{}\label{print_8h_af581f8cc2bba3b54da9fd9d7225cb1f2}
-
+\hypertarget{print_8h_af581f8cc2bba3b54da9fd9d7225cb1f2}{}\label{print_8h_af581f8cc2bba3b54da9fd9d7225cb1f2} 
+typedef struct \hyperlink{structobject__t}{object\+\_\+t} $\ast$ {\bfseries object}
 \end{DoxyCompactItemize}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
@@ -43,6 +43,8 @@ void \hyperlink{print_8h_a27b4e3f4330aa0d45806ff5d1dea04b6}{O\+B\+J\+E\+C\+T\+\_
 \begin{DoxyCompactList}\small\item\em Affiche un agrégat. \end{DoxyCompactList}\item 
 void \hyperlink{print_8h_abc700e5dc549b50ed2b811de1cb8c9ad}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail} ()
 \begin{DoxyCompactList}\small\item\em Affiche un object qui n\textquotesingle{}est pas reconnu. Affiche un warning. \end{DoxyCompactList}\item 
+void \hyperlink{print_8h_a9cd9dabf1e49f781eb8689a2be80fadf}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+unknown} (\hyperlink{structobject__t}{object} o)
+\begin{DoxyCompactList}\small\item\em Affiche un type unknown (de base \+: \#undef) \end{DoxyCompactList}\item 
 void \hyperlink{print_8h_ad94ede42a4f72f61eccb7152d06345f4}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+pair} (\hyperlink{structobject__t}{object} o)
 \begin{DoxyCompactList}\small\item\em Affiche un object de type pair. Fonction récursive. \end{DoxyCompactList}\item 
 void \hyperlink{print_8h_ab688e6db514483a6f4f2050ae774ecb0}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+atom} (\hyperlink{structobject__t}{object} o)
@@ -64,13 +66,12 @@ Fri Jun 22 20\+:12\+:52 2012 Printing stuff for S\+FS.
 \end{DoxyItemize}
 
 \subsection{Documentation des fonctions}
+\hypertarget{print_8h_ab688e6db514483a6f4f2050ae774ecb0}{}\label{print_8h_ab688e6db514483a6f4f2050ae774ecb0} 
 \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+atom@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+atom}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+atom@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+atom}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+atom(object o)}{OBJECT_print_atom(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+atom (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_ab688e6db514483a6f4f2050ae774ecb0}{}\label{print_8h_ab688e6db514483a6f4f2050ae774ecb0}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+atom()}{OBJECT\_print\_atom()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+atom (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Affiche un atome. Appel \hyperlink{print_8c_abc700e5dc549b50ed2b811de1cb8c9ad}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail()} si le type est non reconnu. 
@@ -82,13 +83,12 @@ Ne devrait pas avoir à afficher nil. On préfère utiliser sfs\+\_\+print pour 
 {\em object} & \+: l\textquotesingle{}objet à afficher. \\
 \hline
 \end{DoxyParams}
+\hypertarget{print_8h_a76c85a78447173279ae36a78110b030e}{}\label{print_8h_a76c85a78447173279ae36a78110b030e} 
 \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+bool@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+bool}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+bool@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+bool}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+bool(object o)}{OBJECT_print_bool(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+bool (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_a76c85a78447173279ae36a78110b030e}{}\label{print_8h_a76c85a78447173279ae36a78110b030e}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+bool()}{OBJECT\_print\_bool()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+bool (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Affiche un object de type bool. 
@@ -98,13 +98,12 @@ Affiche un object de type bool.
 {\em object} & \+: l\textquotesingle{}objet à afficher. \\
 \hline
 \end{DoxyParams}
+\hypertarget{print_8h_a87f45fb95773a0da0a3412e7985796a2}{}\label{print_8h_a87f45fb95773a0da0a3412e7985796a2} 
 \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+character@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+character}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+character@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+character}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+character(object o)}{OBJECT_print_character(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+character (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_a87f45fb95773a0da0a3412e7985796a2}{}\label{print_8h_a87f45fb95773a0da0a3412e7985796a2}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+character()}{OBJECT\_print\_character()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+character (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Affiche un object de type character. 
@@ -114,35 +113,32 @@ Affiche un object de type character.
 {\em object} & \+: l\textquotesingle{}objet à afficher. \\
 \hline
 \end{DoxyParams}
+\hypertarget{print_8h_a27b4e3f4330aa0d45806ff5d1dea04b6}{}\label{print_8h_a27b4e3f4330aa0d45806ff5d1dea04b6} 
 \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound(object o)}{OBJECT_print_compound(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_a27b4e3f4330aa0d45806ff5d1dea04b6}{}\label{print_8h_a27b4e3f4330aa0d45806ff5d1dea04b6}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound()}{OBJECT\_print\_compound()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+compound (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Affiche un agrégat. 
 
-Affiche \#$<$procedure$>$ \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail}}
+Affiche \#$<$procedure$>$ \hypertarget{print_8h_abc700e5dc549b50ed2b811de1cb8c9ad}{}\label{print_8h_abc700e5dc549b50ed2b811de1cb8c9ad} 
+\index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail()}{OBJECT_print_fail()}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_abc700e5dc549b50ed2b811de1cb8c9ad}{}\label{print_8h_abc700e5dc549b50ed2b811de1cb8c9ad}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail()}{OBJECT\_print\_fail()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+fail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Affiche un object qui n\textquotesingle{}est pas reconnu. Affiche un warning. 
 
-Affiche alors \#unrecognize. C\textquotesingle{}est une interprétation de scheme ici. \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+nil@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+nil}}
+Affiche alors \#unrecognize. C\textquotesingle{}est une interprétation de scheme ici. \hypertarget{print_8h_a3937d61f164b6181c8137178eb66db03}{}\label{print_8h_a3937d61f164b6181c8137178eb66db03} 
+\index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+nil@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+nil}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+nil@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+nil}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+nil(int place)}{OBJECT_print_nil(int place)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+nil (
-\begin{DoxyParamCaption}
-\item[{int}]{place}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_a3937d61f164b6181c8137178eb66db03}{}\label{print_8h_a3937d61f164b6181c8137178eb66db03}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+nil()}{OBJECT\_print\_nil()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+nil (\begin{DoxyParamCaption}\item[{int}]{place }\end{DoxyParamCaption})}
+
 
 
 Affiche un object de type nil. 
@@ -157,13 +153,12 @@ Si nil se situe dans un car affiche celui-\/ci sous forme () sinon seulement sou
 {\em object} & \+: l\textquotesingle{}objet à afficher. \\
 \hline
 \end{DoxyParams}
+\hypertarget{print_8h_a8033d733dc35e34a52f66de5b93745f9}{}\label{print_8h_a8033d733dc35e34a52f66de5b93745f9} 
 \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+number@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+number}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+number@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+number}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+number(object o)}{OBJECT_print_number(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+number (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_a8033d733dc35e34a52f66de5b93745f9}{}\label{print_8h_a8033d733dc35e34a52f66de5b93745f9}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+number()}{OBJECT\_print\_number()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+number (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Affiche un object de type entier. 
@@ -173,13 +168,12 @@ Affiche un object de type entier.
 {\em object} & \+: l\textquotesingle{}objet à afficher. \\
 \hline
 \end{DoxyParams}
+\hypertarget{print_8h_ad94ede42a4f72f61eccb7152d06345f4}{}\label{print_8h_ad94ede42a4f72f61eccb7152d06345f4} 
 \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+pair}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+pair@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+pair}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+pair(object o)}{OBJECT_print_pair(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+pair (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_ad94ede42a4f72f61eccb7152d06345f4}{}\label{print_8h_ad94ede42a4f72f61eccb7152d06345f4}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+pair()}{OBJECT\_print\_pair()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+pair (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Affiche un object de type pair. Fonction récursive. 
@@ -191,24 +185,31 @@ Affiche un object de type pair. Fonction récursive.
 \end{DoxyParams}
 La fonction gére de façon particulière le cas de nil selon si il se trouve dans le car ou le cdr. Un nil seul est géré par \hyperlink{print_8c_a7e845724ec647ec44337e2e3e86bd8f7}{sfs\+\_\+print()}
 
-Gestion d\textquotesingle{}une paire pure \+: Une paire pure, contient une paire et un cdr qui n\textquotesingle{}est pas une paire. Dans ce cas affiche au forme (car . cdr) \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim}}
+~\newline
+ Gestion d\textquotesingle{}une paire impure \+: Une paire pure, contient une paire et un cdr qui n\textquotesingle{}est pas une paire. Dans ce cas affiche au forme (car . cdr)
+
+~\newline
+ Gestion type unknown \+: Si un type unknown est croisé dans une liste affiche \#undef pour avoir un affichage cohérent.
+
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{print_8c_a9cd9dabf1e49f781eb8689a2be80fadf}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+unknown} 
+\end{DoxySeeAlso}
+\hypertarget{print_8h_a478b35e75fe4de7f0cc70cf2b293edc3}{}\label{print_8h_a478b35e75fe4de7f0cc70cf2b293edc3} 
+\index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim(object o)}{OBJECT_print_prim(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_a478b35e75fe4de7f0cc70cf2b293edc3}{}\label{print_8h_a478b35e75fe4de7f0cc70cf2b293edc3}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim()}{OBJECT\_print\_prim()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+prim (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Affiche un type primitive. 
 
-En pratique on va chercher le nom de la primitive dans la structure prim de object pour l\textquotesingle{}afficher. \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string}}
+En pratique on va chercher le nom de la primitive dans la structure prim de object pour l\textquotesingle{}afficher. \hypertarget{print_8h_aff768f8d6724ee59c7b3e197b26be34b}{}\label{print_8h_aff768f8d6724ee59c7b3e197b26be34b} 
+\index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string(object o)}{OBJECT_print_string(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_aff768f8d6724ee59c7b3e197b26be34b}{}\label{print_8h_aff768f8d6724ee59c7b3e197b26be34b}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string()}{OBJECT\_print\_string()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+string (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Affiche un object de type string. 
@@ -218,13 +219,12 @@ Affiche un object de type string.
 {\em object} & \+: l\textquotesingle{}objet à afficher. \\
 \hline
 \end{DoxyParams}
+\hypertarget{print_8h_a87ea9fe33284f8018de8808803b4803a}{}\label{print_8h_a87ea9fe33284f8018de8808803b4803a} 
 \index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+symbol@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+symbol}}
 \index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+symbol@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+symbol}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+symbol(object o)}{OBJECT_print_symbol(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+symbol (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_a87ea9fe33284f8018de8808803b4803a}{}\label{print_8h_a87ea9fe33284f8018de8808803b4803a}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+symbol()}{OBJECT\_print\_symbol()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+symbol (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Affiche un object de type string. 
@@ -234,13 +234,27 @@ Affiche un object de type string.
 {\em object} & \+: l\textquotesingle{}objet à afficher. \\
 \hline
 \end{DoxyParams}
+\hypertarget{print_8h_a9cd9dabf1e49f781eb8689a2be80fadf}{}\label{print_8h_a9cd9dabf1e49f781eb8689a2be80fadf} 
+\index{print.\+h@{print.\+h}!O\+B\+J\+E\+C\+T\+\_\+print\+\_\+unknown@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+unknown}}
+\index{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+unknown@{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+unknown}!print.\+h@{print.\+h}}
+\subsubsection{\texorpdfstring{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+unknown()}{OBJECT\_print\_unknown()}}
+{\footnotesize\ttfamily void O\+B\+J\+E\+C\+T\+\_\+print\+\_\+unknown (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
+
+
+Affiche un type unknown (de base \+: \#undef) 
+
+Affiche un type unknown. De base affiche \#undef. Peut-\/être enrichi pour afficher des messages d\textquotesingle{}erreur selon le contenu de o. Utile pour l\textquotesingle{}affiche d\textquotesingle{}un unknown dans une paire.
+
+\begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}
+\hypertarget{print_8h_a7e845724ec647ec44337e2e3e86bd8f7}{}\label{print_8h_a7e845724ec647ec44337e2e3e86bd8f7} 
 \index{print.\+h@{print.\+h}!sfs\+\_\+print@{sfs\+\_\+print}}
 \index{sfs\+\_\+print@{sfs\+\_\+print}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{sfs\+\_\+print(object o)}{sfs_print(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void sfs\+\_\+print (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_a7e845724ec647ec44337e2e3e86bd8f7}{}\label{print_8h_a7e845724ec647ec44337e2e3e86bd8f7}
+\subsubsection{\texorpdfstring{sfs\+\_\+print()}{sfs\_print()}}
+{\footnotesize\ttfamily void sfs\+\_\+print (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Affiche un objet dans l\textquotesingle{}interpréteur. 
@@ -252,13 +266,12 @@ Affiche un objet. Si celui-\/ci est de type S\+F\+S\+\_\+\+U\+N\+K\+N\+O\+WN ret
 
 \hyperlink{print_8c_aa53e30749d79b20fec111373db54be3d}{sfs\+\_\+print\+\_\+atom} 
 \end{DoxySeeAlso}
+\hypertarget{print_8h_aa53e30749d79b20fec111373db54be3d}{}\label{print_8h_aa53e30749d79b20fec111373db54be3d} 
 \index{print.\+h@{print.\+h}!sfs\+\_\+print\+\_\+atom@{sfs\+\_\+print\+\_\+atom}}
 \index{sfs\+\_\+print\+\_\+atom@{sfs\+\_\+print\+\_\+atom}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{sfs\+\_\+print\+\_\+atom(object o)}{sfs_print_atom(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void sfs\+\_\+print\+\_\+atom (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_aa53e30749d79b20fec111373db54be3d}{}\label{print_8h_aa53e30749d79b20fec111373db54be3d}
+\subsubsection{\texorpdfstring{sfs\+\_\+print\+\_\+atom()}{sfs\_print\_atom()}}
+{\footnotesize\ttfamily void sfs\+\_\+print\+\_\+atom (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 affiche un atome. 
@@ -266,13 +279,12 @@ affiche un atome.
 \begin{DoxySeeAlso}{Voir également}
 \hyperlink{print_8c_ab688e6db514483a6f4f2050ae774ecb0}{O\+B\+J\+E\+C\+T\+\_\+print\+\_\+atom(object o)} 
 \end{DoxySeeAlso}
+\hypertarget{print_8h_ab68c60a5d4852af0ba78130cbd30592a}{}\label{print_8h_ab68c60a5d4852af0ba78130cbd30592a} 
 \index{print.\+h@{print.\+h}!sfs\+\_\+print\+\_\+pair@{sfs\+\_\+print\+\_\+pair}}
 \index{sfs\+\_\+print\+\_\+pair@{sfs\+\_\+print\+\_\+pair}!print.\+h@{print.\+h}}
-\subsubsection[{\texorpdfstring{sfs\+\_\+print\+\_\+pair(object o)}{sfs_print_pair(object o)}}]{\setlength{\rightskip}{0pt plus 5cm}void sfs\+\_\+print\+\_\+pair (
-\begin{DoxyParamCaption}
-\item[{{\bf object}}]{o}
-\end{DoxyParamCaption}
-)}\hypertarget{print_8h_ab68c60a5d4852af0ba78130cbd30592a}{}\label{print_8h_ab68c60a5d4852af0ba78130cbd30592a}
+\subsubsection{\texorpdfstring{sfs\+\_\+print\+\_\+pair()}{sfs\_print\_pair()}}
+{\footnotesize\ttfamily void sfs\+\_\+print\+\_\+pair (\begin{DoxyParamCaption}\item[{\hyperlink{structobject__t}{object}}]{o }\end{DoxyParamCaption})}
+
 
 
 Affiche une paire. 

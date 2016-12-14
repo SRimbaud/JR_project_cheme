@@ -20,7 +20,7 @@ extern "C" {
  *
  * 22 Oct 2016 ==> 6 formes.
  */
-#define NB_FORM 8
+#define NB_FORM 9
 
 #include<strings.h>
 #include<ctype.h>
@@ -42,6 +42,7 @@ enum mots_clefs{
        	OR, /**< La forme IF valant 5 */
 	BEGIN, /**< La forme BEGIN valant 6 */
 	LAMBDA, /**< La forme LAMBDA valant 7 */
+	LET, /**< La forme LET valant 8 */
 	NONE = 9999 /**< Forme inconnue valant 9999*/
 };
 /* Prototypages supplémentaires car inclusion multiples. */

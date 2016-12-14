@@ -113,6 +113,7 @@ void make_forms()
 	form[OR]= OBJECT_build_symbol("or");
 	form[BEGIN] = OBJECT_build_symbol("begin");
 	form[LAMBDA] = OBJECT_build_symbol("lambda");
+	form[LET] = OBJECT_build_symbol("let");
 	DEBUG_MSG(" init : %s", form[BEGIN]->this.symbol);
 }
 /*Accesseurs */
@@ -970,13 +971,11 @@ void check_alloc(void* ptr, char* message)
 /** @fn int check_type(object o, int sfs_type)
  * @brief Vérifie que o est bien de type sfs_type.
  *
+ * Renvoie 0 si o NULL.
  * @return Renvoie 1 si o est de type sfs_type, 0 sinon.
- * Renvoie 0 si o de type SFS_UNKNOW quelque soit
- * sfs_type.
  */
 int check_type(object o, int sfs_type)
 {
-	if(sfs_type == SFS_UNKNOWN) return(0);
 	if(OBJECT_isempty(o)) return(0);
 	if(o->type== sfs_type) return(1);
 	return(0);

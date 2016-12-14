@@ -1,7 +1,7 @@
 var searchData=
 [
   ['sfs_5feval',['sfs_eval',['../eval_8h.html#ae380eb697aba625d9557508c5ce78230',1,'sfs_eval(object input, object env):&#160;eval.c'],['../eval_8c.html#ae380eb697aba625d9557508c5ce78230',1,'sfs_eval(object input, object env):&#160;eval.c']]],
-  ['sfs_5feval_5fcompound',['sfs_eval_compound',['../eval_8h.html#a63409534cf57d947724747bcfea47071',1,'sfs_eval_compound(object pair, object env):&#160;eval.c'],['../eval_8c.html#a63409534cf57d947724747bcfea47071',1,'sfs_eval_compound(object pair, object env):&#160;eval.c']]],
+  ['sfs_5feval_5fcompound',['sfs_eval_compound',['../eval_8h.html#ae6a1f129c513c24456d85a102835bd32',1,'sfs_eval_compound(object pair):&#160;eval.c'],['../eval_8c.html#ae6a1f129c513c24456d85a102835bd32',1,'sfs_eval_compound(object pair):&#160;eval.c']]],
   ['sfs_5ffree',['sfs_free',['../mem_8h.html#ae414c01305ed3c5d50c4b8c4c6f6fa99',1,'sfs_free(void *ptr):&#160;mem.c'],['../mem_8c.html#ae414c01305ed3c5d50c4b8c4c6f6fa99',1,'sfs_free(void *ptr):&#160;mem.c']]],
   ['sfs_5fget_5fsexpr',['sfs_get_sexpr',['../read_8c.html#a46cec1fd91fe64ce3df1940755ea173e',1,'read.c']]],
   ['sfs_5fmalloc',['sfs_malloc',['../mem_8h.html#afc1a4bbd48ea85f3a20fe2366892c555',1,'sfs_malloc(size_t size):&#160;mem.c'],['../mem_8c.html#a659bee72955e0e8f265312220e10f2d4',1,'sfs_malloc(size_t size):&#160;mem.c']]],

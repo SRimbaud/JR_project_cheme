@@ -22,6 +22,7 @@ var searchData=
   ['prim_5fis_5flist',['PRIM_is_list',['../primitive_8h.html#a9ecdfb51ec828520a14830ea4103bc32',1,'primitive.c']]],
   ['prim_5fis_5fnull',['PRIM_is_null',['../primitive_8h.html#a40befd1983531ea58c9048ec8f85544d',1,'primitive.c']]],
   ['prim_5fis_5fpair',['PRIM_is_pair',['../primitive_8h.html#abe48a16dcc56fa73cbe76d8b08d318a5',1,'primitive.c']]],
+  ['prim_5fis_5fprocedure',['PRIM_is_procedure',['../primitive_8h.html#a39830a9f73edd09f0be7f08989fc622f',1,'primitive.c']]],
   ['prim_5fis_5freal',['PRIM_is_real',['../primitive_8h.html#ad6477d03ae071af318530e7739185cbb',1,'primitive.c']]],
   ['prim_5fis_5fstring',['PRIM_is_string',['../primitive_8h.html#a653281c403fab1be39f84c982425178e',1,'primitive.c']]],
   ['prim_5fis_5fsup',['PRIM_is_sup',['../primitive_8h.html#aa105c6d8a470ff89ae8b960a48926932',1,'primitive.c']]],
