@@ -325,8 +325,8 @@ object sfs_eval(object input, object env)
 					OBJECT_set_car(input, var);
 					/* On a évalué le symbole en un compound*/
 					/* On évalue les arguments */
-					OBJECT_set_cdr(input, PRIM_eval(OBJECT_get_cxr(input, "cdr"), env));
-					return(sfs_eval_compound(input));
+					/*OBJECT_set_cdr(input, PRIM_eval(OBJECT_get_cxr(input, "cdr"), env));*/
+					return(sfs_eval(input, env));
 				}
 
 				return(var);
