@@ -1,5 +1,5 @@
 ; tests avancés pour lambda
-; TEST_RETURN_CODE=FAIL
+; TEST_RETURN_CODE=PASS
 ; TEST_COMMENT="advanced lambda"
 
 

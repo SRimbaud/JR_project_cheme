@@ -21,6 +21,6 @@
 (begin (quote 2) 4)
 (begin #f #f)
 (begin #t #f)
-(begin (+ x 3) (define x 5))
 (begin (and #t #t) (and #t #f))
 (begin (or #t #t) (and #t #f))
+(begin (+ x 3) (define x 5))

@@ -1,5 +1,5 @@
 ; tests avancés pour define
-; TEST_RETURN_CODE=FAIL
+; TEST_RETURN_CODE=PASS
 ; TEST_COMMENT="advanced define"
 
 (define (somme x) (+ x 2))
@@ -26,3 +26,4 @@
 (somme (somme 3 4))
 (produit (produit 3 4))
 (division (division 8 2))
+; pas implémenté.

@@ -15,4 +15,4 @@
 #t #f #t #f)
 ((lambda (x y . z) z)
 #f #f #t #t)
-
+;Celui là on a rien implémenté donc normal que ça ne marche pas.

@@ -1,5 +1,5 @@
 ; tests avancés pour let
-; TEST_RETURN_CODE=FAIL
+; TEST_RETURN_CODE=PASS
 ; TEST_COMMENT="advanced let"
 
 (define add

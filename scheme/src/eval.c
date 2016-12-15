@@ -68,6 +68,7 @@ object sfs_eval_compound(object pair)
 	if((j == nil || OBJECT_isempty(j))
 			&& (i != nil && !OBJECT_isempty(i)))
 	{
+		DEBUG_MSG("j : %p, i : %p", j, i);
 		WARNING_MSG("Too many arguments %d needed", compteur_warning);
 		return(NULL);
 	}
@@ -758,8 +759,7 @@ object EVAL_let(object o, object env)
 int LAMBDA_check_number_arg(object input)
 {
 	object val = OBJECT_get_cxr(input, "cdr");
-	if( (check_type(val->this.pair.car, SFS_NIL) ||
-			check_type(val->this.pair.car, SFS_PAIR) )
+	if( check_type(val->this.pair.car, SFS_PAIR)
 			&& (check_type(val->this.pair.cdr, SFS_NIL)))
 		return(0);
 	return(1);

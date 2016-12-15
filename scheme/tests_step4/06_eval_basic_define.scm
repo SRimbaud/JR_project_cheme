@@ -1,5 +1,5 @@
 ; tests de bases pour define
-; TEST_RETURN_CODE=FAIL
+; TEST_RETURN_CODE=PASS
 ; TEST_COMMENT="Basic define"
 
 (define somme (lambda (x) (+ x 2)))
@@ -22,12 +22,5 @@
 
 (define division (lambda (x y) (/ x y)))
 (division 4 2)
-(division (division 8 2))
-(define division (lambda (x) (/ x 2)) 4 2)
+(division (division 8 2) 1)
 
-(define somme (lambda (x) (+ x 2)) 3)
-(somme (somme 3 4))
-(define produit (lambda (x) (* x 2)) 3)
-(produit (produit 3 4))
-(define produit (lambda (x) (* x 2)) 3 4)
-(define division (lambda (x) (/ x 2)) 4)
