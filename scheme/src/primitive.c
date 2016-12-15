@@ -68,6 +68,7 @@ void init_primitive()
 	PRIM_make("string?", PRIM_is_string);
 	PRIM_make("pair?", PRIM_is_pair);
 	PRIM_make("list?", PRIM_is_list);
+	PRIM_make("procedure?", PRIM_is_procedure);
 	PRIM_make("car", PRIM_car);
 	PRIM_make("cdr", PRIM_cdr);
 	PRIM_make("set-car!", PRIM_set_car);
